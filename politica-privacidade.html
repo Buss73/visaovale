@@ -3,11 +3,12 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>VISÃOVALE · Arquitectura & Design</title>
-<meta name="description" content="VISÃOVALE · Arquitectura, Engenharia e Design de Interiores. Reabilitação, habitação, comércio, indústria e serviços.">
+<title>Política de Privacidade · VISÃOVALE</title>
+<meta name="description" content="Política de Privacidade da VISÃOVALE, em conformidade com o RGPD (Regulamento Geral sobre a Protecção de Dados).">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400&family=Raleway:wght@200;300;400;500;600&family=Barlow+Condensed:wght@300;400;500;600&display=swap" rel="stylesheet">
 <style>
+
 /* ═══════════════════════════════════════════════════════════
    VISÃOVALE — Design system inspired by 71arquitectos
    Colours: Visãovale originals preserved
@@ -306,6 +307,22 @@ footer{background:var(--c-black);padding:72px 0 36px}
   .fg-row{grid-template-columns:1fr}
   .port-head{flex-direction:column;align-items:flex-start}
 }
+
+
+.legal-hero{background:var(--c-dark);padding:calc(var(--nav-h) + 64px) 0 56px}
+.legal-hero h1{color:var(--c-white);font-family:'Cormorant Garamond',serif;font-weight:300;font-size:clamp(2.2rem,4.5vw,3.2rem);margin-top:14px}
+.legal-updated{color:rgba(246,244,240,.55);font-size:.8rem;margin-top:14px;letter-spacing:.04em}
+.legal-content{padding:64px 0 100px}
+.legal-content .container{max-width:820px}
+.legal-content h2{font-family:'Cormorant Garamond',serif;font-weight:400;font-size:1.5rem;margin:40px 0 14px;color:var(--c-black)}
+.legal-content h2:first-of-type{margin-top:0}
+.legal-content p{font-size:.94rem;line-height:1.85;color:var(--c-grey);margin-bottom:14px}
+.legal-content ul{margin:0 0 16px 22px;color:var(--c-grey);font-size:.94rem;line-height:1.85}
+.legal-content li{margin-bottom:6px}
+.legal-content strong{color:var(--c-black);font-weight:600}
+.legal-content a{color:var(--c-gold-txt);text-decoration:underline}
+.legal-note{background:var(--c-warm);border-left:3px solid var(--c-gold);padding:16px 20px;font-size:.83rem;color:var(--c-grey);margin:22px 0;line-height:1.7}
+
 </style>
 </head>
 <body>
@@ -320,11 +337,11 @@ footer{background:var(--c-black);padding:72px 0 36px}
 
 <!-- ══ MOBILE MENU ══ -->
 <div class="mmenu" id="mmenu">
-  <a href="#home" onclick="closeM()"><span class="t">Início</span></a>
-  <a href="#servicos" onclick="closeM()"><span class="t">Serviços</span></a>
-  <a href="#portfolio" onclick="closeM()"><span class="t">Projectos</span></a>
-  <a href="#sobre" onclick="closeM()"><span class="t">Visãovale</span></a>
-  <a href="#contacto" onclick="closeM()"><span class="t">Contactos</span></a>
+  <a href="index.html#home" onclick="closeM()"><span class="t">Início</span></a>
+  <a href="index.html#servicos" onclick="closeM()"><span class="t">Serviços</span></a>
+  <a href="index.html#portfolio" onclick="closeM()"><span class="t">Projectos</span></a>
+  <a href="index.html#sobre" onclick="closeM()"><span class="t">Visãovale</span></a>
+  <a href="index.html#contacto" onclick="closeM()"><span class="t">Contactos</span></a>
   <div class="mmenu-lang">
     <button onclick="setLang('pt',this)" class="active">PT</button>
     <button onclick="setLang('en',this)">EN</button>
@@ -334,17 +351,17 @@ footer{background:var(--c-black);padding:72px 0 36px}
 
 <!-- ══ NAV ══ -->
 <nav id="nav">
-  <a href="#home" class="nav-logo">
+  <a href="index.html#home" class="nav-logo">
     <img src="images/image-001-affbdd6bd538.png" alt="VISÃOVALE"
          onerror="this.style.display='none';this.nextElementSibling.style.display='block'">
     <span style="display:none">VISÃOVALE</span>
   </a>
   <ul class="nav-links" id="navlinks">
-    <li><a href="#home" class="t">Início</a></li>
-    <li><a href="#servicos" class="t">Serviços</a></li>
-    <li><a href="#portfolio" class="t">Projectos</a></li>
-    <li><a href="#sobre" class="t">Visãovale</a></li>
-    <li><a href="#contacto" class="t">Contactos</a></li>
+    <li><a href="index.html#home" class="t">Início</a></li>
+    <li><a href="index.html#servicos" class="t">Serviços</a></li>
+    <li><a href="index.html#portfolio" class="t">Projectos</a></li>
+    <li><a href="index.html#sobre" class="t">Visãovale</a></li>
+    <li><a href="index.html#contacto" class="t">Contactos</a></li>
   </ul>
   <div class="nav-right">
     <div class="lang-sw">
@@ -358,796 +375,98 @@ footer{background:var(--c-black);padding:72px 0 36px}
   </div>
 </nav>
 
-<!-- ══════════════════════════════════════════════
-     HERO
-══════════════════════════════════════════════ -->
-<section class="hero" id="home">
-  <div class="hero-slides" id="heroSlides">
 
-    <!-- SLIDE 1 -->
-    <div class="hero-slide">
-      <img src="images/image-002-7cbe681b23ae.jpg" alt="Edifício Multifamiliar · Visãovale"
-           onerror="this.outerHTML='<div class=\'slide-ph\'><div class=\'ph-lbl\'>Foto Hero 1 · 1920×1080px</div></div>'">
-      <div class="hero-overlay"></div>
-      <div class="hero-content">
-        <p class="hero-tag t">Arquitectura & Design</p>
-        <h1 class="hero-title h1">A sua <em>Visão</em>,<br>a nossa missão</h1>
-        <p class="hero-sub t">Projectos residenciais, comerciais e de reabilitação com acompanhamento integral, do estudo prévio à entrega da obra.</p>
-        <div class="hero-actions">
-          <a href="#portfolio" class="btn btn-white t">Ver Projectos</a>
-          <a href="#contacto" class="btn btn-gold t">Pedir Orçamento</a>
-        </div>
-      </div>
-    </div>
-
-    <!-- SLIDE 2 -->
-    <div class="hero-slide">
-      <img src="images/image-003-f90a026115c5.jpg" alt="Segunda Moradia Unifamiliar · Visãovale"
-           onerror="this.outerHTML='<div class=\'slide-ph\'><div class=\'ph-lbl\'>Foto Hero 2 · 1920×1080px</div></div>'">
-      <div class="hero-overlay"></div>
-      <div class="hero-content">
-        <p class="hero-tag t">Habitação</p>
-        <h1 class="hero-title h1">Espaços que<br><em>Inspiram</em></h1>
-        <p class="hero-sub t">Moradias unifamiliares e edifícios colectivos com rigor técnico e sensibilidade estética.</p>
-        <div class="hero-actions">
-          <a href="#portfolio" class="btn btn-white t">Portfólio</a>
-        </div>
-      </div>
-    </div>
-
-    <!-- SLIDE 3 -->
-    <div class="hero-slide">
-      <img src="images/image-004-28d7e44550c4.jpg" alt="Moradia Tradicional · Visãovale"
-           onerror="this.outerHTML='<div class=\'slide-ph\'><div class=\'ph-lbl\'>Foto Hero 3 · 1920×1080px</div></div>'">
-      <div class="hero-overlay"></div>
-      <div class="hero-content">
-        <p class="hero-tag t">Reabilitação</p>
-        <h1 class="hero-title h1">Tradição com<br><em>Alma Nova</em></h1>
-        <p class="hero-sub t">Recuperação de imóveis com respeito pela traça original e todo o conforto actual.</p>
-        <div class="hero-actions">
-          <a href="#portfolio" class="btn btn-white t">Ver Projectos</a>
-          <a href="#contacto" class="btn btn-gold t">Pedir Orçamento</a>
-        </div>
-      </div>
-    </div>
-
-    <!-- SLIDE 4 -->
-    <div class="hero-slide">
-      <img src="images/image-005-51279dc3096d.jpg" alt="Moradia Contemporânea · Visãovale"
-           onerror="this.outerHTML='<div class=\'slide-ph\'><div class=\'ph-lbl\'>Foto Hero 4 · 1920×1080px</div></div>'">
-      <div class="hero-overlay"></div>
-      <div class="hero-content">
-        <p class="hero-tag t">Habitação</p>
-        <h1 class="hero-title h1">Arquitectura em<br><em>Harmonia</em></h1>
-        <p class="hero-sub t">Moradias desenhadas à medida da paisagem, entre pedra natural e linhas contemporâneas.</p>
-        <div class="hero-actions">
-          <a href="#portfolio" class="btn btn-white t">Portfólio</a>
-        </div>
-      </div>
-    </div>
-
-    <!-- SLIDE 5 -->
-    <div class="hero-slide">
-      <img src="images/image-006-246a952f555b.jpg" alt="Moradia Contemporânea · Pátio · Visãovale"
-           onerror="this.outerHTML='<div class=\'slide-ph\'><div class=\'ph-lbl\'>Foto Hero 5 · 1920×1080px</div></div>'">
-      <div class="hero-overlay"></div>
-      <div class="hero-content">
-        <p class="hero-tag t">Habitação</p>
-        <h1 class="hero-title h1">Viver com<br><em>Natureza</em></h1>
-        <p class="hero-sub t">Espaços exteriores que prolongam o conforto da casa até ao jardim.</p>
-        <div class="hero-actions">
-          <a href="#servicos" class="btn btn-white t">Serviços</a>
-          <a href="#contacto" class="btn btn-gold t">Contactar</a>
-        </div>
-      </div>
-    </div>
-
+<section class="legal-hero">
+  <div class="container">
+    <p class="label t" style="color:var(--c-gold)">Protecção de Dados</p>
+    <h1 class="t">Política de Privacidade</h1>
+    <p class="legal-updated">Última actualização: Agosto de 2026</p>
   </div>
-  <div class="hero-nav">
-    <div class="hero-dots" id="dots">
-      <div class="dot on" onclick="goS(0)"></div>
-      <div class="dot" onclick="goS(1)"></div>
-      <div class="dot" onclick="goS(2)"></div>
-      <div class="dot" onclick="goS(3)"></div>
-      <div class="dot" onclick="goS(4)"></div>
-    </div>
-    <button onclick="prevS()">&#8592;</button>
-    <button onclick="nextS()">&#8594;</button>
-  </div>
-  <div class="scroll-cue"><div class="scroll-line"></div><span>Scroll</span></div>
 </section>
 
-<!-- ══════════════════════════════════════════════
-     STATS
-══════════════════════════════════════════════ -->
-<div class="stats" id="stats">
+<section class="legal-content">
   <div class="container">
-    <div class="stats-grid">
-      <div class="stat reveal">
-        <span class="stat-n" data-t="20" data-sfx="+">0</span>
-        <span class="stat-l t">Anos de Experiência</span>
-      </div>
-      <div class="stat reveal">
-        <span class="stat-n" data-t="5" data-sfx="">0</span>
-        <span class="stat-l t">Áreas de Intervenção</span>
-      </div>
-      <div class="stat reveal">
-        <span class="stat-n" data-t="100" data-sfx="%">0</span>
-        <span class="stat-l t">Cobertura Nacional</span>
-      </div>
-      <div class="stat reveal">
-        <span class="stat-n" data-txt="∞" data-t="0">∞</span>
-        <span class="stat-l t">Dedicação ao Cliente</span>
-      </div>
-      <div class="stat reveal">
-        <span class="stat-n" data-t="0" data-txt="★">★</span>
-        <span class="stat-l t">Qualidade & Rigor</span>
-      </div>
-    </div>
-  </div>
-</div>
+      <h2>1. Introdução</h2>
+      <p>A VISÃOVALE ("nós", "a nossa empresa") respeita a privacidade dos visitantes deste site e dos seus clientes, e compromete-se a proteger os dados pessoais que lhe são confiados, em conformidade com o Regulamento (UE) 2016/679 do Parlamento Europeu e do Conselho, de 27 de Abril de 2016 (Regulamento Geral sobre a Protecção de Dados, "RGPD"), e com a legislação portuguesa aplicável em matéria de protecção de dados.</p>
+      <p>Esta Política de Privacidade explica que dados pessoais recolhemos, para que finalidades os utilizamos, com quem os podemos partilhar e quais são os seus direitos enquanto titular dos dados.</p>
 
-<!-- ══════════════════════════════════════════════
-     SERVICES
-══════════════════════════════════════════════ -->
-<section class="services" id="servicos">
-  <div class="container">
-    <div class="port-head reveal" style="margin-bottom:40px">
-      <div>
-        <p class="label" style="color:var(--c-gold)">O Que Fazemos</p>
-        <h2 class="h2" style="color:var(--c-white)"><span class="t">Serviços</span> <em class="t">em Detalhe</em></h2>
-        <p class="body t" style="max-width:480px;margin-top:10px;color:rgba(246,244,240,.56)">Uma equipa multidisciplinar que acompanha todo o ciclo do projecto, da concepção criativa à entrega final, com rigor técnico e qualidade em cada detalhe.</p>
-      </div>
-      <div class="filter-bar svc-tabs" style="align-self:flex-end;gap:2px">
-        <button class="svc-tab on" onclick="showSvc(this,'reab')" data-panel="reab"><span class="t">Reabilitação</span></button>
-        <button class="svc-tab" onclick="showSvc(this,'hab')" data-panel="hab"><span class="t">Habitação</span></button>
-        <button class="svc-tab" onclick="showSvc(this,'com')" data-panel="com"><span class="t">Comércio</span></button>
-        <button class="svc-tab" onclick="showSvc(this,'ind')" data-panel="ind"><span class="t">Indústria</span></button>
-        <button class="svc-tab" onclick="showSvc(this,'int')" data-panel="int"><span class="t">Interiores</span></button>
-        <button class="svc-tab" onclick="showSvc(this,'srv')" data-panel="srv"><span class="t">Serviços</span></button>
-      </div>
-    </div>
+      <h2>2. Responsável pelo Tratamento de Dados</h2>
+      <p>O responsável pelo tratamento dos dados pessoais recolhidos através deste site é:</p>
+      <ul>
+        <li><strong>Entidade:</strong> VISÃOVALE — Arquitectura, Engenharia e Design de Interiores</li>
+        <li><strong>Morada:</strong> Rua Joaquim Augusto de Carvalho, Nº 5, 1º A, 2475-133 Benedita, Portugal</li>
+        <li><strong>Email:</strong> <a href="mailto:geral@visaovale.com">geral@visaovale.com</a></li>
+        <li><strong>Telefone:</strong> +351 969 851 001</li>
+        <li><strong>NIPC:</strong> [a inserir]</li>
+      </ul>
+      <div class="legal-note">Nota: os campos assinalados com "[a inserir]" nesta política devem ser preenchidos com os dados de registo da empresa antes da publicação deste documento.</div>
 
-    <!-- REABILITAÇÃO -->
-    <div class="svc-panel on" id="svc-reab">
-      <div class="svc-panel-grid">
-        <div class="svc-card">
-          <div class="svc-num">01</div>
-          <h3 class="svc-name t">Reabilitação Arquitectónica</h3>
-          <p class="svc-desc t"><strong>Recuperação e valorização de edifícios existentes.</strong> Desde estudos de diagnóstico, passando pelo projecto de intervenção e licenciamento, até à assistência técnica à obra. Preservamos a identidade original introduzindo eficiência contemporânea.</p>
-        </div>
-        <div class="svc-card">
-          <div class="svc-num">02</div>
-          <h3 class="svc-name t">Conservação & Restauro</h3>
-          <p class="svc-desc t"><strong>Intervenções em edifícios de interesse patrimonial.</strong> Análise do estado de conservação, definição de estratégias de intervenção respeitando a autenticidade construtiva, coordenação com entidades de salvaguarda do património.</p>
-        </div>
-        <div class="svc-card">
-          <div class="svc-num">03</div>
-          <h3 class="svc-name t">Remodelação & Ampliação</h3>
-          <p class="svc-desc t"><strong>Modernização funcional e estética de espaços existentes.</strong> Remodelações integrais ou parciais, ampliações e adaptações de uso, com aproveitamento máximo das estruturas existentes para redução de custos e impacto ambiental.</p>
-        </div>
-        <div class="svc-card">
-          <div class="svc-num">04</div>
-          <h3 class="svc-name t">Consultoria & Viabilidade</h3>
-          <p class="svc-desc t"><strong>Orientação técnica antes de investir.</strong> Análise de viabilidade técnica e legal, enquadramento no PDM e legislação em vigor, avaliação de potencial construtivo e assessoria na tomada de decisão de investimento imobiliário.</p>
-        </div>
-      </div>
-    </div>
+      <h2>3. Dados Recolhidos e Finalidade</h2>
+      <p>Recolhemos dados pessoais fornecidos directamente por si, nomeadamente através do formulário de contacto disponível no site, que pode incluir:</p>
+      <ul>
+        <li>Nome;</li>
+        <li>Endereço de email;</li>
+        <li>Número de telefone;</li>
+        <li>Localização do projecto (cidade/região);</li>
+        <li>Tipo de projecto e mensagem descrevendo o pedido.</li>
+      </ul>
+      <p>Estes dados são utilizados exclusivamente para as seguintes finalidades:</p>
+      <ul>
+        <li>Responder a pedidos de informação ou de orçamento;</li>
+        <li>Gerir a relação pré-contratual e contratual com clientes;</li>
+        <li>Cumprir obrigações legais, contabilísticas e fiscais.</li>
+      </ul>
+      <p>Não utilizamos os seus dados para fins de marketing directo sem o seu consentimento prévio e explícito.</p>
 
-    <!-- HABITAÇÃO -->
-    <div class="svc-panel" id="svc-hab">
-      <div class="svc-panel-grid">
-        <div class="svc-card">
-          <div class="svc-num">01</div>
-          <h3 class="svc-name t">Habitação Unifamiliar</h3>
-          <p class="svc-desc t"><strong>Moradias personalizadas do primeiro esboço à chave na mão.</strong> Desenvolvimento de estudos prévios, projecto de arquitectura, coordenação de especialidades, licenciamento camarário e acompanhamento integral da obra.</p>
-        </div>
-        <div class="svc-card">
-          <div class="svc-num">02</div>
-          <h3 class="svc-name t">Habitação Colectiva</h3>
-          <p class="svc-desc t"><strong>Edifícios multifamiliares e empreendimentos residenciais.</strong> Projectos de arquitectura para promoção imobiliária, com optimização de rendas e valias, coordenação de especialidades técnicas e gestão do processo de licenciamento.</p>
-        </div>
-        <div class="svc-card">
-          <div class="svc-num">03</div>
-          <h3 class="svc-name t">Investimento Imobiliário</h3>
-          <p class="svc-desc t"><strong>Apoio especializado a investidores e promotores.</strong> Análises urbanísticas, mapas de rentabilidade, estudos prévios de arquitectura enquadrados no PDM, incluindo Pedido de Informação Prévia (PIP) junto das câmaras municipais.</p>
-        </div>
-        <div class="svc-card">
-          <div class="svc-num">04</div>
-          <h3 class="svc-name t">Gestão de Obra</h3>
-          <p class="svc-desc t"><strong>Acompanhamento técnico permanente em obra.</strong> Fiscalização e coordenação de empreitadas, controlo de qualidade, cumprimento de prazo e orçamento, com acompanhamento online de todas as fases de execução.</p>
-        </div>
-      </div>
-    </div>
+      <h2>4. Base Legal do Tratamento</h2>
+      <p>O tratamento dos seus dados pessoais assenta nas seguintes bases legais, previstas no artigo 6.º do RGPD:</p>
+      <ul>
+        <li><strong>Execução de diligências pré-contratuais e do contrato</strong> (art. 6.º, n.º 1, alínea b): quando nos contacta a pedir um orçamento ou informação sobre um projecto;</li>
+        <li><strong>Consentimento</strong> (art. 6.º, n.º 1, alínea a): quando aceita esta política ao submeter o formulário de contacto, ou noutras situações em que o seu consentimento explícito nos seja solicitado;</li>
+        <li><strong>Cumprimento de obrigação legal</strong> (art. 6.º, n.º 1, alínea c): nomeadamente obrigações fiscais e contabilísticas.</li>
+      </ul>
 
-    <!-- COMÉRCIO -->
-    <div class="svc-panel" id="svc-com">
-      <div class="svc-panel-grid">
-        <div class="svc-card">
-          <div class="svc-num">01</div>
-          <h3 class="svc-name t">Espaços Comerciais & Restauração</h3>
-          <p class="svc-desc t"><strong>Projectos para lojas, restaurantes, bares e espaços de retalho.</strong> Concepção funcional e estética que reforça a identidade da marca, melhora a experiência do cliente e maximiza a rentabilidade do espaço.</p>
-        </div>
-        <div class="svc-card">
-          <div class="svc-num">02</div>
-          <h3 class="svc-name t">Hotelaria & Turismo</h3>
-          <p class="svc-desc t"><strong>Hotéis, alojamentos locais e empreendimentos turísticos.</strong> Soluções que valorizam a experiência do hóspede e reforçam a marca do cliente, desde o projecto de arquitectura até ao design de interiores completo.</p>
-        </div>
-        <div class="svc-card">
-          <div class="svc-num">03</div>
-          <h3 class="svc-name t">Escritórios & Espaços de Trabalho</h3>
-          <p class="svc-desc t"><strong>Ambientes de trabalho funcionais, modernos e motivadores.</strong> Projectos que optimizam fluxos, promovem bem-estar e produtividade, adaptados à cultura e imagem de cada empresa.</p>
-        </div>
-        <div class="svc-card">
-          <div class="svc-num">04</div>
-          <h3 class="svc-name t">Licenciamento & Legalização</h3>
-          <p class="svc-desc t"><strong>Tratamento integral de processos junto das entidades competentes.</strong> Preparação de toda a documentação técnica, acompanhamento dos processos de licenciamento e garantia de conformidade legal em todas as fases.</p>
-        </div>
-      </div>
-    </div>
+      <h2>5. Partilha de Dados com Terceiros</h2>
+      <p>Os seus dados pessoais não são vendidos, alugados ou cedidos a terceiros para fins comerciais. Podemos partilhar dados com prestadores de serviços que actuam em nosso nome (por exemplo, serviços de alojamento web, envio de email ou contabilidade), estando estes contratualmente obrigados a tratar os dados exclusivamente para os fins definidos por nós e em conformidade com o RGPD.</p>
+      <p>Podemos também divulgar dados pessoais quando exigido por lei ou por ordem de autoridade competente.</p>
 
-    <!-- INDÚSTRIA -->
-    <div class="svc-panel" id="svc-ind">
-      <div class="svc-panel-grid">
-        <div class="svc-card">
-          <div class="svc-num">01</div>
-          <h3 class="svc-name t">Edifícios Industriais & Armazéns</h3>
-          <p class="svc-desc t"><strong>Projectos para instalações industriais, logísticas e de armazenagem.</strong> Concepção funcional orientada para a operação, com optimização de espaços, fluxos de trabalho, segurança e eficiência energética.</p>
-        </div>
-        <div class="svc-card">
-          <div class="svc-num">02</div>
-          <h3 class="svc-name t">Adaptação & Reconversão Industrial</h3>
-          <p class="svc-desc t"><strong>Conversão de instalações existentes para novos usos industriais.</strong> Análise estrutural, adequação às normas de segurança e higiene no trabalho, licenciamento industrial e acompanhamento de obras.</p>
-        </div>
-        <div class="svc-card">
-          <div class="svc-num">03</div>
-          <h3 class="svc-name t">Engenharia de Especialidades</h3>
-          <p class="svc-desc t"><strong>Coordenação de todas as especialidades de engenharia.</strong> Estruturas, redes de abastecimento, esgotos, electricidade, AVAC, segurança contra incêndios, em coordenação eficiente com a equipa de arquitectura, utilizando metodologia BIM.</p>
-        </div>
-        <div class="svc-card">
-          <div class="svc-num">04</div>
-          <h3 class="svc-name t">Serviço Chave na Mão</h3>
-          <p class="svc-desc t"><strong>Acompanhamento total sem intermediários.</strong> Da aquisição do activo ao licenciamento, construção e colocação no mercado. Cobertura em todo o território nacional, com técnicos próprios.</p>
-        </div>
-      </div>
-    </div>
+      <h2>6. Prazo de Conservação</h2>
+      <p>Conservamos os seus dados pessoais apenas durante o período necessário para cumprir as finalidades para as quais foram recolhidos, incluindo o cumprimento de requisitos legais, contabilísticos ou de reporte. Regra geral, os dados de contacto de potenciais clientes são conservados por um período de até 3 anos após o último contacto, salvo obrigação legal que determine prazo superior (nomeadamente obrigações fiscais, que podem exigir conservação de 10 anos para documentos contratuais e facturas).</p>
 
-    <!-- INTERIORES -->
-    <div class="svc-panel" id="svc-int">
-      <div class="svc-panel-grid">
-        <div class="svc-card">
-          <div class="svc-num">01</div>
-          <h3 class="svc-name t">Design de Interiores</h3>
-          <p class="svc-desc t"><strong>Transformamos espaços em ambientes únicos, funcionais e personalizados.</strong> Para habitações, criamos interiores que traduzem a identidade de quem vive o espaço, da concepção à escolha de mobiliário, cores, texturas e iluminação.</p>
-        </div>
-        <div class="svc-card">
-          <div class="svc-num">02</div>
-          <h3 class="svc-name t">Creative Design</h3>
-          <p class="svc-desc t"><strong>Equipa criativa para universos de estilos únicos com identidade própria.</strong> Soluções para hotelaria, restauração, escritórios e espaços comerciais, completamente personalizadas e de acordo com a área de negócio.</p>
-        </div>
-        <div class="svc-card">
-          <div class="svc-num">03</div>
-          <h3 class="svc-name t">Visualização 3D</h3>
-          <p class="svc-desc t"><strong>Renders fotorrealistas para apresentação e decisão.</strong> Projectos 3D que proporcionam uma visão tão realista quanto possível do espaço, facilitando a comunicação com o cliente e o processo de licenciamento.</p>
-        </div>
-        <div class="svc-card">
-          <div class="svc-num">04</div>
-          <h3 class="svc-name t">Gestão de Compras & Decoração</h3>
-          <p class="svc-desc t"><strong>Simplificamos o processo de equipamento e decoração.</strong> Selecção de peças, arte e acessórios que conferem carácter e harmonia ao espaço, com gestão de compras que poupa tempo e reduz preocupações ao cliente.</p>
-        </div>
-      </div>
-    </div>
+      <h2>7. Direitos do Titular dos Dados</h2>
+      <p>Nos termos do RGPD, tem direito a, a qualquer momento e de forma gratuita:</p>
+      <ul>
+        <li><strong>Aceder</strong> aos seus dados pessoais e obter informação sobre o respectivo tratamento;</li>
+        <li><strong>Rectificar</strong> dados inexactos ou incompletos;</li>
+        <li><strong>Apagar</strong> os seus dados ("direito ao esquecimento"), quando aplicável;</li>
+        <li><strong>Limitar</strong> o tratamento em determinadas circunstâncias;</li>
+        <li><strong>Portabilidade</strong> dos dados, num formato estruturado e de uso corrente;</li>
+        <li><strong>Opor-se</strong> ao tratamento dos seus dados, nomeadamente para fins de marketing directo;</li>
+        <li><strong>Retirar o consentimento</strong> a qualquer momento, sem afectar a licitude do tratamento efectuado com base no consentimento previamente dado.</li>
+      </ul>
+      <p>Para exercer qualquer um destes direitos, contacte-nos através de <a href="mailto:geral@visaovale.com">geral@visaovale.com</a>. Responderemos ao seu pedido no prazo máximo de um mês, nos termos do RGPD.</p>
 
-    <!-- SERVIÇOS GERAIS -->
-    <div class="svc-panel" id="svc-srv">
-      <div class="svc-panel-grid">
-        <div class="svc-card">
-          <div class="svc-num">01</div>
-          <h3 class="svc-name t">Arquitectura · Projecto Completo</h3>
-          <p class="svc-desc t"><strong>Do estudo prévio ao projecto de execução detalhado.</strong> Acompanhamento de todas as fases: estudos iniciais, ante-projecto, projecto de licenciamento, projecto de execução e assistência técnica à obra, com recurso a tecnologia BIM.</p>
-        </div>
-        <div class="svc-card">
-          <div class="svc-num">02</div>
-          <h3 class="svc-name t">Consultoria de Arquitectura</h3>
-          <p class="svc-desc t"><strong>Orientação especializada antes de tomar decisões.</strong> Análise de viabilidade legal e técnica, procura de terrenos e imóveis, esclarecimento de possibilidades de intervenção, apoio na definição de estratégias de investimento ou reabilitação.</p>
-        </div>
-        <div class="svc-card">
-          <div class="svc-num">03</div>
-          <h3 class="svc-name t">Paisagismo</h3>
-          <p class="svc-desc t"><strong>Design de espaços exteriores integrado com a linguagem arquitectónica.</strong> Jardins, acessos, piscinas e áreas de lazer concebidos em harmonia com a arquitectura e o contexto ambiental do projecto.</p>
-        </div>
-        <div class="svc-card">
-          <div class="svc-num">04</div>
-          <h3 class="svc-name t">Eficiência Energética & Sustentabilidade</h3>
-          <p class="svc-desc t"><strong>Soluções que reduzem custos e impacto ambiental.</strong> Certificação energética, integração de sistemas de energia renovável, análise de ciclo de vida dos materiais e estratégias bioclimáticas passivas.</p>
-        </div>
-      </div>
-    </div>
+      <h2>8. Segurança dos Dados</h2>
+      <p>Adoptamos medidas técnicas e organizativas adequadas para proteger os seus dados pessoais contra acesso não autorizado, perda, destruição ou divulgação indevida, proporcionais à natureza dos dados tratados.</p>
+
+      <h2>9. Cookies</h2>
+      <p>Este site pode utilizar cookies para o seu correcto funcionamento e para melhorar a experiência de navegação. Para mais informação sobre os cookies utilizados e como os pode gerir, consulte a nossa <a href="cookies.html">Política de Cookies</a>.</p>
+
+      <h2>10. Alterações a esta Política</h2>
+      <p>Esta Política de Privacidade pode ser actualizada periodicamente, de forma a reflectir alterações nas nossas práticas ou por motivos legais, operacionais ou regulamentares. Recomendamos que a consulte regularmente. A data da última actualização é indicada no topo desta página.</p>
+
+      <h2>11. Contacto e Reclamações</h2>
+      <p>Para qualquer questão relativa a esta Política de Privacidade ou ao tratamento dos seus dados pessoais, contacte-nos através de <a href="mailto:geral@visaovale.com">geral@visaovale.com</a>.</p>
+      <p>Tem também o direito de apresentar reclamação junto da autoridade de controlo nacional:</p>
+      <ul>
+        <li><strong>Comissão Nacional de Protecção de Dados (CNPD)</strong><br>
+        Av. D. Carlos I, 134, 1.º, 1200-651 Lisboa, Portugal<br>
+        <a href="https://www.cnpd.pt" target="_blank" rel="noopener">www.cnpd.pt</a></li>
+      </ul>
 
   </div>
 </section>
 
-<!-- ══════════════════════════════════════════════
-     PORTFOLIO
-══════════════════════════════════════════════ -->
-<section class="portfolio" id="portfolio">
-  <div class="container">
-    <div class="port-head reveal">
-      <div>
-        <p class="label t">Portfólio</p>
-        <h2 class="h2">Projectos <em>em Destaque</em></h2>
-      </div>
-      <div class="filter-bar">
-        <button class="ftab on" onclick="filt(this,'all')"><span class="t">Todos</span></button>
-        <button class="ftab" onclick="filt(this,'reab')"><span class="t">Reabilitação</span></button>
-        <button class="ftab" onclick="filt(this,'hab')"><span class="t">Habitação</span></button>
-        <button class="ftab" onclick="filt(this,'com')"><span class="t">Comércio</span></button>
-        <button class="ftab" onclick="filt(this,'int')"><span class="t">Interiores</span></button>
-      </div>
-    </div>
-
-    <div class="port-grid" id="portGrid">
-
-      <!-- P1 — TALL -->
-      <div class="proj reveal proj-gallery" data-cat="hab" data-ratio="tall" onclick="openGallery('edificiomultifamiliar')" role="button" tabindex="0" onkeyup="if(event.key==='Enter')openGallery('edificiomultifamiliar')">
-        <div class="proj-img">
-          <img src="images/image-007-6e7c73a1d86d.jpg" alt="Edifício Multifamiliar"
-               onerror="this.outerHTML='<div class=\'proj-ph\' data-ratio=\'tall\' style=\'aspect-ratio:2/3\'><div class=\'ph-lbl\'>Edifício Multifamiliar · 2023</div></div>'">
-          <span class="proj-gallery-badge t">Ver Projecto</span>
-        </div>
-        <div class="proj-overlay"></div>
-        <div class="proj-info">
-          <p class="proj-cat t">Habitação Colectiva · 2023</p>
-          <h3 class="proj-name">Edifício Multifamiliar</h3>
-          <p class="proj-client">Render 3D · Arquitectura</p>
-        </div>
-      </div>
-
-      <!-- P1b — STD (duplicado) -->
-      <div class="proj reveal proj-gallery" data-cat="hab" data-ratio="std" onclick="openGallery('edificiomultifamiliar2')" role="button" tabindex="0" onkeyup="if(event.key==='Enter')openGallery('edificiomultifamiliar2')">
-        <div class="proj-img">
-          <img src="images/image-008-00d812eada66.jpg" alt="Edifício Multifamiliar"
-               onerror="this.outerHTML='<div class=\'proj-ph\' style=\'aspect-ratio:4/3\'><div class=\'ph-lbl\'>Edifício Multifamiliar · 2023</div></div>'">
-          <span class="proj-gallery-badge t">Ver Projecto</span>
-        </div>
-        <div class="proj-overlay"></div>
-        <div class="proj-info">
-          <p class="proj-cat t">Habitação Colectiva · 2023</p>
-          <h3 class="proj-name">Edifício Multifamiliar</h3>
-          <p class="proj-client">Render 3D · Arquitectura</p>
-        </div>
-      </div>
-
-      <!-- P2 — WIDE -->
-      <div class="proj reveal proj-gallery" data-cat="reab" data-ratio="wide" onclick="openGallery('quintarural')" role="button" tabindex="0" onkeyup="if(event.key==='Enter')openGallery('quintarural')">
-        <div class="proj-img">
-          <img src="images/image-009-a78176eb9923.jpg" alt="Quinta Rural com Piscina"
-               onerror="this.outerHTML='<div class=\'proj-ph\' style=\'aspect-ratio:16/9\'><div class=\'ph-lbl\'>Quinta Rural com Piscina · 2022</div></div>'">
-          <span class="proj-gallery-badge t">Ver Projecto</span>
-        </div>
-        <div class="proj-overlay"></div>
-        <div class="proj-info">
-          <p class="proj-cat t">Reabilitação · 2022</p>
-          <h3 class="proj-name">Quinta Rural com Piscina</h3>
-          <p class="proj-client">Render 3D · Reabilitação</p>
-        </div>
-      </div>
-
-      <!-- P3 — WIDE -->
-      <div class="proj reveal proj-gallery" data-cat="reab" data-ratio="wide" onclick="openGallery('aldeamentoturistico')" role="button" tabindex="0" onkeyup="if(event.key==='Enter')openGallery('aldeamentoturistico')">
-        <div class="proj-img">
-          <img src="images/image-010-0b0109241ef1.jpg" alt="Aldeamento Turístico"
-               onerror="this.outerHTML='<div class=\'proj-ph\' style=\'aspect-ratio:16/9\'><div class=\'ph-lbl\'>Aldeamento Turístico · 2021</div></div>'">
-          <span class="proj-gallery-badge t">Ver Projecto</span>
-        </div>
-        <div class="proj-overlay"></div>
-        <div class="proj-info">
-          <p class="proj-cat t">Reabilitação · 2021</p>
-          <h3 class="proj-name">Aldeamento Turístico</h3>
-          <p class="proj-client">S. Frazão · Alcobertas</p>
-        </div>
-      </div>
-
-      <!-- P4 — WIDE -->
-      <div class="proj reveal proj-gallery" data-cat="hab" data-ratio="wide" onclick="openGallery('segundamoradia')" role="button" tabindex="0" onkeyup="if(event.key==='Enter')openGallery('segundamoradia')">
-        <div class="proj-img">
-          <img src="images/image-011-bf462dfabdd0.jpg" alt="Segunda Moradia Unifamiliar"
-               onerror="this.outerHTML='<div class=\'proj-ph\' data-ratio=\'wide\' style=\'aspect-ratio:16/9\'><div class=\'ph-lbl\'>Segunda Moradia Unifamiliar · 2021</div></div>'">
-          <span class="proj-gallery-badge t">Ver Projecto</span>
-        </div>
-        <div class="proj-overlay"></div>
-        <div class="proj-info">
-          <p class="proj-cat t">Habitação · 2021</p>
-          <h3 class="proj-name">Segunda Moradia Unifamiliar</h3>
-          <p class="proj-client">Render 3D · Arquitectura</p>
-        </div>
-      </div>
-
-      <!-- P5 — WIDE -->
-      <div class="proj reveal proj-gallery" data-cat="hab" data-ratio="wide" onclick="openGallery('terceiramoradia')" role="button" tabindex="0" onkeyup="if(event.key==='Enter')openGallery('terceiramoradia')">
-        <div class="proj-img">
-          <img src="images/image-012-3e067328e79b.jpg" alt="Terceira Moradia Unifamiliar"
-               onerror="this.outerHTML='<div class=\'proj-ph\' data-ratio=\'wide\' style=\'aspect-ratio:16/9\'><div class=\'ph-lbl\'>Terceira Moradia Unifamiliar · 2021</div></div>'">
-          <span class="proj-gallery-badge t">Ver Projecto</span>
-        </div>
-        <div class="proj-overlay"></div>
-        <div class="proj-info">
-          <p class="proj-cat t">Habitação · 2021</p>
-          <h3 class="proj-name">Terceira Moradia Unifamiliar</h3>
-          <p class="proj-client">Render 3D · Arquitectura</p>
-        </div>
-      </div>
-
-      
-<!-- P6 — WIDE -->
-      <div class="proj reveal proj-gallery" data-cat="hab" data-ratio="wide" onclick="openGallery('moradiasgeminadas')" role="button" tabindex="0" onkeyup="if(event.key==='Enter')openGallery('moradiasgeminadas')">
-        <div class="proj-img">
-          <img src="images/image-013-de4a12591be4.jpg" alt="Moradias Geminadas"
-               onerror="this.outerHTML='<div class=\'proj-ph\' style=\'aspect-ratio:16/9\'><div class=\'ph-lbl\'>Moradias Geminadas · 2020</div></div>'">
-          <span class="proj-gallery-badge t">Ver Projecto</span>
-        </div>
-        <div class="proj-overlay"></div>
-        <div class="proj-info">
-          <p class="proj-cat t">Habitação · 2020</p>
-          <h3 class="proj-name">Moradias Geminadas</h3>
-          <p class="proj-client">Render 3D · Arquitectura</p>
-        </div>
-      </div>
-
-      <!-- P7 — STD -->
-      <div class="proj reveal proj-gallery" data-cat="hab" data-ratio="std" onclick="openGallery('coutinhoteixeira')" role="button" tabindex="0" onkeyup="if(event.key==='Enter')openGallery('coutinhoteixeira')">
-        <div class="proj-img">
-          <img src="images/image-014-92da044d21b1.jpg" alt="Coutinho e Teixeira, Lda"
-               onerror="this.outerHTML='<div class=\'proj-ph\' style=\'aspect-ratio:4/3\'><div class=\'ph-lbl\'>Coutinho e Teixeira, Lda · São Martinho do Porto</div></div>'">
-          <span class="proj-gallery-badge t">Ver Projecto</span>
-        </div>
-        <div class="proj-overlay"></div>
-        <div class="proj-info">
-          <p class="proj-cat t">Habitação Multifamiliar · São Martinho do Porto</p>
-          <h3 class="proj-name">Coutinho e Teixeira, Lda</h3>
-          <p class="proj-client">Render 3D · Arquitectura</p>
-        </div>
-      </div>
-
-      <!-- P8 — WIDE (GALERIA) -->
-      <div class="proj reveal proj-gallery" data-cat="com" data-ratio="wide" onclick="openGallery('restaurantenatura')" role="button" tabindex="0" onkeyup="if(event.key==='Enter')openGallery('restaurantenatura')">
-        <div class="proj-img">
-          <img src="images/image-015-6f126730445e.jpg" alt="Restaurante Natura"
-               onerror="this.outerHTML='<div class=\'proj-ph\' style=\'aspect-ratio:16/9\'><div class=\'ph-lbl\'>Restaurante Natura · 2017</div></div>'">
-          <span class="proj-gallery-badge t">Ver Projecto</span>
-        </div>
-        <div class="proj-overlay"></div>
-        <div class="proj-info">
-          <p class="proj-cat t">Restauração · 2017</p>
-          <h3 class="proj-name">Restaurante Natura</h3>
-          <p class="proj-client">Projecto Comercial · Render 3D</p>
-        </div>
-      </div>
-
-      <!-- P9 — WIDE (GALERIA) -->
-      <div class="proj reveal proj-gallery" data-cat="com" data-ratio="wide" onclick="openGallery('hotelnatura')" role="button" tabindex="0" onkeyup="if(event.key==='Enter')openGallery('hotelnatura')">
-        <div class="proj-img">
-          <img src="images/image-056-6cf81ba1c3c9.jpg" alt="Hotel Natura"
-               onerror="this.outerHTML='<div class=\'proj-ph\' style=\'aspect-ratio:16/9\'><div class=\'ph-lbl\'>Hotel Natura · 2015</div></div>'">
-          <span class="proj-gallery-badge t">Ver Projecto</span>
-        </div>
-        <div class="proj-overlay"></div>
-        <div class="proj-info">
-          <p class="proj-cat t">Hotelaria · 2015</p>
-          <h3 class="proj-name">Hotel Natura</h3>
-          <p class="proj-client">Grande Projecto Hoteleiro</p>
-        </div>
-      </div>
-
-
-      <!-- P10 — GALERIA (Projecto de Reabilitação) -->
-      <div class="proj reveal proj-gallery" data-cat="reab" data-ratio="wide" onclick="openGallery('reabilitacao')" role="button" tabindex="0" onkeyup="if(event.key==='Enter')openGallery('reabilitacao')">
-        <div class="proj-img">
-          <img src="images/image-017-156d18ebf8ae.jpg" alt="Projecto de Reabilitação · Fachada Principal" loading="lazy"
-               onerror="this.outerHTML='<div class=\'proj-ph\' style=\'aspect-ratio:16/9\'><div class=\'ph-lbl\'>Projecto de Reabilitação · 2024</div></div>'">
-          <span class="proj-gallery-badge t">Ver Projecto</span>
-        </div>
-        <div class="proj-overlay"></div>
-        <div class="proj-info">
-          <p class="proj-cat t">Reabilitação · 2024</p>
-          <h3 class="proj-name">Projecto de Reabilitação</h3>
-          <p class="proj-client">Render 3D · Ver galeria</p>
-        </div>
-      </div>
-
-
-      <!-- P11 — GALERIA (Alojamento Turístico Boutique) -->
-      <div class="proj reveal proj-gallery" data-cat="com" data-ratio="wide" onclick="openGallery('turismo')" role="button" tabindex="0" onkeyup="if(event.key==='Enter')openGallery('turismo')">
-        <div class="proj-img">
-          <img src="images/image-018-caf86d80bf1c.jpg" alt="Alojamento Turístico Boutique"
-               onerror="this.outerHTML='<div class=\'proj-ph\' style=\'aspect-ratio:16/9\'><div class=\'ph-lbl\'>Alojamento Turístico Boutique · 2021</div></div>'">
-          <span class="proj-gallery-badge t">Ver Projecto</span>
-        </div>
-        <div class="proj-overlay"></div>
-        <div class="proj-info">
-          <p class="proj-cat t">Hotelaria e Turismo · 2021</p>
-          <h3 class="proj-name">Alojamento Turístico Boutique</h3>
-          <p class="proj-client">Render 3D · Ver galeria</p>
-        </div>
-      </div>
-
-      <!-- P12 — GALERIA (Edifício Habitacional) -->
-      <div class="proj reveal proj-gallery" data-cat="hab" data-ratio="wide" onclick="openGallery('edificiohabitacional')" role="button" tabindex="0" onkeyup="if(event.key==='Enter')openGallery('edificiohabitacional')">
-        <div class="proj-img">
-          <img src="images/image-019-8fb1a9696e14.jpg" alt="Edifício Habitacional" loading="lazy"
-               onerror="this.outerHTML='<div class=\'proj-ph\' data-ratio=\'wide\' style=\'aspect-ratio:16/9\'><div class=\'ph-lbl\'>Edifício Habitacional · 2025</div></div>'">
-          <span class="proj-gallery-badge t">Ver Projecto</span>
-        </div>
-        <div class="proj-overlay"></div>
-        <div class="proj-info">
-          <p class="proj-cat t">Habitação Colectiva · 2025</p>
-          <h3 class="proj-name">Edifício Habitacional</h3>
-          <p class="proj-client">Render 3D · Arquitectura</p>
-        </div>
-      </div>
-    </div>
-
-    <div class="port-cta reveal">
-      <a href="#contacto" class="btn btn-dark t">Ver todos os projectos →</a>
-    </div>
-  </div>
-</section>
-
-<style>
-/* ── PROJECT GALLERY / LIGHTBOX ── */
-.proj-gallery{cursor:pointer}
-.proj-gallery .proj-img{position:relative}
-.proj-gallery-badge{position:absolute;top:14px;right:14px;background:rgba(17,17,16,.72);color:var(--c-white);font-family:'Barlow Condensed',sans-serif;font-size:.7rem;letter-spacing:.14em;text-transform:uppercase;padding:6px 12px;border:1px solid var(--c-gold);z-index:2}
-.lightbox{position:fixed;inset:0;background:rgba(10,9,8,.96);z-index:9999;display:none;align-items:center;justify-content:center;flex-direction:column;padding:32px}
-.lightbox.on{display:flex}
-.lightbox-frame{position:relative;max-width:1100px;width:100%;display:flex;flex-direction:column;align-items:center;gap:16px}
-.lightbox-img-wrap{position:relative;width:100%;display:flex;align-items:center;justify-content:center;min-height:200px}
-.lightbox-img-wrap img{max-height:74vh;max-width:100%;object-fit:contain;box-shadow:0 20px 60px rgba(0,0,0,.5)}
-.lightbox-cap{color:var(--c-white);font-family:'Raleway',sans-serif;font-size:.85rem;font-weight:300;text-align:center;max-width:720px;color:rgba(246,244,240,.85)}
-.lightbox-count{font-family:'Barlow Condensed',sans-serif;font-size:.7rem;letter-spacing:.2em;text-transform:uppercase;color:var(--c-gold)}
-.lightbox-close{position:absolute;top:24px;right:32px;background:none;border:none;color:var(--c-white);font-size:2rem;line-height:1;cursor:pointer;font-weight:300;z-index:2}
-.lightbox-nav{background:none;border:1px solid rgba(246,244,240,.3);color:var(--c-white);width:48px;height:48px;border-radius:50%;font-size:1.4rem;cursor:pointer;display:flex;align-items:center;justify-content:center;transition:border-color .25s,background .25s}
-.lightbox-nav:hover{border-color:var(--c-gold);background:rgba(224,154,43,.12)}
-.lightbox-nav-row{display:flex;align-items:center;justify-content:center;gap:28px;width:100%}
-@media(max-width:640px){.lightbox-close{top:12px;right:16px}.lightbox-nav{width:40px;height:40px}}
-</style>
-
-<!-- ══════════════════════════════════════════════
-     PROJECT GALLERY LIGHTBOX
-══════════════════════════════════════════════ -->
-<div class="lightbox" id="lightbox" aria-hidden="true">
-  <button class="lightbox-close" onclick="closeGallery()" aria-label="Fechar">&times;</button>
-  <div class="lightbox-frame">
-    <div class="lightbox-nav-row">
-      <button class="lightbox-nav" onclick="galleryStep(-1)" aria-label="Anterior">&#8249;</button>
-      <div class="lightbox-img-wrap">
-        <img id="lightboxImg" src="" alt="">
-      </div>
-      <button class="lightbox-nav" onclick="galleryStep(1)" aria-label="Seguinte">&#8250;</button>
-    </div>
-    <p class="lightbox-cap t" id="lightboxCap"></p>
-    <p class="lightbox-count" id="lightboxCount"></p>
-  </div>
-</div>
-
-<!-- ══════════════════════════════════════════════
-     ABOUT / PROCESS
-══════════════════════════════════════════════ -->
-<section class="about" id="sobre">
-  <div class="container">
-    <div class="about-grid">
-      <div class="about-imgs reveal-l">
-        <div class="about-main">
-          <img id="aboutMainImg" src="images/image-025-0d5635971f13.jpg" alt="Visãovale · Projectos" class="about-slide-img"
-               onerror="this.outerHTML='<div class=\'about-ph\' style=\'height:100%;min-height:480px\'><div class=\'ph-lbl\'>Foto Sobre Nós<br>800×1000px</div></div>'">
-        </div>
-        <div class="about-float">
-          <img id="aboutFloatImg" src="images/image-026-280e529691bd.jpg" alt="Visãovale · Pormenor" class="about-slide-img"
-               onerror="this.outerHTML='<div class=\'about-ph\' style=\'height:100%;min-height:180px\'><div class=\'ph-lbl\'>Foto Detalhe</div></div>'">
-        </div>
-      </div>
-      <div class="reveal">
-        <p class="label t">Sobre Nós</p>
-        <h2 class="h2" style="margin-bottom:20px">A Nossa <em>Proposta</em></h2>
-        <p class="about-lead t">Profissionais especializados e acreditados com competências reconhecidas nas áreas da engenharia, arquitectura e design.</p>
-        <p class="body t">A VISÃOVALE põe à sua disposição uma equipa com sólida reputação e experiência profissional adquirida ao longo de anos de trabalho no sector imobiliário.</p>
-        <p class="body t" style="margin-top:12px">Particularmente na área do projecto e construção, estamos aptos a oferecer ao mercado um verdadeiro serviço chave na mão, apoiando o cliente desde o momento da aquisição do activo, passando pelo licenciamento camarário, construção e colocação no mercado.</p>
-        <p class="body t" style="margin-top:12px">Garantimos cobertura em todo o Território Nacional, sem intermediários e com técnicos próprios.</p>
-        <a href="#contacto" class="about-cta t">Falar Connosco →</a>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- ══════════════════════════════════════════════
-     PROCESS
-══════════════════════════════════════════════ -->
-<section class="process" id="processo">
-  <div class="container">
-    <div class="process-grid">
-      <div class="reveal">
-        <p class="label t">Como Trabalhamos</p>
-        <h2 class="h2" style="margin-bottom:36px">O Nosso <em>Processo</em></h2>
-        <div class="steps">
-          <div class="step">
-            <div class="step-n">01</div>
-            <div>
-              <p class="step-title t">Briefing & Viabilidade</p>
-              <p class="step-desc t">Ouvimos as suas necessidades e elaboramos um estudo de viabilidade técnica, legal e económica. Não fazemos um mero orçamento: produzimos análise que poupa tempo e dinheiro.</p>
-            </div>
-          </div>
-          <div class="step">
-            <div class="step-n">02</div>
-            <div>
-              <p class="step-title t">Projecto & Licenciamento</p>
-              <p class="step-desc t">Desenvolvemos o projecto completo com recurso a tecnologia BIM para maior precisão. Tratamos integralmente do processo de licenciamento junto de câmaras e entidades competentes.</p>
-            </div>
-          </div>
-          <div class="step">
-            <div class="step-n">03</div>
-            <div>
-              <p class="step-title t">Execução & Acompanhamento</p>
-              <p class="step-desc t">Acompanhamento técnico permanente em obra, com técnicos próprios. Garantia de qualidade, prazo e orçamento. Acompanhamento online atento e contínuo de todas as fases.</p>
-            </div>
-          </div>
-          <div class="step">
-            <div class="step-n">04</div>
-            <div>
-              <p class="step-title t">Entrega & Pós-Obra</p>
-              <p class="step-desc t">Entrega da obra com toda a documentação legal. Apoio na colocação do imóvel no mercado (venda ou arrendamento) e assistência pós-obra.</p>
-            </div>
-          </div>
-        </div>
-      </div>
-      <div class="reveal" style="padding-bottom:20px">
-        <div class="process-img-wrap">
-          <div class="process-img">
-            <img src="images/image-021-dbd46c398ef1.jpg" alt="Obra Visãovale"
-                 onerror="this.outerHTML='<div class=\'about-ph\' style=\'height:100%;min-height:400px\'><div class=\'ph-lbl\'>Foto Processo · 600×750px</div></div>'">
-          </div>
-          <div class="process-badge">
-            <span class="badge-n">100%</span>
-            <span class="badge-l t">Nacional · Sem Intermediários</span>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- ══════════════════════════════════════════════
-     NEWS
-══════════════════════════════════════════════ -->
-<section class="news" id="noticias">
-  <div class="container">
-    <div class="news-head reveal">
-      <div>
-        <p class="label t">Actualidade</p>
-        <h2 class="h2">Projectos & <em>Novidades</em></h2>
-      </div>
-      <a href="#contacto" class="btn btn-dark t">Ver todos →</a>
-    </div>
-    <div class="news-grid">
-      <div class="news-card reveal">
-        <div class="news-img">
-          <img src="images/image-022-e1a5d6b12f70.jpg" alt="Moradia Chãos"
-               onerror="this.outerHTML='<div class=\'news-ph\' style=\'height:100%;min-height:200px\'><div class=\'ph-lbl\'>Foto Notícia 1</div></div>'">
-        </div>
-        <p class="news-date">2021</p>
-        <h3 class="news-title t">Moradia Unifamiliar em Chãos · Projecto Completo</h3>
-        <p class="news-excerpt t">Projecto de construção de habitação unifamiliar e muro em Alcobertas, Rio Maior. Alçados e plantas de licenciamento elaborados pela equipa Visãovale.</p>
-      </div>
-      <div class="news-card reveal">
-        <div class="news-img">
-          <img src="images/image-016-4c92ce36e6d6.jpg" alt="Segunda Moradia Unifamiliar"
-               onerror="this.outerHTML='<div class=\'news-ph\' style=\'height:100%;min-height:200px\'><div class=\'ph-lbl\'>Foto Notícia 2</div></div>'">
-        </div>
-        <p class="news-date">2021</p>
-        <h3 class="news-title t">Segunda Moradia Unifamiliar · Render 3D e Projecto</h3>
-        <p class="news-excerpt t">Visualizações 3D fotorrealistas para apresentação ao cliente e processo de licenciamento. Projecto de arquitectura com coordenação de especialidades.</p>
-      </div>
-      <div class="news-card reveal">
-        <div class="news-img">
-          <img src="images/image-015-6f126730445e.jpg" alt="Reabilitação de Moradia"
-               onerror="this.outerHTML='<div class=\'news-ph\' style=\'height:100%;min-height:200px\'><div class=\'ph-lbl\'>Foto Notícia 3</div></div>'">
-        </div>
-        <p class="news-date">2021</p>
-        <h3 class="news-title t">Reabilitação de Moradia · Projecto Completo</h3>
-        <p class="news-excerpt t">Projecto de reabilitação e remodelação de moradia unifamiliar. Acompanhamento integral desde o projecto de arquitectura até à entrega da obra.</p>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- ══════════════════════════════════════════════
-     CONTACT
-══════════════════════════════════════════════ -->
-<section class="contact" id="contacto">
-  <div class="container">
-    <div class="reveal" style="margin-bottom:52px">
-      <p class="label t">Fale Connosco</p>
-      <h2 class="h2">Inicie o seu <em>Projecto</em></h2>
-    </div>
-    <div class="contact-grid">
-      <div>
-        <div class="c-detail reveal">
-          <div class="c-icon">📍</div>
-          <div>
-            <p class="c-lbl t">Morada</p>
-            <p class="c-val">Rua Joaquim Augusto de Carvalho, Nº 5, 1º A<br>2475-133 Benedita, Portugal</p>
-          </div>
-        </div>
-        <div class="c-detail reveal">
-          <div class="c-icon">📞</div>
-          <div>
-            <p class="c-lbl t">Telefone / WhatsApp</p>
-            <p class="c-val"><a href="tel:+351969851001">+351 969 851 001</a></p>
-          </div>
-        </div>
-        <div class="c-detail reveal">
-          <div class="c-icon">✉</div>
-          <div>
-            <p class="c-lbl t">Email</p>
-            <p class="c-val"><a href="mailto:geral@visaovale.com">geral@visaovale.com</a></p>
-          </div>
-        </div>
-        <div class="c-detail reveal">
-          <div class="c-icon">🕐</div>
-          <div>
-            <p class="c-lbl t">Horário</p>
-            <p class="c-val t">Segunda a Sexta<br>09:00 – 18:00</p>
-          </div>
-        </div>
-        <div class="c-map reveal">
-          <iframe 
-            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3000.9!2d-8.9340!3d39.4220!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xd21f97e0b3c0001%3A0x1234abcd!2sRua%20Joaquim%20Augusto%20de%20Carvalho%205%2C%202475-133%20Benedita!5e0!3m2!1spt!2spt!4v1719900000000!5m2!1spt!2spt"
-            width="100%" height="100%" style="border:0;display:block;" 
-            allowfullscreen="" loading="lazy" 
-            referrerpolicy="no-referrer-when-downgrade"
-            title="VISÃOVALE · Rua Joaquim Augusto de Carvalho 5, Benedita">
-          </iframe>
-        </div>
-      </div>
-      <div class="reveal">
-        <div class="fg-row">
-          <div class="fg"><label class="t">Nome *</label><input type="text" placeholder="O seu nome"></div>
-          <div class="fg"><label class="t">Email *</label><input type="email" placeholder="email@exemplo.com"></div>
-        </div>
-        <div class="fg-row">
-          <div class="fg"><label class="t">Telefone</label><input type="tel" placeholder="+351 ___ ___ ___"></div>
-          <div class="fg">
-            <label class="t">Tipo de Projecto</label>
-            <select>
-              <option value="" class="t">Seleccionar</option>
-              <option class="t">Reabilitação</option>
-              <option class="t">Habitação Unifamiliar</option>
-              <option class="t">Habitação Colectiva</option>
-              <option class="t">Comércio / Restauração</option>
-              <option class="t">Indústria / Armazém</option>
-              <option class="t">Interiores / Design</option>
-              <option class="t">Consultoria / Viabilidade</option>
-              <option class="t">Outro</option>
-            </select>
-          </div>
-        </div>
-        <div class="fg"><label class="t">Localização</label><input type="text" placeholder="Cidade / Região"></div>
-        <div class="fg"><label class="t">Mensagem *</label><textarea class="t" placeholder="Descreva o seu projecto com o máximo de detalhe..."></textarea></div>
-        <button class="btn btn-gold" style="width:100%;justify-content:center" onclick="sendForm(event)">
-          <span class="t">Enviar Mensagem →</span>
-        </button>
-        <p style="font-size:.7rem;color:var(--c-grey);margin-top:12px;line-height:1.6">
-          <span class="t">Ao enviar aceita a nossa</span>
-          <a href="politica-privacidade.html" style="color:var(--c-grey);text-decoration:underline" class="t">Política de Privacidade</a>.
-          <span class="t">Respondemos em 24–48h úteis.</span>
-        </p>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- ══════════════════════════════════════════════
-     FOOTER
-══════════════════════════════════════════════ -->
 <footer>
   <div class="container">
     <div class="foot-grid">
@@ -1168,20 +487,20 @@ footer{background:var(--c-black);padding:72px 0 36px}
       <div class="foot-col">
         <h4 class="t">Empresa</h4>
         <ul>
-          <li><a href="#sobre" class="t">Sobre Nós</a></li>
-          <li><a href="#processo" class="t">Como Trabalhamos</a></li>
-          <li><a href="#portfolio" class="t">Portfólio</a></li>
-          <li><a href="#noticias" class="t">Notícias</a></li>
+          <li><a href="index.html#sobre" class="t">Sobre Nós</a></li>
+          <li><a href="index.html#processo" class="t">Como Trabalhamos</a></li>
+          <li><a href="index.html#portfolio" class="t">Portfólio</a></li>
+          <li><a href="index.html#noticias" class="t">Notícias</a></li>
         </ul>
       </div>
       <div class="foot-col">
         <h4 class="t">Serviços</h4>
         <ul>
-          <li><a href="#servicos" class="t">Reabilitação</a></li>
-          <li><a href="#servicos" class="t">Habitação</a></li>
-          <li><a href="#servicos" class="t">Comércio</a></li>
-          <li><a href="#servicos" class="t">Indústria</a></li>
-          <li><a href="#servicos" class="t">Interiores</a></li>
+          <li><a href="index.html#servicos" class="t">Reabilitação</a></li>
+          <li><a href="index.html#servicos" class="t">Habitação</a></li>
+          <li><a href="index.html#servicos" class="t">Comércio</a></li>
+          <li><a href="index.html#servicos" class="t">Indústria</a></li>
+          <li><a href="index.html#servicos" class="t">Interiores</a></li>
         </ul>
       </div>
       <div class="foot-col">
@@ -1189,8 +508,8 @@ footer{background:var(--c-black);padding:72px 0 36px}
         <ul>
           <li><a href="tel:+351969851001">+351 969 851 001</a></li>
           <li><a href="mailto:geral@visaovale.com">geral@visaovale.com</a></li>
-          <li><a href="#contacto" class="t">Formulário</a></li>
-          <li><a href="#contacto" class="t">Pedir Orçamento</a></li>
+          <li><a href="index.html#contacto" class="t">Formulário</a></li>
+          <li><a href="index.html#contacto" class="t">Pedir Orçamento</a></li>
         </ul>
       </div>
     </div>
@@ -1206,9 +525,7 @@ footer{background:var(--c-black);padding:72px 0 36px}
   </div>
 </footer>
 
-<!-- ══════════════════════════════════════════════
-     I18N — PT / EN / FR
-══════════════════════════════════════════════ -->
+
 <script>
 const TR = {
   pt: {
@@ -1919,200 +1236,20 @@ function setLang(lang, el) {
   // Update html lang attribute
   document.documentElement.lang = lang === 'pt' ? 'pt' : lang === 'en' ? 'en' : 'fr';
 }
+
 </script>
-
-
 <script>
-// ── PROJECT GALLERIES / LIGHTBOX ──────────────────────────────
-const PROJECT_GALLERIES = {
-  reabilitacao: [
-    {src:'images/image-017-156d18ebf8ae.jpg', caption:'Fachada principal, alçado sobre a rua'},
-    {src:'images/image-023-e244d9254b8f.jpg', caption:'Vista aérea, pátio interior e telhados em telha cerâmica'},
-    {src:'images/image-024-5b06265c69b6.jpg', caption:'Vista aérea, geometria da cobertura e mansardas'},
-    {src:'images/image-025-0d5635971f13.jpg', caption:'Alçado tardoz, ambiente golden hour'},
-    {src:'images/image-026-280e529691bd.jpg', caption:'Pátio traseiro, zona de churrasqueira coberta'},
-    {src:'images/image-027-b0a947158305.jpg', caption:'Vista aérea, pátio traseiro e portão de acesso'},
-    {src:'images/image-028-100d2d7f3948.jpg', caption:'Vista aérea, pátio traseiro e alçado tardoz'},
-    {src:'images/image-029-a14439a735ae.jpg', caption:'Vista aérea, pormenor da cobertura e mansardas'},
-  ],
-  turismo: [
-    {src:'images/image-018-caf86d80bf1c.jpg', caption:'Vista geral, conjunto de alojamentos e piscina comum'},
-    {src:'images/image-030-e9efdc42a092.jpg', caption:'Vista aérea, implantação do resort'},
-    {src:'images/image-031-828ed4c8b238.jpg', caption:'Zona de piscina e lazer, pormenor'}
-  ],
-  segundamoradia: [
-    {src:'images/image-011-bf462dfabdd0.jpg', caption:'Alçado principal, vista da rua'},
-    {src:'images/image-032-3637c5584fc4.jpg', caption:'Alçado frontal, enquadramento geral'},
-    {src:'images/image-033-5e5a24d04124.jpg', caption:'Entrada e acesso pedonal'}
-  ],
-  coutinhoteixeira: [
-    {src:'images/image-014-92da044d21b1.jpg', caption:'Vista aérea diurna, implantação e jardins'},
-    {src:'images/image-034-89efb47093c6.jpg', caption:'Vista nocturna, fachada iluminada'},
-    {src:'images/image-035-ccfe83387448.jpg', caption:'Vista da rua, acesso ao empreendimento'},
-    {src:'images/image-036-94c84286c804.jpg', caption:'Zona pedonal e jardins entre os dois blocos'},
-    {src:'images/image-037-c973f6af6a0c.jpg', caption:'Vista geral do conjunto, arruamento envolvente'}
-  ],
-  quintarural: [
-    {src:'images/image-009-a78176eb9923.jpg', caption:'Alçado frontal, vista geral do alpendre'},
-    {src:'images/image-038-ba623958a63b.jpg', caption:'Vista de esquina, acesso e jardim'},
-    {src:'images/image-039-3f53552953b4.jpg', caption:'Vista aérea, implantação e garagem'}
-  ],
-  edificiomultifamiliar: [
-    {src:'images/image-007-6e7c73a1d86d.jpg', caption:'Vista aérea, varandas e alçado principal'},
-    {src:'images/image-040-66a7d0abfa0d.jpg', caption:'Vista da rua, alçado frontal'}
-  ],
-  moradiasgeminadas: [
-    {src:'images/image-013-de4a12591be4.jpg', caption:'Alçado principal, entrada e portões de acesso'},
-    {src:'images/image-041-a60a3daeca30.jpg', caption:'Vista de esquina, alçado tardoz e logradouro'},
-    {src:'images/image-042-85fdfa11ab86.jpg', caption:'Zona de piscina, logradouro privado'}
-  ],
-  edificiomultifamiliar2: [
-    {src:'images/image-008-00d812eada66.jpg', caption:'Vista de esquina, alçado principal e acesso'},
-    {src:'images/image-043-d0e320e4bb79.jpg', caption:'Alçado frontal, fachada e estacionamento'},
-    {src:'images/image-044-229fc3be2c63.jpg', caption:'Vista de esquina, alçado lateral e envolvente'}
-  ],
-  aldeamentoturistico: [
-    {src:'images/image-010-0b0109241ef1.jpg', caption:'Vista aérea, conjunto de cabanas e implantação'},
-    {src:'images/image-045-eb275ad3e90b.jpg', caption:'Alçado rua, fachada em pedra e madeira'},
-    {src:'images/image-046-d55db6ee8aa7.jpg', caption:'Alçado tardoz, zona envolvente com pinheiros'},
-    {src:'images/image-047-2dffbb616215.jpg', caption:'Vista de esquina, anexos em pedra'},
-    {src:'images/image-048-d56bfa342e91.jpg', caption:'Vista aérea, conjunto da quinta e cabanas'},
-    {src:'images/image-049-9738ceac5166.jpg', caption:'Cabanas de apoio, implantação na encosta'},
-    {src:'images/image-050-1d083d15e248.jpg', caption:'Piscina e anexos em pedra, zona envolvente'}
-  ],
-  terceiramoradia: [
-    {src:'images/image-012-3e067328e79b.jpg', caption:'Alçado principal, garagem e coberto de acesso'},
-    {src:'images/image-051-44b24af5598b.jpg', caption:'Alçado lateral, jardim envolvente'},
-    {src:'images/image-052-f836b37b65aa.jpg', caption:'Entrada principal, acesso pedonal'}
-  ],
-  edificiohabitacional: [
-    {src:'images/image-019-8fb1a9696e14.jpg', caption:'Alçado principal, vista da rua'},
-    {src:'images/image-053-b1f1fbfe8a7b.jpg', caption:'Vista aérea, implantação e acessos'},
-    {src:'images/image-054-2f149756b52d.jpg', caption:'Vista de esquina, acesso pedonal'},
-    {src:'images/image-055-604578fa4142.jpg', caption:'Alçado frontal, enquadramento geral'}
-  ],
-  hotelnatura: [
-    {src:'images/image-056-6cf81ba1c3c9.jpg', caption:'Alçado principal, vista da rua'},
-    {src:'images/image-057-752a078b43b6.jpg', caption:'Vista de esquina, pormenor da fachada'},
-    {src:'images/image-058-750a40afb833.jpg', caption:'Alçado lateral, enquadramento geral'}
-  ],
-  restaurantenatura: [
-    {src:'images/image-015-6f126730445e.jpg', caption:'Alçado principal, vista da rua'}
-  ]
-};
-
-let currentGallery = null;
-let currentIndex = 0;
-
-function openGallery(key) {
-  const imgs = PROJECT_GALLERIES[key];
-  if (!imgs || !imgs.length) return;
-  currentGallery = key;
-  currentIndex = 0;
-  renderGalleryImage();
-  document.getElementById('lightbox').classList.add('on');
-  document.getElementById('lightbox').setAttribute('aria-hidden', 'false');
-  document.body.style.overflow = 'hidden';
-}
-
-function closeGallery() {
-  document.getElementById('lightbox').classList.remove('on');
-  document.getElementById('lightbox').setAttribute('aria-hidden', 'true');
-  document.body.style.overflow = '';
-  currentGallery = null;
-}
-
-function galleryStep(dir) {
-  if (!currentGallery) return;
-  const imgs = PROJECT_GALLERIES[currentGallery];
-  currentIndex = (currentIndex + dir + imgs.length) % imgs.length;
-  renderGalleryImage();
-}
-
-function renderGalleryImage() {
-  const imgs = PROJECT_GALLERIES[currentGallery];
-  const item = imgs[currentIndex];
-  document.getElementById('lightboxImg').src = item.src;
-  document.getElementById('lightboxImg').alt = item.caption;
-  document.getElementById('lightboxCap').textContent = item.caption;
-  document.getElementById('lightboxCount').textContent = (currentIndex + 1) + ' / ' + imgs.length;
-}
-
-document.addEventListener('keydown', (e) => {
-  if (!currentGallery) return;
-  if (e.key === 'Escape') closeGallery();
-  if (e.key === 'ArrowRight') galleryStep(1);
-  if (e.key === 'ArrowLeft') galleryStep(-1);
-});
-
-document.getElementById('lightbox').addEventListener('click', (e) => {
-  if (e.target.id === 'lightbox') closeGallery();
-});
-</script>
-
-<script>
-// ── LOADER ──────────────────────────────────────────────────
 window.addEventListener('load', () => {
-  setTimeout(() => document.getElementById('loader').classList.add('out'), 1800);
+  setTimeout(() => document.getElementById('loader').classList.add('out'), 800);
 });
-
-// ── NAV ─────────────────────────────────────────────────────
 window.addEventListener('scroll', () => {
   document.getElementById('nav').classList.toggle('on', window.scrollY > 50);
-  // highlight active section
-  const secs = ['home','servicos','portfolio','sobre','contacto'];
-  let cur = 'home';
-  secs.forEach(id => {
-    const el = document.getElementById(id);
-    if (el && window.scrollY >= el.offsetTop - 120) cur = id;
-  });
-  document.querySelectorAll('.nav-links a').forEach(a => {
-    a.classList.toggle('active', a.getAttribute('href') === '#'+cur);
-  });
 });
-
-// ── MOBILE MENU ──────────────────────────────────────────────
 function toggleM() {
   document.getElementById('mmenu').classList.toggle('open');
-  const h = document.getElementById('ham');
-  h.classList.toggle('open');
+  document.getElementById('ham').classList.toggle('open');
 }
 function closeM() { document.getElementById('mmenu').classList.remove('open'); }
-
-// ── HERO SLIDER ──────────────────────────────────────────────
-let cs = 0, tot = 5, iv;
-function goS(n) {
-  cs = n;
-  document.getElementById('heroSlides').style.transform = `translateX(-${n*100}%)`;
-  document.querySelectorAll('.dot').forEach((d,i) => d.classList.toggle('on', i===n));
-}
-function nextS() { goS((cs+1)%tot); resetIv(); }
-function prevS() { goS((cs-1+tot)%tot); resetIv(); }
-function resetIv() { clearInterval(iv); iv = setInterval(nextS, 5500); }
-iv = setInterval(nextS, 5500);
-
-// ── SERVICE TABS ─────────────────────────────────────────────
-function showSvc(btn, id) {
-  // use ftab style (dark bg / white text when active)
-  document.querySelectorAll('.services .ftab').forEach(b => b.classList.remove('on'));
-  document.querySelectorAll('.svc-panel').forEach(p => p.classList.remove('on'));
-  btn.classList.add('on');
-  document.getElementById('svc-'+id).classList.add('on');
-}
-
-// ── PORTFOLIO FILTER ─────────────────────────────────────────
-function filt(btn, cat) {
-  document.querySelectorAll('.ftab').forEach(b => b.classList.remove('on'));
-  btn.classList.add('on');
-  document.querySelectorAll('.proj').forEach(p => {
-    const show = cat === 'all' || p.dataset.cat === cat;
-    p.style.opacity = show ? '1' : '0.12';
-    p.style.pointerEvents = show ? 'auto' : 'none';
-    p.style.transition = 'opacity .35s';
-  });
-}
-
-// ── REVEAL ON SCROLL ─────────────────────────────────────────
 const obs = new IntersectionObserver(entries => {
   entries.forEach((e, i) => {
     if (e.isIntersecting) {
@@ -2122,106 +1259,6 @@ const obs = new IntersectionObserver(entries => {
   });
 }, { threshold: 0.08 });
 document.querySelectorAll('.reveal, .reveal-l').forEach(el => obs.observe(el));
-
-// ── COUNTERS ─────────────────────────────────────────────────
-const cObs = new IntersectionObserver(entries => {
-  entries.forEach(e => {
-    if (!e.isIntersecting) return;
-    const el = e.target;
-    if (el.dataset.txt) { cObs.unobserve(el); return; } // static symbol
-    const target = +el.dataset.t, sfx = el.dataset.sfx || '';
-    let c = 0; const step = target / 45;
-    const t = setInterval(() => {
-      c = Math.min(c + step, target);
-      el.textContent = Math.floor(c) + sfx;
-      if (c >= target) clearInterval(t);
-    }, 32);
-    cObs.unobserve(el);
-  });
-}, { threshold: 0.5 });
-document.querySelectorAll('.stat-n[data-t]').forEach(el => cObs.observe(el));
-
-// ── SMOOTH SCROLL ────────────────────────────────────────────
-document.querySelectorAll('a[href^="#"]').forEach(a => {
-  a.addEventListener('click', e => {
-    const t = document.querySelector(a.getAttribute('href'));
-    if (t) { e.preventDefault(); const navH=parseInt(getComputedStyle(document.documentElement).getPropertyValue('--nav-h'))||72; const top=t.getBoundingClientRect().top+window.scrollY-navH; window.scrollTo({top,behavior:'smooth'}); closeM(); }
-  });
-});
-
-// ── FORM ─────────────────────────────────────────────────────
-function sendForm(e) {
-  e.preventDefault();
-  const btn = e.currentTarget;
-  const sp = btn.querySelector('span');
-  const sec = btn.closest('section');
-  const inputs = sec.querySelectorAll('input, select, textarea');
-  const nome  = inputs[0]?.value.trim()||'';
-  const email = inputs[1]?.value.trim()||'';
-  const tel   = inputs[2]?.value.trim()||'';
-  const tipo  = inputs[3]?.value.trim()||'';
-  const local = inputs[4]?.value.trim()||'';
-  const msg   = inputs[5]?.value.trim()||'';
-  if (!nome||!email||!msg){alert('Por favor preencha Nome, Email e Mensagem.');return;}
-  const orig = sp.dataset.orig||sp.textContent;
-  sp.dataset.orig = orig;
-  btn.disabled = true; sp.textContent = '...';
-  fetch('contacto.php',{method:'POST',body:new URLSearchParams({nome,email,tel,tipo,local,msg})})
-    .then(r=>r.text()).then(r=>{
-      if(r.trim()==='ok'){
-        btn.style.background='#4a7c59';btn.style.borderColor='#4a7c59';
-        sp.textContent='✓ Mensagem Enviada!';
-        inputs.forEach(i=>{if(i.tagName!=='SELECT')i.value='';else i.selectedIndex=0;});
-      } else {
-        btn.style.background='#c0392b';btn.style.borderColor='#c0392b';
-        sp.textContent='Erro. Tente novamente';
-      }
-      setTimeout(()=>{
-        btn.style.background='var(--c-gold)';btn.style.borderColor='var(--c-gold)';
-        sp.textContent=TR[curLang][orig]||orig;btn.disabled=false;
-      },4000);
-    }).catch(()=>{
-      const s=encodeURIComponent('Contacto · '+tipo);
-      const b=encodeURIComponent('Nome: '+nome+'\nEmail: '+email+'\nTel: '+tel+'\nTipo: '+tipo+'\nLocal: '+local+'\n\n'+msg);
-      window.location.href='mailto:geral@visaovale.com?subject='+s+'&body='+b;
-      btn.disabled=false;
-    });
-}
-</script>
-
-<!-- ══ ABOUT SLIDESHOW ══ -->
-<script>
-(function(){
-  const mainImgs = [
-    'images/image-025-0d5635971f13.jpg',
-    'images/image-030-e9efdc42a092.jpg',
-    'images/image-034-89efb47093c6.jpg',
-    'images/image-045-eb275ad3e90b.jpg',
-    'images/image-048-d56bfa342e91.jpg',
-    'images/image-053-b1f1fbfe8a7b.jpg'
-  ];
-  const floatImgs = [
-    'images/image-026-280e529691bd.jpg',
-    'images/image-042-85fdfa11ab86.jpg',
-    'images/image-047-2dffbb616215.jpg',
-    'images/image-052-f836b37b65aa.jpg'
-  ];
-  function cycle(elId, arr, intervalMs){
-    const el = document.getElementById(elId);
-    if(!el || arr.length < 2) return;
-    let idx = 0;
-    setInterval(() => {
-      el.classList.add('fading');
-      setTimeout(() => {
-        idx = (idx + 1) % arr.length;
-        el.src = arr[idx];
-        el.classList.remove('fading');
-      }, 700);
-    }, intervalMs);
-  }
-  cycle('aboutMainImg', mainImgs, 5000);
-  cycle('aboutFloatImg', floatImgs, 4200);
-})();
 </script>
 <style>
 /* ── COOKIE CONSENT BANNER ── */
