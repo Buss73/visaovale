@@ -365,7 +365,7 @@ footer{background:var(--c-black);padding:72px 0 36px}
 
     <!-- SLIDE 1 -->
     <div class="hero-slide">
-      <img src="images/image-002-7cbe681b23ae.jpg" alt="Edifício Multifamiliar · Visãovale"
+      <img src="images/edificiomultifamiliar_hero.jpg" alt="Edifício Multifamiliar · Visãovale"
            onerror="this.outerHTML='<div class=\'slide-ph\'><div class=\'ph-lbl\'>Foto Hero 1 · 1920×1080px</div></div>'">
       <div class="hero-overlay"></div>
       <div class="hero-content">
@@ -916,21 +916,6 @@ footer{background:var(--c-black);padding:72px 0 36px}
         </div>
       </div>
 
-      <!-- P15 — GALERIA (Moradia Litoral) -->
-      <div class="proj reveal proj-gallery" data-cat="hab" data-ratio="wide" onclick="openGallery('moradialitoral', this)" role="button" tabindex="0" onkeyup="if(event.key==='Enter')openGallery('moradialitoral', this)">
-        <div class="proj-img">
-          <img src="images/moradialitoral_01.jpg" alt="Moradia Litoral" loading="lazy"
-               onerror="this.outerHTML='<div class=\'proj-ph\' data-ratio=\'wide\' style=\'aspect-ratio:16/9\'><div class=\'ph-lbl\'>Moradia Litoral · 2026</div></div>'">
-          <span class="proj-gallery-badge t">Ver Projecto</span>
-        </div>
-        <div class="proj-overlay"></div>
-        <div class="proj-info">
-          <p class="proj-cat t">Habitação · 2026</p>
-          <h3 class="proj-name">Moradia Litoral</h3>
-          <p class="proj-client">Render 3D · Arquitectura</p>
-        </div>
-      </div>
-
       <!-- P16 — GALERIA (Moradia Elevada) -->
       <div class="proj reveal proj-gallery" data-cat="hab" data-ratio="wide" onclick="openGallery('moradiaelevada', this)" role="button" tabindex="0" onkeyup="if(event.key==='Enter')openGallery('moradiaelevada', this)">
         <div class="proj-img">
@@ -961,21 +946,6 @@ footer{background:var(--c-black);padding:72px 0 36px}
         </div>
       </div>
 
-      <!-- P18 — GALERIA (Apartamentos com Piscina) -->
-      <div class="proj reveal proj-gallery" data-cat="hab" data-ratio="wide" onclick="openGallery('apartpiscina', this)" role="button" tabindex="0" onkeyup="if(event.key==='Enter')openGallery('apartpiscina', this)">
-        <div class="proj-img">
-          <img src="images/apartpiscina_01.jpg" alt="Apartamentos com Piscina" loading="lazy"
-               onerror="this.outerHTML='<div class=\'proj-ph\' data-ratio=\'wide\' style=\'aspect-ratio:16/9\'><div class=\'ph-lbl\'>Apartamentos com Piscina · 2026</div></div>'">
-          <span class="proj-gallery-badge t">Ver Projecto</span>
-        </div>
-        <div class="proj-overlay"></div>
-        <div class="proj-info">
-          <p class="proj-cat t">Habitação Colectiva · 2026</p>
-          <h3 class="proj-name">Apartamentos com Piscina</h3>
-          <p class="proj-client">Render 3D · Arquitectura</p>
-        </div>
-      </div>
-
       <!-- P19 — GALERIA (Bloco de Apartamentos) -->
       <div class="proj reveal proj-gallery" data-cat="hab" data-ratio="wide" onclick="openGallery('blocoapartamentos', this)" role="button" tabindex="0" onkeyup="if(event.key==='Enter')openGallery('blocoapartamentos', this)">
         <div class="proj-img">
@@ -1002,21 +972,6 @@ footer{background:var(--c-black);padding:72px 0 36px}
         <div class="proj-info">
           <p class="proj-cat t">Habitação Colectiva · 2026</p>
           <h3 class="proj-name">Residencial com Parque Infantil</h3>
-          <p class="proj-client">Render 3D · Arquitectura</p>
-        </div>
-      </div>
-
-      <!-- P21 — GALERIA (Bloco Habitacional) -->
-      <div class="proj reveal proj-gallery" data-cat="hab" data-ratio="wide" onclick="openGallery('blocohabitacional', this)" role="button" tabindex="0" onkeyup="if(event.key==='Enter')openGallery('blocohabitacional', this)">
-        <div class="proj-img">
-          <img src="images/blocohabitacional_01.jpg" alt="Bloco Habitacional" loading="lazy"
-               onerror="this.outerHTML='<div class=\'proj-ph\' data-ratio=\'wide\' style=\'aspect-ratio:16/9\'><div class=\'ph-lbl\'>Bloco Habitacional · 2026</div></div>'">
-          <span class="proj-gallery-badge t">Ver Projecto</span>
-        </div>
-        <div class="proj-overlay"></div>
-        <div class="proj-info">
-          <p class="proj-cat t">Habitação Colectiva · 2026</p>
-          <h3 class="proj-name">Bloco Habitacional</h3>
           <p class="proj-client">Render 3D · Arquitectura</p>
         </div>
       </div>
@@ -2221,7 +2176,8 @@ const PROJECT_GALLERIES = {
   ],
   edificiomultifamiliar: [
     {src:'images/image-064-caad7da54214.jpg', caption:'Vista aérea, varandas e alçado principal'},
-    {src:'images/image-065-74c2d5416dea.jpg', caption:'Vista da rua, alçado frontal'}
+    {src:'images/image-065-74c2d5416dea.jpg', caption:'Vista da rua, alçado frontal'},
+    {src:'images/image-072-edificiomultifamiliar.jpg', caption:'Vista de esquina, varandas e alçado principal'}
   ],
 
   moradiasgeminadas: [
@@ -2272,10 +2228,8 @@ const PROJECT_GALLERIES = {
   ],
   moradiapiscina: [
     {src:'images/moradiapiscina_01.jpg', caption:'Alçado principal, piscina e terraço'},
-    {src:'images/moradiapiscina_02.jpg', caption:'Vista aérea, implantação e piscina'}
-  ],
-  moradialitoral: [
-    {src:'images/moradialitoral_01.jpg', caption:'Alçado principal, terraço com acesso exterior'}
+    {src:'images/moradiapiscina_02.jpg', caption:'Vista aérea, implantação e piscina'},
+    {src:'images/moradialitoral_01.jpg', caption:'Terraço com acesso exterior'}
   ],
   moradiaelevada: [
     {src:'images/moradiaelevada_01.jpg', caption:'Alçado principal, terraço suspenso e acesso coberto'},
@@ -2284,18 +2238,14 @@ const PROJECT_GALLERIES = {
   moradiaalpendre: [
     {src:'images/moradiaalpendre_01.jpg', caption:'Alçado principal, entrada e alpendre de acesso'}
   ],
-  apartpiscina: [
-    {src:'images/apartpiscina_01.jpg', caption:'Vista aérea, pátio interior e piscina comum'}
-  ],
   blocoapartamentos: [
     {src:'images/blocoapartamentos_01.jpg', caption:'Alçado principal, vista da rua'},
-    {src:'images/blocoapartamentos_02.jpg', caption:'Vista de esquina, enquadramento paisagístico'}
+    {src:'images/blocoapartamentos_02.jpg', caption:'Vista de esquina, enquadramento paisagístico'},
+    {src:'images/apartpiscina_01.jpg', caption:'Vista aérea, pátio interior e piscina comum'}
   ],
   residparque: [
     {src:'images/residparque_01.jpg', caption:'Alçado principal, zona de lazer infantil'},
-    {src:'images/residparque_02.jpg', caption:'Vista de esquina, envolvente ajardinada'}
-  ],
-  blocohabitacional: [
+    {src:'images/residparque_02.jpg', caption:'Vista de esquina, envolvente ajardinada'},
     {src:'images/blocohabitacional_01.jpg', caption:'Alçado tardoz, varandas e zona de estar exterior'}
   ],
   moradiadeclive: [
