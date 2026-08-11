@@ -65,7 +65,7 @@ em{font-style:italic;color:var(--c-gold)}
 /* ── LOADER ── */
 #loader{position:fixed;inset:0;background:var(--c-black);display:flex;flex-direction:column;align-items:center;justify-content:center;gap:20px;z-index:9999;transition:opacity .7s ease .3s,visibility .7s ease .3s}
 #loader.out{opacity:0;visibility:hidden}
-#loader img{height:120px;width:auto;opacity:0;animation:fadeUp .9s ease .3s forwards;filter:brightness(0) invert(1)}
+#loader img{height:120px;width:auto;opacity:0;animation:fadeUp .9s ease .3s forwards}
 .loader-track{width:100px;height:1px;background:rgba(255,255,255,.08);overflow:hidden;opacity:0;animation:fadeIn .5s ease .7s forwards}
 .loader-track::after{content:'';display:block;height:100%;width:0;background:var(--c-gold);animation:load 1s ease .9s forwards}
 @keyframes load{to{width:100%}}
@@ -75,7 +75,7 @@ em{font-style:italic;color:var(--c-gold)}
 /* ── NAV (71arquitectos-style: minimal, left logo, right links) ── */
 nav{position:fixed;top:0;left:0;right:0;height:var(--nav-h);display:flex;align-items:center;justify-content:space-between;padding:0 var(--pad);z-index:1000;transition:background .4s,box-shadow .4s}
 nav.on{background:rgba(17,17,16,.96);backdrop-filter:blur(14px);box-shadow:0 1px 0 var(--c-line)}
-.nav-logo img{height:72px;width:auto;filter:brightness(0) invert(1)}
+.nav-logo img{height:72px;width:auto}
 .nav-logo span{font-family:'Cormorant Garamond',serif;font-size:1.4rem;font-weight:300;color:var(--c-white);letter-spacing:.15em}
 .nav-links{display:flex;gap:36px;list-style:none;align-items:center}
 .nav-links a{font-family:'Barlow Condensed',sans-serif;font-size:.80rem;font-weight:400;letter-spacing:.18em;text-transform:uppercase;color:rgba(246,244,240,.68);transition:color .3s;position:relative}
@@ -265,7 +265,7 @@ nav.on{background:rgba(17,17,16,.96);backdrop-filter:blur(14px);box-shadow:0 1px
 /* ── FOOTER ── */
 footer{background:var(--c-black);padding:72px 0 36px}
 .foot-grid{display:grid;grid-template-columns:2fr 1fr 1fr 1fr;gap:52px;padding-bottom:52px;border-bottom:1px solid var(--c-line);margin-bottom:32px}
-.foot-logo img{height:76px;width:auto;filter:brightness(0) invert(1);margin-bottom:16px;display:block}
+.foot-logo img{height:76px;width:auto;margin-bottom:16px;display:block}
 .foot-logo span{font-family:'Cormorant Garamond',serif;font-size:1.5rem;font-weight:300;color:var(--c-white);letter-spacing:.14em;display:block;margin-bottom:16px}
 .foot-tag{font-size:.82rem;font-weight:300;color:rgba(246,244,240,.55);line-height:1.75;max-width:260px;margin-bottom:24px}
 .socials{display:flex;gap:8px}
