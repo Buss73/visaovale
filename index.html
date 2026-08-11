@@ -170,7 +170,7 @@ nav.on{background:rgba(17,17,16,.96);backdrop-filter:blur(14px);box-shadow:0 1px
 .svc-card:hover{background:rgba(224,154,43,.05)}
 .svc-card::before{content:'';position:absolute;top:0;left:36px;width:32px;height:2px;background:var(--c-gold);transform:scaleX(0);transform-origin:left;transition:transform .4s}
 .svc-card:hover::before{transform:scaleX(1)}
-.svc-num{font-family:'Cormorant Garamond',serif;font-size:3rem;font-weight:300;color:rgba(224,154,43,.1);line-height:1;margin-bottom:18px}
+.svc-num{font-family:'Cormorant Garamond',serif;font-size:3rem;font-weight:300;color:var(--c-gold);line-height:1;margin-bottom:18px}
 .svc-name{font-family:'Cormorant Garamond',serif;font-size:1.3rem;font-weight:400;color:var(--c-white);margin-bottom:12px}
 .svc-desc{font-size:.83rem;font-weight:400;color:rgba(246,244,240,.48);line-height:1.75}
 .svc-desc strong{color:rgba(246,244,240,.65);font-weight:400}
@@ -298,11 +298,14 @@ footer{background:var(--c-black);padding:72px 0 36px}
   .stats-grid{grid-template-columns:repeat(2,1fr)}
   .stat:nth-child(3)::after,.stat:nth-child(5)::after{display:none}
   .port-grid{columns:1}
-  .svc-tabs{gap:4px}
+  .svc-tabs{gap:4px;margin:24px 0 0}
+  .svc-card{padding:26px 22px}
+  .svc-num{font-size:2.1rem;margin-bottom:10px}
+  .svc-name{margin-bottom:8px}
   .news-grid{grid-template-columns:1fr}
   .foot-grid{grid-template-columns:1fr;gap:32px}
   .fg-row{grid-template-columns:1fr}
-  .port-head{flex-direction:column;align-items:flex-start}
+  .port-head{flex-direction:column;align-items:flex-start;margin-bottom:24px !important}
 }
 </style>
 </head>
@@ -364,7 +367,7 @@ footer{background:var(--c-black);padding:72px 0 36px}
 
     <!-- SLIDE 1 -->
     <div class="hero-slide">
-      <img src="images/edificiomultifamiliar_hero.jpg" alt="Edifício Multifamiliar · Visãovale"
+      <img src="images/edificiomultifamiliar_hero.jpg" alt="Edifício Multifamiliar · Visãovale" style="object-position:66% center"
            onerror="this.outerHTML='<div class=\'slide-ph\'><div class=\'ph-lbl\'>Foto Hero 1 · 1920×1080px</div></div>'">
       <div class="hero-overlay"></div>
       <div class="hero-content">
