@@ -58,6 +58,8 @@ em{font-style:italic;color:var(--c-gold)}
 .reveal.visible{opacity:1;transform:translateY(0)}
 .reveal-l{opacity:0;transform:translateX(-28px);transition:opacity .8s ease,transform .8s ease}
 .reveal-l.visible{opacity:1;transform:translateX(0)}
+.reveal-r{opacity:0;transform:translateX(28px);transition:opacity .8s ease,transform .8s ease}
+.reveal-r.visible{opacity:1;transform:translateX(0)}
 
 /* img fill helpers */
 .img-fill{width:100%;height:100%;object-fit:cover;display:block}
@@ -137,12 +139,9 @@ nav.on{background:rgba(17,17,16,.96);backdrop-filter:blur(14px);box-shadow:0 1px
 
 /* ── ABOUT ── */
 .about{background:var(--c-white);padding:85px 0}
-.about-grid{display:grid;grid-template-columns:1fr 1fr;gap:80px;align-items:center}
-.about-imgs{position:relative;height:560px}
-.about-main{width:82%;height:100%;overflow:hidden}
-.about-main img{width:100%;height:100%;object-fit:cover}
-.about-float{position:absolute;bottom:-28px;right:0;width:46%;height:46%;border:4px solid var(--c-white);overflow:hidden;z-index:2;box-shadow:0 20px 60px rgba(0,0,0,.12)}
-.about-float img{width:100%;height:100%;object-fit:cover}
+.about-grid{display:grid;grid-template-columns:.85fr 1.3fr .85fr;gap:40px;align-items:center}
+.about-imgs-side{height:560px;overflow:hidden}
+.about-imgs-side img{width:100%;height:100%;object-fit:cover}
 .about-slide-img{transition:opacity .7s ease}
 .about-slide-img.fading{opacity:0}
 .about-ph{width:100%;height:100%;background:var(--c-dark);display:flex;flex-direction:column;align-items:center;justify-content:center;gap:8px}
@@ -287,7 +286,7 @@ footer{background:var(--c-black);padding:72px 0 36px}
   .stats-grid{grid-template-columns:repeat(3,1fr)}
   .stat:nth-child(4)::after,.stat:nth-child(5)::after{display:none}
   .about-grid,.process-grid,.contact-grid{grid-template-columns:1fr;gap:48px}
-  .about-imgs{height:400px}
+  .about-imgs-side{height:400px}
   .svc-panel-grid{grid-template-columns:1fr}
   .foot-grid{grid-template-columns:1fr 1fr;gap:36px}
   .port-grid{columns:2}
@@ -931,21 +930,6 @@ footer{background:var(--c-black);padding:72px 0 36px}
         </div>
       </div>
 
-      <!-- P17 — GALERIA (Moradia com Alpendre) -->
-      <div class="proj reveal proj-gallery" data-cat="hab" data-ratio="wide" onclick="openGallery('moradiaalpendre', this)" role="button" tabindex="0" onkeyup="if(event.key==='Enter')openGallery('moradiaalpendre', this)">
-        <div class="proj-img">
-          <img src="images/moradiaalpendre_01.jpg" alt="Moradia com Alpendre" loading="lazy"
-               onerror="this.outerHTML='<div class=\'proj-ph\' data-ratio=\'wide\' style=\'aspect-ratio:16/9\'><div class=\'ph-lbl\'>Moradia com Alpendre · 2026</div></div>'">
-          <span class="proj-gallery-badge t">Ver Projecto</span>
-        </div>
-        <div class="proj-overlay"></div>
-        <div class="proj-info">
-          <p class="proj-cat t">Habitação · 2026</p>
-          <h3 class="proj-name">Moradia com Alpendre</h3>
-          <p class="proj-client">Render 3D · Arquitectura</p>
-        </div>
-      </div>
-
       <!-- P19 — GALERIA (Bloco de Apartamentos) -->
       <div class="proj reveal proj-gallery" data-cat="hab" data-ratio="wide" onclick="openGallery('blocoapartamentos', this)" role="button" tabindex="0" onkeyup="if(event.key==='Enter')openGallery('blocoapartamentos', this)">
         <div class="proj-img">
@@ -1185,15 +1169,9 @@ footer{background:var(--c-black);padding:72px 0 36px}
 <section class="about" id="sobre">
   <div class="container">
     <div class="about-grid">
-      <div class="about-imgs reveal-l">
-        <div class="about-main">
-          <img id="aboutMainImg" src="images/image-025-0d5635971f13.jpg" alt="Visãovale · Projectos" class="about-slide-img"
-               onerror="this.outerHTML='<div class=\'about-ph\' style=\'height:100%;min-height:480px\'><div class=\'ph-lbl\'>Foto Sobre Nós<br>800×1000px</div></div>'">
-        </div>
-        <div class="about-float">
-          <img id="aboutFloatImg" src="images/image-026-280e529691bd.jpg" alt="Visãovale · Pormenor" class="about-slide-img"
-               onerror="this.outerHTML='<div class=\'about-ph\' style=\'height:100%;min-height:180px\'><div class=\'ph-lbl\'>Foto Detalhe</div></div>'">
-        </div>
+      <div class="about-imgs-side reveal-l">
+        <img id="aboutMainImg" src="images/image-025-0d5635971f13.jpg" alt="Visãovale · Projectos" class="about-slide-img"
+             onerror="this.outerHTML='<div class=\'about-ph\' style=\'height:100%;min-height:480px\'><div class=\'ph-lbl\'>Foto Sobre Nós<br>800×1000px</div></div>'">
       </div>
       <div class="reveal">
         <p class="label t">Sobre Nós</p>
@@ -1203,6 +1181,10 @@ footer{background:var(--c-black);padding:72px 0 36px}
         <p class="body t" style="margin-top:12px">Particularmente na área do projecto e construção, estamos aptos a oferecer ao mercado um verdadeiro serviço chave na mão, apoiando o cliente desde o momento da aquisição do activo, passando pelo licenciamento camarário, construção e colocação no mercado.</p>
         <p class="body t" style="margin-top:12px">Garantimos cobertura em todo o Território Nacional, sem intermediários e com técnicos próprios.</p>
         <a href="#contacto" class="about-cta t">Falar Connosco →</a>
+      </div>
+      <div class="about-imgs-side reveal-r">
+        <img id="aboutFloatImg" src="images/image-026-280e529691bd.jpg" alt="Visãovale · Pormenor" class="about-slide-img"
+             onerror="this.outerHTML='<div class=\'about-ph\' style=\'height:100%;min-height:480px\'><div class=\'ph-lbl\'>Foto Sobre Nós</div></div>'">
       </div>
     </div>
   </div>
@@ -2262,9 +2244,7 @@ const PROJECT_GALLERIES = {
   ],
   moradiaelevada: [
     {src:'images/moradiaelevada_01.jpg', caption:'Alçado principal, terraço suspenso e acesso coberto'},
-    {src:'images/moradiaelevada_02.jpg', caption:'Alçado lateral, entrada e estacionamento coberto'}
-  ],
-  moradiaalpendre: [
+    {src:'images/moradiaelevada_02.jpg', caption:'Alçado lateral, entrada e estacionamento coberto'},
     {src:'images/moradiaalpendre_01.jpg', caption:'Alçado principal, entrada e alpendre de acesso'}
   ],
   blocoapartamentos: [
@@ -2508,7 +2488,7 @@ const obs = new IntersectionObserver(entries => {
     }
   });
 }, { threshold: 0.08 });
-document.querySelectorAll('.reveal, .reveal-l').forEach(el => obs.observe(el));
+document.querySelectorAll('.reveal, .reveal-l, .reveal-r').forEach(el => obs.observe(el));
 
 // ── COUNTERS ─────────────────────────────────────────────────
 const cObs = new IntersectionObserver(entries => {
