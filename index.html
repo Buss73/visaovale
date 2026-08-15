@@ -235,8 +235,8 @@ nav.on{background:rgba(17,17,16,.96);backdrop-filter:blur(14px);box-shadow:0 1px
 .prob-q::before{content:'“';color:var(--c-gold)}
 .prob-q::after{content:'”';color:var(--c-gold)}
 .prob-a{font-size:.85rem;font-weight:300;line-height:1.78;color:var(--c-grey);margin-bottom:18px;flex:1}
-.prob-l{font-family:'Barlow Condensed',sans-serif;font-size:.66rem;letter-spacing:.2em;text-transform:uppercase;color:var(--c-gold);border-bottom:1px solid transparent;align-self:flex-start;transition:.3s}
-.prob:hover .prob-l{border-color:var(--c-gold)}
+.prob-l{font-family:'Barlow Condensed',sans-serif;font-size:.68rem;letter-spacing:.2em;text-transform:uppercase;color:var(--c-gold-txt);border-bottom:1px solid transparent;align-self:flex-start;transition:.3s}
+.prob:hover .prob-l{border-color:var(--c-gold-txt)}
 .probs-note{margin-top:34px;padding-top:26px;border-top:1px solid var(--c-line);display:flex;gap:26px;flex-wrap:wrap;align-items:center;justify-content:space-between}
 .probs-note p{font-size:.86rem;font-weight:300;color:var(--c-grey);max-width:520px;line-height:1.75}
 .q-group{margin-bottom:22px}
@@ -374,7 +374,7 @@ footer{background:var(--c-black);padding:72px 0 36px}
 <!-- ══ MOBILE MENU ══ -->
 <div class="mmenu" id="mmenu">
   <a href="#home" onclick="closeM()"><span class="t">Início</span></a>
-  <a href="#como-ajudamos" onclick="closeM()"><span class="t">Como Ajudamos</span></a>
+  <a href="#como-ajudamos" onclick="closeM()"><span class="t">Por Onde Começar</span></a>
   <a href="#servicos" onclick="closeM()"><span class="t">Serviços</span></a>
   <a href="#portfolio" onclick="closeM()"><span class="t">Projectos</span></a>
   <a href="#sobre" onclick="closeM()"><span class="t">Visãovale</span></a>
@@ -395,7 +395,7 @@ footer{background:var(--c-black);padding:72px 0 36px}
   </a>
   <ul class="nav-links" id="navlinks">
     <li><a href="#home" class="t">Início</a></li>
-    <li><a href="#como-ajudamos" class="t">Como Ajudamos</a></li>
+    <li><a href="#como-ajudamos" class="t">Por Onde Começar</a></li>
           <li><a href="#servicos" class="t">Serviços</a></li>
     <li><a href="#portfolio" class="t">Projectos</a></li>
     <li><a href="#sobre" class="t">Visãovale</a></li>
@@ -520,7 +520,7 @@ footer{background:var(--c-black);padding:72px 0 36px}
 <section class="probs" id="como-ajudamos">
   <div class="container">
     <div class="reveal">
-      <p class="label t">Como ajudamos</p>
+      <p class="label t">Por onde começar</p>
       <h2 class="h2">O seu problema, <em>resolvido</em></h2>
       <p class="body t" style="max-width:600px;margin-top:12px">Quase toda a gente que nos contacta chega com uma destas seis perguntas. Escolha a sua e veja exactamente o que fazemos a seguir.</p>
     </div>
@@ -1811,6 +1811,8 @@ footer{background:var(--c-black);padding:72px 0 36px}
 <script>
 const TR = {
   pt: {
+    'Por onde começar':'Por onde começar',
+    'Por Onde Começar':'Por Onde Começar',
     'Como Ajudamos':'Como Ajudamos',
     'Como ajudamos':'Como ajudamos',
     'Falar com um Arquitecto':'Falar com um Arquitecto',
@@ -2154,6 +2156,8 @@ const TR = {
     'Email *':'Email *',
   },
   en: {
+    'Por onde começar':'Where to start',
+    'Por Onde Começar':'Where to Start',
     'Como Ajudamos':'How We Help',
     'Como ajudamos':'How we help',
     'Falar com um Arquitecto':'Talk to an Architect',
@@ -2497,6 +2501,8 @@ const TR = {
     '800×1000px':'800×1000px',
   },
   fr: {
+    'Por onde começar':'Par où commencer',
+    'Por Onde Começar':'Par où commencer',
     'Como Ajudamos':'Comment nous aidons',
     'Como ajudamos':'Comment nous aidons',
     'Falar com um Arquitecto':'Parler à un architecte',
