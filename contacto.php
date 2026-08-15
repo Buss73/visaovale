@@ -1,66 +1,71 @@
 <?php
-// contacto.php — Visaovale — Formulário de Contacto
-// Coloque este ficheiro na mesma pasta que o index.html no servidor
+/* ─────────────────────────────────────────────────────────────
+   VISÃOVALE · recepção do formulário de contacto
+   Devolve exactamente "ok" em caso de sucesso (o JS espera isso).
+   ───────────────────────────────────────────────────────────── */
 
-header('Content-Type: text/plain; charset=utf-8');
+declare(strict_types=1);
+mb_internal_encoding('UTF-8');
+header('Content-Type: text/plain; charset=UTF-8');
 
-// ── Configuração ──────────────────────────────────────
-$para      = 'geral@visaovale.pt';          // EDITAR: email destino
-$de_nome   = 'Website Visaovale';
-$de_email  = 'noreply@visaovale.pt';        // EDITAR: deve existir no servidor
-// ─────────────────────────────────────────────────────
+$DESTINO = 'geral@visaovale.com';
+$REMETENTE = 'site@visaovale.com';   // tem de ser um endereço do próprio domínio
 
-if ($_SERVER['REQUEST_METHOD'] !== 'POST') {
-    echo 'erro';
-    exit;
+if ($_SERVER['REQUEST_METHOD'] !== 'POST') { http_response_code(405); exit('erro'); }
+
+function campo(string $k, int $max = 500): string {
+    $v = isset($_POST[$k]) ? trim((string) $_POST[$k]) : '';
+    $v = str_replace(["\r", "\n", "\0"], ' ', $v);        // anti header-injection
+    return mb_substr($v, 0, $max);
 }
 
-// Sanitizar entradas
-function limpar($val) {
-    return htmlspecialchars(trim(strip_tags($val)), ENT_QUOTES, 'UTF-8');
+$nome      = campo('nome', 120);
+$email     = campo('email', 160);
+$tel       = campo('tel', 40);
+$objectivo = campo('objectivo', 60);
+$terreno   = campo('terreno', 30);
+$local     = campo('local', 120);
+$area      = campo('area', 30);
+$orcamento = campo('orcamento', 60);
+$prazo     = campo('prazo', 60);
+$msg       = mb_substr(trim((string) ($_POST['msg'] ?? '')), 0, 4000);
+
+// honeypot opcional: se um bot preencher o campo escondido, fingimos sucesso
+if (!empty($_POST['website'])) { exit('ok'); }
+
+if ($nome === '' || $objectivo === '' || !filter_var($email, FILTER_VALIDATE_EMAIL)) {
+    http_response_code(422); exit('erro');
 }
 
-$nome  = limpar($_POST['nome']  ?? '');
-$email = limpar($_POST['email'] ?? '');
-$tel   = limpar($_POST['tel']   ?? '');
-$tipo  = limpar($_POST['tipo']  ?? '');
-$local = limpar($_POST['local'] ?? '');
-$msg   = limpar($_POST['msg']   ?? '');
+$linhas = [
+    'Nome:               ' . $nome,
+    'Email:              ' . $email,
+    'Telefone:           ' . ($tel ?: '—'),
+    '',
+    'O que pretende:     ' . $objectivo,
+    'Já tem terreno:     ' . ($terreno ?: '—'),
+    'Localização:        ' . ($local ?: '—'),
+    'Área aproximada:    ' . ($area ? $area . ' m²' : '—'),
+    'Orçamento estimado: ' . ($orcamento ?: '—'),
+    'Quando começa:      ' . ($prazo ?: '—'),
+    '',
+    'Mensagem:',
+    ($msg ?: '—'),
+    '',
+    '───────────────────────────────',
+    'Enviado em ' . date('Y-m-d H:i') . ' · IP ' . ($_SERVER['REMOTE_ADDR'] ?? '?'),
+];
+$corpo = implode("\n", $linhas);
 
-// Validação mínima
-if (empty($nome) || empty($email) || empty($msg)) {
-    echo 'erro';
-    exit;
-}
-if (!filter_var($_POST['email'], FILTER_VALIDATE_EMAIL)) {
-    echo 'erro';
-    exit;
-}
+$assunto = '=?UTF-8?B?' . base64_encode('Pedido de contacto · ' . $objectivo . ' · ' . $nome) . '?=';
 
-// Construir email
-$assunto = "Contacto pelo site — {$tipo} — {$nome}";
-
-$corpo  = "━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\n";
-$corpo .= "  NOVO CONTACTO — VISAOVALE.PT\n";
-$corpo .= "━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\n\n";
-$corpo .= "Nome:              {$nome}\n";
-$corpo .= "Email:             {$email}\n";
-$corpo .= "Telefone:          {$tel}\n";
-$corpo .= "Tipo de Projecto:  {$tipo}\n";
-$corpo .= "Localização:       {$local}\n\n";
-$corpo .= "Mensagem:\n";
-$corpo .= "─────────────────────────────────────────\n";
-$corpo .= "{$msg}\n\n";
-$corpo .= "─────────────────────────────────────────\n";
-$corpo .= "Enviado em: " . date('d/m/Y H:i') . " (UTC)\n";
-$corpo .= "IP: " . ($_SERVER['REMOTE_ADDR'] ?? 'desconhecido') . "\n";
-
-$headers  = "From: {$de_nome} <{$de_email}>\r\n";
-$headers .= "Reply-To: {$nome} <{$email}>\r\n";
-$headers .= "X-Mailer: PHP/" . phpversion() . "\r\n";
+$headers  = 'From: VISÃOVALE Site <' . $REMETENTE . ">\r\n";
+$headers .= 'Reply-To: ' . $nome . ' <' . $email . ">\r\n";
 $headers .= "Content-Type: text/plain; charset=UTF-8\r\n";
+$headers .= "Content-Transfer-Encoding: 8bit\r\n";
+$headers .= "MIME-Version: 1.0\r\n";
 
-$enviado = mail($para, $assunto, $corpo, $headers);
+// cópia local, útil se o mail() falhar no alojamento
+@file_put_contents(__DIR__ . '/leads.log', $corpo . "\n\n", FILE_APPEND | LOCK_EX);
 
-echo $enviado ? 'ok' : 'erro';
-?>
+echo mail($DESTINO, $assunto, $corpo, $headers) ? 'ok' : 'erro';

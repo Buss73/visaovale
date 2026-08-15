@@ -2,9 +2,14 @@
 <html lang="pt" data-lang="pt">
 <head>
 <meta charset="UTF-8">
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>VISÃOVALE · Arquitectura & Design</title>
 <meta name="description" content="VISÃOVALE · Arquitectura, Engenharia e Design de Interiores. Reabilitação, habitação, comércio, indústria e serviços.">
+<link rel="canonical" href="https://visaovale.com/">
+<link rel="sitemap" type="application/xml" href="/sitemap.xml">
+<meta property="og:locale" content="pt_PT">
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "ArchitecturalService", "name": "VISÃOVALE", "url": "https://visaovale.com/", "telephone": "+351969851001", "email": "geral@visaovale.com", "image": "https://visaovale.com/images/image-001-affbdd6bd538.png", "description": "Arquitectura, Engenharia e Design de Interiores. Reabilitação, habitação, comércio, indústria e serviços.", "address": {"@type": "PostalAddress", "streetAddress": "Rua Joaquim Augusto de Carvalho, Nº 5, 1º A", "postalCode": "2475-133", "addressLocality": "Benedita", "addressRegion": "Leiria", "addressCountry": "PT"}, "areaServed": [{"@type": "Country", "name": "Portugal"}, {"@type": "City", "name": "Caldas da Rainha"}, {"@type": "City", "name": "Óbidos"}, {"@type": "City", "name": "Peniche"}, {"@type": "City", "name": "Nazaré"}, {"@type": "City", "name": "Alcobaça"}, {"@type": "City", "name": "Leiria"}, {"@type": "City", "name": "Marinha Grande"}], "openingHours": "Mo-Fr 09:00-18:00", "hasOfferCatalog": {"@type": "OfferCatalog", "name": "Serviços", "itemListElement": [{"@type": "Offer", "itemOffered": {"@type": "Service", "name": "Reabilitação de edifícios", "url": "https://visaovale.com/reabilitacao.html"}}, {"@type": "Offer", "itemOffered": {"@type": "Service", "name": "Projecto de moradias unifamiliares", "url": "https://visaovale.com/arquitectura-moradias.html"}}, {"@type": "Offer", "itemOffered": {"@type": "Service", "name": "Licenciamento camarário", "url": "https://visaovale.com/licenciamento.html"}}, {"@type": "Offer", "itemOffered": {"@type": "Service", "name": "Design de interiores", "url": "https://visaovale.com/design-interiores.html"}}, {"@type": "Offer", "itemOffered": {"@type": "Service", "name": "Gestão e acompanhamento de obra", "url": "https://visaovale.com/gestao-de-obra.html"}}, {"@type": "Offer", "itemOffered": {"@type": "Service", "name": "Urbanismo e loteamentos", "url": "https://visaovale.com/urbanismo-loteamentos.html"}}]}}</script>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400&family=Raleway:wght@200;300;400;500;600&family=Barlow+Condensed:wght@300;400;500;600&display=swap" rel="stylesheet">
 <style>
@@ -210,6 +215,23 @@ nav.on{background:rgba(17,17,16,.96);backdrop-filter:blur(14px);box-shadow:0 1px
 .proj-ph[data-ratio="sq"]{aspect-ratio:1/1}
 .proj-ph[data-ratio="std"]{aspect-ratio:4/3}
 .port-cta{text-align:center;margin-top:48px}
+.q-group{margin-bottom:22px}
+.q-group>label{display:block;font-family:'Barlow Condensed',sans-serif;font-size:.7rem;letter-spacing:.18em;text-transform:uppercase;color:var(--c-grey);margin-bottom:10px}
+.q-chips{display:flex;flex-wrap:wrap;gap:8px}
+.q-chips input{position:absolute;opacity:0;width:0;height:0}
+.q-chips label{display:inline-flex;align-items:center;font-family:'Barlow Condensed',sans-serif;font-size:.72rem;letter-spacing:.1em;text-transform:uppercase;padding:9px 15px;border:1px solid rgba(0,0,0,.16);cursor:pointer;transition:.25s;line-height:1;background:transparent}
+.q-chips label:hover{border-color:var(--c-gold);color:var(--c-gold)}
+.q-chips input:checked+label{background:var(--c-black);border-color:var(--c-black);color:var(--c-white)}
+.q-chips input:focus-visible+label{outline:2px solid var(--c-gold);outline-offset:2px}
+.cta-band{background:var(--c-black);color:var(--c-white);padding:64px 0;text-align:center}
+.cta-band h2{font-family:'Cormorant Garamond',serif;font-size:clamp(1.6rem,3.4vw,2.6rem);font-weight:300;line-height:1.25;margin-bottom:10px}
+.cta-band h2 em{font-style:italic;color:var(--c-gold)}
+.cta-band p{font-size:.86rem;color:rgba(246,244,240,.68);max-width:560px;margin:0 auto 26px;line-height:1.75}
+.cta-band .cta-actions{display:flex;gap:14px;justify-content:center;flex-wrap:wrap}
+.lightbox-meta{display:flex;flex-wrap:wrap;gap:6px 18px;margin:8px 0 4px;justify-content:center}
+.lightbox-meta span{font-family:'Barlow Condensed',sans-serif;font-size:.68rem;letter-spacing:.14em;text-transform:uppercase;color:rgba(246,244,240,.62)}
+.lightbox-meta span b{font-weight:500;color:rgba(246,244,240,.92)}
+.proj-meta{font-family:'Barlow Condensed',sans-serif;font-size:.64rem;letter-spacing:.14em;text-transform:uppercase;color:rgba(246,244,240,.6);margin-top:4px}
 
 /* ── PROCESS ── */
 .process{background:var(--c-warm);padding:85px 0}
@@ -263,7 +285,7 @@ nav.on{background:rgba(17,17,16,.96);backdrop-filter:blur(14px);box-shadow:0 1px
 
 /* ── FOOTER ── */
 footer{background:var(--c-black);padding:72px 0 36px}
-.foot-grid{display:grid;grid-template-columns:2fr 1fr 1fr 1fr;gap:52px;padding-bottom:52px;border-bottom:1px solid var(--c-line);margin-bottom:32px}
+.foot-grid{display:grid;grid-template-columns:2fr 1.1fr 1.1fr 1.1fr 1fr;gap:52px;padding-bottom:52px;border-bottom:1px solid var(--c-line);margin-bottom:32px}
 .foot-logo img{height:68px;width:auto;filter:brightness(0) invert(1);margin-bottom:16px;display:block}
 .foot-logo span{font-family:'Cormorant Garamond',serif;font-size:1.5rem;font-weight:300;color:var(--c-white);letter-spacing:.14em;display:block;margin-bottom:16px}
 .foot-tag{font-size:.82rem;font-weight:300;color:rgba(246,244,240,.55);line-height:1.75;max-width:260px;margin-bottom:24px}
@@ -377,7 +399,7 @@ footer{background:var(--c-black);padding:72px 0 36px}
         <p class="hero-sub t">Projectos residenciais, comerciais e de reabilitação com acompanhamento integral, do estudo prévio à entrega da obra.</p>
         <div class="hero-actions">
           <a href="#portfolio" class="btn btn-white t">Ver Projectos</a>
-          <a href="#contacto" class="btn btn-gold t">Pedir Orçamento</a>
+          <a href="#contacto" class="btn btn-gold t">Falar com um Arquitecto</a>
         </div>
       </div>
     </div>
@@ -393,6 +415,7 @@ footer{background:var(--c-black);padding:72px 0 36px}
         <p class="hero-sub t">Moradias unifamiliares e edifícios colectivos com rigor técnico e sensibilidade estética.</p>
         <div class="hero-actions">
           <a href="#portfolio" class="btn btn-white t">Portfólio</a>
+          <a href="#contacto" class="btn btn-gold t">Falar com um Arquitecto</a>
         </div>
       </div>
     </div>
@@ -408,7 +431,7 @@ footer{background:var(--c-black);padding:72px 0 36px}
         <p class="hero-sub t">Recuperação de imóveis com respeito pela traça original e todo o conforto actual.</p>
         <div class="hero-actions">
           <a href="#portfolio" class="btn btn-white t">Ver Projectos</a>
-          <a href="#contacto" class="btn btn-gold t">Pedir Orçamento</a>
+          <a href="#contacto" class="btn btn-gold t">Falar com um Arquitecto</a>
         </div>
       </div>
     </div>
@@ -424,6 +447,7 @@ footer{background:var(--c-black);padding:72px 0 36px}
         <p class="hero-sub t">Moradias desenhadas à medida da paisagem, entre pedra natural e linhas contemporâneas.</p>
         <div class="hero-actions">
           <a href="#portfolio" class="btn btn-white t">Portfólio</a>
+          <a href="#contacto" class="btn btn-gold t">Falar com um Arquitecto</a>
         </div>
       </div>
     </div>
@@ -439,7 +463,7 @@ footer{background:var(--c-black);padding:72px 0 36px}
         <p class="hero-sub t">Espaços exteriores que prolongam o conforto da casa até ao jardim.</p>
         <div class="hero-actions">
           <a href="#servicos" class="btn btn-white t">Serviços</a>
-          <a href="#contacto" class="btn btn-gold t">Contactar</a>
+          <a href="#contacto" class="btn btn-gold t">Falar com um Arquitecto</a>
         </div>
       </div>
     </div>
@@ -458,36 +482,6 @@ footer{background:var(--c-black);padding:72px 0 36px}
   </div>
   <div class="scroll-cue"><div class="scroll-line"></div><span>Scroll</span></div>
 </section>
-
-<!-- ══════════════════════════════════════════════
-     STATS
-══════════════════════════════════════════════ -->
-<div class="stats" id="stats">
-  <div class="container">
-    <div class="stats-grid">
-      <div class="stat reveal">
-        <span class="stat-n" data-t="20" data-sfx="+">0</span>
-        <span class="stat-l t">Anos de Experiência</span>
-      </div>
-      <div class="stat reveal">
-        <span class="stat-n" data-t="5" data-sfx="">0</span>
-        <span class="stat-l t">Áreas de Intervenção</span>
-      </div>
-      <div class="stat reveal">
-        <span class="stat-n" data-t="100" data-sfx="%">0</span>
-        <span class="stat-l t">Cobertura Nacional</span>
-      </div>
-      <div class="stat reveal">
-        <span class="stat-n" data-txt="∞" data-t="0">∞</span>
-        <span class="stat-l t">Dedicação ao Cliente</span>
-      </div>
-      <div class="stat reveal">
-        <span class="stat-n" data-t="0" data-txt="★">★</span>
-        <span class="stat-l t">Qualidade & Rigor</span>
-      </div>
-    </div>
-  </div>
-</div>
 
 <!-- ══════════════════════════════════════════════
      SERVICES
@@ -1370,6 +1364,7 @@ footer{background:var(--c-black);padding:72px 0 36px}
   <div class="lightbox-grid" id="lightboxGrid"></div>
   <div class="lightbox-info">
     <h3 class="lightbox-title" id="lightboxTitle"></h3>
+    <div class="lightbox-meta" id="lightboxMeta"></div>
     <p class="lightbox-cap t" id="lightboxCap"></p>
     <p class="lightbox-count" id="lightboxCount"></p>
   </div>
@@ -1463,8 +1458,8 @@ footer{background:var(--c-black);padding:72px 0 36px}
   <div class="container">
     <div class="news-head reveal">
       <div>
-        <p class="label t">Actualidade</p>
-        <h2 class="h2">Projectos & <em>Novidades</em></h2>
+        <p class="label t">Selecção</p>
+        <h2 class="h2">Projectos em <em>Foco</em></h2>
       </div>
       <a href="#portfolio" class="btn btn-dark t">Ver todos →</a>
     </div>
@@ -1503,11 +1498,26 @@ footer{background:var(--c-black);padding:72px 0 36px}
 <!-- ══════════════════════════════════════════════
      CONTACT
 ══════════════════════════════════════════════ -->
+<!-- ══════════════════════════════════════════════
+     CTA BAND
+══════════════════════════════════════════════ -->
+<section class="cta-band">
+  <div class="container reveal">
+    <h2><span class="t">Tem um terreno?</span> <em class="t">Vamos estudar o seu projecto.</em></h2>
+    <p class="t">Estudo prévio, viabilidade construtiva e estimativa de custos. Diga-nos o que quer fazer e recebe uma resposta de um arquitecto em 24–48h úteis.</p>
+    <div class="cta-actions">
+      <a href="#contacto" class="btn btn-gold t">Falar com um Arquitecto</a>
+      <a href="tel:+351969851001" class="btn btn-white t">Ligar Agora</a>
+    </div>
+  </div>
+</section>
+
 <section class="contact" id="contacto">
   <div class="container">
     <div class="reveal" style="margin-bottom:52px">
       <p class="label t">Fale Connosco</p>
-      <h2 class="h2">Inicie o seu <em>Projecto</em></h2>
+      <h2 class="h2">Quer construir, remodelar <em>ou investir?</em></h2>
+      <p class="body t" style="max-width:560px;margin-top:14px">Quanto mais nos disser, mais concreta é a nossa resposta. Só o nome, o email e o objectivo são obrigatórios — o resto ajuda-nos a preparar uma proposta à medida.</p>
     </div>
     <div class="contact-grid">
       <div>
@@ -1550,31 +1560,68 @@ footer{background:var(--c-black);padding:72px 0 36px}
         </div>
       </div>
       <div class="reveal">
-        <div class="fg-row">
-          <div class="fg"><label class="t">Nome *</label><input type="text" placeholder="O seu nome"></div>
-          <div class="fg"><label class="t">Email *</label><input type="email" placeholder="email@exemplo.com"></div>
+
+        <div class="q-group">
+          <label class="t">O que pretende fazer? *</label>
+          <div class="q-chips" id="qObjectivo">
+            <input type="radio" name="objectivo" id="ob1" value="Construir de raiz"><label for="ob1" class="t">Construir de raiz</label>
+            <input type="radio" name="objectivo" id="ob2" value="Remodelar"><label for="ob2" class="t">Remodelar</label>
+            <input type="radio" name="objectivo" id="ob3" value="Reabilitar"><label for="ob3" class="t">Reabilitar</label>
+            <input type="radio" name="objectivo" id="ob4" value="Comprar terreno"><label for="ob4" class="t">Comprar terreno</label>
+            <input type="radio" name="objectivo" id="ob5" value="Investimento imobiliário"><label for="ob5" class="t">Investimento imobiliário</label>
+            <input type="radio" name="objectivo" id="ob6" value="Licenciamento"><label for="ob6" class="t">Licenciamento</label>
+            <input type="radio" name="objectivo" id="ob7" value="Design de interiores"><label for="ob7" class="t">Design de interiores</label>
+            <input type="radio" name="objectivo" id="ob8" value="Outro"><label for="ob8" class="t">Outro</label>
+          </div>
         </div>
+
+        <div class="q-group">
+          <label class="t">Já tem terreno ou imóvel?</label>
+          <div class="q-chips" id="qTerreno">
+            <input type="radio" name="terreno" id="tr1" value="Sim"><label for="tr1" class="t">Sim</label>
+            <input type="radio" name="terreno" id="tr2" value="Não"><label for="tr2" class="t">Não</label>
+            <input type="radio" name="terreno" id="tr3" value="Em negociação"><label for="tr3" class="t">Em negociação</label>
+          </div>
+        </div>
+
         <div class="fg-row">
-          <div class="fg"><label class="t">Telefone</label><input type="tel" placeholder="+351 ___ ___ ___"></div>
+          <div class="fg"><label class="t">Localização</label><input type="text" id="fLocal" placeholder="Concelho / freguesia"></div>
+          <div class="fg"><label class="t">Área aproximada (m²)</label><input type="text" id="fArea" placeholder="Ex.: 220"></div>
+        </div>
+
+        <div class="fg-row">
           <div class="fg">
-            <label class="t">Tipo de Projecto</label>
-            <select>
+            <label class="t">Orçamento estimado</label>
+            <select id="fOrcamento">
+              <option value="" class="t">Prefiro não indicar</option>
+              <option class="t">Até 50.000 €</option>
+              <option class="t">50.000 – 150.000 €</option>
+              <option class="t">150.000 – 300.000 €</option>
+              <option class="t">300.000 – 600.000 €</option>
+              <option class="t">Mais de 600.000 €</option>
+            </select>
+          </div>
+          <div class="fg">
+            <label class="t">Quando pretende começar?</label>
+            <select id="fPrazo">
               <option value="" class="t">Seleccionar</option>
-              <option class="t">Reabilitação</option>
-              <option class="t">Habitação Unifamiliar</option>
-              <option class="t">Habitação Colectiva</option>
-              <option class="t">Comércio / Restauração</option>
-              <option class="t">Indústria / Armazém</option>
-              <option class="t">Interiores / Design</option>
-              <option class="t">Consultoria / Viabilidade</option>
-              <option class="t">Outro</option>
+              <option class="t">O mais cedo possível</option>
+              <option class="t">Nos próximos 3 meses</option>
+              <option class="t">Nos próximos 6 a 12 meses</option>
+              <option class="t">Ainda a estudar</option>
             </select>
           </div>
         </div>
-        <div class="fg"><label class="t">Localização</label><input type="text" placeholder="Cidade / Região"></div>
-        <div class="fg"><label class="t">Mensagem *</label><textarea class="t" placeholder="Descreva o seu projecto com o máximo de detalhe..."></textarea></div>
+
+        <div class="fg-row">
+          <div class="fg"><label class="t">Nome *</label><input type="text" id="fNome" placeholder="O seu nome"></div>
+          <div class="fg"><label class="t">Email *</label><input type="email" id="fEmail" placeholder="email@exemplo.com"></div>
+        </div>
+        <div class="fg"><label class="t">Telefone</label><input type="tel" id="fTel" placeholder="+351 ___ ___ ___"></div>
+        <div class="fg"><label class="t">Mensagem</label><textarea class="t" id="fMsg" placeholder="Conte-nos o que tem em mente — quanto mais detalhe, melhor a resposta."></textarea></div>
+
         <button class="btn btn-gold" style="width:100%;justify-content:center" onclick="sendForm(event)">
-          <span class="t">Enviar Mensagem →</span>
+          <span class="t">Falar com um Arquitecto →</span>
         </button>
         <p style="font-size:.7rem;color:var(--c-grey);margin-top:12px;line-height:1.6">
           <span class="t">Ao enviar aceita a nossa</span>
@@ -1612,17 +1659,30 @@ footer{background:var(--c-black);padding:72px 0 36px}
           <li><a href="#sobre" class="t">Sobre Nós</a></li>
           <li><a href="#processo" class="t">Como Trabalhamos</a></li>
           <li><a href="#portfolio" class="t">Portfólio</a></li>
-          <li><a href="#noticias" class="t">Notícias</a></li>
+          <li><a href="#noticias" class="t">Projectos em Foco</a></li>
         </ul>
       </div>
       <div class="foot-col">
         <h4 class="t">Serviços</h4>
         <ul>
-          <li><a href="#servicos" class="t">Reabilitação</a></li>
-          <li><a href="#servicos" class="t">Habitação</a></li>
-          <li><a href="#servicos" class="t">Comércio</a></li>
-          <li><a href="#servicos" class="t">Indústria</a></li>
-          <li><a href="#servicos" class="t">Interiores</a></li>
+          <li><a href="reabilitacao.html" class="t">Reabilitação</a></li>
+          <li><a href="arquitectura-moradias.html" class="t">Projecto de Moradias</a></li>
+          <li><a href="licenciamento.html" class="t">Licenciamento</a></li>
+          <li><a href="design-interiores.html" class="t">Design de Interiores</a></li>
+          <li><a href="gestao-de-obra.html" class="t">Gestão de Obra</a></li>
+          <li><a href="urbanismo-loteamentos.html" class="t">Urbanismo e Loteamentos</a></li>
+        </ul>
+      </div>
+      <div class="foot-col">
+        <h4 class="t">Onde trabalhamos</h4>
+        <ul>
+          <li><a href="arquitectura-caldas-da-rainha.html" class="t">Caldas da Rainha</a></li>
+          <li><a href="arquitectura-obidos.html" class="t">Óbidos</a></li>
+          <li><a href="arquitectura-peniche.html" class="t">Peniche</a></li>
+          <li><a href="arquitectura-nazare.html" class="t">Nazaré</a></li>
+          <li><a href="arquitectura-alcobaca.html" class="t">Alcobaça</a></li>
+          <li><a href="arquitectura-leiria.html" class="t">Leiria</a></li>
+          <li><a href="arquitectura-marinha-grande.html" class="t">Marinha Grande</a></li>
         </ul>
       </div>
       <div class="foot-col">
@@ -1631,12 +1691,12 @@ footer{background:var(--c-black);padding:72px 0 36px}
           <li><a href="tel:+351969851001">+351 969 851 001</a></li>
           <li><a href="mailto:geral@visaovale.com">geral@visaovale.com</a></li>
           <li><a href="#contacto" class="t">Formulário</a></li>
-          <li><a href="#contacto" class="t">Pedir Orçamento</a></li>
+          <li><a href="#contacto" class="t">Falar com um Arquitecto</a></li>
         </ul>
       </div>
     </div>
     <div class="foot-bottom">
-      <p class="foot-copy t">© 2025 VISÃOVALE · Todos os direitos reservados</p>
+      <p class="foot-copy"><span id="footYear">2026</span> <span class="t">VISÃOVALE · Todos os direitos reservados</span></p>
       <div class="foot-legal">
         <a href="politica-privacidade.html" class="t">Política de Privacidade</a>
         <a href="cookies.html" class="t">Cookies</a>
@@ -1725,7 +1785,7 @@ const TR = {
     'Cookies':'Cookies',
     'Visualização 3D':'Visualização 3D',
     'Fiscalização e coordenação de empreitadas, controlo de qualidade, cumprimento de prazo e orçamento, com acompanhamento online de todas as fases de execução.':'Fiscalização e coordenação de empreitadas, controlo de qualidade, cumprimento de prazo e orçamento, com acompanhamento online de todas as fases de execução.',
-    '© 2025 VISÃOVALE · Todos os direitos reservados':'© 2025 VISÃOVALE · Todos os direitos reservados',
+    'VISÃOVALE · Todos os direitos reservados':'VISÃOVALE · Todos os direitos reservados',
     'Fale Connosco →':'Fale Connosco →',
     'Foto Detalhe':'Foto Detalhe',
     'Moradias personalizadas do primeiro esboço à chave na mão.':'Moradias personalizadas do primeiro esboço à chave na mão.',
@@ -1744,7 +1804,7 @@ const TR = {
     'Consultoria de Arquitectura':'Consultoria de Arquitectura',
     'Reabilitação · 2022':'Reabilitação · 2022',
     'Nacional · Sem Intermediários':'Nacional · Sem Intermediários',
-    'Actualidade':'Actualidade',
+    'Selecção':'Selecção',
     'Enviar Mensagem →':'Enviar Mensagem →',
     'Respondemos em 24–48h úteis.':'Respondemos em 24–48h úteis.',
     'Qualidade & Rigor':'Qualidade & Rigor',
@@ -1904,7 +1964,7 @@ const TR = {
     'Portfólio':'Portfolio',
     'Sobre Nós':'About Us',
     'Como Trabalhamos':'How We Work',
-    'Actualidade':'News',
+    'Selecção':'Selected Work',
     'Notícias':'News',
     'Novidades':'Updates',
     'Empresa':'Company',
@@ -2096,7 +2156,7 @@ const TR = {
     'Respondemos em 24–48h úteis.':'We respond within 24–48 business hours.',
     'Serviço chave na mão em todo o território nacional. Sem intermediários, com técnicos próprios.':'Turnkey service across Portugal. No intermediaries, with our own technical team.',
     'Arquitectura, Engenharia e Design de Interiores.':'Architecture, Engineering and Interior Design.',
-    '© 2025 VISÃOVALE · Todos os direitos reservados':'© 2025 VISÃOVALE. All rights reserved',
+    'VISÃOVALE · Todos os direitos reservados':'VISÃOVALE. All rights reserved',
     'Foto Hero 1 · 1920×1080px':'Hero Photo 1 · 1920×1080px',
     'Foto Hero 2 · 1920×1080px':'Hero Photo 2 · 1920×1080px',
     'Foto Hero 3 · 1920×1080px':'Hero Photo 3 · 1920×1080px',
@@ -2132,7 +2192,7 @@ const TR = {
     'Portfólio':'Portfolio',
     'Sobre Nós':'À Propos',
     'Como Trabalhamos':'Comment Nous Travaillons',
-    'Actualidade':'Actualités',
+    'Selecção':'Sélection',
     'Notícias':'Actualités',
     'Novidades':'Mises à Jour',
     'Empresa':'Entreprise',
@@ -2320,7 +2380,7 @@ const TR = {
     'Respondemos em 24–48h úteis.':'Nous répondons dans les 24–48h ouvrables.',
     'Serviço chave na mão em todo o território nacional. Sem intermediários, com técnicos próprios.':'Service clé en main sur tout le territoire national. Sans intermédiaires, avec nos propres techniciens.',
     'Arquitectura, Engenharia e Design de Interiores.':'Architecture, Ingénierie et Design d\'Intérieur.',
-    '© 2025 VISÃOVALE · Todos os direitos reservados':'© 2025 VISÃOVALE. Tous droits réservés',
+    'VISÃOVALE · Todos os direitos reservados':'VISÃOVALE. Tous droits réservés',
     'Foto Hero 1 · 1920×1080px':'Photo Hero 1',
     'Foto Hero 2 · 1920×1080px':'Photo Hero 2',
     'Foto Hero 3 · 1920×1080px':'Photo Hero 3',
@@ -2368,6 +2428,49 @@ function setLang(lang, el) {
 
 <script>
 // ── PROJECT GALLERIES / LIGHTBOX ──────────────────────────────
+// Ficha de cada projecto. Campos vazios não aparecem no site.
+const PROJECT_META = {
+  edificiomultifamiliar: {local:'', area:'', ano:'2023', tipo:'Construção nova', servicos:'Render 3D · Arquitectura', estado:''},
+  edificiomultifamiliar2: {local:'', area:'', ano:'2023', tipo:'Construção nova', servicos:'Render 3D · Arquitectura', estado:''},
+  quintarural: {local:'', area:'', ano:'2022', tipo:'Reabilitação', servicos:'Render 3D · Reabilitação', estado:''},
+  aldeamentoturistico: {local:'', area:'', ano:'2021', tipo:'Reabilitação', servicos:'Render 3D · Reabilitação', estado:''},
+  segundamoradia: {local:'', area:'', ano:'2021', tipo:'Construção nova', servicos:'Render 3D · Arquitectura', estado:''},
+  terceiramoradia: {local:'', area:'', ano:'2021', tipo:'Construção nova', servicos:'Render 3D · Arquitectura', estado:''},
+  moradiasgeminadas: {local:'', area:'', ano:'2020', tipo:'Construção nova', servicos:'Render 3D · Arquitectura', estado:''},
+  coutinhoteixeira: {local:'São Martinho do Porto', area:'', ano:'', tipo:'Construção nova', servicos:'Render 3D · Arquitectura', estado:''},
+  restaurantenatura: {local:'', area:'', ano:'2017', tipo:'Restauração', servicos:'Projecto Comercial · Render 3D', estado:''},
+  hotelnatura: {local:'', area:'', ano:'2015', tipo:'Hotelaria', servicos:'Grande Projecto Hoteleiro', estado:''},
+  reabilitacao: {local:'', area:'', ano:'2024', tipo:'Reabilitação', servicos:'Render 3D · Arquitectura', estado:''},
+  turismo: {local:'', area:'', ano:'2021', tipo:'Turismo', servicos:'Render 3D · Arquitectura', estado:''},
+  edificiohabitacional: {local:'', area:'', ano:'2025', tipo:'Construção nova', servicos:'Render 3D · Arquitectura', estado:''},
+  quartamoradia: {local:'', area:'', ano:'2026', tipo:'Construção nova', servicos:'Render 3D · Arquitectura', estado:''},
+  moradiapiscina: {local:'', area:'', ano:'2026', tipo:'Construção nova', servicos:'Render 3D · Arquitectura', estado:''},
+  moradiaelevada: {local:'', area:'', ano:'2026', tipo:'Construção nova', servicos:'Render 3D · Arquitectura', estado:''},
+  blocoapartamentos: {local:'', area:'', ano:'2026', tipo:'Construção nova', servicos:'Render 3D · Arquitectura', estado:''},
+  residparque: {local:'', area:'', ano:'2026', tipo:'Construção nova', servicos:'Render 3D · Arquitectura', estado:''},
+  moradiadeclive: {local:'', area:'', ano:'2026', tipo:'Construção nova', servicos:'Render 3D · Arquitectura', estado:''},
+  moradiaclassica: {local:'', area:'', ano:'2026', tipo:'Construção nova', servicos:'Render 3D · Arquitectura', estado:''},
+  moradiaconsola: {local:'', area:'', ano:'2026', tipo:'Construção nova', servicos:'Render 3D · Arquitectura', estado:''},
+  geminadaspiscina: {local:'', area:'', ano:'2026', tipo:'Construção nova', servicos:'Render 3D · Arquitectura', estado:''},
+  planourbanizacao: {local:'', area:'', ano:'2026', tipo:'Planeamento urbano', servicos:'Render 3D · Planeamento Urbano', estado:''},
+  vivendaunifamiliar: {local:'', area:'', ano:'2026', tipo:'Construção nova', servicos:'Render 3D · Arquitectura', estado:''},
+  moradiaurbana: {local:'', area:'', ano:'2020', tipo:'Construção nova', servicos:'Render 3D · Arquitectura', estado:''},
+  moradiasgeminadasurbanas: {local:'', area:'', ano:'2026', tipo:'Construção nova', servicos:'Render 3D · Arquitectura', estado:''},
+  vivendaatouguia: {local:'Atouguia', area:'', ano:'2026', tipo:'Design de interiores', servicos:'Render 3D · Design de Interiores', estado:''},
+  vivendasgeminadas: {local:'', area:'', ano:'2026', tipo:'Construção nova', servicos:'Render 3D · Arquitectura', estado:''},
+  blocoaptunifamiliares: {local:'', area:'', ano:'2026', tipo:'Construção nova', servicos:'Render 3D · Arquitectura', estado:''},
+  reabvivendaunifamiliar: {local:'', area:'', ano:'2026', tipo:'Reabilitação', servicos:'Render 3D · Reabilitação', estado:''},
+  bungalowsinteriores: {local:'', area:'', ano:'2026', tipo:'Design de interiores', servicos:'Decoração de Interiores', estado:''},
+  vivendasserramar: {local:'', area:'', ano:'2026', tipo:'Construção nova', servicos:'Render 3D · Arquitectura', estado:''},
+  vivendapedra: {local:'', area:'', ano:'2026', tipo:'Construção nova', servicos:'Render 3D · Arquitectura', estado:''},
+  urbanizacaobanda: {local:'', area:'', ano:'2026', tipo:'Loteamento', servicos:'Render 3D · Arquitectura', estado:''},
+  hotelnaturaresort: {local:'', area:'', ano:'2026', tipo:'Hotelaria', servicos:'Grande Projecto Hoteleiro', estado:''},
+  complexodesportivo: {local:'', area:'', ano:'2026', tipo:'Equipamento desportivo', servicos:'Equipamento Desportivo · Arquitectura', estado:''},
+  vivendamoderna: {local:'', area:'', ano:'2026', tipo:'Construção nova', servicos:'Render 3D · Arquitectura', estado:''},
+  geminadasbanda: {local:'', area:'', ano:'2026', tipo:'Construção nova', servicos:'Render 3D · Arquitectura', estado:''},
+  edificioescritorios: {local:'', area:'', ano:'2026', tipo:'Escritórios', servicos:'Projecto Comercial · Arquitectura', estado:''},
+};
+
 const PROJECT_GALLERIES = {
   reabilitacao: [
     {src:'images/image-017-156d18ebf8ae.jpg', caption:'Fachada principal, alçado sobre a rua'},
@@ -2634,6 +2737,51 @@ function renderGalleryImage() {
   document.getElementById('lightboxImg').alt = item.caption;
   document.getElementById('lightboxCap').textContent = item.caption;
   document.getElementById('lightboxCount').textContent = (currentIndex + 1) + ' / ' + imgs.length;
+  renderGalleryMeta();
+}
+
+// Mostra a ficha do projecto na lightbox — só os campos preenchidos.
+function renderGalleryMeta() {
+  const box = document.getElementById('lightboxMeta');
+  if (!box) return;
+  const m = PROJECT_META[currentGallery];
+  if (!m) { box.innerHTML = ''; return; }
+  const L = {
+    local:'Local', area:'Área', ano:'Ano',
+    tipo:'Intervenção', servicos:'Serviços', estado:'Estado'
+  };
+  box.innerHTML = ['local','area','ano','tipo','servicos','estado']
+    .filter(k => m[k])
+    .map(k => '<span>' + L[k] + ' <b>' + m[k] + (k === 'area' ? ' m²' : '') + '</b></span>')
+    .join('');
+}
+
+// Escreve local/ano e serviços nos cartões do portfólio a partir do PROJECT_META.
+function enhanceCards() {
+  document.querySelectorAll('#portGrid .proj').forEach(p => {
+    const oc = p.getAttribute('onclick') || '';
+    const km = oc.match(/openGallery\('([a-z0-9]+)'/);
+    if (!km) return;
+    const m = PROJECT_META[km[1]];
+    if (!m) return;
+    const cat = p.querySelector('.proj-cat');
+    if (cat) {
+      const txt = m.tipo + (m.local ? ' · ' + m.local : (m.ano ? ' · ' + m.ano : ''));
+      cat.textContent = txt;
+      cat.dataset.orig = txt;
+    }
+    const cli = p.querySelector('.proj-client');
+    if (cli && m.servicos) cli.textContent = m.servicos;
+    if (m.area || (m.local && m.ano)) {
+      let extra = p.querySelector('.proj-meta');
+      if (!extra) {
+        extra = document.createElement('p');
+        extra.className = 'proj-meta';
+        p.querySelector('.proj-info').appendChild(extra);
+      }
+      extra.textContent = [m.area ? m.area + ' m²' : '', m.local ? m.ano : ''].filter(Boolean).join(' · ');
+    }
+  });
 }
 
 function toggleGridView() {
@@ -2757,7 +2905,7 @@ function showSvc(btn, id) {
 
 // ── PORTFOLIO FILTER ─────────────────────────────────────────
 // ── PORTFÓLIO: ordem aleatória + mostrar metade ──────────────
-const PORT_VISIBLE = 18;   // nº de projectos mostrados antes de "Ver todos"
+const PORT_VISIBLE = 12;   // nº de projectos mostrados antes de "Ver todos"
 let portCat = 'all';
 let portExpanded = false;
 
@@ -2820,6 +2968,10 @@ function filt(btn, cat) {
 
 shufflePort();
 applyPort();
+enhanceCards();
+
+// ── ANO DINÂMICO NO RODAPÉ ───────────────────────────────────
+(function(){ const y=document.getElementById('footYear'); if(y) y.textContent='© '+new Date().getFullYear(); })();
 
 // ── REVEAL ON SCROLL ─────────────────────────────────────────
 const obs = new IntersectionObserver(entries => {
@@ -2833,22 +2985,7 @@ const obs = new IntersectionObserver(entries => {
 document.querySelectorAll('.reveal, .reveal-l, .reveal-r').forEach(el => obs.observe(el));
 
 // ── COUNTERS ─────────────────────────────────────────────────
-const cObs = new IntersectionObserver(entries => {
-  entries.forEach(e => {
-    if (!e.isIntersecting) return;
-    const el = e.target;
-    if (el.dataset.txt) { cObs.unobserve(el); return; } // static symbol
-    const target = +el.dataset.t, sfx = el.dataset.sfx || '';
-    let c = 0; const step = target / 45;
-    const t = setInterval(() => {
-      c = Math.min(c + step, target);
-      el.textContent = Math.floor(c) + sfx;
-      if (c >= target) clearInterval(t);
-    }, 32);
-    cObs.unobserve(el);
-  });
-}, { threshold: 0.5 });
-document.querySelectorAll('.stat-n[data-t]').forEach(el => cObs.observe(el));
+
 
 // ── SMOOTH SCROLL ────────────────────────────────────────────
 document.querySelectorAll('a[href^="#"]').forEach(a => {
@@ -2862,38 +2999,66 @@ document.querySelectorAll('a[href^="#"]').forEach(a => {
 function sendForm(e) {
   e.preventDefault();
   const btn = e.currentTarget;
-  const sp = btn.querySelector('span');
-  const sec = btn.closest('section');
-  const inputs = sec.querySelectorAll('input, select, textarea');
-  const nome  = inputs[0]?.value.trim()||'';
-  const email = inputs[1]?.value.trim()||'';
-  const tel   = inputs[2]?.value.trim()||'';
-  const tipo  = inputs[3]?.value.trim()||'';
-  const local = inputs[4]?.value.trim()||'';
-  const msg   = inputs[5]?.value.trim()||'';
-  if (!nome||!email||!msg){alert('Por favor preencha Nome, Email e Mensagem.');return;}
-  const orig = sp.dataset.orig||sp.textContent;
+  const sp  = btn.querySelector('span');
+  const v   = id => (document.getElementById(id)?.value || '').trim();
+  const rad = n  => (document.querySelector('input[name="' + n + '"]:checked')?.value || '');
+
+  const d = {
+    nome:      v('fNome'),
+    email:     v('fEmail'),
+    tel:       v('fTel'),
+    objectivo: rad('objectivo'),
+    terreno:   rad('terreno'),
+    local:     v('fLocal'),
+    area:      v('fArea'),
+    orcamento: v('fOrcamento'),
+    prazo:     v('fPrazo'),
+    msg:       v('fMsg')
+  };
+  d.tipo = d.objectivo;   // compatibilidade com o contacto.php antigo
+
+  if (!d.nome || !d.email || !d.objectivo) {
+    alert('Por favor indique o Nome, o Email e o que pretende fazer.');
+    return;
+  }
+  if (!/^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/.test(d.email)) {
+    alert('O email indicado não parece válido.');
+    return;
+  }
+
+  const orig = sp.dataset.orig || sp.textContent;
   sp.dataset.orig = orig;
   btn.disabled = true; sp.textContent = '...';
-  fetch('contacto.php',{method:'POST',body:new URLSearchParams({nome,email,tel,tipo,local,msg})})
-    .then(r=>r.text()).then(r=>{
-      if(r.trim()==='ok'){
-        btn.style.background='#4a7c59';btn.style.borderColor='#4a7c59';
-        sp.textContent='✓ Mensagem Enviada!';
-        inputs.forEach(i=>{if(i.tagName!=='SELECT')i.value='';else i.selectedIndex=0;});
+
+  fetch('contacto.php', { method:'POST', body:new URLSearchParams(d) })
+    .then(r => r.text()).then(r => {
+      if (r.trim() === 'ok') {
+        btn.style.background = '#4a7c59'; btn.style.borderColor = '#4a7c59';
+        sp.textContent = '✓ Pedido enviado!';
+        document.querySelectorAll('#contacto input, #contacto select, #contacto textarea').forEach(i => {
+          if (i.type === 'radio') i.checked = false;
+          else if (i.tagName === 'SELECT') i.selectedIndex = 0;
+          else i.value = '';
+        });
       } else {
-        btn.style.background='#c0392b';btn.style.borderColor='#c0392b';
-        sp.textContent='Erro. Tente novamente';
+        btn.style.background = '#c0392b'; btn.style.borderColor = '#c0392b';
+        sp.textContent = 'Erro. Tente novamente';
       }
-      setTimeout(()=>{
-        btn.style.background='var(--c-gold)';btn.style.borderColor='var(--c-gold)';
-        sp.textContent=TR[curLang][orig]||orig;btn.disabled=false;
-      },4000);
-    }).catch(()=>{
-      const s=encodeURIComponent('Contacto · '+tipo);
-      const b=encodeURIComponent('Nome: '+nome+'\nEmail: '+email+'\nTel: '+tel+'\nTipo: '+tipo+'\nLocal: '+local+'\n\n'+msg);
-      window.location.href='mailto:geral@visaovale.com?subject='+s+'&body='+b;
-      btn.disabled=false;
+      setTimeout(() => {
+        btn.style.background = 'var(--c-gold)'; btn.style.borderColor = 'var(--c-gold)';
+        sp.textContent = TR[curLang][orig] || orig; btn.disabled = false;
+      }, 4000);
+    })
+    .catch(() => {
+      const s = encodeURIComponent('Pedido de contacto · ' + d.objectivo);
+      const b = encodeURIComponent(
+        'Nome: ' + d.nome + '\nEmail: ' + d.email + '\nTelefone: ' + d.tel +
+        '\n\nObjectivo: ' + d.objectivo + '\nJá tem terreno: ' + d.terreno +
+        '\nLocalização: ' + d.local + '\nÁrea: ' + d.area +
+        '\nOrçamento: ' + d.orcamento + '\nPrazo: ' + d.prazo +
+        '\n\n' + d.msg);
+      window.location.href = 'mailto:geral@visaovale.com?subject=' + s + '&body=' + b;
+      btn.disabled = false;
     });
 }
 </script>
