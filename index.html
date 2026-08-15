@@ -1251,7 +1251,10 @@ footer{background:var(--c-black);padding:72px 0 36px}
     </div>
 
     <div class="port-cta reveal">
-      <a href="#contacto" class="btn btn-dark t">Ver todos os projectos →</a>
+      <a href="#portfolio" class="btn btn-dark" id="portToggleBtn" onclick="togglePort(event)" role="button">
+        <span class="t" id="portLblMore">Ver todos os projectos →</span>
+        <span class="t" id="portLblLess" style="display:none">Ver menos projectos ←</span>
+      </a>
     </div>
   </div>
 </section>
@@ -1359,7 +1362,7 @@ footer{background:var(--c-black);padding:72px 0 36px}
         <p class="body t">A VISÃOVALE põe à sua disposição uma equipa com sólida reputação e experiência profissional adquirida ao longo de anos de trabalho no sector imobiliário.</p>
         <p class="body t" style="margin-top:12px">Particularmente na área do projecto e construção, estamos aptos a oferecer ao mercado um verdadeiro serviço chave na mão, apoiando o cliente desde o momento da aquisição do activo, passando pelo licenciamento camarário, construção e colocação no mercado.</p>
         <p class="body t" style="margin-top:12px">Garantimos cobertura em todo o Território Nacional, sem intermediários e com técnicos próprios.</p>
-        <a href="#contacto" class="about-cta t">Falar Connosco →</a>
+        <a href="#contacto" class="about-cta t">Fale Connosco →</a>
       </div>
       <div class="about-imgs-side reveal-r">
         <img id="aboutFloatImg" src="images/image-026-280e529691bd.jpg" alt="Visãovale · Pormenor" class="about-slide-img"
@@ -1693,7 +1696,7 @@ const TR = {
     'Visualização 3D':'Visualização 3D',
     'Fiscalização e coordenação de empreitadas, controlo de qualidade, cumprimento de prazo e orçamento, com acompanhamento online de todas as fases de execução.':'Fiscalização e coordenação de empreitadas, controlo de qualidade, cumprimento de prazo e orçamento, com acompanhamento online de todas as fases de execução.',
     '© 2025 VISÃOVALE · Todos os direitos reservados':'© 2025 VISÃOVALE · Todos os direitos reservados',
-    'Falar Connosco →':'Falar Connosco →',
+    'Fale Connosco →':'Fale Connosco →',
     'Foto Detalhe':'Foto Detalhe',
     'Moradias personalizadas do primeiro esboço à chave na mão.':'Moradias personalizadas do primeiro esboço à chave na mão.',
     'Ver Projectos':'Ver Projectos',
@@ -1734,6 +1737,7 @@ const TR = {
     'Formulário':'Formulário',
     'Inspiram':'Inspiram',
     'Ver todos os projectos →':'Ver todos os projectos →',
+    'Ver menos projectos ←':'Ver menos projectos ←',
     'Jardins, acessos, piscinas e áreas de lazer concebidos em harmonia com a arquitectura e o contexto ambiental do projecto.':'Jardins, acessos, piscinas e áreas de lazer concebidos em harmonia com a arquitectura e o contexto ambiental do projecto.',
     'Moradia Unifamiliar em Chãos · Projecto Completo':'Moradia Unifamiliar em Chãos · Projecto Completo',
     'Restaurante Natura · 2017':'Restaurante Natura · 2017',
@@ -1900,10 +1904,11 @@ const TR = {
     'Ver Projectos':'View Projects',
     'Pedir Orçamento':'Request a Quote',
     'Contactar':'Contact Us',
-    'Falar Connosco →':'Get in Touch →',
+    'Fale Connosco →':'Get in Touch →',
     'Fale Connosco':'Contact Us',
     'Inicie o seu':'Start your',
     'Ver todos os projectos →':'View all projects →',
+    'Ver menos projectos ←':'Show fewer projects ←',
     'Ver todos →':'See all →',
     'Enviar Mensagem →':'Send Message →',
     'Anos de Experiência':'Years of Experience',
@@ -2127,10 +2132,11 @@ const TR = {
     'Ver Projectos':'Voir les Projets',
     'Pedir Orçamento':'Demander un Devis',
     'Contactar':'Nous Contacter',
-    'Falar Connosco →':'Nous Contacter →',
+    'Fale Connosco →':'Nous Contacter →',
     'Fale Connosco':'Contactez-Nous',
     'Inicie o seu':'Démarrez votre',
     'Ver todos os projectos →':'Voir tous les projets →',
+    'Ver menos projectos ←':'Voir moins de projets ←',
     'Ver todos →':'Voir tout →',
     'Enviar Mensagem →':'Envoyer le Message →',
     'Anos de Experiência':'Ans d\'Expérience',
@@ -2708,16 +2714,70 @@ function showSvc(btn, id) {
 }
 
 // ── PORTFOLIO FILTER ─────────────────────────────────────────
+// ── PORTFÓLIO: ordem aleatória + mostrar metade ──────────────
+const PORT_VISIBLE = 18;   // nº de projectos mostrados antes de "Ver todos"
+let portCat = 'all';
+let portExpanded = false;
+
+// Baralha a ordem dos cartões no DOM (Fisher-Yates) para não aparecerem
+// sempre os mesmos projectos nos mesmos lugares.
+function shufflePort() {
+  const grid = document.getElementById('portGrid');
+  if (!grid) return;
+  const items = Array.from(grid.querySelectorAll('.proj'));
+  for (let i = items.length - 1; i > 0; i--) {
+    const j = Math.floor(Math.random() * (i + 1));
+    [items[i], items[j]] = [items[j], items[i]];
+  }
+  items.forEach(el => grid.appendChild(el));
+}
+
+function applyPort() {
+  const projs = Array.from(document.querySelectorAll('#portGrid .proj'));
+  let shown = 0, matching = 0;
+  projs.forEach(p => {
+    const match = portCat === 'all' || p.dataset.cat === portCat;
+    if (!match) { p.style.display = 'none'; return; }
+    matching++;
+    if (portExpanded || shown < PORT_VISIBLE) {
+      p.style.display = '';
+      shown++;
+    } else {
+      p.style.display = 'none';
+    }
+  });
+  const btn  = document.getElementById('portToggleBtn');
+  const more = document.getElementById('portLblMore');
+  const less = document.getElementById('portLblLess');
+  if (btn) {
+    const needsBtn = matching > PORT_VISIBLE;
+    btn.parentElement.style.display = needsBtn ? '' : 'none';
+    if (more) more.style.display = portExpanded ? 'none' : '';
+    if (less) less.style.display = portExpanded ? '' : 'none';
+  }
+}
+
+function togglePort(ev) {
+  if (ev) ev.preventDefault();
+  portExpanded = !portExpanded;
+  if (!portExpanded) shufflePort();   // nova ordem sempre que se volta a fechar
+  applyPort();
+  if (!portExpanded) {
+    const sec = document.getElementById('portfolio');
+    if (sec) sec.scrollIntoView({ behavior: 'smooth', block: 'start' });
+  }
+}
+
 function filt(btn, cat) {
   document.querySelectorAll('.ftab').forEach(b => b.classList.remove('on'));
   btn.classList.add('on');
-  document.querySelectorAll('.proj').forEach(p => {
-    const show = cat === 'all' || p.dataset.cat === cat;
-    p.style.opacity = show ? '1' : '0.12';
-    p.style.pointerEvents = show ? 'auto' : 'none';
-    p.style.transition = 'opacity .35s';
-  });
+  portCat = cat;
+  portExpanded = false;
+  applyPort();
 }
+
+shufflePort();
+applyPort();
 
 // ── REVEAL ON SCROLL ─────────────────────────────────────────
 const obs = new IntersectionObserver(entries => {
