@@ -36,6 +36,7 @@
 }
 *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
 html{scroll-behavior:smooth;font-size:16px}
+html,body{overflow-x:hidden;max-width:100%}
 body{font-family:'Raleway',sans-serif;background:var(--c-white);color:var(--c-black);overflow-x:hidden;-webkit-font-smoothing:antialiased}
 ::-webkit-scrollbar{width:2px}
 ::-webkit-scrollbar-track{background:var(--c-warm)}
@@ -215,6 +216,31 @@ nav.on{background:rgba(17,17,16,.96);backdrop-filter:blur(14px);box-shadow:0 1px
 .proj-ph[data-ratio="sq"]{aspect-ratio:1/1}
 .proj-ph[data-ratio="std"]{aspect-ratio:4/3}
 .port-cta{text-align:center;margin-top:48px}
+.ba{background:var(--c-warm);padding:85px 0}
+.ba-wrap{position:relative;max-width:940px;margin:34px auto 0;aspect-ratio:16/9;overflow:hidden;background:var(--c-black);user-select:none}
+.ba-wrap img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;display:block}
+.ba-after{clip-path:inset(0 0 0 var(--pos,50%))}
+.ba-handle{position:absolute;top:0;bottom:0;left:var(--pos,50%);width:2px;background:var(--c-white);cursor:ew-resize;z-index:3}
+.ba-handle::after{content:'⇄';position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);width:42px;height:42px;border-radius:50%;background:var(--c-white);color:var(--c-black);display:flex;align-items:center;justify-content:center;font-size:.9rem;box-shadow:0 2px 14px rgba(0,0,0,.28)}
+.ba-tag{position:absolute;top:14px;font-family:'Barlow Condensed',sans-serif;font-size:.64rem;letter-spacing:.2em;text-transform:uppercase;padding:5px 11px;background:rgba(17,17,16,.72);color:var(--c-white);z-index:2}
+.ba-tag.l{left:14px}.ba-tag.r{right:14px;background:var(--c-gold);color:var(--c-black)}
+.ba-range{width:100%;max-width:940px;margin:14px auto 0;display:block}
+.ba-empty{max-width:940px;margin:34px auto 0;border:1px dashed var(--c-line);padding:52px 28px;text-align:center}
+.ba-empty p{font-size:.86rem;font-weight:300;color:var(--c-grey);line-height:1.8;max-width:520px;margin:0 auto 18px}
+.probs{background:var(--c-white);padding:85px 0}
+.probs-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:20px;margin-top:38px}
+.prob{border:1px solid var(--c-line);padding:30px 26px;display:flex;flex-direction:column;transition:.3s;background:var(--c-white)}
+.prob:hover{border-color:var(--c-gold);transform:translateY(-3px)}
+.prob-q{font-family:'Cormorant Garamond',serif;font-size:1.18rem;font-style:italic;font-weight:400;line-height:1.4;margin-bottom:14px;color:var(--c-black)}
+.prob-q::before{content:'“';color:var(--c-gold)}
+.prob-q::after{content:'”';color:var(--c-gold)}
+.prob-a{font-size:.85rem;font-weight:300;line-height:1.78;color:var(--c-grey);margin-bottom:18px;flex:1}
+.prob-l{font-family:'Barlow Condensed',sans-serif;font-size:.66rem;letter-spacing:.2em;text-transform:uppercase;color:var(--c-gold);border-bottom:1px solid transparent;align-self:flex-start;transition:.3s}
+.prob:hover .prob-l{border-color:var(--c-gold)}
+.probs-note{margin-top:34px;padding-top:26px;border-top:1px solid var(--c-line);display:flex;gap:26px;flex-wrap:wrap;align-items:center;justify-content:space-between}
+.probs-note p{font-size:.86rem;font-weight:300;color:var(--c-grey);max-width:520px;line-height:1.75}
+.proj-badge{position:absolute;top:12px;left:12px;z-index:3;font-family:'Barlow Condensed',sans-serif;font-size:.6rem;letter-spacing:.16em;text-transform:uppercase;padding:5px 10px;line-height:1;background:rgba(246,244,240,.94);color:var(--c-black);border:1px solid rgba(0,0,0,.08)}
+.proj-badge.obra{background:var(--c-gold);color:var(--c-black);border-color:var(--c-gold)}
 .q-group{margin-bottom:22px}
 .q-group>label{display:block;font-family:'Barlow Condensed',sans-serif;font-size:.7rem;letter-spacing:.18em;text-transform:uppercase;color:var(--c-grey);margin-bottom:10px}
 .q-chips{display:flex;flex-wrap:wrap;gap:8px}
@@ -345,6 +371,7 @@ footer{background:var(--c-black);padding:72px 0 36px}
 <!-- ══ MOBILE MENU ══ -->
 <div class="mmenu" id="mmenu">
   <a href="#home" onclick="closeM()"><span class="t">Início</span></a>
+  <a href="#como-ajudamos" onclick="closeM()"><span class="t">Como Ajudamos</span></a>
   <a href="#servicos" onclick="closeM()"><span class="t">Serviços</span></a>
   <a href="#portfolio" onclick="closeM()"><span class="t">Projectos</span></a>
   <a href="#sobre" onclick="closeM()"><span class="t">Visãovale</span></a>
@@ -365,7 +392,8 @@ footer{background:var(--c-black);padding:72px 0 36px}
   </a>
   <ul class="nav-links" id="navlinks">
     <li><a href="#home" class="t">Início</a></li>
-    <li><a href="#servicos" class="t">Serviços</a></li>
+    <li><a href="#como-ajudamos" class="t">Como Ajudamos</a></li>
+          <li><a href="#servicos" class="t">Serviços</a></li>
     <li><a href="#portfolio" class="t">Projectos</a></li>
     <li><a href="#sobre" class="t">Visãovale</a></li>
     <li><a href="#contacto" class="t">Contactos</a></li>
@@ -407,11 +435,11 @@ footer{background:var(--c-black);padding:72px 0 36px}
     <!-- SLIDE 2 -->
     <div class="hero-slide">
       <img src="images/image-003-f90a026115c5.jpg" alt="Segunda Moradia Unifamiliar · Visãovale"
-           onerror="this.outerHTML='<div class=\'slide-ph\'><div class=\'ph-lbl\'>Foto Hero 2 · 1920×1080px</div></div>'">
+           onerror="this.outerHTML='<div class=\'slide-ph\'><div class=\'ph-lbl\'>Foto Hero 2 · 1920×1080px</div></div>'" loading="lazy" decoding="async">
       <div class="hero-overlay"></div>
       <div class="hero-content">
         <p class="hero-tag t">Habitação</p>
-        <h1 class="hero-title h1">Espaços que<br><em>Inspiram</em></h1>
+        <p class="hero-title h1">Espaços que<br><em>Inspiram</em></p>
         <p class="hero-sub t">Moradias unifamiliares e edifícios colectivos com rigor técnico e sensibilidade estética.</p>
         <div class="hero-actions">
           <a href="#portfolio" class="btn btn-white t">Portfólio</a>
@@ -423,11 +451,11 @@ footer{background:var(--c-black);padding:72px 0 36px}
     <!-- SLIDE 3 -->
     <div class="hero-slide">
       <img src="images/image-004-28d7e44550c4.jpg" alt="Moradia Tradicional · Visãovale"
-           onerror="this.outerHTML='<div class=\'slide-ph\'><div class=\'ph-lbl\'>Foto Hero 3 · 1920×1080px</div></div>'">
+           onerror="this.outerHTML='<div class=\'slide-ph\'><div class=\'ph-lbl\'>Foto Hero 3 · 1920×1080px</div></div>'" loading="lazy" decoding="async">
       <div class="hero-overlay"></div>
       <div class="hero-content">
         <p class="hero-tag t">Reabilitação</p>
-        <h1 class="hero-title h1">Tradição com<br><em>Alma Nova</em></h1>
+        <p class="hero-title h1">Tradição com<br><em>Alma Nova</em></p>
         <p class="hero-sub t">Recuperação de imóveis com respeito pela traça original e todo o conforto actual.</p>
         <div class="hero-actions">
           <a href="#portfolio" class="btn btn-white t">Ver Projectos</a>
@@ -439,11 +467,11 @@ footer{background:var(--c-black);padding:72px 0 36px}
     <!-- SLIDE 4 -->
     <div class="hero-slide">
       <img src="images/image-005-51279dc3096d.jpg" alt="Moradia Contemporânea · Visãovale"
-           onerror="this.outerHTML='<div class=\'slide-ph\'><div class=\'ph-lbl\'>Foto Hero 4 · 1920×1080px</div></div>'">
+           onerror="this.outerHTML='<div class=\'slide-ph\'><div class=\'ph-lbl\'>Foto Hero 4 · 1920×1080px</div></div>'" loading="lazy" decoding="async">
       <div class="hero-overlay"></div>
       <div class="hero-content">
         <p class="hero-tag t">Habitação</p>
-        <h1 class="hero-title h1">Arquitectura em<br><em>Harmonia</em></h1>
+        <p class="hero-title h1">Arquitectura em<br><em>Harmonia</em></p>
         <p class="hero-sub t">Moradias desenhadas à medida da paisagem, entre pedra natural e linhas contemporâneas.</p>
         <div class="hero-actions">
           <a href="#portfolio" class="btn btn-white t">Portfólio</a>
@@ -455,11 +483,11 @@ footer{background:var(--c-black);padding:72px 0 36px}
     <!-- SLIDE 5 -->
     <div class="hero-slide">
       <img src="images/image-006-246a952f555b.jpg" alt="Moradia Contemporânea · Pátio · Visãovale"
-           onerror="this.outerHTML='<div class=\'slide-ph\'><div class=\'ph-lbl\'>Foto Hero 5 · 1920×1080px</div></div>'">
+           onerror="this.outerHTML='<div class=\'slide-ph\'><div class=\'ph-lbl\'>Foto Hero 5 · 1920×1080px</div></div>'" loading="lazy" decoding="async">
       <div class="hero-overlay"></div>
       <div class="hero-content">
         <p class="hero-tag t">Habitação</p>
-        <h1 class="hero-title h1">Viver com<br><em>Natureza</em></h1>
+        <p class="hero-title h1">Viver com<br><em>Natureza</em></p>
         <p class="hero-sub t">Espaços exteriores que prolongam o conforto da casa até ao jardim.</p>
         <div class="hero-actions">
           <a href="#servicos" class="btn btn-white t">Serviços</a>
@@ -481,6 +509,50 @@ footer{background:var(--c-black);padding:72px 0 36px}
     <button onclick="nextS()">&#8594;</button>
   </div>
   <div class="scroll-cue"><div class="scroll-line"></div><span>Scroll</span></div>
+</section>
+
+<!-- ══════════════════════════════════════════════
+     PROBLEMA → SOLUÇÃO → PROVA
+══════════════════════════════════════════════ -->
+<section class="probs" id="como-ajudamos">
+  <div class="container">
+    <div class="reveal">
+      <p class="label t">Como ajudamos</p>
+      <h2 class="h2">O seu problema, <em>resolvido</em></h2>
+      <p class="body t" style="max-width:600px;margin-top:12px">Quase toda a gente que nos contacta chega com uma destas seis perguntas. Escolha a sua e veja exactamente o que fazemos a seguir.</p>
+    </div>
+    <div class="probs-grid">
+      <a class="prob reveal" href="arquitectura-moradias.html">
+        <p class="prob-q t">Tenho um terreno mas não sei o que posso construir lá.</p>
+        <p class="prob-a t">Analisamos o PDM, a certidão e as condicionantes do lote e dizemos-lhe, por escrito, que área e que volumetria são possíveis — antes de investir em projecto.</p>
+        <span class="prob-l t">Ver como fazemos →</span>
+      </a><a class="prob reveal" href="reabilitacao.html">
+        <p class="prob-q t">Herdei uma casa antiga e não sei se vale a pena recuperar.</p>
+        <p class="prob-a t">Fazemos o diagnóstico do edificado, identificamos patologias e comparamos o custo de reabilitar com o de construir de novo.</p>
+        <span class="prob-l t">Ver reabilitação →</span>
+      </a><a class="prob reveal" href="licenciamento.html">
+        <p class="prob-q t">A câmara pediu elementos e o processo está parado.</p>
+        <p class="prob-a t">Assumimos processos já iniciados: percebemos o que falta, respondemos às entidades e levamos até ao alvará.</p>
+        <span class="prob-l t">Ver licenciamento →</span>
+      </a><a class="prob reveal" href="gestao-de-obra.html">
+        <p class="prob-q t">Tenho medo que a obra derrape no preço e no prazo.</p>
+        <p class="prob-a t">Mapa de quantidades e caderno de encargos para consultar empreiteiros em igualdade, e visitas de obra com relatório e validação de autos.</p>
+        <span class="prob-l t">Ver gestão de obra →</span>
+      </a><a class="prob reveal" href="design-interiores.html">
+        <p class="prob-q t">Vou remodelar e não consigo imaginar o resultado final.</p>
+        <p class="prob-a t">Renders fotorrealistas de cada divisão e mapa de acabamentos aprovados antes de comprar seja o que for.</p>
+        <span class="prob-l t">Ver interiores →</span>
+      </a><a class="prob reveal" href="urbanismo-loteamentos.html">
+        <p class="prob-q t">Quero comprar um terreno para promoção mas não sei se dá retorno.</p>
+        <p class="prob-a t">Estudo de capacidade construtiva e leitura urbanística independente antes da escritura — o número que decide o negócio.</p>
+        <span class="prob-l t">Ver urbanismo →</span>
+      </a>
+    </div>
+    <div class="probs-note reveal">
+      <p class="t">Não encontra a sua situação? Descreva-a em duas linhas — respondemos com o caminho concreto, não com um catálogo de serviços.</p>
+      <a href="#contacto" class="btn btn-dark t">Falar com um Arquitecto</a>
+    </div>
+  </div>
 </section>
 
 <!-- ══════════════════════════════════════════════
@@ -680,6 +752,7 @@ footer{background:var(--c-black);padding:72px 0 36px}
         <button class="ftab" onclick="filt(this,'com')"><span class="t">Comércio</span></button>
         <button class="ftab" onclick="filt(this,'ind')"><span class="t">Indústria</span></button>
         <button class="ftab" onclick="filt(this,'int')"><span class="t">Interiores</span></button>
+        <button class="ftab" onclick="filt(this,'obra')"><span class="t">Obra Construída</span></button>
       </div>
     </div>
 
@@ -689,7 +762,7 @@ footer{background:var(--c-black);padding:72px 0 36px}
       <div class="proj reveal proj-gallery" data-cat="hab" data-ratio="tall" onclick="openGallery('edificiomultifamiliar', this)" role="button" tabindex="0" onkeyup="if(event.key==='Enter')openGallery('edificiomultifamiliar', this)">
         <div class="proj-img">
           <img src="images/edificiomultifamiliar_cover.jpg" alt="Edifício Multifamiliar"
-               onerror="this.outerHTML='<div class=\'proj-ph\' data-ratio=\'tall\' style=\'aspect-ratio:2/3\'><div class=\'ph-lbl\'>Edifício Multifamiliar · 2023</div></div>'">
+               onerror="this.outerHTML='<div class=\'proj-ph\' data-ratio=\'tall\' style=\'aspect-ratio:2/3\'><div class=\'ph-lbl\'>Edifício Multifamiliar · 2023</div></div>'" loading="lazy" decoding="async">
           <span class="proj-gallery-badge t">Ver Projecto</span>
         </div>
         <div class="proj-overlay"></div>
@@ -704,7 +777,7 @@ footer{background:var(--c-black);padding:72px 0 36px}
       <div class="proj reveal proj-gallery" data-cat="hab" data-ratio="std" onclick="openGallery('edificiomultifamiliar2', this)" role="button" tabindex="0" onkeyup="if(event.key==='Enter')openGallery('edificiomultifamiliar2', this)">
         <div class="proj-img">
           <img src="images/image-008-00d812eada66.jpg" alt="Edifício Multifamiliar"
-               onerror="this.outerHTML='<div class=\'proj-ph\' style=\'aspect-ratio:4/3\'><div class=\'ph-lbl\'>Edifício Multifamiliar · 2023</div></div>'">
+               onerror="this.outerHTML='<div class=\'proj-ph\' style=\'aspect-ratio:4/3\'><div class=\'ph-lbl\'>Edifício Multifamiliar · 2023</div></div>'" loading="lazy" decoding="async">
           <span class="proj-gallery-badge t">Ver Projecto</span>
         </div>
         <div class="proj-overlay"></div>
@@ -719,7 +792,7 @@ footer{background:var(--c-black);padding:72px 0 36px}
       <div class="proj reveal proj-gallery" data-cat="reab" data-ratio="wide" onclick="openGallery('quintarural', this)" role="button" tabindex="0" onkeyup="if(event.key==='Enter')openGallery('quintarural', this)">
         <div class="proj-img">
           <img src="images/image-009-a78176eb9923.jpg" alt="Quinta Rural com Piscina"
-               onerror="this.outerHTML='<div class=\'proj-ph\' style=\'aspect-ratio:16/9\'><div class=\'ph-lbl\'>Quinta Rural com Piscina · 2022</div></div>'">
+               onerror="this.outerHTML='<div class=\'proj-ph\' style=\'aspect-ratio:16/9\'><div class=\'ph-lbl\'>Quinta Rural com Piscina · 2022</div></div>'" loading="lazy" decoding="async">
           <span class="proj-gallery-badge t">Ver Projecto</span>
         </div>
         <div class="proj-overlay"></div>
@@ -734,7 +807,7 @@ footer{background:var(--c-black);padding:72px 0 36px}
       <div class="proj reveal proj-gallery" data-cat="reab" data-ratio="wide" onclick="openGallery('aldeamentoturistico', this)" role="button" tabindex="0" onkeyup="if(event.key==='Enter')openGallery('aldeamentoturistico', this)">
         <div class="proj-img">
           <img src="images/image-010-0b0109241ef1.jpg" alt="Aldeamento Turístico"
-               onerror="this.outerHTML='<div class=\'proj-ph\' style=\'aspect-ratio:16/9\'><div class=\'ph-lbl\'>Aldeamento Turístico · 2021</div></div>'">
+               onerror="this.outerHTML='<div class=\'proj-ph\' style=\'aspect-ratio:16/9\'><div class=\'ph-lbl\'>Aldeamento Turístico · 2021</div></div>'" loading="lazy" decoding="async">
           <span class="proj-gallery-badge t">Ver Projecto</span>
         </div>
         <div class="proj-overlay"></div>
@@ -749,7 +822,7 @@ footer{background:var(--c-black);padding:72px 0 36px}
       <div class="proj reveal proj-gallery" data-cat="hab" data-ratio="wide" onclick="openGallery('segundamoradia', this)" role="button" tabindex="0" onkeyup="if(event.key==='Enter')openGallery('segundamoradia', this)">
         <div class="proj-img">
           <img src="images/image-011-bf462dfabdd0.jpg" alt="Segunda Moradia Unifamiliar"
-               onerror="this.outerHTML='<div class=\'proj-ph\' data-ratio=\'wide\' style=\'aspect-ratio:16/9\'><div class=\'ph-lbl\'>Segunda Moradia Unifamiliar · 2021</div></div>'">
+               onerror="this.outerHTML='<div class=\'proj-ph\' data-ratio=\'wide\' style=\'aspect-ratio:16/9\'><div class=\'ph-lbl\'>Segunda Moradia Unifamiliar · 2021</div></div>'" loading="lazy" decoding="async">
           <span class="proj-gallery-badge t">Ver Projecto</span>
         </div>
         <div class="proj-overlay"></div>
@@ -764,7 +837,7 @@ footer{background:var(--c-black);padding:72px 0 36px}
       <div class="proj reveal proj-gallery" data-cat="hab" data-ratio="wide" onclick="openGallery('terceiramoradia', this)" role="button" tabindex="0" onkeyup="if(event.key==='Enter')openGallery('terceiramoradia', this)">
         <div class="proj-img">
           <img src="images/image-012-3e067328e79b.jpg" alt="Terceira Moradia Unifamiliar"
-               onerror="this.outerHTML='<div class=\'proj-ph\' data-ratio=\'wide\' style=\'aspect-ratio:16/9\'><div class=\'ph-lbl\'>Terceira Moradia Unifamiliar · 2021</div></div>'">
+               onerror="this.outerHTML='<div class=\'proj-ph\' data-ratio=\'wide\' style=\'aspect-ratio:16/9\'><div class=\'ph-lbl\'>Terceira Moradia Unifamiliar · 2021</div></div>'" loading="lazy" decoding="async">
           <span class="proj-gallery-badge t">Ver Projecto</span>
         </div>
         <div class="proj-overlay"></div>
@@ -780,7 +853,7 @@ footer{background:var(--c-black);padding:72px 0 36px}
       <div class="proj reveal proj-gallery" data-cat="hab" data-ratio="wide" onclick="openGallery('moradiasgeminadas', this)" role="button" tabindex="0" onkeyup="if(event.key==='Enter')openGallery('moradiasgeminadas', this)">
         <div class="proj-img">
           <img src="images/image-013-de4a12591be4.jpg" alt="Moradias Geminadas"
-               onerror="this.outerHTML='<div class=\'proj-ph\' style=\'aspect-ratio:16/9\'><div class=\'ph-lbl\'>Moradias Geminadas · 2020</div></div>'">
+               onerror="this.outerHTML='<div class=\'proj-ph\' style=\'aspect-ratio:16/9\'><div class=\'ph-lbl\'>Moradias Geminadas · 2020</div></div>'" loading="lazy" decoding="async">
           <span class="proj-gallery-badge t">Ver Projecto</span>
         </div>
         <div class="proj-overlay"></div>
@@ -795,7 +868,7 @@ footer{background:var(--c-black);padding:72px 0 36px}
       <div class="proj reveal proj-gallery" data-cat="hab" data-ratio="std" onclick="openGallery('coutinhoteixeira', this)" role="button" tabindex="0" onkeyup="if(event.key==='Enter')openGallery('coutinhoteixeira', this)">
         <div class="proj-img">
           <img src="images/image-014-92da044d21b1.jpg" alt="Edifício em São Martinho do Porto"
-               onerror="this.outerHTML='<div class=\'proj-ph\' style=\'aspect-ratio:4/3\'><div class=\'ph-lbl\'>Edifício em São Martinho do Porto</div></div>'">
+               onerror="this.outerHTML='<div class=\'proj-ph\' style=\'aspect-ratio:4/3\'><div class=\'ph-lbl\'>Edifício em São Martinho do Porto</div></div>'" loading="lazy" decoding="async">
           <span class="proj-gallery-badge t">Ver Projecto</span>
         </div>
         <div class="proj-overlay"></div>
@@ -809,8 +882,8 @@ footer{background:var(--c-black);padding:72px 0 36px}
       <!-- P8 — WIDE (GALERIA) -->
       <div class="proj reveal proj-gallery" data-cat="com" data-ratio="wide" onclick="openGallery('restaurantenatura', this)" role="button" tabindex="0" onkeyup="if(event.key==='Enter')openGallery('restaurantenatura', this)">
         <div class="proj-img">
-          <img src="images/restaurantenatura_01.jpg" alt="Restaurante Natura"
-               onerror="this.outerHTML='<div class=\'proj-ph\' style=\'aspect-ratio:16/9\'><div class=\'ph-lbl\'>Restaurante Natura · 2017</div></div>'">
+          <img width="1365" height="768" src="images/restaurantenatura_01.jpg" alt="Restaurante Natura"
+               onerror="this.outerHTML='<div class=\'proj-ph\' style=\'aspect-ratio:16/9\'><div class=\'ph-lbl\'>Restaurante Natura · 2017</div></div>'" loading="lazy" decoding="async">
           <span class="proj-gallery-badge t">Ver Projecto</span>
         </div>
         <div class="proj-overlay"></div>
@@ -825,7 +898,7 @@ footer{background:var(--c-black);padding:72px 0 36px}
       <div class="proj reveal proj-gallery" data-cat="com" data-ratio="wide" onclick="openGallery('hotelnatura', this)" role="button" tabindex="0" onkeyup="if(event.key==='Enter')openGallery('hotelnatura', this)">
         <div class="proj-img">
           <img src="images/image-056-6cf81ba1c3c9.jpg" alt="Hotel Natura"
-               onerror="this.outerHTML='<div class=\'proj-ph\' style=\'aspect-ratio:16/9\'><div class=\'ph-lbl\'>Hotel Natura · 2015</div></div>'">
+               onerror="this.outerHTML='<div class=\'proj-ph\' style=\'aspect-ratio:16/9\'><div class=\'ph-lbl\'>Hotel Natura · 2015</div></div>'" loading="lazy" decoding="async">
           <span class="proj-gallery-badge t">Ver Projecto</span>
         </div>
         <div class="proj-overlay"></div>
@@ -857,7 +930,7 @@ footer{background:var(--c-black);padding:72px 0 36px}
       <div class="proj reveal proj-gallery" data-cat="com" data-ratio="wide" onclick="openGallery('turismo', this)" role="button" tabindex="0" onkeyup="if(event.key==='Enter')openGallery('turismo', this)">
         <div class="proj-img">
           <img src="images/image-018-caf86d80bf1c.jpg" alt="Alojamento Turístico Boutique"
-               onerror="this.outerHTML='<div class=\'proj-ph\' style=\'aspect-ratio:16/9\'><div class=\'ph-lbl\'>Alojamento Turístico Boutique · 2021</div></div>'">
+               onerror="this.outerHTML='<div class=\'proj-ph\' style=\'aspect-ratio:16/9\'><div class=\'ph-lbl\'>Alojamento Turístico Boutique · 2021</div></div>'" loading="lazy" decoding="async">
           <span class="proj-gallery-badge t">Ver Projecto</span>
         </div>
         <div class="proj-overlay"></div>
@@ -871,7 +944,7 @@ footer{background:var(--c-black);padding:72px 0 36px}
       <!-- P12 — GALERIA (Edifício Habitacional) -->
       <div class="proj reveal proj-gallery" data-cat="hab" data-ratio="wide" onclick="openGallery('edificiohabitacional', this)" role="button" tabindex="0" onkeyup="if(event.key==='Enter')openGallery('edificiohabitacional', this)">
         <div class="proj-img">
-          <img src="images/edificiohabitacional_01.jpg" alt="Edifício Habitacional" loading="lazy"
+          <img width="1365" height="768" src="images/edificiohabitacional_01.jpg" alt="Edifício Habitacional" loading="lazy"
                onerror="this.outerHTML='<div class=\'proj-ph\' data-ratio=\'wide\' style=\'aspect-ratio:16/9\'><div class=\'ph-lbl\'>Edifício Habitacional · 2025</div></div>'">
           <span class="proj-gallery-badge t">Ver Projecto</span>
         </div>
@@ -886,7 +959,7 @@ footer{background:var(--c-black);padding:72px 0 36px}
       <!-- P13 — GALERIA (Quarta Moradia Unifamiliar) -->
       <div class="proj reveal proj-gallery" data-cat="hab" data-ratio="wide" onclick="openGallery('quartamoradia', this)" role="button" tabindex="0" onkeyup="if(event.key==='Enter')openGallery('quartamoradia', this)">
         <div class="proj-img">
-          <img src="images/quartamoradia_01.jpg" alt="Quarta Moradia Unifamiliar" loading="lazy"
+          <img width="1365" height="768" src="images/quartamoradia_01.jpg" alt="Quarta Moradia Unifamiliar" loading="lazy"
                onerror="this.outerHTML='<div class=\'proj-ph\' data-ratio=\'wide\' style=\'aspect-ratio:16/9\'><div class=\'ph-lbl\'>Quarta Moradia Unifamiliar · 2026</div></div>'">
           <span class="proj-gallery-badge t">Ver Projecto</span>
         </div>
@@ -976,7 +1049,7 @@ footer{background:var(--c-black);padding:72px 0 36px}
       <!-- P23 — GALERIA (Moradia Clássica) -->
       <div class="proj reveal proj-gallery" data-cat="hab" data-ratio="wide" onclick="openGallery('moradiaclassica', this)" role="button" tabindex="0" onkeyup="if(event.key==='Enter')openGallery('moradiaclassica', this)">
         <div class="proj-img">
-          <img src="images/moradiaclassica_01.jpg" alt="Moradia Clássica" loading="lazy"
+          <img width="1365" height="768" src="images/moradiaclassica_01.jpg" alt="Moradia Clássica" loading="lazy"
                onerror="this.outerHTML='<div class=\'proj-ph\' data-ratio=\'wide\' style=\'aspect-ratio:16/9\'><div class=\'ph-lbl\'>Moradia Clássica · 2026</div></div>'">
           <span class="proj-gallery-badge t">Ver Projecto</span>
         </div>
@@ -1006,7 +1079,7 @@ footer{background:var(--c-black);padding:72px 0 36px}
       <!-- P25 — GALERIA (Moradias Geminadas com Piscina) -->
       <div class="proj reveal proj-gallery" data-cat="hab" data-ratio="wide" onclick="openGallery('geminadaspiscina', this)" role="button" tabindex="0" onkeyup="if(event.key==='Enter')openGallery('geminadaspiscina', this)">
         <div class="proj-img">
-          <img src="images/geminadaspiscina_01.jpg" alt="Moradias Geminadas com Piscina" loading="lazy"
+          <img width="1365" height="768" src="images/geminadaspiscina_01.jpg" alt="Moradias Geminadas com Piscina" loading="lazy"
                onerror="this.outerHTML='<div class=\'proj-ph\' data-ratio=\'wide\' style=\'aspect-ratio:16/9\'><div class=\'ph-lbl\'>Moradias Geminadas com Piscina · 2026</div></div>'">
           <span class="proj-gallery-badge t">Ver Projecto</span>
         </div>
@@ -1066,7 +1139,7 @@ footer{background:var(--c-black);padding:72px 0 36px}
       <!-- P29 — GALERIA (Moradias Geminadas Urbanas) -->
       <div class="proj reveal proj-gallery" data-cat="hab" data-ratio="wide" onclick="openGallery('moradiasgeminadasurbanas', this)" role="button" tabindex="0" onkeyup="if(event.key==='Enter')openGallery('moradiasgeminadasurbanas', this)">
         <div class="proj-img">
-          <img src="images/moradiasgeminadasurbanas_01.jpg" alt="Moradias Geminadas Urbanas" loading="lazy"
+          <img width="1365" height="768" src="images/moradiasgeminadasurbanas_01.jpg" alt="Moradias Geminadas Urbanas" loading="lazy"
                onerror="this.outerHTML='<div class=\'proj-ph\' data-ratio=\'wide\' style=\'aspect-ratio:16/9\'><div class=\'ph-lbl\'>Moradias Geminadas Urbanas · 2026</div></div>'">
           <span class="proj-gallery-badge t">Ver Projecto</span>
         </div>
@@ -1111,7 +1184,7 @@ footer{background:var(--c-black);padding:72px 0 36px}
       <!-- P32 — GALERIA (Bloco de Apartamentos Unifamiliares) -->
       <div class="proj reveal proj-gallery" data-cat="hab" data-ratio="wide" onclick="openGallery('blocoaptunifamiliares', this)" role="button" tabindex="0" onkeyup="if(event.key==='Enter')openGallery('blocoaptunifamiliares', this)">
         <div class="proj-img">
-          <img src="images/blocoaptunifamiliares_01.jpg" alt="Bloco de Apartamentos Unifamiliares" loading="lazy"
+          <img width="1365" height="768" src="images/blocoaptunifamiliares_01.jpg" alt="Bloco de Apartamentos Unifamiliares" loading="lazy"
                onerror="this.outerHTML='<div class=\'proj-ph\' data-ratio=\'wide\' style=\'aspect-ratio:16/9\'><div class=\'ph-lbl\'>Bloco de Apartamentos Unifamiliares · 2026</div></div>'">
           <span class="proj-gallery-badge t">Ver Projecto</span>
         </div>
@@ -1126,7 +1199,7 @@ footer{background:var(--c-black);padding:72px 0 36px}
       <!-- P33 — GALERIA (Reabilitação de Vivenda Unifamiliar) -->
       <div class="proj reveal proj-gallery" data-cat="reab" data-ratio="wide" onclick="openGallery('reabvivendaunifamiliar', this)" role="button" tabindex="0" onkeyup="if(event.key==='Enter')openGallery('reabvivendaunifamiliar', this)">
         <div class="proj-img">
-          <img src="images/reabvivendaunifamiliar_01.jpg" alt="Reabilitação de Vivenda Unifamiliar" loading="lazy"
+          <img width="1365" height="768" src="images/reabvivendaunifamiliar_01.jpg" alt="Reabilitação de Vivenda Unifamiliar" loading="lazy"
                onerror="this.outerHTML='<div class=\'proj-ph\' data-ratio=\'wide\' style=\'aspect-ratio:16/9\'><div class=\'ph-lbl\'>Reabilitação de Vivenda Unifamiliar · 2026</div></div>'">
           <span class="proj-gallery-badge t">Ver Projecto</span>
         </div>
@@ -1141,7 +1214,7 @@ footer{background:var(--c-black);padding:72px 0 36px}
       <!-- P34 — GALERIA (Bungalows · Decoração de Interiores) -->
       <div class="proj reveal proj-gallery" data-cat="int" data-ratio="wide" onclick="openGallery('bungalowsinteriores', this)" role="button" tabindex="0" onkeyup="if(event.key==='Enter')openGallery('bungalowsinteriores', this)">
         <div class="proj-img">
-          <img src="images/bungalowsinteriores_01.jpg" alt="Bungalows · Decoração de Interiores" loading="lazy"
+          <img width="1365" height="768" src="images/bungalowsinteriores_01.jpg" alt="Bungalows · Decoração de Interiores" loading="lazy"
                onerror="this.outerHTML='<div class=\'proj-ph\' data-ratio=\'wide\' style=\'aspect-ratio:16/9\'><div class=\'ph-lbl\'>Bungalows · 2026</div></div>'">
           <span class="proj-gallery-badge t">Ver Projecto</span>
         </div>
@@ -1156,7 +1229,7 @@ footer{background:var(--c-black);padding:72px 0 36px}
       <!-- P35 — GALERIA (Vivendas Unifamiliares Vista Serra e Mar) -->
       <div class="proj reveal proj-gallery" data-cat="hab" data-ratio="wide" onclick="openGallery('vivendasserramar', this)" role="button" tabindex="0" onkeyup="if(event.key==='Enter')openGallery('vivendasserramar', this)">
         <div class="proj-img">
-          <img src="images/vivendasserramar_01.jpg" alt="Vivendas Unifamiliares Vista Serra e Mar" loading="lazy"
+          <img width="1365" height="768" src="images/vivendasserramar_01.jpg" alt="Vivendas Unifamiliares Vista Serra e Mar" loading="lazy"
                onerror="this.outerHTML='<div class=\'proj-ph\' data-ratio=\'wide\' style=\'aspect-ratio:16/9\'><div class=\'ph-lbl\'>Vivendas Unifamiliares Vista Serra e Mar · 2026</div></div>'">
           <span class="proj-gallery-badge t">Ver Projecto</span>
         </div>
@@ -1171,7 +1244,7 @@ footer{background:var(--c-black);padding:72px 0 36px}
       <!-- P36 — GALERIA (Vivenda Unifamiliar em Pedra) -->
       <div class="proj reveal proj-gallery" data-cat="hab" data-ratio="wide" onclick="openGallery('vivendapedra', this)" role="button" tabindex="0" onkeyup="if(event.key==='Enter')openGallery('vivendapedra', this)">
         <div class="proj-img">
-          <img src="images/vivendapedra_01.jpg" alt="Vivenda Unifamiliar em Pedra" loading="lazy"
+          <img width="1365" height="768" src="images/vivendapedra_01.jpg" alt="Vivenda Unifamiliar em Pedra" loading="lazy"
                onerror="this.outerHTML='<div class=\'proj-ph\' data-ratio=\'wide\' style=\'aspect-ratio:16/9\'><div class=\'ph-lbl\'>Vivenda Unifamiliar em Pedra · 2026</div></div>'">
           <span class="proj-gallery-badge t">Ver Projecto</span>
         </div>
@@ -1186,7 +1259,7 @@ footer{background:var(--c-black);padding:72px 0 36px}
       <!-- P37 — GALERIA (Urbanização de Moradias em Banda) -->
       <div class="proj reveal proj-gallery" data-cat="hab" data-ratio="wide" onclick="openGallery('urbanizacaobanda', this)" role="button" tabindex="0" onkeyup="if(event.key==='Enter')openGallery('urbanizacaobanda', this)">
         <div class="proj-img">
-          <img src="images/urbanizacaobanda_01.jpg" alt="Urbanização de Moradias em Banda" loading="lazy"
+          <img width="1365" height="768" src="images/urbanizacaobanda_01.jpg" alt="Urbanização de Moradias em Banda" loading="lazy"
                onerror="this.outerHTML='<div class=\'proj-ph\' data-ratio=\'wide\' style=\'aspect-ratio:16/9\'><div class=\'ph-lbl\'>Urbanização de Moradias em Banda · 2026</div></div>'">
           <span class="proj-gallery-badge t">Ver Projecto</span>
         </div>
@@ -1201,7 +1274,7 @@ footer{background:var(--c-black);padding:72px 0 36px}
       <!-- P38 — GALERIA (Hotel Natura · Resort Rural) -->
       <div class="proj reveal proj-gallery" data-cat="com" data-ratio="wide" onclick="openGallery('hotelnaturaresort', this)" role="button" tabindex="0" onkeyup="if(event.key==='Enter')openGallery('hotelnaturaresort', this)">
         <div class="proj-img">
-          <img src="images/hotelnaturaresort_01.jpg" alt="Hotel Natura · Resort Rural" loading="lazy"
+          <img width="1365" height="768" src="images/hotelnaturaresort_01.jpg" alt="Hotel Natura · Resort Rural" loading="lazy"
                onerror="this.outerHTML='<div class=\'proj-ph\' data-ratio=\'wide\' style=\'aspect-ratio:16/9\'><div class=\'ph-lbl\'>Hotel Natura · Resort Rural · 2026</div></div>'">
           <span class="proj-gallery-badge t">Ver Projecto</span>
         </div>
@@ -1216,7 +1289,7 @@ footer{background:var(--c-black);padding:72px 0 36px}
       <!-- P39 — GALERIA (Complexo Desportivo) -->
       <div class="proj reveal proj-gallery" data-cat="com" data-ratio="wide" onclick="openGallery('complexodesportivo', this)" role="button" tabindex="0" onkeyup="if(event.key==='Enter')openGallery('complexodesportivo', this)">
         <div class="proj-img">
-          <img src="images/complexodesportivo_01.jpg" alt="Complexo Desportivo" loading="lazy"
+          <img width="1365" height="768" src="images/complexodesportivo_01.jpg" alt="Complexo Desportivo" loading="lazy"
                onerror="this.outerHTML='<div class=\'proj-ph\' data-ratio=\'wide\' style=\'aspect-ratio:16/9\'><div class=\'ph-lbl\'>Complexo Desportivo · 2026</div></div>'">
           <span class="proj-gallery-badge t">Ver Projecto</span>
         </div>
@@ -1231,7 +1304,7 @@ footer{background:var(--c-black);padding:72px 0 36px}
       <!-- P40 — GALERIA (Vivenda Unifamiliar Moderna) -->
       <div class="proj reveal proj-gallery" data-cat="hab" data-ratio="wide" onclick="openGallery('vivendamoderna', this)" role="button" tabindex="0" onkeyup="if(event.key==='Enter')openGallery('vivendamoderna', this)">
         <div class="proj-img">
-          <img src="images/vivendamoderna_01.jpg" alt="Vivenda Unifamiliar Moderna" loading="lazy"
+          <img width="1365" height="768" src="images/vivendamoderna_01.jpg" alt="Vivenda Unifamiliar Moderna" loading="lazy"
                onerror="this.outerHTML='<div class=\'proj-ph\' data-ratio=\'wide\' style=\'aspect-ratio:16/9\'><div class=\'ph-lbl\'>Vivenda Unifamiliar Moderna · 2026</div></div>'">
           <span class="proj-gallery-badge t">Ver Projecto</span>
         </div>
@@ -1246,7 +1319,7 @@ footer{background:var(--c-black);padding:72px 0 36px}
       <!-- P41 — GALERIA (Moradias Geminadas em Banda) -->
       <div class="proj reveal proj-gallery" data-cat="hab" data-ratio="wide" onclick="openGallery('geminadasbanda', this)" role="button" tabindex="0" onkeyup="if(event.key==='Enter')openGallery('geminadasbanda', this)">
         <div class="proj-img">
-          <img src="images/geminadasbanda_01.jpg" alt="Moradias Geminadas em Banda" loading="lazy"
+          <img width="1365" height="768" src="images/geminadasbanda_01.jpg" alt="Moradias Geminadas em Banda" loading="lazy"
                onerror="this.outerHTML='<div class=\'proj-ph\' data-ratio=\'wide\' style=\'aspect-ratio:16/9\'><div class=\'ph-lbl\'>Moradias Geminadas em Banda · 2026</div></div>'">
           <span class="proj-gallery-badge t">Ver Projecto</span>
         </div>
@@ -1261,7 +1334,7 @@ footer{background:var(--c-black);padding:72px 0 36px}
       <!-- P42 — GALERIA (Edifício de Escritórios) -->
       <div class="proj reveal proj-gallery" data-cat="com" data-ratio="wide" onclick="openGallery('edificioescritorios', this)" role="button" tabindex="0" onkeyup="if(event.key==='Enter')openGallery('edificioescritorios', this)">
         <div class="proj-img">
-          <img src="images/edificioescritorios_01.jpg" alt="Edifício de Escritórios" loading="lazy"
+          <img width="1365" height="768" src="images/edificioescritorios_01.jpg" alt="Edifício de Escritórios" loading="lazy"
                onerror="this.outerHTML='<div class=\'proj-ph\' data-ratio=\'wide\' style=\'aspect-ratio:16/9\'><div class=\'ph-lbl\'>Edifício de Escritórios · 2026</div></div>'">
           <span class="proj-gallery-badge t">Ver Projecto</span>
         </div>
@@ -1349,7 +1422,7 @@ footer{background:var(--c-black);padding:72px 0 36px}
   <div class="lightbox-stage">
     <button class="lightbox-nav prev" onclick="galleryStep(-1)" aria-label="Anterior">&#8249;</button>
     <div class="lightbox-img-wrap">
-      <img id="lightboxImg" src="" alt="">
+      <img id="lightboxImg" src="" alt="" loading="lazy" decoding="async">
     </div>
     <button class="lightbox-nav next" onclick="galleryStep(1)" aria-label="Seguinte">&#8250;</button>
   </div>
@@ -1371,6 +1444,37 @@ footer{background:var(--c-black);padding:72px 0 36px}
 </div>
 
 <!-- ══════════════════════════════════════════════
+     ANTES / DEPOIS · OBRAS CONCLUÍDAS
+══════════════════════════════════════════════ -->
+<section class="ba" id="antes-depois">
+  <div class="container">
+    <div class="reveal">
+      <p class="label t">Obra concluída</p>
+      <h2 class="h2">Antes e <em>depois</em></h2>
+      <p class="body t" style="max-width:600px;margin-top:12px">Arraste a barra para comparar o estado original com o resultado final. Estas são obras construídas, não simulações.</p>
+    </div>
+
+    <!-- Para activar: coloque as fotos em images/antesdepois_01_antes.jpg e
+         images/antesdepois_01_depois.jpg e apague o atributo hidden abaixo. -->
+    <div id="baLive" hidden>
+      <div class="ba-wrap reveal" id="baWrap">
+        <img src="images/antesdepois_01_antes.jpg" alt="Antes da intervenção" loading="lazy" decoding="async">
+        <img src="images/antesdepois_01_depois.jpg" alt="Depois da intervenção" class="ba-after" id="baAfter" loading="lazy" decoding="async">
+        <span class="ba-tag l t">Antes</span>
+        <span class="ba-tag r t">Depois</span>
+        <div class="ba-handle" id="baHandle"></div>
+      </div>
+      <input type="range" class="ba-range" id="baRange" min="0" max="100" value="50" aria-label="Comparar antes e depois">
+    </div>
+
+    <div class="ba-empty reveal" id="baEmpty">
+      <p class="t">Estamos a preparar esta secção com fotografias de obra. Enquanto isso, pode ver os projectos já construídos filtrando o portfólio por <strong>Obra Construída</strong>.</p>
+      <a href="#portfolio" class="btn btn-dark t" onclick="verObra(event)">Ver obras construídas</a>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════════════════════════════════════
      ABOUT / PROCESS
 ══════════════════════════════════════════════ -->
 <section class="about" id="sobre">
@@ -1378,7 +1482,7 @@ footer{background:var(--c-black);padding:72px 0 36px}
     <div class="about-grid">
       <div class="about-imgs-side reveal-l">
         <img id="aboutMainImg" src="images/image-025-0d5635971f13.jpg" alt="Visãovale · Projectos" class="about-slide-img"
-             onerror="this.outerHTML='<div class=\'about-ph\' style=\'height:100%;min-height:480px\'><div class=\'ph-lbl\'>Foto Sobre Nós<br>800×1000px</div></div>'">
+             onerror="this.outerHTML='<div class=\'about-ph\' style=\'height:100%;min-height:480px\'><div class=\'ph-lbl\'>Foto Sobre Nós<br>800×1000px</div></div>'" loading="lazy" decoding="async">
       </div>
       <div class="reveal">
         <p class="label t">Sobre Nós</p>
@@ -1391,7 +1495,7 @@ footer{background:var(--c-black);padding:72px 0 36px}
       </div>
       <div class="about-imgs-side reveal-r">
         <img id="aboutFloatImg" src="images/image-026-280e529691bd.jpg" alt="Visãovale · Pormenor" class="about-slide-img"
-             onerror="this.outerHTML='<div class=\'about-ph\' style=\'height:100%;min-height:480px\'><div class=\'ph-lbl\'>Foto Sobre Nós</div></div>'">
+             onerror="this.outerHTML='<div class=\'about-ph\' style=\'height:100%;min-height:480px\'><div class=\'ph-lbl\'>Foto Sobre Nós</div></div>'" loading="lazy" decoding="async">
       </div>
     </div>
   </div>
@@ -1440,10 +1544,10 @@ footer{background:var(--c-black);padding:72px 0 36px}
       <div class="reveal" style="padding-bottom:20px">
         <div class="process-img-wrap">
           <div class="process-img" id="processSlides">
-            <img src="images/process_01.jpg" alt="Obra Visãovale" class="pslide on">
-            <img src="images/process_02.jpg" alt="Obra Visãovale" class="pslide">
-            <img src="images/process_03.jpg" alt="Obra Visãovale" class="pslide">
-            <img src="images/process_04.jpg" alt="Obra Visãovale" class="pslide">
+            <img src="images/process_01.jpg" alt="Obra Visãovale" class="pslide on" loading="lazy" decoding="async">
+            <img src="images/process_02.jpg" alt="Obra Visãovale" class="pslide" loading="lazy" decoding="async">
+            <img src="images/process_03.jpg" alt="Obra Visãovale" class="pslide" loading="lazy" decoding="async">
+            <img src="images/process_04.jpg" alt="Obra Visãovale" class="pslide" loading="lazy" decoding="async">
           </div>
         </div>
       </div>
@@ -1466,8 +1570,8 @@ footer{background:var(--c-black);padding:72px 0 36px}
     <div class="news-grid">
       <div class="news-card reveal" onclick="openGallery('quartamoradia', this)" role="button" tabindex="0" onkeyup="if(event.key==='Enter')openGallery('quartamoradia', this)">
         <div class="news-img">
-          <img src="images/quartamoradia_01.jpg" alt="Moradia Chãos"
-               onerror="this.outerHTML='<div class=\'news-ph\' style=\'height:100%;min-height:200px\'><div class=\'ph-lbl\'>Foto Notícia 1</div></div>'">
+          <img width="1365" height="768" src="images/quartamoradia_01.jpg" alt="Moradia Chãos"
+               onerror="this.outerHTML='<div class=\'news-ph\' style=\'height:100%;min-height:200px\'><div class=\'ph-lbl\'>Foto Notícia 1</div></div>'" loading="lazy" decoding="async">
         </div>
         <p class="news-date">2021</p>
         <h3 class="news-title t">Moradia Unifamiliar em Chãos · Projecto Completo</h3>
@@ -1476,7 +1580,7 @@ footer{background:var(--c-black);padding:72px 0 36px}
       <div class="news-card reveal" onclick="openGallery('segundamoradia', this)" role="button" tabindex="0" onkeyup="if(event.key==='Enter')openGallery('segundamoradia', this)">
         <div class="news-img">
           <img src="images/image-011-bf462dfabdd0.jpg" alt="Segunda Moradia Unifamiliar"
-               onerror="this.outerHTML='<div class=\'news-ph\' style=\'height:100%;min-height:200px\'><div class=\'ph-lbl\'>Foto Notícia 2</div></div>'">
+               onerror="this.outerHTML='<div class=\'news-ph\' style=\'height:100%;min-height:200px\'><div class=\'ph-lbl\'>Foto Notícia 2</div></div>'" loading="lazy" decoding="async">
         </div>
         <p class="news-date">2021</p>
         <h3 class="news-title t">Segunda Moradia Unifamiliar · Render 3D e Projecto</h3>
@@ -1485,7 +1589,7 @@ footer{background:var(--c-black);padding:72px 0 36px}
       <div class="news-card reveal" onclick="openGallery('reabilitacao', this)" role="button" tabindex="0" onkeyup="if(event.key==='Enter')openGallery('reabilitacao', this)">
         <div class="news-img">
           <img src="images/image-017-156d18ebf8ae.jpg" alt="Reabilitação de Moradia"
-               onerror="this.outerHTML='<div class=\'news-ph\' style=\'height:100%;min-height:200px\'><div class=\'ph-lbl\'>Foto Notícia 3</div></div>'">
+               onerror="this.outerHTML='<div class=\'news-ph\' style=\'height:100%;min-height:200px\'><div class=\'ph-lbl\'>Foto Notícia 3</div></div>'" loading="lazy" decoding="async">
         </div>
         <p class="news-date">2021</p>
         <h3 class="news-title t">Reabilitação de Moradia · Projecto Completo</h3>
@@ -1647,10 +1751,10 @@ footer{background:var(--c-black);padding:72px 0 36px}
         </div>
         <p class="foot-tag t">Arquitectura, Engenharia e Design de Interiores.</p>
         <div class="socials">
-          <a href="https://facebook.com" target="_blank" class="soc">f</a>
-          <a href="https://www.instagram.com" target="_blank" class="soc">in</a>
-          <a href="https://behance.net" target="_blank" class="soc">Be</a>
-          <a href="https://linkedin.com" target="_blank" class="soc">Li</a>
+          <a href="https://facebook.com" target="_blank" rel="noopener noreferrer" class="soc">f</a>
+          <a href="https://www.instagram.com" target="_blank" rel="noopener noreferrer" class="soc">in</a>
+          <a href="https://behance.net" target="_blank" rel="noopener noreferrer" class="soc">Be</a>
+          <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer" class="soc">Li</a>
         </div>
       </div>
       <div class="foot-col">
@@ -2430,45 +2534,45 @@ function setLang(lang, el) {
 // ── PROJECT GALLERIES / LIGHTBOX ──────────────────────────────
 // Ficha de cada projecto. Campos vazios não aparecem no site.
 const PROJECT_META = {
-  edificiomultifamiliar: {local:'', area:'', ano:'2023', tipo:'Construção nova', servicos:'Render 3D · Arquitectura', estado:''},
-  edificiomultifamiliar2: {local:'', area:'', ano:'2023', tipo:'Construção nova', servicos:'Render 3D · Arquitectura', estado:''},
-  quintarural: {local:'', area:'', ano:'2022', tipo:'Reabilitação', servicos:'Render 3D · Reabilitação', estado:''},
-  aldeamentoturistico: {local:'', area:'', ano:'2021', tipo:'Reabilitação', servicos:'Render 3D · Reabilitação', estado:''},
-  segundamoradia: {local:'', area:'', ano:'2021', tipo:'Construção nova', servicos:'Render 3D · Arquitectura', estado:''},
-  terceiramoradia: {local:'', area:'', ano:'2021', tipo:'Construção nova', servicos:'Render 3D · Arquitectura', estado:''},
-  moradiasgeminadas: {local:'', area:'', ano:'2020', tipo:'Construção nova', servicos:'Render 3D · Arquitectura', estado:''},
-  coutinhoteixeira: {local:'São Martinho do Porto', area:'', ano:'', tipo:'Construção nova', servicos:'Render 3D · Arquitectura', estado:''},
-  restaurantenatura: {local:'', area:'', ano:'2017', tipo:'Restauração', servicos:'Projecto Comercial · Render 3D', estado:''},
-  hotelnatura: {local:'', area:'', ano:'2015', tipo:'Hotelaria', servicos:'Grande Projecto Hoteleiro', estado:''},
-  reabilitacao: {local:'', area:'', ano:'2024', tipo:'Reabilitação', servicos:'Render 3D · Arquitectura', estado:''},
-  turismo: {local:'', area:'', ano:'2021', tipo:'Turismo', servicos:'Render 3D · Arquitectura', estado:''},
-  edificiohabitacional: {local:'', area:'', ano:'2025', tipo:'Construção nova', servicos:'Render 3D · Arquitectura', estado:''},
-  quartamoradia: {local:'', area:'', ano:'2026', tipo:'Construção nova', servicos:'Render 3D · Arquitectura', estado:''},
-  moradiapiscina: {local:'', area:'', ano:'2026', tipo:'Construção nova', servicos:'Render 3D · Arquitectura', estado:''},
-  moradiaelevada: {local:'', area:'', ano:'2026', tipo:'Construção nova', servicos:'Render 3D · Arquitectura', estado:''},
-  blocoapartamentos: {local:'', area:'', ano:'2026', tipo:'Construção nova', servicos:'Render 3D · Arquitectura', estado:''},
-  residparque: {local:'', area:'', ano:'2026', tipo:'Construção nova', servicos:'Render 3D · Arquitectura', estado:''},
-  moradiadeclive: {local:'', area:'', ano:'2026', tipo:'Construção nova', servicos:'Render 3D · Arquitectura', estado:''},
-  moradiaclassica: {local:'', area:'', ano:'2026', tipo:'Construção nova', servicos:'Render 3D · Arquitectura', estado:''},
-  moradiaconsola: {local:'', area:'', ano:'2026', tipo:'Construção nova', servicos:'Render 3D · Arquitectura', estado:''},
-  geminadaspiscina: {local:'', area:'', ano:'2026', tipo:'Construção nova', servicos:'Render 3D · Arquitectura', estado:''},
-  planourbanizacao: {local:'', area:'', ano:'2026', tipo:'Planeamento urbano', servicos:'Render 3D · Planeamento Urbano', estado:''},
-  vivendaunifamiliar: {local:'', area:'', ano:'2026', tipo:'Construção nova', servicos:'Render 3D · Arquitectura', estado:''},
-  moradiaurbana: {local:'', area:'', ano:'2020', tipo:'Construção nova', servicos:'Render 3D · Arquitectura', estado:''},
-  moradiasgeminadasurbanas: {local:'', area:'', ano:'2026', tipo:'Construção nova', servicos:'Render 3D · Arquitectura', estado:''},
-  vivendaatouguia: {local:'Atouguia', area:'', ano:'2026', tipo:'Design de interiores', servicos:'Render 3D · Design de Interiores', estado:''},
-  vivendasgeminadas: {local:'', area:'', ano:'2026', tipo:'Construção nova', servicos:'Render 3D · Arquitectura', estado:''},
-  blocoaptunifamiliares: {local:'', area:'', ano:'2026', tipo:'Construção nova', servicos:'Render 3D · Arquitectura', estado:''},
-  reabvivendaunifamiliar: {local:'', area:'', ano:'2026', tipo:'Reabilitação', servicos:'Render 3D · Reabilitação', estado:''},
-  bungalowsinteriores: {local:'', area:'', ano:'2026', tipo:'Design de interiores', servicos:'Decoração de Interiores', estado:''},
-  vivendasserramar: {local:'', area:'', ano:'2026', tipo:'Construção nova', servicos:'Render 3D · Arquitectura', estado:''},
-  vivendapedra: {local:'', area:'', ano:'2026', tipo:'Construção nova', servicos:'Render 3D · Arquitectura', estado:''},
-  urbanizacaobanda: {local:'', area:'', ano:'2026', tipo:'Loteamento', servicos:'Render 3D · Arquitectura', estado:''},
-  hotelnaturaresort: {local:'', area:'', ano:'2026', tipo:'Hotelaria', servicos:'Grande Projecto Hoteleiro', estado:''},
-  complexodesportivo: {local:'', area:'', ano:'2026', tipo:'Equipamento desportivo', servicos:'Equipamento Desportivo · Arquitectura', estado:''},
-  vivendamoderna: {local:'', area:'', ano:'2026', tipo:'Construção nova', servicos:'Render 3D · Arquitectura', estado:''},
-  geminadasbanda: {local:'', area:'', ano:'2026', tipo:'Construção nova', servicos:'Render 3D · Arquitectura', estado:''},
-  edificioescritorios: {local:'', area:'', ano:'2026', tipo:'Escritórios', servicos:'Projecto Comercial · Arquitectura', estado:''},
+  edificiomultifamiliar: {local:'', area:'', ano:'2023', tipo:'Construção nova', servicos:'Render 3D · Arquitectura', estado:'', media:'render'},
+  edificiomultifamiliar2: {local:'', area:'', ano:'2023', tipo:'Construção nova', servicos:'Render 3D · Arquitectura', estado:'', media:'render'},
+  quintarural: {local:'', area:'', ano:'2022', tipo:'Reabilitação', servicos:'Render 3D · Reabilitação', estado:'', media:'render'},
+  aldeamentoturistico: {local:'', area:'', ano:'2021', tipo:'Reabilitação', servicos:'Render 3D · Reabilitação', estado:'', media:'render'},
+  segundamoradia: {local:'', area:'', ano:'2021', tipo:'Construção nova', servicos:'Render 3D · Arquitectura', estado:'', media:'render'},
+  terceiramoradia: {local:'', area:'', ano:'2021', tipo:'Construção nova', servicos:'Render 3D · Arquitectura', estado:'', media:'render'},
+  moradiasgeminadas: {local:'', area:'', ano:'2020', tipo:'Construção nova', servicos:'Render 3D · Arquitectura', estado:'', media:'render'},
+  coutinhoteixeira: {local:'São Martinho do Porto', area:'', ano:'', tipo:'Construção nova', servicos:'Render 3D · Arquitectura', estado:'', media:'render'},
+  restaurantenatura: {local:'', area:'', ano:'2017', tipo:'Restauração', servicos:'Projecto Comercial · Render 3D', estado:'', media:'render'},
+  hotelnatura: {local:'', area:'', ano:'2015', tipo:'Hotelaria', servicos:'Grande Projecto Hoteleiro', estado:'', media:'render'},
+  reabilitacao: {local:'', area:'', ano:'2024', tipo:'Reabilitação', servicos:'Render 3D · Arquitectura', estado:'', media:'render'},
+  turismo: {local:'', area:'', ano:'2021', tipo:'Turismo', servicos:'Render 3D · Arquitectura', estado:'', media:'render'},
+  edificiohabitacional: {local:'', area:'', ano:'2025', tipo:'Construção nova', servicos:'Render 3D · Arquitectura', estado:'', media:'render'},
+  quartamoradia: {local:'', area:'', ano:'2026', tipo:'Construção nova', servicos:'Render 3D · Arquitectura', estado:'', media:'obra'},
+  moradiapiscina: {local:'', area:'', ano:'2026', tipo:'Construção nova', servicos:'Render 3D · Arquitectura', estado:'', media:'render'},
+  moradiaelevada: {local:'', area:'', ano:'2026', tipo:'Construção nova', servicos:'Render 3D · Arquitectura', estado:'', media:'render'},
+  blocoapartamentos: {local:'', area:'', ano:'2026', tipo:'Construção nova', servicos:'Render 3D · Arquitectura', estado:'', media:'render'},
+  residparque: {local:'', area:'', ano:'2026', tipo:'Construção nova', servicos:'Render 3D · Arquitectura', estado:'', media:'render'},
+  moradiadeclive: {local:'', area:'', ano:'2026', tipo:'Construção nova', servicos:'Render 3D · Arquitectura', estado:'', media:'render'},
+  moradiaclassica: {local:'', area:'', ano:'2026', tipo:'Construção nova', servicos:'Render 3D · Arquitectura', estado:'', media:'render'},
+  moradiaconsola: {local:'', area:'', ano:'2026', tipo:'Construção nova', servicos:'Render 3D · Arquitectura', estado:'', media:'render'},
+  geminadaspiscina: {local:'', area:'', ano:'2026', tipo:'Construção nova', servicos:'Render 3D · Arquitectura', estado:'', media:'misto'},
+  planourbanizacao: {local:'', area:'', ano:'2026', tipo:'Planeamento urbano', servicos:'Render 3D · Planeamento Urbano', estado:'', media:'render'},
+  vivendaunifamiliar: {local:'', area:'', ano:'2026', tipo:'Construção nova', servicos:'Render 3D · Arquitectura', estado:'', media:'render'},
+  moradiaurbana: {local:'', area:'', ano:'2020', tipo:'Construção nova', servicos:'Render 3D · Arquitectura', estado:'', media:'render'},
+  moradiasgeminadasurbanas: {local:'', area:'', ano:'2026', tipo:'Construção nova', servicos:'Render 3D · Arquitectura', estado:'', media:'obra'},
+  vivendaatouguia: {local:'Atouguia', area:'', ano:'2026', tipo:'Design de interiores', servicos:'Render 3D · Design de Interiores', estado:'', media:'obra'},
+  vivendasgeminadas: {local:'', area:'', ano:'2026', tipo:'Construção nova', servicos:'Render 3D · Arquitectura', estado:'', media:'render'},
+  blocoaptunifamiliares: {local:'', area:'', ano:'2026', tipo:'Construção nova', servicos:'Render 3D · Arquitectura', estado:'', media:'render'},
+  reabvivendaunifamiliar: {local:'', area:'', ano:'2026', tipo:'Reabilitação', servicos:'Render 3D · Reabilitação', estado:'', media:'render'},
+  bungalowsinteriores: {local:'', area:'', ano:'2026', tipo:'Design de interiores', servicos:'Decoração de Interiores', estado:'', media:'obra'},
+  vivendasserramar: {local:'', area:'', ano:'2026', tipo:'Construção nova', servicos:'Render 3D · Arquitectura', estado:'', media:'render'},
+  vivendapedra: {local:'', area:'', ano:'2026', tipo:'Construção nova', servicos:'Render 3D · Arquitectura', estado:'', media:'render'},
+  urbanizacaobanda: {local:'', area:'', ano:'2026', tipo:'Loteamento', servicos:'Render 3D · Arquitectura', estado:'', media:'render'},
+  hotelnaturaresort: {local:'', area:'', ano:'2026', tipo:'Hotelaria', servicos:'Grande Projecto Hoteleiro', estado:'', media:'render'},
+  complexodesportivo: {local:'', area:'', ano:'2026', tipo:'Equipamento desportivo', servicos:'Equipamento Desportivo · Arquitectura', estado:'', media:'render'},
+  vivendamoderna: {local:'', area:'', ano:'2026', tipo:'Construção nova', servicos:'Render 3D · Arquitectura', estado:'', media:'misto'},
+  geminadasbanda: {local:'', area:'', ano:'2026', tipo:'Construção nova', servicos:'Render 3D · Arquitectura', estado:'', media:'misto'},
+  edificioescritorios: {local:'', area:'', ano:'2026', tipo:'Escritórios', servicos:'Projecto Comercial · Arquitectura', estado:'', media:'obra'},
 };
 
 const PROJECT_GALLERIES = {
@@ -2770,6 +2874,15 @@ function enhanceCards() {
       cat.textContent = txt;
       cat.dataset.orig = txt;
     }
+    p.dataset.media = m.media || 'render';
+    const wrap = p.querySelector('.proj-img');
+    if (wrap && !wrap.querySelector('.proj-badge')) {
+      const lbl = {obra:'Obra construída', misto:'Obra + render', render:'Render 3D'}[m.media || 'render'];
+      const bd = document.createElement('span');
+      bd.className = 'proj-badge' + (m.media === 'obra' || m.media === 'misto' ? ' obra' : '');
+      bd.textContent = lbl;
+      wrap.appendChild(bd);
+    }
     const cli = p.querySelector('.proj-client');
     if (cli && m.servicos) cli.textContent = m.servicos;
     if (m.area || (m.local && m.ano)) {
@@ -2926,7 +3039,10 @@ function applyPort() {
   const projs = Array.from(document.querySelectorAll('#portGrid .proj'));
   let shown = 0, matching = 0;
   projs.forEach(p => {
-    const match = portCat === 'all' || p.dataset.cat === portCat;
+    const match = portCat === 'all'
+      ? true
+      : (portCat === 'obra' ? p.dataset.media === 'obra' || p.dataset.media === 'misto'
+                            : p.dataset.cat === portCat);
     if (!match) { p.style.display = 'none'; return; }
     matching++;
     if (portExpanded || shown < PORT_VISIBLE) {
@@ -2969,6 +3085,44 @@ function filt(btn, cat) {
 shufflePort();
 applyPort();
 enhanceCards();
+
+// ── ANTES / DEPOIS ───────────────────────────────────────────
+(function(){
+  const live = document.getElementById('baLive');
+  const wrap = document.getElementById('baWrap');
+  const rng  = document.getElementById('baRange');
+  if (!live || !wrap || !rng) return;
+  const set = v => wrap.style.setProperty('--pos', Math.max(0, Math.min(100, v)) + '%');
+  rng.addEventListener('input', () => set(rng.value));
+  const drag = e => {
+    const r = wrap.getBoundingClientRect();
+    const x = (e.touches ? e.touches[0].clientX : e.clientX) - r.left;
+    const v = x / r.width * 100;
+    set(v); rng.value = v;
+  };
+  let on = false;
+  wrap.addEventListener('mousedown', e => { on = true; drag(e); });
+  window.addEventListener('mousemove', e => on && drag(e));
+  window.addEventListener('mouseup', () => on = false);
+  wrap.addEventListener('touchstart', drag, {passive:true});
+  wrap.addEventListener('touchmove', drag, {passive:true});
+  set(50);
+  // se as fotos não existirem, esconde o comparador e mantém a nota
+  const img = live.querySelector('img');
+  img.addEventListener('error', () => { live.hidden = true; });
+  img.addEventListener('load', () => {
+    live.hidden = false;
+    const vazio = document.getElementById('baEmpty');
+    if (vazio) vazio.style.display = 'none';
+  });
+})();
+
+// Atalho: abre o portfólio já filtrado por obra construída.
+function verObra(e) {
+  const alvo = [...document.querySelectorAll('.ftab')].find(b => (b.getAttribute('onclick') || '').includes("'obra'"));
+  if (alvo) alvo.click();
+}
+
 
 // ── ANO DINÂMICO NO RODAPÉ ───────────────────────────────────
 (function(){ const y=document.getElementById('footYear'); if(y) y.textContent='© '+new Date().getFullYear(); })();
