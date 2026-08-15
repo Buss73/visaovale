@@ -815,7 +815,7 @@ footer{background:var(--c-black);padding:72px 0 36px}
       <!-- P8 — WIDE (GALERIA) -->
       <div class="proj reveal proj-gallery" data-cat="com" data-ratio="wide" onclick="openGallery('restaurantenatura', this)" role="button" tabindex="0" onkeyup="if(event.key==='Enter')openGallery('restaurantenatura', this)">
         <div class="proj-img">
-          <img src="images/image-068-cbdf01a8c3cb.jpg" alt="Restaurante Natura"
+          <img src="images/restaurantenatura_01.jpg" alt="Restaurante Natura"
                onerror="this.outerHTML='<div class=\'proj-ph\' style=\'aspect-ratio:16/9\'><div class=\'ph-lbl\'>Restaurante Natura · 2017</div></div>'">
           <span class="proj-gallery-badge t">Ver Projecto</span>
         </div>
@@ -1231,6 +1231,21 @@ footer{background:var(--c-black);padding:72px 0 36px}
           <p class="proj-cat t">Zona Desportiva · 2026</p>
           <h3 class="proj-name">Complexo Desportivo</h3>
           <p class="proj-client">Equipamento Desportivo · Arquitectura</p>
+        </div>
+      </div>
+
+      <!-- P40 — GALERIA (Vivenda Unifamiliar Moderna) -->
+      <div class="proj reveal proj-gallery" data-cat="hab" data-ratio="wide" onclick="openGallery('vivendamoderna', this)" role="button" tabindex="0" onkeyup="if(event.key==='Enter')openGallery('vivendamoderna', this)">
+        <div class="proj-img">
+          <img src="images/vivendamoderna_01.jpg" alt="Vivenda Unifamiliar Moderna" loading="lazy"
+               onerror="this.outerHTML='<div class=\'proj-ph\' data-ratio=\'wide\' style=\'aspect-ratio:16/9\'><div class=\'ph-lbl\'>Vivenda Unifamiliar Moderna · 2026</div></div>'">
+          <span class="proj-gallery-badge t">Ver Projecto</span>
+        </div>
+        <div class="proj-overlay"></div>
+        <div class="proj-info">
+          <p class="proj-cat t">Habitação · 2026</p>
+          <h3 class="proj-name">Vivenda Unifamiliar Moderna</h3>
+          <p class="proj-client">Render 3D · Arquitectura</p>
         </div>
       </div>
     </div>
@@ -2391,10 +2406,9 @@ const PROJECT_GALLERIES = {
     {src:'images/image-058-750a40afb833.jpg', caption:'Alçado lateral, enquadramento geral'}
   ],
   restaurantenatura: [
-    {src:'images/image-068-cbdf01a8c3cb.jpg', caption:'Vista aérea, implantação geral'},
-    {src:'images/image-066-d13614217bbb.jpg', caption:'Entrada, sinalética e acesso principal'},
-    {src:'images/image-067-8a4b0f3da51d.jpg', caption:'Vista lateral, zona de estacionamento'},
-    {src:'images/image-069-344063720a4b.jpg', caption:'Vista aérea, enquadramento do terreno'}
+    {src:'images/restaurantenatura_01.jpg', caption:'Entrada, sinalética e acesso principal'},
+    {src:'images/restaurantenatura_02.jpg', caption:'Vista aérea, pátio de chegada e enquadramento do terreno'},
+    {src:'images/restaurantenatura_03.jpg', caption:'Alçado poente ao fim da tarde, estacionamento e oliveiras'}
   ],
   quartamoradia: [
     {src:'images/quartamoradia_01.jpg', caption:'Alçado principal, jardim envolvente'},
@@ -2519,6 +2533,11 @@ const PROJECT_GALLERIES = {
     {src:'images/complexodesportivo_02.jpg', caption:'Edifício principal e campo relvado com bancadas cobertas'},
     {src:'images/complexodesportivo_03.jpg', caption:'Campos de treino, courts de ténis e zona de balneários'},
     {src:'images/complexodesportivo_04.jpg', caption:'Alçado da rua, estacionamento e arruamento de acesso'}
+  ],
+  vivendamoderna: [
+    {src:'images/vivendamoderna_01.jpg', caption:'Vista aérea, piscina, terraço e envolvente arborizada'},
+    {src:'images/vivendamoderna_02.jpg', caption:'Alçado poente, deck da piscina e envidraçados da sala'},
+    {src:'images/vivendamoderna_03.jpg', caption:'Alçado da rua, painéis em corten e acesso à garagem'}
   ],
 };
 
