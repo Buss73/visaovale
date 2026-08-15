@@ -242,13 +242,18 @@ nav.on{background:rgba(17,17,16,.96);backdrop-filter:blur(14px);box-shadow:0 1px
 .proj-badge{position:absolute;top:12px;left:12px;z-index:3;font-family:'Barlow Condensed',sans-serif;font-size:.6rem;letter-spacing:.16em;text-transform:uppercase;padding:5px 10px;line-height:1;background:rgba(246,244,240,.94);color:var(--c-black);border:1px solid rgba(0,0,0,.08)}
 .proj-badge.obra{background:var(--c-gold);color:var(--c-black);border-color:var(--c-gold)}
 .q-group{margin-bottom:22px}
-.q-group>label{display:block;font-family:'Barlow Condensed',sans-serif;font-size:.7rem;letter-spacing:.18em;text-transform:uppercase;color:var(--c-grey);margin-bottom:10px}
+.q-group>.q-lbl{display:block;font-family:'Barlow Condensed',sans-serif;font-size:.7rem;letter-spacing:.18em;text-transform:uppercase;color:var(--c-grey);margin-bottom:10px}
+.q-group>.q-lbl .req{color:#c0392b}
 .q-chips{display:flex;flex-wrap:wrap;gap:8px}
-.q-chips input{position:absolute;opacity:0;width:0;height:0}
-.q-chips label{display:inline-flex;align-items:center;font-family:'Barlow Condensed',sans-serif;font-size:.72rem;letter-spacing:.1em;text-transform:uppercase;padding:9px 15px;border:1px solid rgba(0,0,0,.16);cursor:pointer;transition:.25s;line-height:1;background:transparent}
-.q-chips label:hover{border-color:var(--c-gold);color:var(--c-gold)}
-.q-chips input:checked+label{background:var(--c-black);border-color:var(--c-black);color:var(--c-white)}
-.q-chips input:focus-visible+label{outline:2px solid var(--c-gold);outline-offset:2px}
+.q-chip{font-family:'Barlow Condensed',sans-serif;font-size:.72rem;letter-spacing:.1em;text-transform:uppercase;padding:11px 16px;border:1px solid rgba(0,0,0,.16);cursor:pointer;transition:.22s;line-height:1;background:transparent;color:var(--c-black);min-height:40px;display:inline-flex;align-items:center}
+.q-chip:hover{border-color:var(--c-gold);color:var(--c-gold-txt)}
+.q-chip[aria-pressed="true"]{background:var(--c-black);border-color:var(--c-black);color:var(--c-white)}
+.q-chip:focus-visible{outline:2px solid var(--c-gold);outline-offset:2px}
+.q-err{display:none;font-family:'Barlow Condensed',sans-serif;font-size:.7rem;letter-spacing:.1em;color:#c0392b;margin-top:8px}
+.is-err .q-err,.fg.is-err .q-err{display:block}
+.is-err .q-chip{border-color:rgba(192,57,43,.55)}
+.fg.is-err input,.fg.is-err textarea{border-color:#c0392b !important}
+.fg .q-err{margin-top:4px}
 .cta-band{background:var(--c-black);color:var(--c-white);padding:64px 0;text-align:center}
 .cta-band h2{font-family:'Cormorant Garamond',serif;font-size:clamp(1.6rem,3.4vw,2.6rem);font-weight:300;line-height:1.25;margin-bottom:10px}
 .cta-band h2 em{font-style:italic;color:var(--c-gold)}
@@ -419,7 +424,7 @@ footer{background:var(--c-black);padding:72px 0 36px}
     <!-- SLIDE 1 -->
     <div class="hero-slide">
       <img src="images/edificiomultifamiliar_hero.jpg" alt="Edifício Multifamiliar · Visãovale" style="object-position:66% center"
-           onerror="this.outerHTML='<div class=\'slide-ph\'><div class=\'ph-lbl\'>Foto Hero 1 · 1920×1080px</div></div>'">
+           onerror="if(!this.parentNode)return;this.outerHTML='<div class=\'slide-ph\'><div class=\'ph-lbl\'>Foto Hero 1 · 1920×1080px</div></div>'">
       <div class="hero-overlay"></div>
       <div class="hero-content">
         <p class="hero-tag t">Arquitectura & Design</p>
@@ -435,7 +440,7 @@ footer{background:var(--c-black);padding:72px 0 36px}
     <!-- SLIDE 2 -->
     <div class="hero-slide">
       <img src="images/image-003-f90a026115c5.jpg" alt="Segunda Moradia Unifamiliar · Visãovale"
-           onerror="this.outerHTML='<div class=\'slide-ph\'><div class=\'ph-lbl\'>Foto Hero 2 · 1920×1080px</div></div>'" loading="lazy" decoding="async">
+           onerror="if(!this.parentNode)return;this.outerHTML='<div class=\'slide-ph\'><div class=\'ph-lbl\'>Foto Hero 2 · 1920×1080px</div></div>'" loading="lazy" decoding="async">
       <div class="hero-overlay"></div>
       <div class="hero-content">
         <p class="hero-tag t">Habitação</p>
@@ -451,7 +456,7 @@ footer{background:var(--c-black);padding:72px 0 36px}
     <!-- SLIDE 3 -->
     <div class="hero-slide">
       <img src="images/image-004-28d7e44550c4.jpg" alt="Moradia Tradicional · Visãovale"
-           onerror="this.outerHTML='<div class=\'slide-ph\'><div class=\'ph-lbl\'>Foto Hero 3 · 1920×1080px</div></div>'" loading="lazy" decoding="async">
+           onerror="if(!this.parentNode)return;this.outerHTML='<div class=\'slide-ph\'><div class=\'ph-lbl\'>Foto Hero 3 · 1920×1080px</div></div>'" loading="lazy" decoding="async">
       <div class="hero-overlay"></div>
       <div class="hero-content">
         <p class="hero-tag t">Reabilitação</p>
@@ -467,7 +472,7 @@ footer{background:var(--c-black);padding:72px 0 36px}
     <!-- SLIDE 4 -->
     <div class="hero-slide">
       <img src="images/image-005-51279dc3096d.jpg" alt="Moradia Contemporânea · Visãovale"
-           onerror="this.outerHTML='<div class=\'slide-ph\'><div class=\'ph-lbl\'>Foto Hero 4 · 1920×1080px</div></div>'" loading="lazy" decoding="async">
+           onerror="if(!this.parentNode)return;this.outerHTML='<div class=\'slide-ph\'><div class=\'ph-lbl\'>Foto Hero 4 · 1920×1080px</div></div>'" loading="lazy" decoding="async">
       <div class="hero-overlay"></div>
       <div class="hero-content">
         <p class="hero-tag t">Habitação</p>
@@ -483,7 +488,7 @@ footer{background:var(--c-black);padding:72px 0 36px}
     <!-- SLIDE 5 -->
     <div class="hero-slide">
       <img src="images/image-006-246a952f555b.jpg" alt="Moradia Contemporânea · Pátio · Visãovale"
-           onerror="this.outerHTML='<div class=\'slide-ph\'><div class=\'ph-lbl\'>Foto Hero 5 · 1920×1080px</div></div>'" loading="lazy" decoding="async">
+           onerror="if(!this.parentNode)return;this.outerHTML='<div class=\'slide-ph\'><div class=\'ph-lbl\'>Foto Hero 5 · 1920×1080px</div></div>'" loading="lazy" decoding="async">
       <div class="hero-overlay"></div>
       <div class="hero-content">
         <p class="hero-tag t">Habitação</p>
@@ -524,7 +529,7 @@ footer{background:var(--c-black);padding:72px 0 36px}
     <div class="probs-grid">
       <a class="prob reveal" href="arquitectura-moradias.html">
         <p class="prob-q t">Tenho um terreno mas não sei o que posso construir lá.</p>
-        <p class="prob-a t">Analisamos o PDM, a certidão e as condicionantes do lote e dizemos-lhe, por escrito, que área e que volumetria são possíveis — antes de investir em projecto.</p>
+        <p class="prob-a t">Analisamos o PDM, a certidão e as condicionantes do lote e dizemos-lhe, por escrito, que área e que volumetria são possíveis, antes de investir em projecto.</p>
         <span class="prob-l t">Ver como fazemos →</span>
       </a><a class="prob reveal" href="reabilitacao.html">
         <p class="prob-q t">Herdei uma casa antiga e não sei se vale a pena recuperar.</p>
@@ -544,12 +549,12 @@ footer{background:var(--c-black);padding:72px 0 36px}
         <span class="prob-l t">Ver interiores →</span>
       </a><a class="prob reveal" href="urbanismo-loteamentos.html">
         <p class="prob-q t">Quero comprar um terreno para promoção mas não sei se dá retorno.</p>
-        <p class="prob-a t">Estudo de capacidade construtiva e leitura urbanística independente antes da escritura — o número que decide o negócio.</p>
+        <p class="prob-a t">Estudo de capacidade construtiva e leitura urbanística independente antes da escritura. É o número que decide o negócio.</p>
         <span class="prob-l t">Ver urbanismo →</span>
       </a>
     </div>
     <div class="probs-note reveal">
-      <p class="t">Não encontra a sua situação? Descreva-a em duas linhas — respondemos com o caminho concreto, não com um catálogo de serviços.</p>
+      <p class="t">Não encontra a sua situação? Descreva-a em duas linhas e respondemos com o caminho concreto, não com um catálogo de serviços.</p>
       <a href="#contacto" class="btn btn-dark t">Falar com um Arquitecto</a>
     </div>
   </div>
@@ -758,11 +763,11 @@ footer{background:var(--c-black);padding:72px 0 36px}
 
     <div class="port-grid" id="portGrid">
 
-      <!-- P1 — TALL -->
+      <!-- P1 · TALL -->
       <div class="proj reveal proj-gallery" data-cat="hab" data-ratio="tall" onclick="openGallery('edificiomultifamiliar', this)" role="button" tabindex="0" onkeyup="if(event.key==='Enter')openGallery('edificiomultifamiliar', this)">
         <div class="proj-img">
           <img src="images/edificiomultifamiliar_cover.jpg" alt="Edifício Multifamiliar"
-               onerror="this.outerHTML='<div class=\'proj-ph\' data-ratio=\'tall\' style=\'aspect-ratio:2/3\'><div class=\'ph-lbl\'>Edifício Multifamiliar · 2023</div></div>'" loading="lazy" decoding="async">
+               onerror="if(!this.parentNode)return;this.outerHTML='<div class=\'proj-ph\' data-ratio=\'tall\' style=\'aspect-ratio:2/3\'><div class=\'ph-lbl\'>Edifício Multifamiliar · 2023</div></div>'" loading="lazy" decoding="async">
           <span class="proj-gallery-badge t">Ver Projecto</span>
         </div>
         <div class="proj-overlay"></div>
@@ -773,11 +778,11 @@ footer{background:var(--c-black);padding:72px 0 36px}
         </div>
       </div>
 
-      <!-- P1b — STD (duplicado) -->
+      <!-- P1b · STD (duplicado) -->
       <div class="proj reveal proj-gallery" data-cat="hab" data-ratio="std" onclick="openGallery('edificiomultifamiliar2', this)" role="button" tabindex="0" onkeyup="if(event.key==='Enter')openGallery('edificiomultifamiliar2', this)">
         <div class="proj-img">
           <img src="images/image-008-00d812eada66.jpg" alt="Edifício Multifamiliar"
-               onerror="this.outerHTML='<div class=\'proj-ph\' style=\'aspect-ratio:4/3\'><div class=\'ph-lbl\'>Edifício Multifamiliar · 2023</div></div>'" loading="lazy" decoding="async">
+               onerror="if(!this.parentNode)return;this.outerHTML='<div class=\'proj-ph\' style=\'aspect-ratio:4/3\'><div class=\'ph-lbl\'>Edifício Multifamiliar · 2023</div></div>'" loading="lazy" decoding="async">
           <span class="proj-gallery-badge t">Ver Projecto</span>
         </div>
         <div class="proj-overlay"></div>
@@ -788,11 +793,11 @@ footer{background:var(--c-black);padding:72px 0 36px}
         </div>
       </div>
 
-      <!-- P2 — WIDE -->
+      <!-- P2 · WIDE -->
       <div class="proj reveal proj-gallery" data-cat="reab" data-ratio="wide" onclick="openGallery('quintarural', this)" role="button" tabindex="0" onkeyup="if(event.key==='Enter')openGallery('quintarural', this)">
         <div class="proj-img">
           <img src="images/image-009-a78176eb9923.jpg" alt="Quinta Rural com Piscina"
-               onerror="this.outerHTML='<div class=\'proj-ph\' style=\'aspect-ratio:16/9\'><div class=\'ph-lbl\'>Quinta Rural com Piscina · 2022</div></div>'" loading="lazy" decoding="async">
+               onerror="if(!this.parentNode)return;this.outerHTML='<div class=\'proj-ph\' style=\'aspect-ratio:16/9\'><div class=\'ph-lbl\'>Quinta Rural com Piscina · 2022</div></div>'" loading="lazy" decoding="async">
           <span class="proj-gallery-badge t">Ver Projecto</span>
         </div>
         <div class="proj-overlay"></div>
@@ -803,11 +808,11 @@ footer{background:var(--c-black);padding:72px 0 36px}
         </div>
       </div>
 
-      <!-- P3 — WIDE -->
+      <!-- P3 · WIDE -->
       <div class="proj reveal proj-gallery" data-cat="reab" data-ratio="wide" onclick="openGallery('aldeamentoturistico', this)" role="button" tabindex="0" onkeyup="if(event.key==='Enter')openGallery('aldeamentoturistico', this)">
         <div class="proj-img">
           <img src="images/image-010-0b0109241ef1.jpg" alt="Aldeamento Turístico"
-               onerror="this.outerHTML='<div class=\'proj-ph\' style=\'aspect-ratio:16/9\'><div class=\'ph-lbl\'>Aldeamento Turístico · 2021</div></div>'" loading="lazy" decoding="async">
+               onerror="if(!this.parentNode)return;this.outerHTML='<div class=\'proj-ph\' style=\'aspect-ratio:16/9\'><div class=\'ph-lbl\'>Aldeamento Turístico · 2021</div></div>'" loading="lazy" decoding="async">
           <span class="proj-gallery-badge t">Ver Projecto</span>
         </div>
         <div class="proj-overlay"></div>
@@ -818,11 +823,11 @@ footer{background:var(--c-black);padding:72px 0 36px}
         </div>
       </div>
 
-      <!-- P4 — WIDE -->
+      <!-- P4 · WIDE -->
       <div class="proj reveal proj-gallery" data-cat="hab" data-ratio="wide" onclick="openGallery('segundamoradia', this)" role="button" tabindex="0" onkeyup="if(event.key==='Enter')openGallery('segundamoradia', this)">
         <div class="proj-img">
           <img src="images/image-011-bf462dfabdd0.jpg" alt="Segunda Moradia Unifamiliar"
-               onerror="this.outerHTML='<div class=\'proj-ph\' data-ratio=\'wide\' style=\'aspect-ratio:16/9\'><div class=\'ph-lbl\'>Segunda Moradia Unifamiliar · 2021</div></div>'" loading="lazy" decoding="async">
+               onerror="if(!this.parentNode)return;this.outerHTML='<div class=\'proj-ph\' data-ratio=\'wide\' style=\'aspect-ratio:16/9\'><div class=\'ph-lbl\'>Segunda Moradia Unifamiliar · 2021</div></div>'" loading="lazy" decoding="async">
           <span class="proj-gallery-badge t">Ver Projecto</span>
         </div>
         <div class="proj-overlay"></div>
@@ -833,11 +838,11 @@ footer{background:var(--c-black);padding:72px 0 36px}
         </div>
       </div>
 
-      <!-- P5 — WIDE -->
+      <!-- P5 · WIDE -->
       <div class="proj reveal proj-gallery" data-cat="hab" data-ratio="wide" onclick="openGallery('terceiramoradia', this)" role="button" tabindex="0" onkeyup="if(event.key==='Enter')openGallery('terceiramoradia', this)">
         <div class="proj-img">
           <img src="images/image-012-3e067328e79b.jpg" alt="Terceira Moradia Unifamiliar"
-               onerror="this.outerHTML='<div class=\'proj-ph\' data-ratio=\'wide\' style=\'aspect-ratio:16/9\'><div class=\'ph-lbl\'>Terceira Moradia Unifamiliar · 2021</div></div>'" loading="lazy" decoding="async">
+               onerror="if(!this.parentNode)return;this.outerHTML='<div class=\'proj-ph\' data-ratio=\'wide\' style=\'aspect-ratio:16/9\'><div class=\'ph-lbl\'>Terceira Moradia Unifamiliar · 2021</div></div>'" loading="lazy" decoding="async">
           <span class="proj-gallery-badge t">Ver Projecto</span>
         </div>
         <div class="proj-overlay"></div>
@@ -849,11 +854,11 @@ footer{background:var(--c-black);padding:72px 0 36px}
       </div>
 
       
-<!-- P6 — WIDE -->
+<!-- P6 · WIDE -->
       <div class="proj reveal proj-gallery" data-cat="hab" data-ratio="wide" onclick="openGallery('moradiasgeminadas', this)" role="button" tabindex="0" onkeyup="if(event.key==='Enter')openGallery('moradiasgeminadas', this)">
         <div class="proj-img">
           <img src="images/image-013-de4a12591be4.jpg" alt="Moradias Geminadas"
-               onerror="this.outerHTML='<div class=\'proj-ph\' style=\'aspect-ratio:16/9\'><div class=\'ph-lbl\'>Moradias Geminadas · 2020</div></div>'" loading="lazy" decoding="async">
+               onerror="if(!this.parentNode)return;this.outerHTML='<div class=\'proj-ph\' style=\'aspect-ratio:16/9\'><div class=\'ph-lbl\'>Moradias Geminadas · 2020</div></div>'" loading="lazy" decoding="async">
           <span class="proj-gallery-badge t">Ver Projecto</span>
         </div>
         <div class="proj-overlay"></div>
@@ -864,11 +869,11 @@ footer{background:var(--c-black);padding:72px 0 36px}
         </div>
       </div>
 
-      <!-- P7 — STD -->
+      <!-- P7 · STD -->
       <div class="proj reveal proj-gallery" data-cat="hab" data-ratio="std" onclick="openGallery('coutinhoteixeira', this)" role="button" tabindex="0" onkeyup="if(event.key==='Enter')openGallery('coutinhoteixeira', this)">
         <div class="proj-img">
           <img src="images/image-014-92da044d21b1.jpg" alt="Edifício em São Martinho do Porto"
-               onerror="this.outerHTML='<div class=\'proj-ph\' style=\'aspect-ratio:4/3\'><div class=\'ph-lbl\'>Edifício em São Martinho do Porto</div></div>'" loading="lazy" decoding="async">
+               onerror="if(!this.parentNode)return;this.outerHTML='<div class=\'proj-ph\' style=\'aspect-ratio:4/3\'><div class=\'ph-lbl\'>Edifício em São Martinho do Porto</div></div>'" loading="lazy" decoding="async">
           <span class="proj-gallery-badge t">Ver Projecto</span>
         </div>
         <div class="proj-overlay"></div>
@@ -879,11 +884,11 @@ footer{background:var(--c-black);padding:72px 0 36px}
         </div>
       </div>
 
-      <!-- P8 — WIDE (GALERIA) -->
+      <!-- P8 · WIDE (GALERIA) -->
       <div class="proj reveal proj-gallery" data-cat="com" data-ratio="wide" onclick="openGallery('restaurantenatura', this)" role="button" tabindex="0" onkeyup="if(event.key==='Enter')openGallery('restaurantenatura', this)">
         <div class="proj-img">
           <img width="1365" height="768" src="images/restaurantenatura_01.jpg" alt="Restaurante Natura"
-               onerror="this.outerHTML='<div class=\'proj-ph\' style=\'aspect-ratio:16/9\'><div class=\'ph-lbl\'>Restaurante Natura · 2017</div></div>'" loading="lazy" decoding="async">
+               onerror="if(!this.parentNode)return;this.outerHTML='<div class=\'proj-ph\' style=\'aspect-ratio:16/9\'><div class=\'ph-lbl\'>Restaurante Natura · 2017</div></div>'" loading="lazy" decoding="async">
           <span class="proj-gallery-badge t">Ver Projecto</span>
         </div>
         <div class="proj-overlay"></div>
@@ -894,11 +899,11 @@ footer{background:var(--c-black);padding:72px 0 36px}
         </div>
       </div>
 
-      <!-- P9 — WIDE (GALERIA) -->
+      <!-- P9 · WIDE (GALERIA) -->
       <div class="proj reveal proj-gallery" data-cat="com" data-ratio="wide" onclick="openGallery('hotelnatura', this)" role="button" tabindex="0" onkeyup="if(event.key==='Enter')openGallery('hotelnatura', this)">
         <div class="proj-img">
           <img src="images/image-056-6cf81ba1c3c9.jpg" alt="Hotel Natura"
-               onerror="this.outerHTML='<div class=\'proj-ph\' style=\'aspect-ratio:16/9\'><div class=\'ph-lbl\'>Hotel Natura · 2015</div></div>'" loading="lazy" decoding="async">
+               onerror="if(!this.parentNode)return;this.outerHTML='<div class=\'proj-ph\' style=\'aspect-ratio:16/9\'><div class=\'ph-lbl\'>Hotel Natura · 2015</div></div>'" loading="lazy" decoding="async">
           <span class="proj-gallery-badge t">Ver Projecto</span>
         </div>
         <div class="proj-overlay"></div>
@@ -910,11 +915,11 @@ footer{background:var(--c-black);padding:72px 0 36px}
       </div>
 
 
-      <!-- P10 — GALERIA (Projecto de Reabilitação) -->
+      <!-- P10 · GALERIA (Projecto de Reabilitação) -->
       <div class="proj reveal proj-gallery" data-cat="reab" data-ratio="wide" onclick="openGallery('reabilitacao', this)" role="button" tabindex="0" onkeyup="if(event.key==='Enter')openGallery('reabilitacao', this)">
         <div class="proj-img">
           <img src="images/image-017-156d18ebf8ae.jpg" alt="Projecto de Reabilitação · Fachada Principal" loading="lazy"
-               onerror="this.outerHTML='<div class=\'proj-ph\' style=\'aspect-ratio:16/9\'><div class=\'ph-lbl\'>Projecto de Reabilitação · 2024</div></div>'">
+               onerror="if(!this.parentNode)return;this.outerHTML='<div class=\'proj-ph\' style=\'aspect-ratio:16/9\'><div class=\'ph-lbl\'>Projecto de Reabilitação · 2024</div></div>'">
           <span class="proj-gallery-badge t">Ver Projecto</span>
         </div>
         <div class="proj-overlay"></div>
@@ -926,11 +931,11 @@ footer{background:var(--c-black);padding:72px 0 36px}
       </div>
 
 
-      <!-- P11 — GALERIA (Alojamento Turístico Boutique) -->
+      <!-- P11 · GALERIA (Alojamento Turístico Boutique) -->
       <div class="proj reveal proj-gallery" data-cat="com" data-ratio="wide" onclick="openGallery('turismo', this)" role="button" tabindex="0" onkeyup="if(event.key==='Enter')openGallery('turismo', this)">
         <div class="proj-img">
           <img src="images/image-018-caf86d80bf1c.jpg" alt="Alojamento Turístico Boutique"
-               onerror="this.outerHTML='<div class=\'proj-ph\' style=\'aspect-ratio:16/9\'><div class=\'ph-lbl\'>Alojamento Turístico Boutique · 2021</div></div>'" loading="lazy" decoding="async">
+               onerror="if(!this.parentNode)return;this.outerHTML='<div class=\'proj-ph\' style=\'aspect-ratio:16/9\'><div class=\'ph-lbl\'>Alojamento Turístico Boutique · 2021</div></div>'" loading="lazy" decoding="async">
           <span class="proj-gallery-badge t">Ver Projecto</span>
         </div>
         <div class="proj-overlay"></div>
@@ -941,11 +946,11 @@ footer{background:var(--c-black);padding:72px 0 36px}
         </div>
       </div>
 
-      <!-- P12 — GALERIA (Edifício Habitacional) -->
+      <!-- P12 · GALERIA (Edifício Habitacional) -->
       <div class="proj reveal proj-gallery" data-cat="hab" data-ratio="wide" onclick="openGallery('edificiohabitacional', this)" role="button" tabindex="0" onkeyup="if(event.key==='Enter')openGallery('edificiohabitacional', this)">
         <div class="proj-img">
           <img width="1365" height="768" src="images/edificiohabitacional_01.jpg" alt="Edifício Habitacional" loading="lazy"
-               onerror="this.outerHTML='<div class=\'proj-ph\' data-ratio=\'wide\' style=\'aspect-ratio:16/9\'><div class=\'ph-lbl\'>Edifício Habitacional · 2025</div></div>'">
+               onerror="if(!this.parentNode)return;this.outerHTML='<div class=\'proj-ph\' data-ratio=\'wide\' style=\'aspect-ratio:16/9\'><div class=\'ph-lbl\'>Edifício Habitacional · 2025</div></div>'">
           <span class="proj-gallery-badge t">Ver Projecto</span>
         </div>
         <div class="proj-overlay"></div>
@@ -956,11 +961,11 @@ footer{background:var(--c-black);padding:72px 0 36px}
         </div>
       </div>
 
-      <!-- P13 — GALERIA (Quarta Moradia Unifamiliar) -->
+      <!-- P13 · GALERIA (Quarta Moradia Unifamiliar) -->
       <div class="proj reveal proj-gallery" data-cat="hab" data-ratio="wide" onclick="openGallery('quartamoradia', this)" role="button" tabindex="0" onkeyup="if(event.key==='Enter')openGallery('quartamoradia', this)">
         <div class="proj-img">
           <img width="1365" height="768" src="images/quartamoradia_01.jpg" alt="Quarta Moradia Unifamiliar" loading="lazy"
-               onerror="this.outerHTML='<div class=\'proj-ph\' data-ratio=\'wide\' style=\'aspect-ratio:16/9\'><div class=\'ph-lbl\'>Quarta Moradia Unifamiliar · 2026</div></div>'">
+               onerror="if(!this.parentNode)return;this.outerHTML='<div class=\'proj-ph\' data-ratio=\'wide\' style=\'aspect-ratio:16/9\'><div class=\'ph-lbl\'>Quarta Moradia Unifamiliar · 2026</div></div>'">
           <span class="proj-gallery-badge t">Ver Projecto</span>
         </div>
         <div class="proj-overlay"></div>
@@ -971,11 +976,11 @@ footer{background:var(--c-black);padding:72px 0 36px}
         </div>
       </div>
 
-      <!-- P14 — GALERIA (Moradia com Piscina) -->
+      <!-- P14 · GALERIA (Moradia com Piscina) -->
       <div class="proj reveal proj-gallery" data-cat="hab" data-ratio="wide" onclick="openGallery('moradiapiscina', this)" role="button" tabindex="0" onkeyup="if(event.key==='Enter')openGallery('moradiapiscina', this)">
         <div class="proj-img">
           <img src="images/moradiapiscina_01.jpg" alt="Moradia com Piscina" loading="lazy"
-               onerror="this.outerHTML='<div class=\'proj-ph\' data-ratio=\'wide\' style=\'aspect-ratio:16/9\'><div class=\'ph-lbl\'>Moradia com Piscina · 2026</div></div>'">
+               onerror="if(!this.parentNode)return;this.outerHTML='<div class=\'proj-ph\' data-ratio=\'wide\' style=\'aspect-ratio:16/9\'><div class=\'ph-lbl\'>Moradia com Piscina · 2026</div></div>'">
           <span class="proj-gallery-badge t">Ver Projecto</span>
         </div>
         <div class="proj-overlay"></div>
@@ -986,11 +991,11 @@ footer{background:var(--c-black);padding:72px 0 36px}
         </div>
       </div>
 
-      <!-- P16 — GALERIA (Moradia Elevada) -->
+      <!-- P16 · GALERIA (Moradia Elevada) -->
       <div class="proj reveal proj-gallery" data-cat="hab" data-ratio="wide" onclick="openGallery('moradiaelevada', this)" role="button" tabindex="0" onkeyup="if(event.key==='Enter')openGallery('moradiaelevada', this)">
         <div class="proj-img">
           <img src="images/moradiaelevada_01.jpg" alt="Moradia Elevada" loading="lazy"
-               onerror="this.outerHTML='<div class=\'proj-ph\' data-ratio=\'wide\' style=\'aspect-ratio:16/9\'><div class=\'ph-lbl\'>Moradia Elevada · 2026</div></div>'">
+               onerror="if(!this.parentNode)return;this.outerHTML='<div class=\'proj-ph\' data-ratio=\'wide\' style=\'aspect-ratio:16/9\'><div class=\'ph-lbl\'>Moradia Elevada · 2026</div></div>'">
           <span class="proj-gallery-badge t">Ver Projecto</span>
         </div>
         <div class="proj-overlay"></div>
@@ -1001,11 +1006,11 @@ footer{background:var(--c-black);padding:72px 0 36px}
         </div>
       </div>
 
-      <!-- P19 — GALERIA (Bloco de Apartamentos) -->
+      <!-- P19 · GALERIA (Bloco de Apartamentos) -->
       <div class="proj reveal proj-gallery" data-cat="hab" data-ratio="wide" onclick="openGallery('blocoapartamentos', this)" role="button" tabindex="0" onkeyup="if(event.key==='Enter')openGallery('blocoapartamentos', this)">
         <div class="proj-img">
           <img src="images/blocoapartamentos_01.jpg" alt="Bloco de Apartamentos" loading="lazy"
-               onerror="this.outerHTML='<div class=\'proj-ph\' data-ratio=\'wide\' style=\'aspect-ratio:16/9\'><div class=\'ph-lbl\'>Bloco de Apartamentos · 2026</div></div>'">
+               onerror="if(!this.parentNode)return;this.outerHTML='<div class=\'proj-ph\' data-ratio=\'wide\' style=\'aspect-ratio:16/9\'><div class=\'ph-lbl\'>Bloco de Apartamentos · 2026</div></div>'">
           <span class="proj-gallery-badge t">Ver Projecto</span>
         </div>
         <div class="proj-overlay"></div>
@@ -1016,11 +1021,11 @@ footer{background:var(--c-black);padding:72px 0 36px}
         </div>
       </div>
 
-      <!-- P20 — GALERIA (Residencial com Parque Infantil) -->
+      <!-- P20 · GALERIA (Residencial com Parque Infantil) -->
       <div class="proj reveal proj-gallery" data-cat="hab" data-ratio="wide" onclick="openGallery('residparque', this)" role="button" tabindex="0" onkeyup="if(event.key==='Enter')openGallery('residparque', this)">
         <div class="proj-img">
           <img src="images/residparque_01.jpg" alt="Residencial com Parque Infantil" loading="lazy"
-               onerror="this.outerHTML='<div class=\'proj-ph\' data-ratio=\'wide\' style=\'aspect-ratio:16/9\'><div class=\'ph-lbl\'>Residencial com Parque Infantil · 2026</div></div>'">
+               onerror="if(!this.parentNode)return;this.outerHTML='<div class=\'proj-ph\' data-ratio=\'wide\' style=\'aspect-ratio:16/9\'><div class=\'ph-lbl\'>Residencial com Parque Infantil · 2026</div></div>'">
           <span class="proj-gallery-badge t">Ver Projecto</span>
         </div>
         <div class="proj-overlay"></div>
@@ -1031,11 +1036,11 @@ footer{background:var(--c-black);padding:72px 0 36px}
         </div>
       </div>
 
-      <!-- P22 — GALERIA (Moradia em Declive) -->
+      <!-- P22 · GALERIA (Moradia em Declive) -->
       <div class="proj reveal proj-gallery" data-cat="hab" data-ratio="wide" onclick="openGallery('moradiadeclive', this)" role="button" tabindex="0" onkeyup="if(event.key==='Enter')openGallery('moradiadeclive', this)">
         <div class="proj-img">
           <img src="images/moradiadeclive_01.jpg" alt="Moradia em Declive" loading="lazy"
-               onerror="this.outerHTML='<div class=\'proj-ph\' data-ratio=\'wide\' style=\'aspect-ratio:16/9\'><div class=\'ph-lbl\'>Moradia em Declive · 2026</div></div>'">
+               onerror="if(!this.parentNode)return;this.outerHTML='<div class=\'proj-ph\' data-ratio=\'wide\' style=\'aspect-ratio:16/9\'><div class=\'ph-lbl\'>Moradia em Declive · 2026</div></div>'">
           <span class="proj-gallery-badge t">Ver Projecto</span>
         </div>
         <div class="proj-overlay"></div>
@@ -1046,11 +1051,11 @@ footer{background:var(--c-black);padding:72px 0 36px}
         </div>
       </div>
 
-      <!-- P23 — GALERIA (Moradia Clássica) -->
+      <!-- P23 · GALERIA (Moradia Clássica) -->
       <div class="proj reveal proj-gallery" data-cat="hab" data-ratio="wide" onclick="openGallery('moradiaclassica', this)" role="button" tabindex="0" onkeyup="if(event.key==='Enter')openGallery('moradiaclassica', this)">
         <div class="proj-img">
           <img width="1365" height="768" src="images/moradiaclassica_01.jpg" alt="Moradia Clássica" loading="lazy"
-               onerror="this.outerHTML='<div class=\'proj-ph\' data-ratio=\'wide\' style=\'aspect-ratio:16/9\'><div class=\'ph-lbl\'>Moradia Clássica · 2026</div></div>'">
+               onerror="if(!this.parentNode)return;this.outerHTML='<div class=\'proj-ph\' data-ratio=\'wide\' style=\'aspect-ratio:16/9\'><div class=\'ph-lbl\'>Moradia Clássica · 2026</div></div>'">
           <span class="proj-gallery-badge t">Ver Projecto</span>
         </div>
         <div class="proj-overlay"></div>
@@ -1061,11 +1066,11 @@ footer{background:var(--c-black);padding:72px 0 36px}
         </div>
       </div>
 
-      <!-- P24 — GALERIA (Moradia em Consola) -->
+      <!-- P24 · GALERIA (Moradia em Consola) -->
       <div class="proj reveal proj-gallery" data-cat="hab" data-ratio="wide" onclick="openGallery('moradiaconsola', this)" role="button" tabindex="0" onkeyup="if(event.key==='Enter')openGallery('moradiaconsola', this)">
         <div class="proj-img">
           <img src="images/moradiaconsola_01.jpg" alt="Moradia em Consola" loading="lazy"
-               onerror="this.outerHTML='<div class=\'proj-ph\' data-ratio=\'wide\' style=\'aspect-ratio:16/9\'><div class=\'ph-lbl\'>Moradia em Consola · 2026</div></div>'">
+               onerror="if(!this.parentNode)return;this.outerHTML='<div class=\'proj-ph\' data-ratio=\'wide\' style=\'aspect-ratio:16/9\'><div class=\'ph-lbl\'>Moradia em Consola · 2026</div></div>'">
           <span class="proj-gallery-badge t">Ver Projecto</span>
         </div>
         <div class="proj-overlay"></div>
@@ -1076,11 +1081,11 @@ footer{background:var(--c-black);padding:72px 0 36px}
         </div>
       </div>
 
-      <!-- P25 — GALERIA (Moradias Geminadas com Piscina) -->
+      <!-- P25 · GALERIA (Moradias Geminadas com Piscina) -->
       <div class="proj reveal proj-gallery" data-cat="hab" data-ratio="wide" onclick="openGallery('geminadaspiscina', this)" role="button" tabindex="0" onkeyup="if(event.key==='Enter')openGallery('geminadaspiscina', this)">
         <div class="proj-img">
           <img width="1365" height="768" src="images/geminadaspiscina_01.jpg" alt="Moradias Geminadas com Piscina" loading="lazy"
-               onerror="this.outerHTML='<div class=\'proj-ph\' data-ratio=\'wide\' style=\'aspect-ratio:16/9\'><div class=\'ph-lbl\'>Moradias Geminadas com Piscina · 2026</div></div>'">
+               onerror="if(!this.parentNode)return;this.outerHTML='<div class=\'proj-ph\' data-ratio=\'wide\' style=\'aspect-ratio:16/9\'><div class=\'ph-lbl\'>Moradias Geminadas com Piscina · 2026</div></div>'">
           <span class="proj-gallery-badge t">Ver Projecto</span>
         </div>
         <div class="proj-overlay"></div>
@@ -1091,11 +1096,11 @@ footer{background:var(--c-black);padding:72px 0 36px}
         </div>
       </div>
 
-      <!-- P26 — GALERIA (Plano de Urbanização) -->
+      <!-- P26 · GALERIA (Plano de Urbanização) -->
       <div class="proj reveal proj-gallery" data-cat="ind" data-ratio="wide" onclick="openGallery('planourbanizacao', this)" role="button" tabindex="0" onkeyup="if(event.key==='Enter')openGallery('planourbanizacao', this)">
         <div class="proj-img">
           <img src="images/planourbanizacao_01.jpg" alt="Plano de Urbanização" loading="lazy"
-               onerror="this.outerHTML='<div class=\'proj-ph\' data-ratio=\'wide\' style=\'aspect-ratio:16/9\'><div class=\'ph-lbl\'>Plano de Urbanização · 2026</div></div>'">
+               onerror="if(!this.parentNode)return;this.outerHTML='<div class=\'proj-ph\' data-ratio=\'wide\' style=\'aspect-ratio:16/9\'><div class=\'ph-lbl\'>Plano de Urbanização · 2026</div></div>'">
           <span class="proj-gallery-badge t">Ver Projecto</span>
         </div>
         <div class="proj-overlay"></div>
@@ -1106,11 +1111,11 @@ footer{background:var(--c-black);padding:72px 0 36px}
         </div>
       </div>
 
-      <!-- P27 — GALERIA (Vivenda Unifamiliar) -->
+      <!-- P27 · GALERIA (Vivenda Unifamiliar) -->
       <div class="proj reveal proj-gallery" data-cat="hab" data-ratio="wide" onclick="openGallery('vivendaunifamiliar', this)" role="button" tabindex="0" onkeyup="if(event.key==='Enter')openGallery('vivendaunifamiliar', this)">
         <div class="proj-img">
           <img src="images/vivendaunifamiliar_01.jpg" alt="Vivenda Unifamiliar" loading="lazy"
-               onerror="this.outerHTML='<div class=\'proj-ph\' data-ratio=\'wide\' style=\'aspect-ratio:16/9\'><div class=\'ph-lbl\'>Vivenda Unifamiliar · 2026</div></div>'">
+               onerror="if(!this.parentNode)return;this.outerHTML='<div class=\'proj-ph\' data-ratio=\'wide\' style=\'aspect-ratio:16/9\'><div class=\'ph-lbl\'>Vivenda Unifamiliar · 2026</div></div>'">
           <span class="proj-gallery-badge t">Ver Projecto</span>
         </div>
         <div class="proj-overlay"></div>
@@ -1121,11 +1126,11 @@ footer{background:var(--c-black);padding:72px 0 36px}
         </div>
       </div>
 
-      <!-- P28 — GALERIA (Moradia Urbana) -->
+      <!-- P28 · GALERIA (Moradia Urbana) -->
       <div class="proj reveal proj-gallery" data-cat="hab" data-ratio="wide" onclick="openGallery('moradiaurbana', this)" role="button" tabindex="0" onkeyup="if(event.key==='Enter')openGallery('moradiaurbana', this)">
         <div class="proj-img">
           <img src="images/moradiaurbana_01.jpg" alt="Moradia Urbana" loading="lazy"
-               onerror="this.outerHTML='<div class=\'proj-ph\' data-ratio=\'wide\' style=\'aspect-ratio:16/9\'><div class=\'ph-lbl\'>Moradia Urbana · 2020</div></div>'">
+               onerror="if(!this.parentNode)return;this.outerHTML='<div class=\'proj-ph\' data-ratio=\'wide\' style=\'aspect-ratio:16/9\'><div class=\'ph-lbl\'>Moradia Urbana · 2020</div></div>'">
           <span class="proj-gallery-badge t">Ver Projecto</span>
         </div>
         <div class="proj-overlay"></div>
@@ -1136,11 +1141,11 @@ footer{background:var(--c-black);padding:72px 0 36px}
         </div>
       </div>
 
-      <!-- P29 — GALERIA (Moradias Geminadas Urbanas) -->
+      <!-- P29 · GALERIA (Moradias Geminadas Urbanas) -->
       <div class="proj reveal proj-gallery" data-cat="hab" data-ratio="wide" onclick="openGallery('moradiasgeminadasurbanas', this)" role="button" tabindex="0" onkeyup="if(event.key==='Enter')openGallery('moradiasgeminadasurbanas', this)">
         <div class="proj-img">
           <img width="1365" height="768" src="images/moradiasgeminadasurbanas_01.jpg" alt="Moradias Geminadas Urbanas" loading="lazy"
-               onerror="this.outerHTML='<div class=\'proj-ph\' data-ratio=\'wide\' style=\'aspect-ratio:16/9\'><div class=\'ph-lbl\'>Moradias Geminadas Urbanas · 2026</div></div>'">
+               onerror="if(!this.parentNode)return;this.outerHTML='<div class=\'proj-ph\' data-ratio=\'wide\' style=\'aspect-ratio:16/9\'><div class=\'ph-lbl\'>Moradias Geminadas Urbanas · 2026</div></div>'">
           <span class="proj-gallery-badge t">Ver Projecto</span>
         </div>
         <div class="proj-overlay"></div>
@@ -1151,11 +1156,11 @@ footer{background:var(--c-black);padding:72px 0 36px}
         </div>
       </div>
 
-      <!-- P30 — GALERIA (Vivenda em Atouguia) -->
+      <!-- P30 · GALERIA (Vivenda em Atouguia) -->
       <div class="proj reveal proj-gallery" data-cat="int" data-ratio="wide" onclick="openGallery('vivendaatouguia', this)" role="button" tabindex="0" onkeyup="if(event.key==='Enter')openGallery('vivendaatouguia', this)">
         <div class="proj-img">
           <img src="images/vivendaatouguia_01.jpg" alt="Vivenda em Atouguia" loading="lazy"
-               onerror="this.outerHTML='<div class=\'proj-ph\' data-ratio=\'wide\' style=\'aspect-ratio:16/9\'><div class=\'ph-lbl\'>Vivenda em Atouguia · 2026</div></div>'">
+               onerror="if(!this.parentNode)return;this.outerHTML='<div class=\'proj-ph\' data-ratio=\'wide\' style=\'aspect-ratio:16/9\'><div class=\'ph-lbl\'>Vivenda em Atouguia · 2026</div></div>'">
           <span class="proj-gallery-badge t">Ver Projecto</span>
         </div>
         <div class="proj-overlay"></div>
@@ -1166,11 +1171,11 @@ footer{background:var(--c-black);padding:72px 0 36px}
         </div>
       </div>
 
-      <!-- P31 — GALERIA (Vivendas Geminadas) -->
+      <!-- P31 · GALERIA (Vivendas Geminadas) -->
       <div class="proj reveal proj-gallery" data-cat="hab" data-ratio="wide" onclick="openGallery('vivendasgeminadas', this)" role="button" tabindex="0" onkeyup="if(event.key==='Enter')openGallery('vivendasgeminadas', this)">
         <div class="proj-img">
           <img src="images/vivendasgeminadas_01.jpg" alt="Vivendas Geminadas" loading="lazy"
-               onerror="this.outerHTML='<div class=\'proj-ph\' data-ratio=\'wide\' style=\'aspect-ratio:16/9\'><div class=\'ph-lbl\'>Vivendas Geminadas · 2026</div></div>'">
+               onerror="if(!this.parentNode)return;this.outerHTML='<div class=\'proj-ph\' data-ratio=\'wide\' style=\'aspect-ratio:16/9\'><div class=\'ph-lbl\'>Vivendas Geminadas · 2026</div></div>'">
           <span class="proj-gallery-badge t">Ver Projecto</span>
         </div>
         <div class="proj-overlay"></div>
@@ -1181,11 +1186,11 @@ footer{background:var(--c-black);padding:72px 0 36px}
         </div>
       </div>
 
-      <!-- P32 — GALERIA (Bloco de Apartamentos Unifamiliares) -->
+      <!-- P32 · GALERIA (Bloco de Apartamentos Unifamiliares) -->
       <div class="proj reveal proj-gallery" data-cat="hab" data-ratio="wide" onclick="openGallery('blocoaptunifamiliares', this)" role="button" tabindex="0" onkeyup="if(event.key==='Enter')openGallery('blocoaptunifamiliares', this)">
         <div class="proj-img">
           <img width="1365" height="768" src="images/blocoaptunifamiliares_01.jpg" alt="Bloco de Apartamentos Unifamiliares" loading="lazy"
-               onerror="this.outerHTML='<div class=\'proj-ph\' data-ratio=\'wide\' style=\'aspect-ratio:16/9\'><div class=\'ph-lbl\'>Bloco de Apartamentos Unifamiliares · 2026</div></div>'">
+               onerror="if(!this.parentNode)return;this.outerHTML='<div class=\'proj-ph\' data-ratio=\'wide\' style=\'aspect-ratio:16/9\'><div class=\'ph-lbl\'>Bloco de Apartamentos Unifamiliares · 2026</div></div>'">
           <span class="proj-gallery-badge t">Ver Projecto</span>
         </div>
         <div class="proj-overlay"></div>
@@ -1196,11 +1201,11 @@ footer{background:var(--c-black);padding:72px 0 36px}
         </div>
       </div>
 
-      <!-- P33 — GALERIA (Reabilitação de Vivenda Unifamiliar) -->
+      <!-- P33 · GALERIA (Reabilitação de Vivenda Unifamiliar) -->
       <div class="proj reveal proj-gallery" data-cat="reab" data-ratio="wide" onclick="openGallery('reabvivendaunifamiliar', this)" role="button" tabindex="0" onkeyup="if(event.key==='Enter')openGallery('reabvivendaunifamiliar', this)">
         <div class="proj-img">
           <img width="1365" height="768" src="images/reabvivendaunifamiliar_01.jpg" alt="Reabilitação de Vivenda Unifamiliar" loading="lazy"
-               onerror="this.outerHTML='<div class=\'proj-ph\' data-ratio=\'wide\' style=\'aspect-ratio:16/9\'><div class=\'ph-lbl\'>Reabilitação de Vivenda Unifamiliar · 2026</div></div>'">
+               onerror="if(!this.parentNode)return;this.outerHTML='<div class=\'proj-ph\' data-ratio=\'wide\' style=\'aspect-ratio:16/9\'><div class=\'ph-lbl\'>Reabilitação de Vivenda Unifamiliar · 2026</div></div>'">
           <span class="proj-gallery-badge t">Ver Projecto</span>
         </div>
         <div class="proj-overlay"></div>
@@ -1211,11 +1216,11 @@ footer{background:var(--c-black);padding:72px 0 36px}
         </div>
       </div>
 
-      <!-- P34 — GALERIA (Bungalows · Decoração de Interiores) -->
+      <!-- P34 · GALERIA (Bungalows · Decoração de Interiores) -->
       <div class="proj reveal proj-gallery" data-cat="int" data-ratio="wide" onclick="openGallery('bungalowsinteriores', this)" role="button" tabindex="0" onkeyup="if(event.key==='Enter')openGallery('bungalowsinteriores', this)">
         <div class="proj-img">
           <img width="1365" height="768" src="images/bungalowsinteriores_01.jpg" alt="Bungalows · Decoração de Interiores" loading="lazy"
-               onerror="this.outerHTML='<div class=\'proj-ph\' data-ratio=\'wide\' style=\'aspect-ratio:16/9\'><div class=\'ph-lbl\'>Bungalows · 2026</div></div>'">
+               onerror="if(!this.parentNode)return;this.outerHTML='<div class=\'proj-ph\' data-ratio=\'wide\' style=\'aspect-ratio:16/9\'><div class=\'ph-lbl\'>Bungalows · 2026</div></div>'">
           <span class="proj-gallery-badge t">Ver Projecto</span>
         </div>
         <div class="proj-overlay"></div>
@@ -1226,11 +1231,11 @@ footer{background:var(--c-black);padding:72px 0 36px}
         </div>
       </div>
 
-      <!-- P35 — GALERIA (Vivendas Unifamiliares Vista Serra e Mar) -->
+      <!-- P35 · GALERIA (Vivendas Unifamiliares Vista Serra e Mar) -->
       <div class="proj reveal proj-gallery" data-cat="hab" data-ratio="wide" onclick="openGallery('vivendasserramar', this)" role="button" tabindex="0" onkeyup="if(event.key==='Enter')openGallery('vivendasserramar', this)">
         <div class="proj-img">
           <img width="1365" height="768" src="images/vivendasserramar_01.jpg" alt="Vivendas Unifamiliares Vista Serra e Mar" loading="lazy"
-               onerror="this.outerHTML='<div class=\'proj-ph\' data-ratio=\'wide\' style=\'aspect-ratio:16/9\'><div class=\'ph-lbl\'>Vivendas Unifamiliares Vista Serra e Mar · 2026</div></div>'">
+               onerror="if(!this.parentNode)return;this.outerHTML='<div class=\'proj-ph\' data-ratio=\'wide\' style=\'aspect-ratio:16/9\'><div class=\'ph-lbl\'>Vivendas Unifamiliares Vista Serra e Mar · 2026</div></div>'">
           <span class="proj-gallery-badge t">Ver Projecto</span>
         </div>
         <div class="proj-overlay"></div>
@@ -1241,11 +1246,11 @@ footer{background:var(--c-black);padding:72px 0 36px}
         </div>
       </div>
 
-      <!-- P36 — GALERIA (Vivenda Unifamiliar em Pedra) -->
+      <!-- P36 · GALERIA (Vivenda Unifamiliar em Pedra) -->
       <div class="proj reveal proj-gallery" data-cat="hab" data-ratio="wide" onclick="openGallery('vivendapedra', this)" role="button" tabindex="0" onkeyup="if(event.key==='Enter')openGallery('vivendapedra', this)">
         <div class="proj-img">
           <img width="1365" height="768" src="images/vivendapedra_01.jpg" alt="Vivenda Unifamiliar em Pedra" loading="lazy"
-               onerror="this.outerHTML='<div class=\'proj-ph\' data-ratio=\'wide\' style=\'aspect-ratio:16/9\'><div class=\'ph-lbl\'>Vivenda Unifamiliar em Pedra · 2026</div></div>'">
+               onerror="if(!this.parentNode)return;this.outerHTML='<div class=\'proj-ph\' data-ratio=\'wide\' style=\'aspect-ratio:16/9\'><div class=\'ph-lbl\'>Vivenda Unifamiliar em Pedra · 2026</div></div>'">
           <span class="proj-gallery-badge t">Ver Projecto</span>
         </div>
         <div class="proj-overlay"></div>
@@ -1256,11 +1261,11 @@ footer{background:var(--c-black);padding:72px 0 36px}
         </div>
       </div>
 
-      <!-- P37 — GALERIA (Urbanização de Moradias em Banda) -->
+      <!-- P37 · GALERIA (Urbanização de Moradias em Banda) -->
       <div class="proj reveal proj-gallery" data-cat="hab" data-ratio="wide" onclick="openGallery('urbanizacaobanda', this)" role="button" tabindex="0" onkeyup="if(event.key==='Enter')openGallery('urbanizacaobanda', this)">
         <div class="proj-img">
           <img width="1365" height="768" src="images/urbanizacaobanda_01.jpg" alt="Urbanização de Moradias em Banda" loading="lazy"
-               onerror="this.outerHTML='<div class=\'proj-ph\' data-ratio=\'wide\' style=\'aspect-ratio:16/9\'><div class=\'ph-lbl\'>Urbanização de Moradias em Banda · 2026</div></div>'">
+               onerror="if(!this.parentNode)return;this.outerHTML='<div class=\'proj-ph\' data-ratio=\'wide\' style=\'aspect-ratio:16/9\'><div class=\'ph-lbl\'>Urbanização de Moradias em Banda · 2026</div></div>'">
           <span class="proj-gallery-badge t">Ver Projecto</span>
         </div>
         <div class="proj-overlay"></div>
@@ -1271,11 +1276,11 @@ footer{background:var(--c-black);padding:72px 0 36px}
         </div>
       </div>
 
-      <!-- P38 — GALERIA (Hotel Natura · Resort Rural) -->
+      <!-- P38 · GALERIA (Hotel Natura · Resort Rural) -->
       <div class="proj reveal proj-gallery" data-cat="com" data-ratio="wide" onclick="openGallery('hotelnaturaresort', this)" role="button" tabindex="0" onkeyup="if(event.key==='Enter')openGallery('hotelnaturaresort', this)">
         <div class="proj-img">
           <img width="1365" height="768" src="images/hotelnaturaresort_01.jpg" alt="Hotel Natura · Resort Rural" loading="lazy"
-               onerror="this.outerHTML='<div class=\'proj-ph\' data-ratio=\'wide\' style=\'aspect-ratio:16/9\'><div class=\'ph-lbl\'>Hotel Natura · Resort Rural · 2026</div></div>'">
+               onerror="if(!this.parentNode)return;this.outerHTML='<div class=\'proj-ph\' data-ratio=\'wide\' style=\'aspect-ratio:16/9\'><div class=\'ph-lbl\'>Hotel Natura · Resort Rural · 2026</div></div>'">
           <span class="proj-gallery-badge t">Ver Projecto</span>
         </div>
         <div class="proj-overlay"></div>
@@ -1286,11 +1291,11 @@ footer{background:var(--c-black);padding:72px 0 36px}
         </div>
       </div>
 
-      <!-- P39 — GALERIA (Complexo Desportivo) -->
+      <!-- P39 · GALERIA (Complexo Desportivo) -->
       <div class="proj reveal proj-gallery" data-cat="com" data-ratio="wide" onclick="openGallery('complexodesportivo', this)" role="button" tabindex="0" onkeyup="if(event.key==='Enter')openGallery('complexodesportivo', this)">
         <div class="proj-img">
           <img width="1365" height="768" src="images/complexodesportivo_01.jpg" alt="Complexo Desportivo" loading="lazy"
-               onerror="this.outerHTML='<div class=\'proj-ph\' data-ratio=\'wide\' style=\'aspect-ratio:16/9\'><div class=\'ph-lbl\'>Complexo Desportivo · 2026</div></div>'">
+               onerror="if(!this.parentNode)return;this.outerHTML='<div class=\'proj-ph\' data-ratio=\'wide\' style=\'aspect-ratio:16/9\'><div class=\'ph-lbl\'>Complexo Desportivo · 2026</div></div>'">
           <span class="proj-gallery-badge t">Ver Projecto</span>
         </div>
         <div class="proj-overlay"></div>
@@ -1301,11 +1306,11 @@ footer{background:var(--c-black);padding:72px 0 36px}
         </div>
       </div>
 
-      <!-- P40 — GALERIA (Vivenda Unifamiliar Moderna) -->
+      <!-- P40 · GALERIA (Vivenda Unifamiliar Moderna) -->
       <div class="proj reveal proj-gallery" data-cat="hab" data-ratio="wide" onclick="openGallery('vivendamoderna', this)" role="button" tabindex="0" onkeyup="if(event.key==='Enter')openGallery('vivendamoderna', this)">
         <div class="proj-img">
           <img width="1365" height="768" src="images/vivendamoderna_01.jpg" alt="Vivenda Unifamiliar Moderna" loading="lazy"
-               onerror="this.outerHTML='<div class=\'proj-ph\' data-ratio=\'wide\' style=\'aspect-ratio:16/9\'><div class=\'ph-lbl\'>Vivenda Unifamiliar Moderna · 2026</div></div>'">
+               onerror="if(!this.parentNode)return;this.outerHTML='<div class=\'proj-ph\' data-ratio=\'wide\' style=\'aspect-ratio:16/9\'><div class=\'ph-lbl\'>Vivenda Unifamiliar Moderna · 2026</div></div>'">
           <span class="proj-gallery-badge t">Ver Projecto</span>
         </div>
         <div class="proj-overlay"></div>
@@ -1316,11 +1321,11 @@ footer{background:var(--c-black);padding:72px 0 36px}
         </div>
       </div>
 
-      <!-- P41 — GALERIA (Moradias Geminadas em Banda) -->
+      <!-- P41 · GALERIA (Moradias Geminadas em Banda) -->
       <div class="proj reveal proj-gallery" data-cat="hab" data-ratio="wide" onclick="openGallery('geminadasbanda', this)" role="button" tabindex="0" onkeyup="if(event.key==='Enter')openGallery('geminadasbanda', this)">
         <div class="proj-img">
           <img width="1365" height="768" src="images/geminadasbanda_01.jpg" alt="Moradias Geminadas em Banda" loading="lazy"
-               onerror="this.outerHTML='<div class=\'proj-ph\' data-ratio=\'wide\' style=\'aspect-ratio:16/9\'><div class=\'ph-lbl\'>Moradias Geminadas em Banda · 2026</div></div>'">
+               onerror="if(!this.parentNode)return;this.outerHTML='<div class=\'proj-ph\' data-ratio=\'wide\' style=\'aspect-ratio:16/9\'><div class=\'ph-lbl\'>Moradias Geminadas em Banda · 2026</div></div>'">
           <span class="proj-gallery-badge t">Ver Projecto</span>
         </div>
         <div class="proj-overlay"></div>
@@ -1331,11 +1336,11 @@ footer{background:var(--c-black);padding:72px 0 36px}
         </div>
       </div>
 
-      <!-- P42 — GALERIA (Edifício de Escritórios) -->
+      <!-- P42 · GALERIA (Edifício de Escritórios) -->
       <div class="proj reveal proj-gallery" data-cat="com" data-ratio="wide" onclick="openGallery('edificioescritorios', this)" role="button" tabindex="0" onkeyup="if(event.key==='Enter')openGallery('edificioescritorios', this)">
         <div class="proj-img">
           <img width="1365" height="768" src="images/edificioescritorios_01.jpg" alt="Edifício de Escritórios" loading="lazy"
-               onerror="this.outerHTML='<div class=\'proj-ph\' data-ratio=\'wide\' style=\'aspect-ratio:16/9\'><div class=\'ph-lbl\'>Edifício de Escritórios · 2026</div></div>'">
+               onerror="if(!this.parentNode)return;this.outerHTML='<div class=\'proj-ph\' data-ratio=\'wide\' style=\'aspect-ratio:16/9\'><div class=\'ph-lbl\'>Edifício de Escritórios · 2026</div></div>'">
           <span class="proj-gallery-badge t">Ver Projecto</span>
         </div>
         <div class="proj-overlay"></div>
@@ -1482,7 +1487,7 @@ footer{background:var(--c-black);padding:72px 0 36px}
     <div class="about-grid">
       <div class="about-imgs-side reveal-l">
         <img id="aboutMainImg" src="images/image-025-0d5635971f13.jpg" alt="Visãovale · Projectos" class="about-slide-img"
-             onerror="this.outerHTML='<div class=\'about-ph\' style=\'height:100%;min-height:480px\'><div class=\'ph-lbl\'>Foto Sobre Nós<br>800×1000px</div></div>'" loading="lazy" decoding="async">
+             onerror="if(!this.parentNode)return;this.outerHTML='<div class=\'about-ph\' style=\'height:100%;min-height:480px\'><div class=\'ph-lbl\'>Foto Sobre Nós<br>800×1000px</div></div>'" loading="lazy" decoding="async">
       </div>
       <div class="reveal">
         <p class="label t">Sobre Nós</p>
@@ -1495,7 +1500,7 @@ footer{background:var(--c-black);padding:72px 0 36px}
       </div>
       <div class="about-imgs-side reveal-r">
         <img id="aboutFloatImg" src="images/image-026-280e529691bd.jpg" alt="Visãovale · Pormenor" class="about-slide-img"
-             onerror="this.outerHTML='<div class=\'about-ph\' style=\'height:100%;min-height:480px\'><div class=\'ph-lbl\'>Foto Sobre Nós</div></div>'" loading="lazy" decoding="async">
+             onerror="if(!this.parentNode)return;this.outerHTML='<div class=\'about-ph\' style=\'height:100%;min-height:480px\'><div class=\'ph-lbl\'>Foto Sobre Nós</div></div>'" loading="lazy" decoding="async">
       </div>
     </div>
   </div>
@@ -1571,7 +1576,7 @@ footer{background:var(--c-black);padding:72px 0 36px}
       <div class="news-card reveal" onclick="openGallery('quartamoradia', this)" role="button" tabindex="0" onkeyup="if(event.key==='Enter')openGallery('quartamoradia', this)">
         <div class="news-img">
           <img width="1365" height="768" src="images/quartamoradia_01.jpg" alt="Moradia Chãos"
-               onerror="this.outerHTML='<div class=\'news-ph\' style=\'height:100%;min-height:200px\'><div class=\'ph-lbl\'>Foto Notícia 1</div></div>'" loading="lazy" decoding="async">
+               onerror="if(!this.parentNode)return;this.outerHTML='<div class=\'news-ph\' style=\'height:100%;min-height:200px\'><div class=\'ph-lbl\'>Foto Notícia 1</div></div>'" loading="lazy" decoding="async">
         </div>
         <p class="news-date">2021</p>
         <h3 class="news-title t">Moradia Unifamiliar em Chãos · Projecto Completo</h3>
@@ -1580,7 +1585,7 @@ footer{background:var(--c-black);padding:72px 0 36px}
       <div class="news-card reveal" onclick="openGallery('segundamoradia', this)" role="button" tabindex="0" onkeyup="if(event.key==='Enter')openGallery('segundamoradia', this)">
         <div class="news-img">
           <img src="images/image-011-bf462dfabdd0.jpg" alt="Segunda Moradia Unifamiliar"
-               onerror="this.outerHTML='<div class=\'news-ph\' style=\'height:100%;min-height:200px\'><div class=\'ph-lbl\'>Foto Notícia 2</div></div>'" loading="lazy" decoding="async">
+               onerror="if(!this.parentNode)return;this.outerHTML='<div class=\'news-ph\' style=\'height:100%;min-height:200px\'><div class=\'ph-lbl\'>Foto Notícia 2</div></div>'" loading="lazy" decoding="async">
         </div>
         <p class="news-date">2021</p>
         <h3 class="news-title t">Segunda Moradia Unifamiliar · Render 3D e Projecto</h3>
@@ -1589,7 +1594,7 @@ footer{background:var(--c-black);padding:72px 0 36px}
       <div class="news-card reveal" onclick="openGallery('reabilitacao', this)" role="button" tabindex="0" onkeyup="if(event.key==='Enter')openGallery('reabilitacao', this)">
         <div class="news-img">
           <img src="images/image-017-156d18ebf8ae.jpg" alt="Reabilitação de Moradia"
-               onerror="this.outerHTML='<div class=\'news-ph\' style=\'height:100%;min-height:200px\'><div class=\'ph-lbl\'>Foto Notícia 3</div></div>'" loading="lazy" decoding="async">
+               onerror="if(!this.parentNode)return;this.outerHTML='<div class=\'news-ph\' style=\'height:100%;min-height:200px\'><div class=\'ph-lbl\'>Foto Notícia 3</div></div>'" loading="lazy" decoding="async">
         </div>
         <p class="news-date">2021</p>
         <h3 class="news-title t">Reabilitação de Moradia · Projecto Completo</h3>
@@ -1608,7 +1613,7 @@ footer{background:var(--c-black);padding:72px 0 36px}
 <section class="cta-band">
   <div class="container reveal">
     <h2><span class="t">Tem um terreno?</span> <em class="t">Vamos estudar o seu projecto.</em></h2>
-    <p class="t">Estudo prévio, viabilidade construtiva e estimativa de custos. Diga-nos o que quer fazer e recebe uma resposta de um arquitecto em 24–48h úteis.</p>
+    <p class="t">Estudo prévio, viabilidade construtiva e estimativa de custos. Diga-nos o que quer fazer e recebe uma resposta de um arquitecto em 24 a 48h úteis.</p>
     <div class="cta-actions">
       <a href="#contacto" class="btn btn-gold t">Falar com um Arquitecto</a>
       <a href="tel:+351969851001" class="btn btn-white t">Ligar Agora</a>
@@ -1621,7 +1626,7 @@ footer{background:var(--c-black);padding:72px 0 36px}
     <div class="reveal" style="margin-bottom:52px">
       <p class="label t">Fale Connosco</p>
       <h2 class="h2">Quer construir, remodelar <em>ou investir?</em></h2>
-      <p class="body t" style="max-width:560px;margin-top:14px">Quanto mais nos disser, mais concreta é a nossa resposta. Só o nome, o email e o objectivo são obrigatórios — o resto ajuda-nos a preparar uma proposta à medida.</p>
+      <p class="body t" style="max-width:560px;margin-top:14px">Quanto mais nos disser, mais concreta é a nossa resposta. Só o nome, o email e o objectivo são obrigatórios. O resto ajuda-nos a preparar uma proposta à medida.</p>
     </div>
     <div class="contact-grid">
       <div>
@@ -1650,7 +1655,7 @@ footer{background:var(--c-black);padding:72px 0 36px}
           <div class="c-icon">🕐</div>
           <div>
             <p class="c-lbl t">Horário</p>
-            <p class="c-val t">Segunda a Sexta<br>09:00 – 18:00</p>
+            <p class="c-val t">Segunda a Sexta<br>09:00 às 18:00</p>
           </div>
         </div>
         <div class="c-map reveal">
@@ -1665,27 +1670,18 @@ footer{background:var(--c-black);padding:72px 0 36px}
       </div>
       <div class="reveal">
 
-        <div class="q-group">
-          <label class="t">O que pretende fazer? *</label>
-          <div class="q-chips" id="qObjectivo">
-            <input type="radio" name="objectivo" id="ob1" value="Construir de raiz"><label for="ob1" class="t">Construir de raiz</label>
-            <input type="radio" name="objectivo" id="ob2" value="Remodelar"><label for="ob2" class="t">Remodelar</label>
-            <input type="radio" name="objectivo" id="ob3" value="Reabilitar"><label for="ob3" class="t">Reabilitar</label>
-            <input type="radio" name="objectivo" id="ob4" value="Comprar terreno"><label for="ob4" class="t">Comprar terreno</label>
-            <input type="radio" name="objectivo" id="ob5" value="Investimento imobiliário"><label for="ob5" class="t">Investimento imobiliário</label>
-            <input type="radio" name="objectivo" id="ob6" value="Licenciamento"><label for="ob6" class="t">Licenciamento</label>
-            <input type="radio" name="objectivo" id="ob7" value="Design de interiores"><label for="ob7" class="t">Design de interiores</label>
-            <input type="radio" name="objectivo" id="ob8" value="Outro"><label for="ob8" class="t">Outro</label>
-          </div>
+        <div class="q-group" id="qObjectivoGroup">
+          <span class="q-lbl"><span class="t">O que pretende fazer?</span> <span class="req">*</span></span>
+          <div class="q-chips" id="qObjectivo" role="group" aria-label="O que pretende fazer?"><button type="button" class="q-chip t" data-v="Construir de raiz" aria-pressed="false" onclick="pick(this)">Construir de raiz</button><button type="button" class="q-chip t" data-v="Remodelar" aria-pressed="false" onclick="pick(this)">Remodelar</button><button type="button" class="q-chip t" data-v="Reabilitar" aria-pressed="false" onclick="pick(this)">Reabilitar</button><button type="button" class="q-chip t" data-v="Comprar terreno" aria-pressed="false" onclick="pick(this)">Comprar terreno</button><button type="button" class="q-chip t" data-v="Investimento imobiliário" aria-pressed="false" onclick="pick(this)">Investimento imobiliário</button><button type="button" class="q-chip t" data-v="Licenciamento" aria-pressed="false" onclick="pick(this)">Licenciamento</button><button type="button" class="q-chip t" data-v="Design de interiores" aria-pressed="false" onclick="pick(this)">Design de interiores</button><button type="button" class="q-chip t" data-v="Outro" aria-pressed="false" onclick="pick(this)">Outro</button></div>
+          <input type="hidden" id="fObjectivo" value="">
+          <span class="q-err t">Escolha uma opção para continuarmos.</span>
         </div>
 
-        <div class="q-group">
-          <label class="t">Já tem terreno ou imóvel?</label>
-          <div class="q-chips" id="qTerreno">
-            <input type="radio" name="terreno" id="tr1" value="Sim"><label for="tr1" class="t">Sim</label>
-            <input type="radio" name="terreno" id="tr2" value="Não"><label for="tr2" class="t">Não</label>
-            <input type="radio" name="terreno" id="tr3" value="Em negociação"><label for="tr3" class="t">Em negociação</label>
-          </div>
+        <div class="q-group" id="qTerrenoGroup">
+          <span class="q-lbl"><span class="t">Já tem terreno ou imóvel?</span></span>
+          <div class="q-chips" id="qTerreno" role="group" aria-label="Já tem terreno ou imóvel?"><button type="button" class="q-chip t" data-v="Sim" aria-pressed="false" onclick="pick(this)">Sim</button><button type="button" class="q-chip t" data-v="Não" aria-pressed="false" onclick="pick(this)">Não</button><button type="button" class="q-chip t" data-v="Em negociação" aria-pressed="false" onclick="pick(this)">Em negociação</button></div>
+          <input type="hidden" id="fTerreno" value="">
+          <span class="q-err t"></span>
         </div>
 
         <div class="fg-row">
@@ -1699,9 +1695,9 @@ footer{background:var(--c-black);padding:72px 0 36px}
             <select id="fOrcamento">
               <option value="" class="t">Prefiro não indicar</option>
               <option class="t">Até 50.000 €</option>
-              <option class="t">50.000 – 150.000 €</option>
-              <option class="t">150.000 – 300.000 €</option>
-              <option class="t">300.000 – 600.000 €</option>
+              <option class="t">50.000 a 150.000 €</option>
+              <option class="t">150.000 a 300.000 €</option>
+              <option class="t">300.000 a 600.000 €</option>
               <option class="t">Mais de 600.000 €</option>
             </select>
           </div>
@@ -1718,11 +1714,11 @@ footer{background:var(--c-black);padding:72px 0 36px}
         </div>
 
         <div class="fg-row">
-          <div class="fg"><label class="t">Nome *</label><input type="text" id="fNome" placeholder="O seu nome"></div>
-          <div class="fg"><label class="t">Email *</label><input type="email" id="fEmail" placeholder="email@exemplo.com"></div>
+          <div class="fg" id="gNome"><label class="t">Nome *</label><input type="text" id="fNome" placeholder="O seu nome" autocomplete="name"><span class="q-err t">Indique o seu nome.</span></div>
+          <div class="fg" id="gEmail"><label class="t">Email *</label><input type="email" id="fEmail" placeholder="email@exemplo.com" autocomplete="email"><span class="q-err t">Indique um email válido para lhe podermos responder.</span></div>
         </div>
-        <div class="fg"><label class="t">Telefone</label><input type="tel" id="fTel" placeholder="+351 ___ ___ ___"></div>
-        <div class="fg"><label class="t">Mensagem</label><textarea class="t" id="fMsg" placeholder="Conte-nos o que tem em mente — quanto mais detalhe, melhor a resposta."></textarea></div>
+        <div class="fg"><label class="t">Telefone</label><input type="tel" id="fTel" placeholder="+351 ___ ___ ___" autocomplete="tel"></div>
+        <div class="fg"><label class="t">Mensagem</label><textarea class="t" id="fMsg" placeholder="Conte-nos o que tem em mente. Quanto mais detalhe, melhor a resposta."></textarea></div>
 
         <button class="btn btn-gold" style="width:100%;justify-content:center" onclick="sendForm(event)">
           <span class="t">Falar com um Arquitecto →</span>
@@ -1730,7 +1726,7 @@ footer{background:var(--c-black);padding:72px 0 36px}
         <p style="font-size:.7rem;color:var(--c-grey);margin-top:12px;line-height:1.6">
           <span class="t">Ao enviar aceita a nossa</span>
           <a href="politica-privacidade.html" style="color:var(--c-grey);text-decoration:underline" class="t">Política de Privacidade</a>.
-          <span class="t">Respondemos em 24–48h úteis.</span>
+          <span class="t">Respondemos em 24 a 48h úteis.</span>
         </p>
       </div>
     </div>
@@ -1817,6 +1813,121 @@ footer{background:var(--c-black);padding:72px 0 36px}
 <script>
 const TR = {
   pt: {
+    'Como Ajudamos':'Como Ajudamos',
+    'Como ajudamos':'Como ajudamos',
+    'Falar com um Arquitecto':'Falar com um Arquitecto',
+    'Falar com um Arquitecto →':'Falar com um Arquitecto →',
+    'Ligar Agora':'Ligar Agora',
+    'Tem um terreno?':'Tem um terreno?',
+    'Vamos estudar o seu projecto.':'Vamos estudar o seu projecto.',
+    'Projectos em Foco':'Projectos em Foco',
+    'Onde trabalhamos':'Onde trabalhamos',
+    'Projecto de Moradias':'Projecto de Moradias',
+    'Urbanismo e Loteamentos':'Urbanismo e Loteamentos',
+    'Licenciamento':'Licenciamento',
+    'Quase toda a gente que nos contacta chega com uma destas seis perguntas. Escolha a sua e veja exactamente o que fazemos a seguir.':'Quase toda a gente que nos contacta chega com uma destas seis perguntas. Escolha a sua e veja exactamente o que fazemos a seguir.',
+    'Tenho um terreno mas não sei o que posso construir lá.':'Tenho um terreno mas não sei o que posso construir lá.',
+    'Analisamos o PDM, a certidão e as condicionantes do lote e dizemos-lhe, por escrito, que área e que volumetria são possíveis, antes de investir em projecto.':'Analisamos o PDM, a certidão e as condicionantes do lote e dizemos-lhe, por escrito, que área e que volumetria são possíveis, antes de investir em projecto.',
+    'Ver como fazemos →':'Ver como fazemos →',
+    'Herdei uma casa antiga e não sei se vale a pena recuperar.':'Herdei uma casa antiga e não sei se vale a pena recuperar.',
+    'Fazemos o diagnóstico do edificado, identificamos patologias e comparamos o custo de reabilitar com o de construir de novo.':'Fazemos o diagnóstico do edificado, identificamos patologias e comparamos o custo de reabilitar com o de construir de novo.',
+    'Ver reabilitação →':'Ver reabilitação →',
+    'A câmara pediu elementos e o processo está parado.':'A câmara pediu elementos e o processo está parado.',
+    'Assumimos processos já iniciados: percebemos o que falta, respondemos às entidades e levamos até ao alvará.':'Assumimos processos já iniciados: percebemos o que falta, respondemos às entidades e levamos até ao alvará.',
+    'Ver licenciamento →':'Ver licenciamento →',
+    'Tenho medo que a obra derrape no preço e no prazo.':'Tenho medo que a obra derrape no preço e no prazo.',
+    'Mapa de quantidades e caderno de encargos para consultar empreiteiros em igualdade, e visitas de obra com relatório e validação de autos.':'Mapa de quantidades e caderno de encargos para consultar empreiteiros em igualdade, e visitas de obra com relatório e validação de autos.',
+    'Ver gestão de obra →':'Ver gestão de obra →',
+    'Vou remodelar e não consigo imaginar o resultado final.':'Vou remodelar e não consigo imaginar o resultado final.',
+    'Renders fotorrealistas de cada divisão e mapa de acabamentos aprovados antes de comprar seja o que for.':'Renders fotorrealistas de cada divisão e mapa de acabamentos aprovados antes de comprar seja o que for.',
+    'Ver interiores →':'Ver interiores →',
+    'Quero comprar um terreno para promoção mas não sei se dá retorno.':'Quero comprar um terreno para promoção mas não sei se dá retorno.',
+    'Estudo de capacidade construtiva e leitura urbanística independente antes da escritura. É o número que decide o negócio.':'Estudo de capacidade construtiva e leitura urbanística independente antes da escritura. É o número que decide o negócio.',
+    'Ver urbanismo →':'Ver urbanismo →',
+    'Não encontra a sua situação? Descreva-a em duas linhas e respondemos com o caminho concreto, não com um catálogo de serviços.':'Não encontra a sua situação? Descreva-a em duas linhas e respondemos com o caminho concreto, não com um catálogo de serviços.',
+    'Obra concluída':'Obra concluída',
+    'Obra Construída':'Obra Construída',
+    'Antes':'Antes',
+    'Depois':'Depois',
+    'Ver obras construídas':'Ver obras construídas',
+    'Arraste a barra para comparar o estado original com o resultado final. Estas são obras construídas, não simulações.':'Arraste a barra para comparar o estado original com o resultado final. Estas são obras construídas, não simulações.',
+    'Estamos a preparar esta secção com fotografias de obra. Enquanto isso, pode ver os projectos já construídos filtrando o portfólio por Obra Construída.':'Estamos a preparar esta secção com fotografias de obra. Enquanto isso, pode ver os projectos já construídos filtrando o portfólio por Obra Construída.',
+    'Estudo prévio, viabilidade construtiva e estimativa de custos. Diga-nos o que quer fazer e recebe uma resposta de um arquitecto em 24 a 48h úteis.':'Estudo prévio, viabilidade construtiva e estimativa de custos. Diga-nos o que quer fazer e recebe uma resposta de um arquitecto em 24 a 48h úteis.',
+    'Quanto mais nos disser, mais concreta é a nossa resposta. Só o nome, o email e o objectivo são obrigatórios. O resto ajuda-nos a preparar uma proposta à medida.':'Quanto mais nos disser, mais concreta é a nossa resposta. Só o nome, o email e o objectivo são obrigatórios. O resto ajuda-nos a preparar uma proposta à medida.',
+    'Conte-nos o que tem em mente. Quanto mais detalhe, melhor a resposta.':'Conte-nos o que tem em mente. Quanto mais detalhe, melhor a resposta.',
+    'Área aproximada (m²)':'Área aproximada (m²)',
+    'Orçamento estimado':'Orçamento estimado',
+    'Prefiro não indicar':'Prefiro não indicar',
+    'Até 50.000 €':'Até 50.000 €',
+    '50.000 a 150.000 €':'50.000 a 150.000 €',
+    '150.000 a 300.000 €':'150.000 a 300.000 €',
+    '300.000 a 600.000 €':'300.000 a 600.000 €',
+    'Mais de 600.000 €':'Mais de 600.000 €',
+    'Quando pretende começar?':'Quando pretende começar?',
+    'O mais cedo possível':'O mais cedo possível',
+    'Nos próximos 3 meses':'Nos próximos 3 meses',
+    'Nos próximos 6 a 12 meses':'Nos próximos 6 a 12 meses',
+    'Ainda a estudar':'Ainda a estudar',
+    'Mensagem':'Mensagem',
+    'Segunda a Sexta09:00 às 18:00':'Segunda a Sexta09:00 às 18:00',
+    'Caldas da Rainha':'Caldas da Rainha',
+    'Óbidos':'Óbidos',
+    'Peniche':'Peniche',
+    'Nazaré':'Nazaré',
+    'Alcobaça':'Alcobaça',
+    'Leiria':'Leiria',
+    'Marinha Grande':'Marinha Grande',
+    'Construção nova':'Construção nova',
+    'Loteamento':'Loteamento',
+    'Planeamento urbano':'Planeamento urbano',
+    'Equipamento desportivo':'Equipamento desportivo',
+    'Escritórios':'Escritórios',
+    'Hotelaria':'Hotelaria',
+    'Restauração':'Restauração',
+    'Turismo':'Turismo',
+    'Projectos residenciais, comerciais e de reabilitação com acompanhamento integral, do estudo prévio à entrega da obra.':'Projectos residenciais, comerciais e de reabilitação com acompanhamento integral, do estudo prévio à entrega da obra.',
+    'Moradias unifamiliares e edifícios colectivos com rigor técnico e sensibilidade estética.':'Moradias unifamiliares e edifícios colectivos com rigor técnico e sensibilidade estética.',
+    'Recuperação de imóveis com respeito pela traça original e todo o conforto actual.':'Recuperação de imóveis com respeito pela traça original e todo o conforto actual.',
+    'Moradias desenhadas à medida da paisagem, entre pedra natural e linhas contemporâneas.':'Moradias desenhadas à medida da paisagem, entre pedra natural e linhas contemporâneas.',
+    'Espaços exteriores que prolongam o conforto da casa até ao jardim.':'Espaços exteriores que prolongam o conforto da casa até ao jardim.',
+    'Recuperação e valorização de edifícios existentes. Desde estudos de diagnóstico, passando pelo projecto de intervenção e licenciamento, até à assistência técnica à obra. Preservamos a identidade original introduzindo eficiência contemporânea.':'Recuperação e valorização de edifícios existentes. Desde estudos de diagnóstico, passando pelo projecto de intervenção e licenciamento, até à assistência técnica à obra. Preservamos a identidade original introduzindo eficiência contemporânea.',
+    'Intervenções em edifícios de interesse patrimonial. Análise do estado de conservação, definição de estratégias de intervenção respeitando a autenticidade construtiva, coordenação com entidades de salvaguarda do património.':'Intervenções em edifícios de interesse patrimonial. Análise do estado de conservação, definição de estratégias de intervenção respeitando a autenticidade construtiva, coordenação com entidades de salvaguarda do património.',
+    'Modernização funcional e estética de espaços existentes. Remodelações integrais ou parciais, ampliações e adaptações de uso, com aproveitamento máximo das estruturas existentes para redução de custos e impacto ambiental.':'Modernização funcional e estética de espaços existentes. Remodelações integrais ou parciais, ampliações e adaptações de uso, com aproveitamento máximo das estruturas existentes para redução de custos e impacto ambiental.',
+    'Orientação técnica antes de investir. Análise de viabilidade técnica e legal, enquadramento no PDM e legislação em vigor, avaliação de potencial construtivo e assessoria na tomada de decisão de investimento imobiliário.':'Orientação técnica antes de investir. Análise de viabilidade técnica e legal, enquadramento no PDM e legislação em vigor, avaliação de potencial construtivo e assessoria na tomada de decisão de investimento imobiliário.',
+    'Moradias personalizadas do primeiro esboço à chave na mão. Desenvolvimento de estudos prévios, projecto de arquitectura, coordenação de especialidades, licenciamento camarário e acompanhamento integral da obra.':'Moradias personalizadas do primeiro esboço à chave na mão. Desenvolvimento de estudos prévios, projecto de arquitectura, coordenação de especialidades, licenciamento camarário e acompanhamento integral da obra.',
+    'Edifícios multifamiliares e empreendimentos residenciais. Projectos de arquitectura para promoção imobiliária, com optimização de rendas e valias, coordenação de especialidades técnicas e gestão do processo de licenciamento.':'Edifícios multifamiliares e empreendimentos residenciais. Projectos de arquitectura para promoção imobiliária, com optimização de rendas e valias, coordenação de especialidades técnicas e gestão do processo de licenciamento.',
+    'Apoio especializado a investidores e promotores. Análises urbanísticas, mapas de rentabilidade, estudos prévios de arquitectura enquadrados no PDM, incluindo Pedido de Informação Prévia (PIP) junto das câmaras municipais.':'Apoio especializado a investidores e promotores. Análises urbanísticas, mapas de rentabilidade, estudos prévios de arquitectura enquadrados no PDM, incluindo Pedido de Informação Prévia (PIP) junto das câmaras municipais.',
+    'Acompanhamento técnico permanente em obra. Fiscalização e coordenação de empreitadas, controlo de qualidade, cumprimento de prazo e orçamento, com acompanhamento online de todas as fases de execução.':'Acompanhamento técnico permanente em obra. Fiscalização e coordenação de empreitadas, controlo de qualidade, cumprimento de prazo e orçamento, com acompanhamento online de todas as fases de execução.',
+    'Projectos para lojas, restaurantes, bares e espaços de retalho. Concepção funcional e estética que reforça a identidade da marca, melhora a experiência do cliente e maximiza a rentabilidade do espaço.':'Projectos para lojas, restaurantes, bares e espaços de retalho. Concepção funcional e estética que reforça a identidade da marca, melhora a experiência do cliente e maximiza a rentabilidade do espaço.',
+    'Hotéis, alojamentos locais e empreendimentos turísticos. Soluções que valorizam a experiência do hóspede e reforçam a marca do cliente, desde o projecto de arquitectura até ao design de interiores completo.':'Hotéis, alojamentos locais e empreendimentos turísticos. Soluções que valorizam a experiência do hóspede e reforçam a marca do cliente, desde o projecto de arquitectura até ao design de interiores completo.',
+    'Ambientes de trabalho funcionais, modernos e motivadores. Projectos que optimizam fluxos, promovem bem-estar e produtividade, adaptados à cultura e imagem de cada empresa.':'Ambientes de trabalho funcionais, modernos e motivadores. Projectos que optimizam fluxos, promovem bem-estar e produtividade, adaptados à cultura e imagem de cada empresa.',
+    'Tratamento integral de processos junto das entidades competentes. Preparação de toda a documentação técnica, acompanhamento dos processos de licenciamento e garantia de conformidade legal em todas as fases.':'Tratamento integral de processos junto das entidades competentes. Preparação de toda a documentação técnica, acompanhamento dos processos de licenciamento e garantia de conformidade legal em todas as fases.',
+    'Projectos para instalações industriais, logísticas e de armazenagem. Concepção funcional orientada para a operação, com optimização de espaços, fluxos de trabalho, segurança e eficiência energética.':'Projectos para instalações industriais, logísticas e de armazenagem. Concepção funcional orientada para a operação, com optimização de espaços, fluxos de trabalho, segurança e eficiência energética.',
+    'Conversão de instalações existentes para novos usos industriais. Análise estrutural, adequação às normas de segurança e higiene no trabalho, licenciamento industrial e acompanhamento de obras.':'Conversão de instalações existentes para novos usos industriais. Análise estrutural, adequação às normas de segurança e higiene no trabalho, licenciamento industrial e acompanhamento de obras.',
+    'Coordenação de todas as especialidades de engenharia. Estruturas, redes de abastecimento, esgotos, electricidade, AVAC, segurança contra incêndios, em coordenação eficiente com a equipa de arquitectura, utilizando metodologia BIM.':'Coordenação de todas as especialidades de engenharia. Estruturas, redes de abastecimento, esgotos, electricidade, AVAC, segurança contra incêndios, em coordenação eficiente com a equipa de arquitectura, utilizando metodologia BIM.',
+    'Acompanhamento total sem intermediários. Da aquisição do activo ao licenciamento, construção e colocação no mercado. Cobertura em todo o território nacional, com técnicos próprios.':'Acompanhamento total sem intermediários. Da aquisição do activo ao licenciamento, construção e colocação no mercado. Cobertura em todo o território nacional, com técnicos próprios.',
+    'Transformamos espaços em ambientes únicos, funcionais e personalizados. Para habitações, criamos interiores que traduzem a identidade de quem vive o espaço, da concepção à escolha de mobiliário, cores, texturas e iluminação.':'Transformamos espaços em ambientes únicos, funcionais e personalizados. Para habitações, criamos interiores que traduzem a identidade de quem vive o espaço, da concepção à escolha de mobiliário, cores, texturas e iluminação.',
+    'Equipa criativa para universos de estilos únicos com identidade própria. Soluções para hotelaria, restauração, escritórios e espaços comerciais, completamente personalizadas e de acordo com a área de negócio.':'Equipa criativa para universos de estilos únicos com identidade própria. Soluções para hotelaria, restauração, escritórios e espaços comerciais, completamente personalizadas e de acordo com a área de negócio.',
+    'Renders fotorrealistas para apresentação e decisão. Projectos 3D que proporcionam uma visão tão realista quanto possível do espaço, facilitando a comunicação com o cliente e o processo de licenciamento.':'Renders fotorrealistas para apresentação e decisão. Projectos 3D que proporcionam uma visão tão realista quanto possível do espaço, facilitando a comunicação com o cliente e o processo de licenciamento.',
+    'Simplificamos o processo de equipamento e decoração. Selecção de peças, arte e acessórios que conferem carácter e harmonia ao espaço, com gestão de compras que poupa tempo e reduz preocupações ao cliente.':'Simplificamos o processo de equipamento e decoração. Selecção de peças, arte e acessórios que conferem carácter e harmonia ao espaço, com gestão de compras que poupa tempo e reduz preocupações ao cliente.',
+    'Do estudo prévio ao projecto de execução detalhado. Acompanhamento de todas as fases: estudos iniciais, ante-projecto, projecto de licenciamento, projecto de execução e assistência técnica à obra, com recurso a tecnologia BIM.':'Do estudo prévio ao projecto de execução detalhado. Acompanhamento de todas as fases: estudos iniciais, ante-projecto, projecto de licenciamento, projecto de execução e assistência técnica à obra, com recurso a tecnologia BIM.',
+    'Orientação especializada antes de tomar decisões. Análise de viabilidade legal e técnica, procura de terrenos e imóveis, esclarecimento de possibilidades de intervenção, apoio na definição de estratégias de investimento ou reabilitação.':'Orientação especializada antes de tomar decisões. Análise de viabilidade legal e técnica, procura de terrenos e imóveis, esclarecimento de possibilidades de intervenção, apoio na definição de estratégias de investimento ou reabilitação.',
+    'Design de espaços exteriores integrado com a linguagem arquitectónica. Jardins, acessos, piscinas e áreas de lazer concebidos em harmonia com a arquitectura e o contexto ambiental do projecto.':'Design de espaços exteriores integrado com a linguagem arquitectónica. Jardins, acessos, piscinas e áreas de lazer concebidos em harmonia com a arquitectura e o contexto ambiental do projecto.',
+    'Soluções que reduzem custos e impacto ambiental. Certificação energética, integração de sistemas de energia renovável, análise de ciclo de vida dos materiais e estratégias bioclimáticas passivas.':'Soluções que reduzem custos e impacto ambiental. Certificação energética, integração de sistemas de energia renovável, análise de ciclo de vida dos materiais e estratégias bioclimáticas passivas.',
+    'Indique um email válido para lhe podermos responder.':'Indique um email válido para lhe podermos responder.',
+    'Indique o seu nome.':'Indique o seu nome.',
+    'Escolha uma opção para continuarmos.':'Escolha uma opção para continuarmos.',
+    'Em negociação':'Em negociação',
+    'Não':'Não',
+    'Sim':'Sim',
+    'Design de interiores':'Design de interiores',
+    'Investimento imobiliário':'Investimento imobiliário',
+    'Comprar terreno':'Comprar terreno',
+    'Reabilitar':'Reabilitar',
+    'Remodelar':'Remodelar',
+    'Construir de raiz':'Construir de raiz',
+    'Já tem terreno ou imóvel?':'Já tem terreno ou imóvel?',
+    'O que pretende fazer?':'O que pretende fazer?',
     'Ver Projecto':'Ver Projecto',
     'Utilizamos cookies essenciais ao funcionamento do site e, com o seu consentimento, cookies analíticos para melhorar a sua experiência.':'Utilizamos cookies essenciais ao funcionamento do site e, com o seu consentimento, cookies analíticos para melhorar a sua experiência.',
     'Saiba mais na nossa':'Saiba mais na nossa',
@@ -1910,7 +2021,7 @@ const TR = {
     'Nacional · Sem Intermediários':'Nacional · Sem Intermediários',
     'Selecção':'Selecção',
     'Enviar Mensagem →':'Enviar Mensagem →',
-    'Respondemos em 24–48h úteis.':'Respondemos em 24–48h úteis.',
+    'Respondemos em 24 a 48h úteis.':'Respondemos em 24 a 48h úteis.',
     'Qualidade & Rigor':'Qualidade & Rigor',
     'Foto Processo · 600×750px':'Foto Processo · 600×750px',
     'Email':'Email',
@@ -2045,6 +2156,121 @@ const TR = {
     'Email *':'Email *',
   },
   en: {
+    'Como Ajudamos':'How We Help',
+    'Como ajudamos':'How we help',
+    'Falar com um Arquitecto':'Talk to an Architect',
+    'Falar com um Arquitecto →':'Talk to an Architect →',
+    'Ligar Agora':'Call Now',
+    'Tem um terreno?':'Own a plot of land?',
+    'Vamos estudar o seu projecto.':"Let's study your project.",
+    'Projectos em Foco':'Featured Projects',
+    'Onde trabalhamos':'Where we work',
+    'Projecto de Moradias':'House Design',
+    'Urbanismo e Loteamentos':'Urban Planning',
+    'Licenciamento':'Permitting',
+    'Quase toda a gente que nos contacta chega com uma destas seis perguntas. Escolha a sua e veja exactamente o que fazemos a seguir.':'Almost everyone who contacts us arrives with one of these six questions. Pick yours and see exactly what we do next.',
+    'Tenho um terreno mas não sei o que posso construir lá.':'I own a plot but I don’t know what I can build on it.',
+    'Analisamos o PDM, a certidão e as condicionantes do lote e dizemos-lhe, por escrito, que área e que volumetria são possíveis, antes de investir em projecto.':'We review the municipal master plan, the land registry and the plot constraints, and tell you in writing what floor area and volume are possible, before you invest in a design.',
+    'Ver como fazemos →':'See how we work →',
+    'Herdei uma casa antiga e não sei se vale a pena recuperar.':'I inherited an old house and I don’t know if it’s worth restoring.',
+    'Fazemos o diagnóstico do edificado, identificamos patologias e comparamos o custo de reabilitar com o de construir de novo.':'We survey the building, identify its defects and compare the cost of refurbishing with that of building new.',
+    'Ver reabilitação →':'See refurbishment →',
+    'A câmara pediu elementos e o processo está parado.':'The council asked for more documents and my application is stuck.',
+    'Assumimos processos já iniciados: percebemos o que falta, respondemos às entidades e levamos até ao alvará.':'We take over applications already under way: we work out what is missing, answer the authorities and see it through to the permit.',
+    'Ver licenciamento →':'See permitting →',
+    'Tenho medo que a obra derrape no preço e no prazo.':'I’m afraid the build will overrun on cost and time.',
+    'Mapa de quantidades e caderno de encargos para consultar empreiteiros em igualdade, e visitas de obra com relatório e validação de autos.':'A bill of quantities and specification so contractors bid on equal terms, plus site visits with written reports and approval of payment certificates.',
+    'Ver gestão de obra →':'See site supervision →',
+    'Vou remodelar e não consigo imaginar o resultado final.':'I’m remodelling and I can’t picture the end result.',
+    'Renders fotorrealistas de cada divisão e mapa de acabamentos aprovados antes de comprar seja o que for.':'Photorealistic renders of every room and an approved finishes schedule before you buy anything.',
+    'Ver interiores →':'See interiors →',
+    'Quero comprar um terreno para promoção mas não sei se dá retorno.':'I want to buy land for development but I don’t know if it pays off.',
+    'Estudo de capacidade construtiva e leitura urbanística independente antes da escritura. É o número que decide o negócio.':'A build-capacity study and an independent planning assessment before the deed. That is the number the deal turns on.',
+    'Ver urbanismo →':'See urban planning →',
+    'Não encontra a sua situação? Descreva-a em duas linhas e respondemos com o caminho concreto, não com um catálogo de serviços.':'Don’t see your situation? Describe it in two lines and we’ll reply with a concrete route, not a service catalogue.',
+    'Obra concluída':'Completed work',
+    'Obra Construída':'Built Work',
+    'Antes':'Before',
+    'Depois':'After',
+    'Ver obras construídas':'See built work',
+    'Arraste a barra para comparar o estado original com o resultado final. Estas são obras construídas, não simulações.':'Drag the slider to compare the original state with the finished result. These are built works, not simulations.',
+    'Estamos a preparar esta secção com fotografias de obra. Enquanto isso, pode ver os projectos já construídos filtrando o portfólio por Obra Construída.':'We are preparing this section with site photography. In the meantime you can see the completed projects by filtering the portfolio by Built Work.',
+    'Estudo prévio, viabilidade construtiva e estimativa de custos. Diga-nos o que quer fazer e recebe uma resposta de um arquitecto em 24 a 48h úteis.':'Preliminary study, build feasibility and cost estimate. Tell us what you want to do and an architect replies within 24 to 48 business hours.',
+    'Quanto mais nos disser, mais concreta é a nossa resposta. Só o nome, o email e o objectivo são obrigatórios. O resto ajuda-nos a preparar uma proposta à medida.':'The more you tell us, the more concrete our answer. Only name, email and goal are required. The rest helps us prepare a tailored proposal.',
+    'Conte-nos o que tem em mente. Quanto mais detalhe, melhor a resposta.':'Tell us what you have in mind. The more detail, the better the answer.',
+    'Área aproximada (m²)':'Approximate area (m²)',
+    'Orçamento estimado':'Estimated budget',
+    'Prefiro não indicar':'Prefer not to say',
+    'Até 50.000 €':'Up to €50,000',
+    '50.000 a 150.000 €':'€50,000 to €150,000',
+    '150.000 a 300.000 €':'€150,000 to €300,000',
+    '300.000 a 600.000 €':'€300,000 to €600,000',
+    'Mais de 600.000 €':'Over €600,000',
+    'Quando pretende começar?':'When do you want to start?',
+    'O mais cedo possível':'As soon as possible',
+    'Nos próximos 3 meses':'Within 3 months',
+    'Nos próximos 6 a 12 meses':'Within 6 to 12 months',
+    'Ainda a estudar':'Still exploring',
+    'Mensagem':'Message',
+    'Segunda a Sexta09:00 às 18:00':'Monday to Friday09:00 to 18:00',
+    'Caldas da Rainha':'Caldas da Rainha',
+    'Óbidos':'Óbidos',
+    'Peniche':'Peniche',
+    'Nazaré':'Nazaré',
+    'Alcobaça':'Alcobaça',
+    'Leiria':'Leiria',
+    'Marinha Grande':'Marinha Grande',
+    'Construção nova':'New build',
+    'Loteamento':'Land subdivision',
+    'Planeamento urbano':'Urban planning',
+    'Equipamento desportivo':'Sports facility',
+    'Escritórios':'Offices',
+    'Hotelaria':'Hospitality',
+    'Restauração':'Restaurants',
+    'Turismo':'Tourism',
+    'Projectos residenciais, comerciais e de reabilitação com acompanhamento integral, do estudo prévio à entrega da obra.':'Residential, commercial and refurbishment projects with full support, from preliminary study to handover.',
+    'Moradias unifamiliares e edifícios colectivos com rigor técnico e sensibilidade estética.':'Single-family houses and multi-unit buildings with technical rigour and aesthetic sensibility.',
+    'Recuperação de imóveis com respeito pela traça original e todo o conforto actual.':'Restoring properties with respect for the original character and all of today’s comfort.',
+    'Moradias desenhadas à medida da paisagem, entre pedra natural e linhas contemporâneas.':'Houses designed to fit the landscape, between natural stone and contemporary lines.',
+    'Espaços exteriores que prolongam o conforto da casa até ao jardim.':'Outdoor spaces that carry the comfort of the house into the garden.',
+    'Recuperação e valorização de edifícios existentes. Desde estudos de diagnóstico, passando pelo projecto de intervenção e licenciamento, até à assistência técnica à obra. Preservamos a identidade original introduzindo eficiência contemporânea.':'Restoring and adding value to existing buildings. From condition surveys through to the intervention design, permitting and technical support on site. We preserve the original identity while introducing contemporary efficiency.',
+    'Intervenções em edifícios de interesse patrimonial. Análise do estado de conservação, definição de estratégias de intervenção respeitando a autenticidade construtiva, coordenação com entidades de salvaguarda do património.':'Work on heritage-listed buildings. Condition assessment, intervention strategies that respect the authenticity of the original construction, and coordination with heritage authorities.',
+    'Modernização funcional e estética de espaços existentes. Remodelações integrais ou parciais, ampliações e adaptações de uso, com aproveitamento máximo das estruturas existentes para redução de custos e impacto ambiental.':'Functional and aesthetic upgrading of existing spaces. Full or partial remodelling, extensions and change of use, making the most of existing structures to cut cost and environmental impact.',
+    'Orientação técnica antes de investir. Análise de viabilidade técnica e legal, enquadramento no PDM e legislação em vigor, avaliação de potencial construtivo e assessoria na tomada de decisão de investimento imobiliário.':'Technical guidance before you invest. Legal and technical feasibility, compliance with the municipal master plan and current legislation, build-potential assessment and advice on property investment decisions.',
+    'Moradias personalizadas do primeiro esboço à chave na mão. Desenvolvimento de estudos prévios, projecto de arquitectura, coordenação de especialidades, licenciamento camarário e acompanhamento integral da obra.':'Bespoke houses from first sketch to turnkey. Preliminary studies, architectural design, coordination of engineering disciplines, municipal permitting and full site supervision.',
+    'Edifícios multifamiliares e empreendimentos residenciais. Projectos de arquitectura para promoção imobiliária, com optimização de rendas e valias, coordenação de especialidades técnicas e gestão do processo de licenciamento.':'Multi-unit buildings and residential developments. Architecture for property development, optimising yield and value, coordinating engineering disciplines and managing the permitting process.',
+    'Apoio especializado a investidores e promotores. Análises urbanísticas, mapas de rentabilidade, estudos prévios de arquitectura enquadrados no PDM, incluindo Pedido de Informação Prévia (PIP) junto das câmaras municipais.':'Specialist support for investors and developers. Planning analysis, yield modelling and preliminary architectural studies within the municipal master plan, including formal pre-application enquiries to the council.',
+    'Acompanhamento técnico permanente em obra. Fiscalização e coordenação de empreitadas, controlo de qualidade, cumprimento de prazo e orçamento, com acompanhamento online de todas as fases de execução.':'Continuous technical supervision on site. Inspection and coordination of contracts, quality control, adherence to programme and budget, with online tracking of every construction phase.',
+    'Projectos para lojas, restaurantes, bares e espaços de retalho. Concepção funcional e estética que reforça a identidade da marca, melhora a experiência do cliente e maximiza a rentabilidade do espaço.':'Design for shops, restaurants, bars and retail. Functional and aesthetic concepts that strengthen brand identity, improve the customer experience and maximise the return on the space.',
+    'Hotéis, alojamentos locais e empreendimentos turísticos. Soluções que valorizam a experiência do hóspede e reforçam a marca do cliente, desde o projecto de arquitectura até ao design de interiores completo.':'Hotels, short-stay lets and tourism developments. Solutions that elevate the guest experience and strengthen the client’s brand, from architecture through to complete interior design.',
+    'Ambientes de trabalho funcionais, modernos e motivadores. Projectos que optimizam fluxos, promovem bem-estar e produtividade, adaptados à cultura e imagem de cada empresa.':'Functional, modern and motivating workplaces. Layouts that optimise flow and promote wellbeing and productivity, tailored to each company’s culture and image.',
+    'Tratamento integral de processos junto das entidades competentes. Preparação de toda a documentação técnica, acompanhamento dos processos de licenciamento e garantia de conformidade legal em todas as fases.':'End-to-end handling of applications with the relevant authorities. Preparation of all technical documentation, management of the permitting process and legal compliance at every stage.',
+    'Projectos para instalações industriais, logísticas e de armazenagem. Concepção funcional orientada para a operação, com optimização de espaços, fluxos de trabalho, segurança e eficiência energética.':'Design for industrial, logistics and warehousing facilities. Operations-led planning that optimises space, workflow, safety and energy efficiency.',
+    'Conversão de instalações existentes para novos usos industriais. Análise estrutural, adequação às normas de segurança e higiene no trabalho, licenciamento industrial e acompanhamento de obras.':'Converting existing facilities to new industrial uses. Structural assessment, compliance with health and safety regulations, industrial permitting and site supervision.',
+    'Coordenação de todas as especialidades de engenharia. Estruturas, redes de abastecimento, esgotos, electricidade, AVAC, segurança contra incêndios, em coordenação eficiente com a equipa de arquitectura, utilizando metodologia BIM.':'Coordination of every engineering discipline. Structures, water supply, drainage, electrics, HVAC and fire safety, coordinated efficiently with the architecture team using BIM.',
+    'Acompanhamento total sem intermediários. Da aquisição do activo ao licenciamento, construção e colocação no mercado. Cobertura em todo o território nacional, com técnicos próprios.':'Full support with no middlemen. From acquiring the asset through permitting, construction and bringing it to market. Nationwide coverage with our own technical staff.',
+    'Transformamos espaços em ambientes únicos, funcionais e personalizados. Para habitações, criamos interiores que traduzem a identidade de quem vive o espaço, da concepção à escolha de mobiliário, cores, texturas e iluminação.':'We turn spaces into unique, functional and personal environments. For homes, we create interiors that reflect the identity of the people living there, from concept to the choice of furniture, colour, texture and lighting.',
+    'Equipa criativa para universos de estilos únicos com identidade própria. Soluções para hotelaria, restauração, escritórios e espaços comerciais, completamente personalizadas e de acordo com a área de negócio.':'A creative team for distinctive worlds with an identity of their own. Fully bespoke solutions for hospitality, restaurants, offices and retail, matched to each line of business.',
+    'Renders fotorrealistas para apresentação e decisão. Projectos 3D que proporcionam uma visão tão realista quanto possível do espaço, facilitando a comunicação com o cliente e o processo de licenciamento.':'Photorealistic renders for presentation and decision-making. 3D work that shows the space as realistically as possible, easing communication with the client and the permitting process.',
+    'Simplificamos o processo de equipamento e decoração. Selecção de peças, arte e acessórios que conferem carácter e harmonia ao espaço, com gestão de compras que poupa tempo e reduz preocupações ao cliente.':'We simplify furnishing and decorating. Selection of pieces, art and accessories that give the space character and harmony, with purchasing managed for you to save time and worry.',
+    'Do estudo prévio ao projecto de execução detalhado. Acompanhamento de todas as fases: estudos iniciais, ante-projecto, projecto de licenciamento, projecto de execução e assistência técnica à obra, com recurso a tecnologia BIM.':'From preliminary study to detailed construction drawings. Support at every stage: initial studies, schematic design, permit drawings, construction design and technical assistance on site, using BIM.',
+    'Orientação especializada antes de tomar decisões. Análise de viabilidade legal e técnica, procura de terrenos e imóveis, esclarecimento de possibilidades de intervenção, apoio na definição de estratégias de investimento ou reabilitação.':'Expert guidance before you decide. Legal and technical feasibility, searching for land and property, clarifying what can be done, and help defining investment or refurbishment strategy.',
+    'Design de espaços exteriores integrado com a linguagem arquitectónica. Jardins, acessos, piscinas e áreas de lazer concebidos em harmonia com a arquitectura e o contexto ambiental do projecto.':'Outdoor design integrated with the architectural language. Gardens, access, pools and leisure areas conceived in harmony with the building and its environmental context.',
+    'Soluções que reduzem custos e impacto ambiental. Certificação energética, integração de sistemas de energia renovável, análise de ciclo de vida dos materiais e estratégias bioclimáticas passivas.':'Solutions that cut cost and environmental impact. Energy certification, renewable energy systems, life-cycle analysis of materials and passive bioclimatic strategies.',
+    'Indique um email válido para lhe podermos responder.':'Please enter a valid email so we can reply.',
+    'Indique o seu nome.':'Please enter your name.',
+    'Escolha uma opção para continuarmos.':'Please choose an option so we can continue.',
+    'Em negociação':'Under negotiation',
+    'Não':'No',
+    'Sim':'Yes',
+    'Design de interiores':'Interior design',
+    'Investimento imobiliário':'Property investment',
+    'Comprar terreno':'Buy land',
+    'Reabilitar':'Refurbish',
+    'Remodelar':'Remodel',
+    'Construir de raiz':'Build from scratch',
+    'Já tem terreno ou imóvel?':'Do you already own the land or property?',
+    'O que pretende fazer?':'What do you want to do?',
     'Ver Projecto':'View Project',
     'Utilizamos cookies essenciais ao funcionamento do site e, com o seu consentimento, cookies analíticos para melhorar a sua experiência.':'We use cookies essential to the site\'s operation and, with your consent, analytics cookies to improve your experience.',
     'Saiba mais na nossa':'Learn more in our',
@@ -2176,7 +2402,7 @@ const TR = {
     'Análises urbanísticas, mapas de rentabilidade, estudos prévios de arquitectura enquadrados no PDM, incluindo Pedido de Informação Prévia (PIP) junto das câmaras municipais.':'Urban analysis, profitability maps, preliminary architectural studies within the PDM framework, including Prior Information Requests (PIP) with local authorities.',
     'Para habitações, criamos interiores que traduzem a identidade de quem vive o espaço, da concepção à escolha de mobiliário, cores, texturas e iluminação.':'For homes, we create interiors that translate the identity of those who inhabit the space, from concept to the choice of furniture, colours, textures and lighting.',
     'Soluções para hotelaria, restauração, escritórios e espaços comerciais, completamente personalizadas e de acordo com a área de negócio.':'Solutions for hospitality, restaurants, offices and commercial spaces, fully customised and aligned with the business area.',
-    'Selecção de peças, arte e acessórios que conferem carácter e harmonia ao espaço, com gestão de compras que poupa tempo e reduz preocupações ao cliente.':'Selection of pieces, art and accessories that give character and harmony to the space, with procurement management that saves time and reduces client concerns.',
+    'Selecção de peças, arte e acessórios que conferem carácter e harmonia ao espaço, com gestão de compras que poupa tempo e reduz preocupações ao cliente.':'Selection of pieces, art and accessories that give character and harmony to the space, with procurement management that saves equipa and reduces client concerns.',
     'Visualizações 3D fotorrealistas para apresentação ao cliente e processo de licenciamento. Projecto de arquitectura com coordenação de especialidades.':'Photorealistic 3D visualisations for client presentation and planning approval. Architectural project with specialist coordination.',
     'Projectos 3D que proporcionam uma visão tão realista quanto possível do espaço, facilitando a comunicação com o cliente e o processo de licenciamento.':'3D projects that provide the most realistic possible vision of the space, facilitating client communication and the planning process.',
     'Análise de viabilidade legal e técnica, procura de terrenos e imóveis, esclarecimento de possibilidades de intervenção, apoio na definição de estratégias de investimento ou reabilitação.':'Legal and technical feasibility analysis, land and property search, clarification of intervention possibilities, support in defining investment or rehabilitation strategies.',
@@ -2193,7 +2419,7 @@ const TR = {
     'Da aquisição do activo ao licenciamento, construção e colocação no mercado. Cobertura em todo o território nacional, com técnicos próprios.':'From asset acquisition to licensing, construction and market placement. Nationwide coverage with our own technical staff.',
     'Acompanhamento total sem intermediários.':'Total oversight with no intermediaries.',
     'Briefing & Viabilidade':'Briefing & Feasibility',
-    'Ouvimos as suas necessidades e elaboramos um estudo de viabilidade técnica, legal e económica. Não fazemos um mero orçamento: produzimos análise que poupa tempo e dinheiro.':'We listen to your needs and produce a technical, legal and economic feasibility study: not just a quote, but an analysis that saves time and money.',
+    'Ouvimos as suas necessidades e elaboramos um estudo de viabilidade técnica, legal e económica. Não fazemos um mero orçamento: produzimos análise que poupa tempo e dinheiro.':'We listen to your needs and produce a technical, legal and economic feasibility study: not just a quote, but an analysis that saves equipa and money.',
     'Projecto & Licenciamento':'Design & Planning Approval',
     'Desenvolvemos o projecto completo com recurso a tecnologia BIM para maior precisão. Tratamos integralmente do processo de licenciamento junto de câmaras e entidades competentes.':'We develop the full project using BIM technology for greater precision and handle the entire planning approval process with the relevant authorities.',
     'Execução & Acompanhamento':'Execution & Supervision',
@@ -2242,7 +2468,7 @@ const TR = {
     'Telefone / WhatsApp':'Phone / WhatsApp',
     'Email':'Email',
     'Horário':'Hours',
-    'Segunda a Sexta':'Monday – Friday',
+    'Segunda a Sexta':'Monday to Friday',
     'Nome *':'Name *',
     'Email *':'Email *',
     'Telefone':'Phone',
@@ -2257,7 +2483,7 @@ const TR = {
     'Mensagem *':'Message *',
     'Descreva o seu projecto com o máximo de detalhe...':'Describe your project in as much detail as possible...',
     'Ao enviar aceita a nossa':'By submitting you accept our',
-    'Respondemos em 24–48h úteis.':'We respond within 24–48 business hours.',
+    'Respondemos em 24 a 48h úteis.':'We respond within 24 to 48 business hours.',
     'Serviço chave na mão em todo o território nacional. Sem intermediários, com técnicos próprios.':'Turnkey service across Portugal. No intermediaries, with our own technical team.',
     'Arquitectura, Engenharia e Design de Interiores.':'Architecture, Engineering and Interior Design.',
     'VISÃOVALE · Todos os direitos reservados':'VISÃOVALE. All rights reserved',
@@ -2273,6 +2499,119 @@ const TR = {
     '800×1000px':'800×1000px',
   },
   fr: {
+    'Como Ajudamos':'Comment nous aidons',
+    'Como ajudamos':'Comment nous aidons',
+    'Falar com um Arquitecto':'Parler à un architecte',
+    'Falar com um Arquitecto →':'Parler à un architecte →',
+    'Ligar Agora':'Appeler',
+    'Tem um terreno?':'Vous avez un terrain ?',
+    'Vamos estudar o seu projecto.':'Étudions votre projet.',
+    'Projectos em Foco':'Projets en vedette',
+    'Onde trabalhamos':'Où nous intervenons',
+    'Projecto de Moradias':'Projets de maisons',
+    'Urbanismo e Loteamentos':'Urbanisme et lotissements',
+    'Licenciamento':'Autorisations',
+    'Quase toda a gente que nos contacta chega com uma destas seis perguntas. Escolha a sua e veja exactamente o que fazemos a seguir.':'Presque tous ceux qui nous contactent arrivent avec l’une de ces six questions. Choisissez la vôtre et voyez exactement ce que nous faisons ensuite.',
+    'Tenho um terreno mas não sei o que posso construir lá.':'J’ai un terrain mais je ne sais pas ce que je peux y construire.',
+    'Analisamos o PDM, a certidão e as condicionantes do lote e dizemos-lhe, por escrito, que área e que volumetria são possíveis, antes de investir em projecto.':'Nous analysons le plan d’urbanisme, le titre de propriété et les contraintes du terrain, et vous indiquons par écrit la surface et le volume possibles, avant tout investissement en conception.',
+    'Ver como fazemos →':'Voir notre méthode →',
+    'Herdei uma casa antiga e não sei se vale a pena recuperar.':'J’ai hérité d’une vieille maison et j’ignore si la rénovation en vaut la peine.',
+    'Fazemos o diagnóstico do edificado, identificamos patologias e comparamos o custo de reabilitar com o de construir de novo.':'Nous diagnostiquons le bâti, identifions les pathologies et comparons le coût de la réhabilitation à celui d’une construction neuve.',
+    'Ver reabilitação →':'Voir la réhabilitation →',
+    'A câmara pediu elementos e o processo está parado.':'La mairie a demandé des pièces et mon dossier est bloqué.',
+    'Assumimos processos já iniciados: percebemos o que falta, respondemos às entidades e levamos até ao alvará.':'Nous reprenons les dossiers déjà engagés : nous identifions ce qui manque, répondons aux autorités et allons jusqu’au permis.',
+    'Ver licenciamento →':'Voir les autorisations →',
+    'Tenho medo que a obra derrape no preço e no prazo.':'Je crains que le chantier dérape en coût et en délai.',
+    'Mapa de quantidades e caderno de encargos para consultar empreiteiros em igualdade, e visitas de obra com relatório e validação de autos.':'Un métré et un cahier des charges pour consulter les entreprises à conditions égales, et des visites de chantier avec rapport et validation des situations.',
+    'Ver gestão de obra →':'Voir le suivi de chantier →',
+    'Vou remodelar e não consigo imaginar o resultado final.':'Je rénove et je n’arrive pas à imaginer le résultat final.',
+    'Renders fotorrealistas de cada divisão e mapa de acabamentos aprovados antes de comprar seja o que for.':'Des rendus photoréalistes de chaque pièce et un tableau des finitions approuvé avant tout achat.',
+    'Ver interiores →':'Voir les intérieurs →',
+    'Quero comprar um terreno para promoção mas não sei se dá retorno.':'Je veux acheter un terrain pour promouvoir mais j’ignore la rentabilité.',
+    'Estudo de capacidade construtiva e leitura urbanística independente antes da escritura. É o número que decide o negócio.':'Une étude de capacité constructible et une lecture urbanistique indépendante avant l’acte. C’est le chiffre qui décide de l’opération.',
+    'Ver urbanismo →':'Voir l’urbanisme →',
+    'Não encontra a sua situação? Descreva-a em duas linhas e respondemos com o caminho concreto, não com um catálogo de serviços.':'Vous ne trouvez pas votre cas ? Décrivez-le en deux lignes et nous répondrons par un chemin concret, pas par un catalogue de services.',
+    'Obra concluída':'Réalisation livrée',
+    'Obra Construída':'Réalisations',
+    'Antes':'Avant',
+    'Depois':'Après',
+    'Ver obras construídas':'Voir les réalisations',
+    'Arraste a barra para comparar o estado original com o resultado final. Estas são obras construídas, não simulações.':'Faites glisser la barre pour comparer l’état d’origine au résultat final. Ce sont des réalisations, pas des simulations.',
+    'Estamos a preparar esta secção com fotografias de obra. Enquanto isso, pode ver os projectos já construídos filtrando o portfólio por Obra Construída.':'Nous préparons cette section avec des photographies de chantier. Entre-temps, filtrez le portfolio par Réalisations pour voir les projets construits.',
+    'Estudo prévio, viabilidade construtiva e estimativa de custos. Diga-nos o que quer fazer e recebe uma resposta de um arquitecto em 24 a 48h úteis.':'Étude préliminaire, faisabilité constructive et estimation des coûts. Dites-nous ce que vous voulez faire et un architecte répond sous 24 à 48h ouvrables.',
+    'Quanto mais nos disser, mais concreta é a nossa resposta. Só o nome, o email e o objectivo são obrigatórios. O resto ajuda-nos a preparar uma proposta à medida.':'Plus vous nous en dites, plus notre réponse est concrète. Seuls le nom, l’email et l’objectif sont obligatoires. Le reste nous aide à préparer une proposition sur mesure.',
+    'Conte-nos o que tem em mente. Quanto mais detalhe, melhor a resposta.':'Dites-nous ce que vous avez en tête. Plus il y a de détails, meilleure est la réponse.',
+    'Área aproximada (m²)':'Surface approximative (m²)',
+    'Orçamento estimado':'Budget estimé',
+    'Prefiro não indicar':'Je préfère ne pas dire',
+    'Até 50.000 €':"Jusqu'à 50 000 €",
+    '50.000 a 150.000 €':'50 000 à 150 000 €',
+    '150.000 a 300.000 €':'150 000 à 300 000 €',
+    '300.000 a 600.000 €':'300 000 à 600 000 €',
+    'Mais de 600.000 €':'Plus de 600 000 €',
+    'Quando pretende começar?':'Quand souhaitez-vous commencer ?',
+    'O mais cedo possível':'Dès que possible',
+    'Nos próximos 3 meses':'Dans les 3 mois',
+    'Nos próximos 6 a 12 meses':'Dans 6 à 12 mois',
+    'Ainda a estudar':'Encore à l’étude',
+    'Mensagem':'Message',
+    'Segunda a Sexta09:00 às 18:00':'Lundi au vendredi09:00 à 18:00',
+    'Caldas da Rainha':'Caldas da Rainha',
+    'Óbidos':'Óbidos',
+    'Peniche':'Peniche',
+    'Nazaré':'Nazaré',
+    'Alcobaça':'Alcobaça',
+    'Leiria':'Leiria',
+    'Marinha Grande':'Marinha Grande',
+    'Construção nova':'Construction neuve',
+    'Loteamento':'Lotissement',
+    'Planeamento urbano':'Planification urbaine',
+    'Equipamento desportivo':'Équipement sportif',
+    'Escritórios':'Bureaux',
+    'Hotelaria':'Hôtellerie',
+    'Restauração':'Restauration',
+    'Turismo':'Tourisme',
+    'Recuperação de imóveis com respeito pela traça original e todo o conforto actual.':'Restauration de biens dans le respect du caractère d’origine, avec tout le confort actuel.',
+    'Moradias desenhadas à medida da paisagem, entre pedra natural e linhas contemporâneas.':'Des maisons dessinées à la mesure du paysage, entre pierre naturelle et lignes contemporaines.',
+    'Espaços exteriores que prolongam o conforto da casa até ao jardim.':'Des espaces extérieurs qui prolongent le confort de la maison jusqu’au jardin.',
+    'Recuperação e valorização de edifícios existentes. Desde estudos de diagnóstico, passando pelo projecto de intervenção e licenciamento, até à assistência técnica à obra. Preservamos a identidade original introduzindo eficiência contemporânea.':'Restauration et valorisation de bâtiments existants. Du diagnostic au projet d’intervention et aux autorisations, jusqu’à l’assistance technique sur le chantier. Nous préservons l’identité d’origine en y introduisant l’efficacité contemporaine.',
+    'Intervenções em edifícios de interesse patrimonial. Análise do estado de conservação, definição de estratégias de intervenção respeitando a autenticidade construtiva, coordenação com entidades de salvaguarda do património.':'Interventions sur des bâtiments patrimoniaux. Analyse de l’état de conservation, stratégies d’intervention respectant l’authenticité constructive, coordination avec les instances du patrimoine.',
+    'Modernização funcional e estética de espaços existentes. Remodelações integrais ou parciais, ampliações e adaptações de uso, com aproveitamento máximo das estruturas existentes para redução de custos e impacto ambiental.':'Modernisation fonctionnelle et esthétique d’espaces existants. Rénovations totales ou partielles, extensions et changements d’usage, en tirant le meilleur parti des structures existantes pour réduire coûts et impact environnemental.',
+    'Orientação técnica antes de investir. Análise de viabilidade técnica e legal, enquadramento no PDM e legislação em vigor, avaliação de potencial construtivo e assessoria na tomada de decisão de investimento imobiliário.':'Conseil technique avant d’investir. Faisabilité technique et juridique, conformité au plan d’urbanisme et à la législation en vigueur, évaluation du potentiel constructible et accompagnement à la décision d’investissement immobilier.',
+    'Moradias personalizadas do primeiro esboço à chave na mão. Desenvolvimento de estudos prévios, projecto de arquitectura, coordenação de especialidades, licenciamento camarário e acompanhamento integral da obra.':'Maisons sur mesure, du premier croquis à la clé en main. Études préliminaires, projet d’architecture, coordination des lots techniques, autorisations municipales et suivi intégral du chantier.',
+    'Edifícios multifamiliares e empreendimentos residenciais. Projectos de arquitectura para promoção imobiliária, com optimização de rendas e valias, coordenação de especialidades técnicas e gestão do processo de licenciamento.':'Immeubles collectifs et opérations résidentielles. Architecture pour la promotion immobilière, optimisation des rendements et des plus-values, coordination des lots techniques et gestion des autorisations.',
+    'Apoio especializado a investidores e promotores. Análises urbanísticas, mapas de rentabilidade, estudos prévios de arquitectura enquadrados no PDM, incluindo Pedido de Informação Prévia (PIP) junto das câmaras municipais.':'Accompagnement spécialisé des investisseurs et promoteurs. Analyses urbanistiques, tableaux de rentabilité, études préliminaires conformes au plan d’urbanisme, y compris la demande d’information préalable auprès des mairies.',
+    'Acompanhamento técnico permanente em obra. Fiscalização e coordenação de empreitadas, controlo de qualidade, cumprimento de prazo e orçamento, com acompanhamento online de todas as fases de execução.':'Suivi technique permanent sur le chantier. Contrôle et coordination des marchés, contrôle qualité, respect des délais et du budget, avec un suivi en ligne de toutes les phases d’exécution.',
+    'Projectos para lojas, restaurantes, bares e espaços de retalho. Concepção funcional e estética que reforça a identidade da marca, melhora a experiência do cliente e maximiza a rentabilidade do espaço.':'Projets pour boutiques, restaurants, bars et commerces. Une conception fonctionnelle et esthétique qui renforce l’identité de la marque, améliore l’expérience client et maximise la rentabilité du lieu.',
+    'Hotéis, alojamentos locais e empreendimentos turísticos. Soluções que valorizam a experiência do hóspede e reforçam a marca do cliente, desde o projecto de arquitectura até ao design de interiores completo.':'Hôtels, hébergements locatifs et projets touristiques. Des solutions qui valorisent l’expérience du client et renforcent la marque, de l’architecture au design d’intérieur complet.',
+    'Ambientes de trabalho funcionais, modernos e motivadores. Projectos que optimizam fluxos, promovem bem-estar e produtividade, adaptados à cultura e imagem de cada empresa.':'Des lieux de travail fonctionnels, modernes et motivants. Des aménagements qui optimisent les flux, favorisent le bien-être et la productivité, adaptés à la culture et à l’image de chaque entreprise.',
+    'Tratamento integral de processos junto das entidades competentes. Preparação de toda a documentação técnica, acompanhamento dos processos de licenciamento e garantia de conformidade legal em todas as fases.':'Traitement intégral des dossiers auprès des autorités compétentes. Préparation de toute la documentation technique, suivi des procédures d’autorisation et conformité juridique à chaque étape.',
+    'Projectos para instalações industriais, logísticas e de armazenagem. Concepção funcional orientada para a operação, com optimização de espaços, fluxos de trabalho, segurança e eficiência energética.':'Projets pour installations industrielles, logistiques et de stockage. Une conception fonctionnelle orientée exploitation, optimisant les espaces, les flux, la sécurité et l’efficacité énergétique.',
+    'Conversão de instalações existentes para novos usos industriais. Análise estrutural, adequação às normas de segurança e higiene no trabalho, licenciamento industrial e acompanhamento de obras.':'Conversion d’installations existantes vers de nouveaux usages industriels. Analyse structurelle, mise aux normes d’hygiène et de sécurité, autorisations industrielles et suivi des travaux.',
+    'Coordenação de todas as especialidades de engenharia. Estruturas, redes de abastecimento, esgotos, electricidade, AVAC, segurança contra incêndios, em coordenação eficiente com a equipa de arquitectura, utilizando metodologia BIM.':'Coordination de tous les lots d’ingénierie. Structures, réseaux d’adduction, assainissement, électricité, CVC et sécurité incendie, en coordination efficace avec l’équipe d’architecture, en méthodologie BIM.',
+    'Acompanhamento total sem intermediários. Da aquisição do activo ao licenciamento, construção e colocação no mercado. Cobertura em todo o território nacional, com técnicos próprios.':'Un accompagnement total sans intermédiaires. De l’acquisition de l’actif aux autorisations, à la construction et à la mise sur le marché. Couverture nationale avec nos propres techniciens.',
+    'Transformamos espaços em ambientes únicos, funcionais e personalizados. Para habitações, criamos interiores que traduzem a identidade de quem vive o espaço, da concepção à escolha de mobiliário, cores, texturas e iluminação.':'Nous transformons les espaces en environnements uniques, fonctionnels et personnalisés. Pour l’habitat, nous créons des intérieurs qui traduisent l’identité de ceux qui y vivent, du concept au choix du mobilier, des couleurs, des textures et de l’éclairage.',
+    'Equipa criativa para universos de estilos únicos com identidade própria. Soluções para hotelaria, restauração, escritórios e espaços comerciais, completamente personalizadas e de acordo com a área de negócio.':'Une équipe créative pour des univers singuliers dotés d’une identité propre. Des solutions entièrement sur mesure pour l’hôtellerie, la restauration, les bureaux et les commerces, adaptées à chaque secteur.',
+    'Renders fotorrealistas para apresentação e decisão. Projectos 3D que proporcionam uma visão tão realista quanto possível do espaço, facilitando a comunicação com o cliente e o processo de licenciamento.':'Des rendus photoréalistes pour la présentation et la décision. Des projets 3D offrant une vision aussi réaliste que possible de l’espace, facilitant l’échange avec le client et l’instruction du dossier.',
+    'Simplificamos o processo de equipamento e decoração. Selecção de peças, arte e acessórios que conferem carácter e harmonia ao espaço, com gestão de compras que poupa tempo e reduz preocupações ao cliente.':'Nous simplifions l’ameublement et la décoration. Sélection de pièces, d’œuvres et d’accessoires qui donnent caractère et harmonie à l’espace, avec une gestion des achats qui fait gagner du temps au client.',
+    'Do estudo prévio ao projecto de execução detalhado. Acompanhamento de todas as fases: estudos iniciais, ante-projecto, projecto de licenciamento, projecto de execução e assistência técnica à obra, com recurso a tecnologia BIM.':'De l’étude préliminaire au projet d’exécution détaillé. Un accompagnement à chaque phase : études initiales, avant-projet, dossier d’autorisation, projet d’exécution et assistance technique sur le chantier, en BIM.',
+    'Orientação especializada antes de tomar decisões. Análise de viabilidade legal e técnica, procura de terrenos e imóveis, esclarecimento de possibilidades de intervenção, apoio na definição de estratégias de investimento ou reabilitação.':'Un conseil expert avant de décider. Faisabilité juridique et technique, recherche de terrains et de biens, clarification des interventions possibles, aide à la définition d’une stratégie d’investissement ou de réhabilitation.',
+    'Design de espaços exteriores integrado com a linguagem arquitectónica. Jardins, acessos, piscinas e áreas de lazer concebidos em harmonia com a arquitectura e o contexto ambiental do projecto.':'Conception des espaces extérieurs intégrée au langage architectural. Jardins, accès, piscines et espaces de loisirs conçus en harmonie avec l’architecture et le contexte environnemental.',
+    'Soluções que reduzem custos e impacto ambiental. Certificação energética, integração de sistemas de energia renovável, análise de ciclo de vida dos materiais e estratégias bioclimáticas passivas.':'Des solutions qui réduisent les coûts et l’impact environnemental. Certification énergétique, intégration d’énergies renouvelables, analyse du cycle de vie des matériaux et stratégies bioclimatiques passives.',
+    'Indique um email válido para lhe podermos responder.':'Indiquez un email valide pour que nous puissions répondre.',
+    'Indique o seu nome.':'Veuillez indiquer votre nom.',
+    'Escolha uma opção para continuarmos.':'Choisissez une option pour continuer.',
+    'Em negociação':'En négociation',
+    'Não':'Non',
+    'Sim':'Oui',
+    'Design de interiores':"Design d'intérieur",
+    'Investimento imobiliário':'Investissement immobilier',
+    'Comprar terreno':'Acheter un terrain',
+    'Reabilitar':'Réhabiliter',
+    'Remodelar':'Rénover',
+    'Construir de raiz':'Construire de zéro',
+    'Já tem terreno ou imóvel?':'Avez-vous déjà le terrain ou le bien ?',
+    'O que pretende fazer?':'Que souhaitez-vous faire ?',
     'Ver Projecto':'Voir le Projet',
     'Utilizamos cookies essenciais ao funcionamento do site e, com o seu consentimento, cookies analíticos para melhorar a sua experiência.':'Nous utilisons des cookies essentiels au fonctionnement du site et, avec votre consentement, des cookies analytiques pour améliorer votre expérience.',
     'Saiba mais na nossa':'En savoir plus dans notre',
@@ -2466,7 +2805,7 @@ const TR = {
     'Telefone / WhatsApp':'Téléphone / WhatsApp',
     'Email':'Email',
     'Horário':'Horaires',
-    'Segunda a Sexta':'Lundi – Vendredi',
+    'Segunda a Sexta':'Lundi au vendredi',
     'Nome *':'Nom *',
     'Email *':'Email *',
     'Telefone':'Téléphone',
@@ -2481,7 +2820,7 @@ const TR = {
     'Mensagem *':'Message *',
     'Descreva o seu projecto com o máximo de detalhe...':'Décrivez votre projet avec le plus de détails possible...',
     'Ao enviar aceita a nossa':'En envoyant vous acceptez notre',
-    'Respondemos em 24–48h úteis.':'Nous répondons dans les 24–48h ouvrables.',
+    'Respondemos em 24 a 48h úteis.':'Nous répondons sous 24 à 48h ouvrables.',
     'Serviço chave na mão em todo o território nacional. Sem intermediários, com técnicos próprios.':'Service clé en main sur tout le territoire national. Sans intermédiaires, avec nos propres techniciens.',
     'Arquitectura, Engenharia e Design de Interiores.':'Architecture, Ingénierie et Design d\'Intérieur.',
     'VISÃOVALE · Todos os direitos reservados':'VISÃOVALE. Tous droits réservés',
@@ -2514,6 +2853,7 @@ function setLang(lang, el) {
   // Translate all .t elements
   document.querySelectorAll('.t').forEach(el => {
     const orig = el.dataset.orig || el.textContent.trim() || el.placeholder || el.getAttribute('placeholder');
+    if (!orig) return;                       // elemento vazio (ex.: legenda da lightbox)
     if (!el.dataset.orig) el.dataset.orig = orig;
     const tr = TR[lang][el.dataset.orig] || el.dataset.orig;
     if (el.tagName === 'INPUT' || el.tagName === 'TEXTAREA') {
@@ -2526,6 +2866,7 @@ function setLang(lang, el) {
   });
   // Update html lang attribute
   document.documentElement.lang = lang === 'pt' ? 'pt' : lang === 'en' ? 'en' : 'fr';
+  if (typeof pintaCats === 'function') pintaCats();
 }
 </script>
 
@@ -2870,9 +3211,9 @@ function enhanceCards() {
     if (!m) return;
     const cat = p.querySelector('.proj-cat');
     if (cat) {
-      const txt = m.tipo + (m.local ? ' · ' + m.local : (m.ano ? ' · ' + m.ano : ''));
-      cat.textContent = txt;
-      cat.dataset.orig = txt;
+      cat.dataset.tipo = m.tipo || '';
+      cat.dataset.suf  = m.local || m.ano || '';
+      cat.classList.remove('t');   // é pintado por pintaCats(), não pelo dicionário
     }
     p.dataset.media = m.media || 'render';
     const wrap = p.querySelector('.proj-img');
@@ -3085,6 +3426,17 @@ function filt(btn, cat) {
 shufflePort();
 applyPort();
 enhanceCards();
+pintaCats();
+
+// Escreve "Tipo · Local" nos cartões, traduzindo só a parte traduzível.
+function pintaCats() {
+  const L = (typeof curLang !== 'undefined' && TR[curLang]) ? TR[curLang] : {};
+  document.querySelectorAll('#portGrid .proj-cat[data-tipo]').forEach(el => {
+    const t = L[el.dataset.tipo] || el.dataset.tipo;
+    el.textContent = el.dataset.suf ? t + ' · ' + el.dataset.suf : t;
+  });
+}
+
 
 // ── ANTES / DEPOIS ───────────────────────────────────────────
 (function(){
@@ -3150,70 +3502,93 @@ document.querySelectorAll('a[href^="#"]').forEach(a => {
 });
 
 // ── FORM ─────────────────────────────────────────────────────
+// Selecciona um chip do formulário (botão real — não depende de radios escondidos).
+function pick(btn) {
+  const grupo = btn.parentElement;
+  const alvo  = document.getElementById('f' + grupo.id.slice(1));
+  const jaEra = btn.getAttribute('aria-pressed') === 'true';
+  grupo.querySelectorAll('.q-chip').forEach(b => b.setAttribute('aria-pressed', 'false'));
+  if (!jaEra) {
+    btn.setAttribute('aria-pressed', 'true');
+    if (alvo) alvo.value = btn.dataset.v || btn.textContent.trim();
+  } else if (alvo) {
+    alvo.value = '';
+  }
+  grupo.closest('.q-group')?.classList.remove('is-err');
+}
+
+function limpaErros() {
+  document.querySelectorAll('#contacto .is-err').forEach(el => el.classList.remove('is-err'));
+}
+
+function marcaErro(id) {
+  const el = document.getElementById(id);
+  if (!el) return;
+  el.classList.add('is-err');
+  el.scrollIntoView({ behavior: 'smooth', block: 'center' });
+  const foco = el.querySelector('input, textarea, .q-chip');
+  if (foco) setTimeout(() => foco.focus({ preventScroll: true }), 400);
+}
+
 function sendForm(e) {
   e.preventDefault();
   const btn = e.currentTarget;
   const sp  = btn.querySelector('span');
   const v   = id => (document.getElementById(id)?.value || '').trim();
-  const rad = n  => (document.querySelector('input[name="' + n + '"]:checked')?.value || '');
+
+  limpaErros();
 
   const d = {
     nome:      v('fNome'),
     email:     v('fEmail'),
     tel:       v('fTel'),
-    objectivo: rad('objectivo'),
-    terreno:   rad('terreno'),
+    objectivo: v('fObjectivo'),
+    terreno:   v('fTerreno'),
     local:     v('fLocal'),
     area:      v('fArea'),
     orcamento: v('fOrcamento'),
     prazo:     v('fPrazo'),
     msg:       v('fMsg')
   };
-  d.tipo = d.objectivo;   // compatibilidade com o contacto.php antigo
+  d.tipo = d.objectivo;
 
-  if (!d.nome || !d.email || !d.objectivo) {
-    alert('Por favor indique o Nome, o Email e o que pretende fazer.');
-    return;
-  }
-  if (!/^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/.test(d.email)) {
-    alert('O email indicado não parece válido.');
-    return;
-  }
+  if (!d.objectivo) { marcaErro('qObjectivoGroup'); return; }
+  if (!d.nome)      { marcaErro('gNome'); return; }
+  if (!d.email || !/^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/.test(d.email)) { marcaErro('gEmail'); return; }
 
   const orig = sp.dataset.orig || sp.textContent;
   sp.dataset.orig = orig;
   btn.disabled = true; sp.textContent = '...';
 
-  fetch('contacto.php', { method:'POST', body:new URLSearchParams(d) })
-    .then(r => r.text()).then(r => {
-      if (r.trim() === 'ok') {
-        btn.style.background = '#4a7c59'; btn.style.borderColor = '#4a7c59';
-        sp.textContent = '✓ Pedido enviado!';
-        document.querySelectorAll('#contacto input, #contacto select, #contacto textarea').forEach(i => {
-          if (i.type === 'radio') i.checked = false;
-          else if (i.tagName === 'SELECT') i.selectedIndex = 0;
-          else i.value = '';
-        });
-      } else {
-        btn.style.background = '#c0392b'; btn.style.borderColor = '#c0392b';
-        sp.textContent = 'Erro. Tente novamente';
-      }
+  const reporMailto = () => {
+    const s = encodeURIComponent('Pedido de contacto · ' + d.objectivo);
+    const c = encodeURIComponent(
+      'Nome: ' + d.nome + '\nEmail: ' + d.email + '\nTelefone: ' + d.tel +
+      '\n\nObjectivo: ' + d.objectivo + '\nJá tem terreno: ' + d.terreno +
+      '\nLocalização: ' + d.local + '\nÁrea: ' + d.area +
+      '\nOrçamento: ' + d.orcamento + '\nPrazo: ' + d.prazo +
+      '\n\n' + d.msg);
+    window.location.href = 'mailto:geral@visaovale.com?subject=' + s + '&body=' + c;
+    btn.disabled = false;
+    sp.textContent = TR[curLang][orig] || orig;
+  };
+
+  fetch('contacto.php', { method: 'POST', body: new URLSearchParams(d) })
+    .then(r => r.ok ? r.text() : Promise.reject(new Error('HTTP ' + r.status)))
+    .then(r => {
+      if (r.trim() !== 'ok') throw new Error('resposta inesperada');
+      btn.style.background = '#4a7c59'; btn.style.borderColor = '#4a7c59';
+      sp.textContent = '✓ Pedido enviado!';
+      document.querySelectorAll('#contacto input, #contacto select, #contacto textarea').forEach(i => {
+        if (i.tagName === 'SELECT') i.selectedIndex = 0; else i.value = '';
+      });
+      document.querySelectorAll('#contacto .q-chip').forEach(b => b.setAttribute('aria-pressed', 'false'));
       setTimeout(() => {
         btn.style.background = 'var(--c-gold)'; btn.style.borderColor = 'var(--c-gold)';
         sp.textContent = TR[curLang][orig] || orig; btn.disabled = false;
       }, 4000);
     })
-    .catch(() => {
-      const s = encodeURIComponent('Pedido de contacto · ' + d.objectivo);
-      const b = encodeURIComponent(
-        'Nome: ' + d.nome + '\nEmail: ' + d.email + '\nTelefone: ' + d.tel +
-        '\n\nObjectivo: ' + d.objectivo + '\nJá tem terreno: ' + d.terreno +
-        '\nLocalização: ' + d.local + '\nÁrea: ' + d.area +
-        '\nOrçamento: ' + d.orcamento + '\nPrazo: ' + d.prazo +
-        '\n\n' + d.msg);
-      window.location.href = 'mailto:geral@visaovale.com?subject=' + s + '&body=' + b;
-      btn.disabled = false;
-    });
+    .catch(reporMailto);
 }
 </script>
 
