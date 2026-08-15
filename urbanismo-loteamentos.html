@@ -14,7 +14,17 @@
 <meta property="og:locale" content="pt_PT">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400&family=Raleway:wght@200;300;400;500;600&family=Barlow+Condensed:wght@300;400;500;600&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="assets/visaovale.css">
+<link rel="stylesheet" href="assets/visaovale.css?v=3">
+<style>
+/* crítico: garante a barra mesmo com o CSS externo em cache */
+.sp-nav{position:sticky;top:0;left:auto;right:auto;height:auto;min-height:0;display:block;padding:0;z-index:60;background:#fffdfa;border-bottom:1px solid rgba(17,17,16,.12)}
+.sp-nav-in{max-width:1400px;margin:0 auto;padding:10px 40px;min-height:68px;display:flex;align-items:center;gap:18px}
+.sp-logo{flex-shrink:0;display:flex;align-items:center}
+.sp-logo img{height:42px;width:auto;display:block}
+.sp-links{list-style:none;display:flex;gap:16px;margin-left:auto;align-items:center}
+.sp-links a{white-space:nowrap;color:#26251f}
+.sp-crumb{position:static;height:auto;display:block;padding:0;z-index:auto}
+</style>
 <script type="application/ld+json">{"@context": "https://schema.org", "@type": "ArchitecturalService", "name": "VISÃOVALE", "url": "https://visaovale.com/", "telephone": "+351969851001", "email": "geral@visaovale.com", "image": "https://visaovale.com/images/image-001-affbdd6bd538.png", "address": {"@type": "PostalAddress", "streetAddress": "Rua Joaquim Augusto de Carvalho, Nº 5, 1º A", "postalCode": "2475-133", "addressLocality": "Benedita", "addressRegion": "Leiria", "addressCountry": "PT"}, "areaServed": [{"@type": "Country", "name": "Portugal"}, {"@type": "City", "name": "Caldas da Rainha"}, {"@type": "City", "name": "Óbidos"}, {"@type": "City", "name": "Peniche"}, {"@type": "City", "name": "Nazaré"}, {"@type": "City", "name": "Alcobaça"}, {"@type": "City", "name": "Leiria"}, {"@type": "City", "name": "Marinha Grande"}], "openingHours": "Mo-Fr 09:00-18:00"}</script>
 <script type="application/ld+json">{"@context": "https://schema.org", "@type": "Service", "name": "Urbanismo e loteamentos", "description": "Operações de loteamento, planos de pormenor e estudos de viabilidade urbanística para promoção imobiliária. Do estudo de capacidade construtiva ao alvará.", "url": "https://visaovale.com/urbanismo-loteamentos.html", "provider": {"@type": "Organization", "name": "VISÃOVALE"}, "areaServed": {"@type": "Country", "name": "Portugal"}}</script>
 <script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "Fazem análise de terrenos antes da compra?", "acceptedAnswer": {"@type": "Answer", "text": "Sim, e é o serviço mais pedido por promotores. Uma leitura urbanística feita antes da escritura evita comprar um terreno que não permite o que se pensava."}}, {"@type": "Question", "name": "Todo o terreno rústico pode ser loteado?", "acceptedAnswer": {"@type": "Answer", "text": "Não. Depende da classificação no PDM e das condicionantes que incidam sobre ele. É exactamente isso que o estudo de viabilidade esclarece."}}, {"@type": "Question", "name": "Também tratam das obras de urbanização?", "acceptedAnswer": {"@type": "Answer", "text": "Coordenamos o projecto de infraestruturas e acompanhamos a execução, articulando com as especialidades envolvidas."}}]}</script>
@@ -22,8 +32,8 @@
 <body>
 <nav class="sp-nav">
   <div class="sp-nav-in">
-    <a href="index.html" class="sp-logo">
-      <img src="images/image-001-affbdd6bd538.png" alt="VISÃOVALE"
+    <a href="index.html" class="sp-logo" aria-label="VISÃOVALE · página inicial">
+      <img src="images/logo-escuro.png" alt="VISÃOVALE" width="150" height="75"
            onerror="this.style.display='none';this.nextElementSibling.style.display='inline'">
       <span style="display:none">VISÃOVALE</span>
     </a>

@@ -14,7 +14,17 @@
 <meta property="og:locale" content="pt_PT">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400&family=Raleway:wght@200;300;400;500;600&family=Barlow+Condensed:wght@300;400;500;600&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="assets/visaovale.css">
+<link rel="stylesheet" href="assets/visaovale.css?v=3">
+<style>
+/* crítico: garante a barra mesmo com o CSS externo em cache */
+.sp-nav{position:sticky;top:0;left:auto;right:auto;height:auto;min-height:0;display:block;padding:0;z-index:60;background:#fffdfa;border-bottom:1px solid rgba(17,17,16,.12)}
+.sp-nav-in{max-width:1400px;margin:0 auto;padding:10px 40px;min-height:68px;display:flex;align-items:center;gap:18px}
+.sp-logo{flex-shrink:0;display:flex;align-items:center}
+.sp-logo img{height:42px;width:auto;display:block}
+.sp-links{list-style:none;display:flex;gap:16px;margin-left:auto;align-items:center}
+.sp-links a{white-space:nowrap;color:#26251f}
+.sp-crumb{position:static;height:auto;display:block;padding:0;z-index:auto}
+</style>
 <script type="application/ld+json">{"@context": "https://schema.org", "@type": "ArchitecturalService", "name": "VISÃOVALE", "url": "https://visaovale.com/", "telephone": "+351969851001", "email": "geral@visaovale.com", "image": "https://visaovale.com/images/image-001-affbdd6bd538.png", "address": {"@type": "PostalAddress", "streetAddress": "Rua Joaquim Augusto de Carvalho, Nº 5, 1º A", "postalCode": "2475-133", "addressLocality": "Benedita", "addressRegion": "Leiria", "addressCountry": "PT"}, "areaServed": [{"@type": "Country", "name": "Portugal"}, {"@type": "City", "name": "Caldas da Rainha"}, {"@type": "City", "name": "Óbidos"}, {"@type": "City", "name": "Peniche"}, {"@type": "City", "name": "Nazaré"}, {"@type": "City", "name": "Alcobaça"}, {"@type": "City", "name": "Leiria"}, {"@type": "City", "name": "Marinha Grande"}], "openingHours": "Mo-Fr 09:00-18:00"}</script>
 <script type="application/ld+json">{"@context": "https://schema.org", "@type": "Service", "name": "Arquitectura em Alcobaça", "description": "Gabinete de arquitectura a trabalhar em Alcobaça: projecto de moradias, reabilitação, licenciamento camarário, design de interiores e acompanhamento de obra.", "url": "https://visaovale.com/arquitectura-alcobaca.html", "provider": {"@type": "Organization", "name": "VISÃOVALE"}, "areaServed": {"@type": "Country", "name": "Portugal"}}</script>
 <script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "Trabalham em Alcobaça?", "acceptedAnswer": {"@type": "Answer", "text": "Sim. A sede é na Benedita, no concelho de Alcobaça, e Alcobaça está dentro da nossa área de trabalho corrente. Também aceitamos projectos em todo o país."}}, {"@type": "Question", "name": "Fazem a análise do terreno antes de eu comprar?", "acceptedAnswer": {"@type": "Answer", "text": "Fazemos, e é o que recomendamos. Uma leitura urbanística antes da escritura evita comprar um terreno que não permite o que tinha em mente."}}, {"@type": "Question", "name": "Tratam do processo na câmara municipal?", "acceptedAnswer": {"@type": "Answer", "text": "Sim. Instruímos o processo, acompanhamos os pareceres das entidades e respondemos aos pedidos de elementos até à emissão do alvará."}}, {"@type": "Question", "name": "Quanto custa um projecto?", "acceptedAnswer": {"@type": "Answer", "text": "Depende da área, da complexidade e das fases contratadas. Enviamos sempre proposta escrita com valores e prazos antes de começar. A primeira conversa não tem custo."}}]}</script>
@@ -22,8 +32,8 @@
 <body>
 <nav class="sp-nav">
   <div class="sp-nav-in">
-    <a href="index.html" class="sp-logo">
-      <img src="images/image-001-affbdd6bd538.png" alt="VISÃOVALE"
+    <a href="index.html" class="sp-logo" aria-label="VISÃOVALE · página inicial">
+      <img src="images/logo-escuro.png" alt="VISÃOVALE" width="150" height="75"
            onerror="this.style.display='none';this.nextElementSibling.style.display='inline'">
       <span style="display:none">VISÃOVALE</span>
     </a>
