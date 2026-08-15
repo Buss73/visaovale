@@ -1173,6 +1173,66 @@ footer{background:var(--c-black);padding:72px 0 36px}
           <p class="proj-client">Render 3D · Arquitectura</p>
         </div>
       </div>
+
+      <!-- P36 — GALERIA (Vivenda Unifamiliar em Pedra) -->
+      <div class="proj reveal proj-gallery" data-cat="hab" data-ratio="wide" onclick="openGallery('vivendapedra', this)" role="button" tabindex="0" onkeyup="if(event.key==='Enter')openGallery('vivendapedra', this)">
+        <div class="proj-img">
+          <img src="images/vivendapedra_01.jpg" alt="Vivenda Unifamiliar em Pedra" loading="lazy"
+               onerror="this.outerHTML='<div class=\'proj-ph\' data-ratio=\'wide\' style=\'aspect-ratio:16/9\'><div class=\'ph-lbl\'>Vivenda Unifamiliar em Pedra · 2026</div></div>'">
+          <span class="proj-gallery-badge t">Ver Projecto</span>
+        </div>
+        <div class="proj-overlay"></div>
+        <div class="proj-info">
+          <p class="proj-cat t">Habitação · 2026</p>
+          <h3 class="proj-name">Vivenda Unifamiliar em Pedra</h3>
+          <p class="proj-client">Render 3D · Arquitectura</p>
+        </div>
+      </div>
+
+      <!-- P37 — GALERIA (Urbanização de Moradias em Banda) -->
+      <div class="proj reveal proj-gallery" data-cat="hab" data-ratio="wide" onclick="openGallery('urbanizacaobanda', this)" role="button" tabindex="0" onkeyup="if(event.key==='Enter')openGallery('urbanizacaobanda', this)">
+        <div class="proj-img">
+          <img src="images/urbanizacaobanda_01.jpg" alt="Urbanização de Moradias em Banda" loading="lazy"
+               onerror="this.outerHTML='<div class=\'proj-ph\' data-ratio=\'wide\' style=\'aspect-ratio:16/9\'><div class=\'ph-lbl\'>Urbanização de Moradias em Banda · 2026</div></div>'">
+          <span class="proj-gallery-badge t">Ver Projecto</span>
+        </div>
+        <div class="proj-overlay"></div>
+        <div class="proj-info">
+          <p class="proj-cat t">Habitação · 2026</p>
+          <h3 class="proj-name">Urbanização de Moradias em Banda</h3>
+          <p class="proj-client">Render 3D · Arquitectura</p>
+        </div>
+      </div>
+
+      <!-- P38 — GALERIA (Hotel Natura · Resort Rural) -->
+      <div class="proj reveal proj-gallery" data-cat="com" data-ratio="wide" onclick="openGallery('hotelnaturaresort', this)" role="button" tabindex="0" onkeyup="if(event.key==='Enter')openGallery('hotelnaturaresort', this)">
+        <div class="proj-img">
+          <img src="images/hotelnaturaresort_01.jpg" alt="Hotel Natura · Resort Rural" loading="lazy"
+               onerror="this.outerHTML='<div class=\'proj-ph\' data-ratio=\'wide\' style=\'aspect-ratio:16/9\'><div class=\'ph-lbl\'>Hotel Natura · Resort Rural · 2026</div></div>'">
+          <span class="proj-gallery-badge t">Ver Projecto</span>
+        </div>
+        <div class="proj-overlay"></div>
+        <div class="proj-info">
+          <p class="proj-cat t">Hotelaria · 2026</p>
+          <h3 class="proj-name">Hotel Natura · Resort Rural</h3>
+          <p class="proj-client">Grande Projecto Hoteleiro</p>
+        </div>
+      </div>
+
+      <!-- P39 — GALERIA (Complexo Desportivo) -->
+      <div class="proj reveal proj-gallery" data-cat="com" data-ratio="wide" onclick="openGallery('complexodesportivo', this)" role="button" tabindex="0" onkeyup="if(event.key==='Enter')openGallery('complexodesportivo', this)">
+        <div class="proj-img">
+          <img src="images/complexodesportivo_01.jpg" alt="Complexo Desportivo" loading="lazy"
+               onerror="this.outerHTML='<div class=\'proj-ph\' data-ratio=\'wide\' style=\'aspect-ratio:16/9\'><div class=\'ph-lbl\'>Complexo Desportivo · 2026</div></div>'">
+          <span class="proj-gallery-badge t">Ver Projecto</span>
+        </div>
+        <div class="proj-overlay"></div>
+        <div class="proj-info">
+          <p class="proj-cat t">Zona Desportiva · 2026</p>
+          <h3 class="proj-name">Complexo Desportivo</h3>
+          <p class="proj-client">Equipamento Desportivo · Arquitectura</p>
+        </div>
+      </div>
     </div>
 
     <div class="port-cta reveal">
@@ -2435,6 +2495,30 @@ const PROJECT_GALLERIES = {
     {src:'images/vivendasserramar_01.jpg', caption:'Vista aérea, conjunto implantado no declive com a serra ao fundo'},
     {src:'images/vivendasserramar_02.jpg', caption:'Terraços e piscinas privativas, vista sobre o mar'},
     {src:'images/vivendasserramar_03.jpg', caption:'Alçado da rua, acessos e enquadramento sobre a costa'}
+  ],
+  vivendapedra: [
+    {src:'images/vivendapedra_01.jpg', caption:'Alçado principal, piso inferior integrado no declive'},
+    {src:'images/vivendapedra_02.jpg', caption:'Alçado sul, alpendres laterais e envidraçado do corpo central'},
+    {src:'images/vivendapedra_03.jpg', caption:'Vista de esquina, alpendre e portões da garagem'},
+    {src:'images/vivendapedra_04.jpg', caption:'Alçado lateral, garagem coberta e acesso ao piso semienterrado'}
+  ],
+  urbanizacaobanda: [
+    {src:'images/urbanizacaobanda_01.jpg', caption:'Vista de rua, alinhamento das moradias e piscinas privativas'},
+    {src:'images/urbanizacaobanda_02.jpg', caption:'Vista aérea, terraços e implantação escalonada no declive'},
+    {src:'images/urbanizacaobanda_03.jpg', caption:'Vista geral do conjunto, arruamento central e envolvente'}
+  ],
+  hotelnaturaresort: [
+    {src:'images/hotelnaturaresort_01.jpg', caption:'Entrada principal, pala de acesso e sinalética'},
+    {src:'images/hotelnaturaresort_02.jpg', caption:'Alçado principal reflectido no lago, acesso pedonal'},
+    {src:'images/hotelnaturaresort_03.jpg', caption:'Vista aérea, rotunda de chegada e enquadramento agrícola'},
+    {src:'images/hotelnaturaresort_04.jpg', caption:'Vista aérea, volume em corten e jardins envolventes'},
+    {src:'images/hotelnaturaresort_05.jpg', caption:'Vista aérea, restaurante, piscina exterior e vista sobre o mar'}
+  ],
+  complexodesportivo: [
+    {src:'images/complexodesportivo_01.jpg', caption:'Vista aérea geral, campos, edifício de apoio e frente de mar'},
+    {src:'images/complexodesportivo_02.jpg', caption:'Edifício principal e campo relvado com bancadas cobertas'},
+    {src:'images/complexodesportivo_03.jpg', caption:'Campos de treino, courts de ténis e zona de balneários'},
+    {src:'images/complexodesportivo_04.jpg', caption:'Alçado da rua, estacionamento e arruamento de acesso'}
   ],
 };
 
