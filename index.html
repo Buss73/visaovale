@@ -877,7 +877,7 @@ footer{background:var(--c-black);padding:72px 0 36px}
       <!-- P12 — GALERIA (Edifício Habitacional) -->
       <div class="proj reveal proj-gallery" data-cat="hab" data-ratio="wide" onclick="openGallery('edificiohabitacional', this)" role="button" tabindex="0" onkeyup="if(event.key==='Enter')openGallery('edificiohabitacional', this)">
         <div class="proj-img">
-          <img src="images/image-059-029477ce4f34.jpg" alt="Edifício Habitacional" loading="lazy"
+          <img src="images/edificiohabitacional_01.jpg" alt="Edifício Habitacional" loading="lazy"
                onerror="this.outerHTML='<div class=\'proj-ph\' data-ratio=\'wide\' style=\'aspect-ratio:16/9\'><div class=\'ph-lbl\'>Edifício Habitacional · 2025</div></div>'">
           <span class="proj-gallery-badge t">Ver Projecto</span>
         </div>
@@ -1246,6 +1246,36 @@ footer{background:var(--c-black);padding:72px 0 36px}
           <p class="proj-cat t">Habitação · 2026</p>
           <h3 class="proj-name">Vivenda Unifamiliar Moderna</h3>
           <p class="proj-client">Render 3D · Arquitectura</p>
+        </div>
+      </div>
+
+      <!-- P41 — GALERIA (Moradias Geminadas em Banda) -->
+      <div class="proj reveal proj-gallery" data-cat="hab" data-ratio="wide" onclick="openGallery('geminadasbanda', this)" role="button" tabindex="0" onkeyup="if(event.key==='Enter')openGallery('geminadasbanda', this)">
+        <div class="proj-img">
+          <img src="images/geminadasbanda_01.jpg" alt="Moradias Geminadas em Banda" loading="lazy"
+               onerror="this.outerHTML='<div class=\'proj-ph\' data-ratio=\'wide\' style=\'aspect-ratio:16/9\'><div class=\'ph-lbl\'>Moradias Geminadas em Banda · 2026</div></div>'">
+          <span class="proj-gallery-badge t">Ver Projecto</span>
+        </div>
+        <div class="proj-overlay"></div>
+        <div class="proj-info">
+          <p class="proj-cat t">Habitação · 2026</p>
+          <h3 class="proj-name">Moradias Geminadas em Banda</h3>
+          <p class="proj-client">Render 3D · Arquitectura</p>
+        </div>
+      </div>
+
+      <!-- P42 — GALERIA (Edifício de Escritórios) -->
+      <div class="proj reveal proj-gallery" data-cat="com" data-ratio="wide" onclick="openGallery('edificioescritorios', this)" role="button" tabindex="0" onkeyup="if(event.key==='Enter')openGallery('edificioescritorios', this)">
+        <div class="proj-img">
+          <img src="images/edificioescritorios_01.jpg" alt="Edifício de Escritórios" loading="lazy"
+               onerror="this.outerHTML='<div class=\'proj-ph\' data-ratio=\'wide\' style=\'aspect-ratio:16/9\'><div class=\'ph-lbl\'>Edifício de Escritórios · 2026</div></div>'">
+          <span class="proj-gallery-badge t">Ver Projecto</span>
+        </div>
+        <div class="proj-overlay"></div>
+        <div class="proj-info">
+          <p class="proj-cat t">Escritórios · 2026</p>
+          <h3 class="proj-name">Edifício de Escritórios</h3>
+          <p class="proj-client">Projecto Comercial · Arquitectura</p>
         </div>
       </div>
     </div>
@@ -2401,10 +2431,11 @@ const PROJECT_GALLERIES = {
     {src:'images/image-052-f836b37b65aa.jpg', caption:'Entrada principal, acesso pedonal'}
   ],
   edificiohabitacional: [
-    {src:'images/image-059-029477ce4f34.jpg', caption:'Alçado principal, vista da rua'},
-    {src:'images/image-063-44f6dccc6dc9.jpg', caption:'Vista aérea, implantação e acessos'},
-    {src:'images/image-061-569a4228bd06.jpg', caption:'Vista de esquina, acesso pedonal'},
-    {src:'images/image-062-d8624968b1a9.jpg', caption:'Alçado frontal, enquadramento geral'}
+    {src:'images/edificiohabitacional_01.jpg', caption:'Vista de esquina, alçado principal sobre a frente de água'},
+    {src:'images/edificiohabitacional_02.jpg', caption:'Alçado principal, entrada e varandas corridas'},
+    {src:'images/edificiohabitacional_03.jpg', caption:'Alçado tardoz, pormenor das lâminas verticais'},
+    {src:'images/edificiohabitacional_04.jpg', caption:'Alçado lateral, garagens e acesso automóvel'},
+    {src:'images/edificiohabitacional_05.jpg', caption:'Vista aérea, implantação, estacionamento e envolvente'}
   ],
   hotelnatura: [
     {src:'images/image-056-6cf81ba1c3c9.jpg', caption:'Alçado principal, vista da rua'},
@@ -2417,9 +2448,10 @@ const PROJECT_GALLERIES = {
     {src:'images/restaurantenatura_03.jpg', caption:'Alçado poente ao fim da tarde, estacionamento e oliveiras'}
   ],
   quartamoradia: [
-    {src:'images/quartamoradia_01.jpg', caption:'Alçado principal, jardim envolvente'},
-    {src:'images/quartamoradia_02.jpg', caption:'Acesso principal, caminho em calçada'},
-    {src:'images/quartamoradia_03.jpg', caption:'Alçado tardoz, zona de refeições exterior'}
+    {src:'images/quartamoradia_01.jpg', caption:'Alçado principal ao fim da tarde, entrada e garagem'},
+    {src:'images/quartamoradia_02.jpg', caption:'Vista da rua, pátio em calçada e alpendre de acesso'},
+    {src:'images/quartamoradia_03.jpg', caption:'Vista aérea, implantação e enquadramento sobre a costa'},
+    {src:'images/quartamoradia_04.jpg', caption:'Alçado tardoz, painel em pedra e alpendre com churrasqueira'}
   ],
   moradiapiscina: [
     {src:'images/moradiapiscina_01.jpg', caption:'Alçado principal, piscina e terraço'},
@@ -2544,6 +2576,16 @@ const PROJECT_GALLERIES = {
     {src:'images/vivendamoderna_01.jpg', caption:'Vista aérea, piscina, terraço e envolvente arborizada'},
     {src:'images/vivendamoderna_02.jpg', caption:'Alçado poente, deck da piscina e envidraçados da sala'},
     {src:'images/vivendamoderna_03.jpg', caption:'Alçado da rua, painéis em corten e acesso à garagem'}
+  ],
+  geminadasbanda: [
+    {src:'images/geminadasbanda_01.jpg', caption:'Vista aérea, conjunto sobre a baía e frente de mar'},
+    {src:'images/geminadasbanda_02.jpg', caption:'Alçado de rua, alinhamento do conjunto e fachadas em cor'},
+    {src:'images/geminadasbanda_03.jpg', caption:'Zona comum, piscina, solário e alpendre de apoio'}
+  ],
+  edificioescritorios: [
+    {src:'images/edificioescritorios_01.jpg', caption:'Vista de esquina, conjunto de escritórios e armazém'},
+    {src:'images/edificioescritorios_02.jpg', caption:'Alçado principal, entrada e revestimento em chapa nervurada'},
+    {src:'images/edificioescritorios_03.jpg', caption:'Pátio interior, acesso aos escritórios e cais de carga'}
   ],
 };
 
