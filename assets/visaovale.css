@@ -362,6 +362,12 @@ html,body{overflow-x:hidden;max-width:100%}
 .sp-faq summary::after{content:'+';position:absolute;right:0;top:-2px;color:var(--c-gold);font-size:1.2rem}
 .sp-faq[open] summary::after{content:'–'}
 .sp-faq p{font-size:.86rem;font-weight:300;line-height:1.8;color:var(--c-grey);margin-top:10px;max-width:720px}
+.foot-credit-row{display:flex;justify-content:center;margin-top:26px;padding-top:20px;border-top:1px solid var(--c-line)}
+.foot-credit{display:inline-flex;align-items:center;gap:12px}
+.foot-credit span{font-family:'Barlow Condensed',sans-serif;font-size:.62rem;letter-spacing:.22em;text-transform:uppercase;color:rgba(246,244,240,.62);transition:color .3s}
+.foot-credit img{height:28px;width:auto;display:block;opacity:.85;transition:opacity .3s}
+.foot-credit:hover img{opacity:1}
+.foot-credit:hover span{color:rgba(246,244,240,.8)}
 @media(max-width:1240px){.sp-links li:nth-last-child(-n+2){display:none}}
 @media(max-width:1040px){
   .sp-nav-in{flex-wrap:wrap;gap:10px 14px;padding:10px var(--pad) 0}

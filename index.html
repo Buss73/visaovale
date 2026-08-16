@@ -331,6 +331,12 @@ footer{background:var(--c-black);padding:72px 0 36px}
 .foot-legal{display:flex;gap:18px}
 .foot-legal a{font-size:.7rem;color:rgba(246,244,240,.58);transition:color .3s}
 .foot-legal a:hover{color:rgba(246,244,240,.92)}
+.foot-credit-row{margin-top:26px;padding-top:20px;border-top:1px solid var(--c-line);display:flex;justify-content:center}
+.foot-credit{display:inline-flex;align-items:center;gap:12px;transition:opacity .3s}
+.foot-credit span{font-family:'Barlow Condensed',sans-serif;font-size:.62rem;letter-spacing:.22em;text-transform:uppercase;color:rgba(246,244,240,.46)}
+.foot-credit img{height:28px;width:auto;display:block;opacity:.85;transition:opacity .3s}
+.foot-credit:hover img{opacity:1}
+.foot-credit:hover span{color:rgba(246,244,240,.8)}
 
 /* ── RESPONSIVE ── */
 @media(max-width:1100px){
@@ -1802,6 +1808,13 @@ footer{background:var(--c-black);padding:72px 0 36px}
         <button type="button" class="t ck-link" style="text-decoration:underline;font-size:.7rem;color:inherit" onclick="ckReopen(event)">Preferências de Cookies</button>
       </div>
     </div>
+    <div class="foot-credit-row">
+      <a class="foot-credit" href="https://paal.pt" target="_blank" rel="noopener noreferrer"
+         aria-label="Site concebido e desenvolvido por paal · abre em nova janela">
+        <span class="t">Site por</span>
+        <img src="images/logo-paal.png" alt="paal · create + build" width="253" height="120" loading="lazy" decoding="async">
+      </a>
+    </div>
   </div>
 </footer>
 
@@ -1811,6 +1824,7 @@ footer{background:var(--c-black);padding:72px 0 36px}
 <script>
 const TR = {
   pt: {
+    'Site por':'Site por',
     'Por onde começar':'Por onde começar',
     'Por Onde Começar':'Por Onde Começar',
     'Como Ajudamos':'Como Ajudamos',
@@ -2156,6 +2170,7 @@ const TR = {
     'Email *':'Email *',
   },
   en: {
+    'Site por':'Site by',
     'Por onde começar':'Where to start',
     'Por Onde Começar':'Where to Start',
     'Como Ajudamos':'How We Help',
@@ -2501,6 +2516,7 @@ const TR = {
     '800×1000px':'800×1000px',
   },
   fr: {
+    'Site por':'Site par',
     'Por onde começar':'Par où commencer',
     'Por Onde Começar':'Par où commencer',
     'Como Ajudamos':'Comment nous aidons',
