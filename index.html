@@ -768,30 +768,15 @@ footer{background:var(--c-black);padding:72px 0 36px}
     <div class="port-grid" id="portGrid">
 
       <!-- P1 · TALL -->
-      <div class="proj reveal proj-gallery" data-cat="hab" data-ratio="tall" onclick="openGallery('edificiomultifamiliar', this)" role="button" tabindex="0" onkeyup="if(event.key==='Enter')openGallery('edificiomultifamiliar', this)">
+      <div class="proj reveal proj-gallery" data-cat="hab" data-ratio="wide" onclick="openGallery('edificiomultifamiliar', this)" role="button" tabindex="0" onkeyup="if(event.key==='Enter')openGallery('edificiomultifamiliar', this)">
         <div class="proj-img">
-          <img src="images/edificiomultifamiliar_cover.jpg" alt="Edifício Multifamiliar"
-               onerror="if(!this.parentNode)return;this.outerHTML='<div class=\'proj-ph\' data-ratio=\'tall\' style=\'aspect-ratio:2/3\'><div class=\'ph-lbl\'>Edifício Multifamiliar · 2023</div></div>'" loading="lazy" decoding="async">
+          <img width="1365" height="768" src="images/edificiomultifamiliar_01.jpg" alt="Edifício Multifamiliar"
+               onerror="if(!this.parentNode)return;this.outerHTML='<div class=\'proj-ph\' data-ratio=\'wide\' style=\'aspect-ratio:16/9\'><div class=\'ph-lbl\'>Edifício Multifamiliar · 2027</div></div>'" loading="lazy" decoding="async">
           <span class="proj-gallery-badge t">Ver Projecto</span>
         </div>
         <div class="proj-overlay"></div>
         <div class="proj-info">
-          <p class="proj-cat t">Habitação Colectiva · 2023</p>
-          <h3 class="proj-name">Edifício Multifamiliar</h3>
-          <p class="proj-client">Arquitectura</p>
-        </div>
-      </div>
-
-      <!-- P1b · STD (duplicado) -->
-      <div class="proj reveal proj-gallery" data-cat="hab" data-ratio="std" onclick="openGallery('edificiomultifamiliar2', this)" role="button" tabindex="0" onkeyup="if(event.key==='Enter')openGallery('edificiomultifamiliar2', this)">
-        <div class="proj-img">
-          <img src="images/image-008-00d812eada66.jpg" alt="Edifício Multifamiliar"
-               onerror="if(!this.parentNode)return;this.outerHTML='<div class=\'proj-ph\' style=\'aspect-ratio:4/3\'><div class=\'ph-lbl\'>Edifício Multifamiliar · 2023</div></div>'" loading="lazy" decoding="async">
-          <span class="proj-gallery-badge t">Ver Projecto</span>
-        </div>
-        <div class="proj-overlay"></div>
-        <div class="proj-info">
-          <p class="proj-cat t">Habitação Colectiva · 2023</p>
+          <p class="proj-cat t">Habitação Colectiva · 2027</p>
           <h3 class="proj-name">Edifício Multifamiliar</h3>
           <p class="proj-client">Arquitectura</p>
         </div>
@@ -2895,8 +2880,7 @@ function setLang(lang, el) {
 // ── PROJECT GALLERIES / LIGHTBOX ──────────────────────────────
 // Ficha de cada projecto. Campos vazios não aparecem no site.
 const PROJECT_META = {
-  edificiomultifamiliar: {local:'', area:'', ano:'2023', tipo:'Construção nova', servicos:'Arquitectura', estado:'', media:'render'},
-  edificiomultifamiliar2: {local:'', area:'', ano:'2023', tipo:'Construção nova', servicos:'Arquitectura', estado:'', media:'render'},
+  edificiomultifamiliar: {local:'', area:'', ano:'2027', tipo:'Construção nova', servicos:'Arquitectura', estado:'', media:'render'},
   quintarural: {local:'', area:'', ano:'2022', tipo:'Reabilitação', servicos:'Reabilitação', estado:'', media:'render'},
   aldeamentoturistico: {local:'', area:'', ano:'2021', tipo:'Reabilitação', servicos:'Reabilitação', estado:'', media:'render'},
   segundamoradia: {local:'', area:'', ano:'2021', tipo:'Construção nova', servicos:'Arquitectura', estado:'', media:'render'},
@@ -2970,19 +2954,14 @@ const PROJECT_GALLERIES = {
     {src:'images/image-039-3f53552953b4.jpg', caption:'Vista aérea, implantação e garagem'}
   ],
   edificiomultifamiliar: [
-    {src:'images/edificiomultifamiliar_01.jpg', caption:'Vista de esquina, varandas e alçado principal'},
-    {src:'images/edificiomultifamiliar_02.jpg', caption:'Alçado principal, vista da rua'}
+    {src:'images/edificiomultifamiliar_01.jpg', caption:'Vista aérea de esquina, varandas corridas e enquadramento no arruamento'},
+    {src:'images/edificiomultifamiliar_02.jpg', caption:'Alçado de esquina, ripado de madeira e pilares do piso térreo'}
   ],
 
   moradiasgeminadas: [
     {src:'images/image-013-de4a12591be4.jpg', caption:'Alçado principal, entrada e portões de acesso'},
     {src:'images/image-041-a60a3daeca30.jpg', caption:'Vista de esquina, alçado tardoz e logradouro'},
     {src:'images/image-042-85fdfa11ab86.jpg', caption:'Zona de piscina, logradouro privado'}
-  ],
-  edificiomultifamiliar2: [
-    {src:'images/image-008-00d812eada66.jpg', caption:'Vista de esquina, alçado principal e acesso'},
-    {src:'images/image-043-d0e320e4bb79.jpg', caption:'Alçado frontal, fachada e estacionamento'},
-    {src:'images/image-044-229fc3be2c63.jpg', caption:'Vista de esquina, alçado lateral e envolvente'}
   ],
   aldeamentoturistico: [
     {src:'images/image-010-0b0109241ef1.jpg', caption:'Vista aérea, conjunto de cabanas e implantação'},
@@ -3016,10 +2995,11 @@ const PROJECT_GALLERIES = {
     {src:'images/restaurantenatura_03.jpg', caption:'Alçado poente ao fim da tarde, estacionamento e oliveiras'}
   ],
   quartamoradia: [
-    {src:'images/quartamoradia_01.jpg', caption:'Alçado principal ao fim da tarde, entrada e garagem'},
-    {src:'images/quartamoradia_02.jpg', caption:'Vista da rua, pátio em calçada e alpendre de acesso'},
-    {src:'images/quartamoradia_03.jpg', caption:'Vista aérea, implantação e enquadramento sobre a costa'},
-    {src:'images/quartamoradia_04.jpg', caption:'Alçado tardoz, painel em pedra e alpendre com churrasqueira'}
+    {src:'images/quartamoradia_01.jpg', caption:'Alçado principal, relvado e enquadramento no pinhal'},
+    {src:'images/quartamoradia_02.jpg', caption:'Vista de esquina, volume em pedra e alpendre com churrasqueira'},
+    {src:'images/quartamoradia_03.jpg', caption:'Alçado lateral, painel em pedra e envidraçados da sala'},
+    {src:'images/quartamoradia_04.jpg', caption:'Acesso automóvel, garagens e pátio em calçada'},
+    {src:'images/quartamoradia_05.jpg', caption:'Vista aérea, alpendre corrido e muro de vedação'}
   ],
   moradiapiscina: [
     {src:'images/moradiapiscina_01.jpg', caption:'Alçado principal, piscina e terraço'},
@@ -3112,9 +3092,11 @@ const PROJECT_GALLERIES = {
     {src:'images/bungalowsinteriores_02.jpg', caption:'Quarto principal, parede de destaque e acesso ao exterior'}
   ],
   vivendasserramar: [
-    {src:'images/vivendasserramar_01.jpg', caption:'Vista aérea, conjunto implantado no declive com a serra ao fundo'},
-    {src:'images/vivendasserramar_02.jpg', caption:'Terraços e piscinas privativas, vista sobre o mar'},
-    {src:'images/vivendasserramar_03.jpg', caption:'Alçado da rua, acessos e enquadramento sobre a costa'}
+    {src:'images/vivendasserramar_01.jpg', caption:'Vista aérea, conjunto implantado no declive com o mar ao fundo'},
+    {src:'images/vivendasserramar_02.jpg', caption:'Terraços, piscinas privativas e volumes em consola'},
+    {src:'images/vivendasserramar_03.jpg', caption:'Alçado da rua, portões de acesso e horizonte sobre a costa'},
+    {src:'images/vivendasserramar_04.jpg', caption:'Piscina e terraço, envidraçados da sala e vista para a serra'},
+    {src:'images/vivendasserramar_05.jpg', caption:'Vista aérea da rua, pátios em socalco e muros de vedação'}
   ],
   vivendapedra: [
     {src:'images/vivendapedra_01.jpg', caption:'Alçado principal, piso inferior integrado no declive'},
