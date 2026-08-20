@@ -1359,7 +1359,7 @@ footer{background:var(--c-black);padding:72px 0 36px}
 .lightbox-top{flex-shrink:0;display:flex;justify-content:flex-end;padding:18px 26px}
 .lightbox-close{background:none;border:none;color:rgba(246,244,240,.6);font-size:1.7rem;line-height:1;cursor:pointer;font-weight:300;transition:color .2s}
 .lightbox-close:hover{color:var(--c-white)}
-.lightbox-stage{position:relative;flex:1;min-height:0;display:flex;align-items:center;justify-content:center;padding:0 84px}
+.lightbox-stage{position:relative;flex:1;min-height:0;display:flex;align-items:center;justify-content:center;padding:0 84px;touch-action:pan-y}
 .lightbox-nav{position:absolute;top:50%;transform:translateY(-50%);background:none;border:none;color:rgba(246,244,240,.4);font-size:2.4rem;line-height:1;font-weight:200;cursor:pointer;padding:14px;transition:color .2s}
 .lightbox-nav:hover{color:var(--c-gold2)}
 .lightbox-nav.prev{left:4px}
@@ -3282,6 +3282,33 @@ document.getElementById('lightbox').addEventListener('click', (e) => {
   if (e.target.closest('.lightbox-img-wrap, .lightbox-tools, .lightbox-nav, .lightbox-close, .lightbox-grid-item')) return;
   closeGallery();
 });
+
+// ── SWIPE (telemóvel / tablet) ─────────────────────────────
+// Permite passar de fotografia arrastando o dedo, sem precisar de tocar nas setas.
+(function () {
+  const stage = document.querySelector('.lightbox-stage');
+  if (!stage) return;
+  const SWIPE_THRESHOLD = 40; // deslocação mínima (px) para contar como swipe
+  let touchStartX = 0, touchStartY = 0;
+
+  stage.addEventListener('touchstart', (e) => {
+    if (isGridMode || !currentGallery) return;
+    touchStartX = e.changedTouches[0].screenX;
+    touchStartY = e.changedTouches[0].screenY;
+  }, { passive: true });
+
+  stage.addEventListener('touchend', (e) => {
+    if (isGridMode || !currentGallery) return;
+    const touchEndX = e.changedTouches[0].screenX;
+    const touchEndY = e.changedTouches[0].screenY;
+    const dx = touchEndX - touchStartX;
+    const dy = touchEndY - touchStartY;
+    if (Math.abs(dx) > SWIPE_THRESHOLD && Math.abs(dx) > Math.abs(dy)) {
+      if (dx < 0) galleryStep(1);   // arrastar para a esquerda → foto seguinte
+      else galleryStep(-1);         // arrastar para a direita → foto anterior
+    }
+  }, { passive: true });
+})();
 </script>
 
 <script>
