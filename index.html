@@ -520,6 +520,36 @@ footer{background:var(--c-black);padding:72px 0 36px}
 </section>
 
 <!-- ══════════════════════════════════════════════
+     CREDIBILIDADE / AUTORIDADE
+══════════════════════════════════════════════ -->
+<section class="stats reveal">
+  <div class="container">
+    <div class="stats-grid">
+      <div class="stat">
+        <span class="stat-n" id="statProjCount">—</span>
+        <span class="stat-l t">Projectos no Portfólio</span>
+      </div>
+      <div class="stat">
+        <span class="stat-n t">5</span>
+        <span class="stat-l t">Áreas de Especialização</span>
+      </div>
+      <div class="stat">
+        <span class="stat-n t">3</span>
+        <span class="stat-l t">Disciplinas Integradas</span>
+      </div>
+      <div class="stat">
+        <span class="stat-n t">100%</span>
+        <span class="stat-l t">Cobertura Nacional</span>
+      </div>
+      <div class="stat">
+        <span class="stat-n t">0</span>
+        <span class="stat-l t">Intermediários</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════════════════════════════════════
      PROBLEMA → SOLUÇÃO → PROVA
 ══════════════════════════════════════════════ -->
 <section class="probs" id="como-ajudamos">
@@ -1338,11 +1368,41 @@ footer{background:var(--c-black);padding:72px 0 36px}
           <p class="proj-client">Projecto Comercial · Arquitectura</p>
         </div>
       </div>
+
+      <!-- P43 · GALERIA (Reabilitação de Vivenda Unifamiliar em Alvorninha) -->
+      <div class="proj reveal proj-gallery" data-cat="reab" data-ratio="wide" onclick="openGallery('reabvivendaunifamiliaralvorninha', this)" role="button" tabindex="0" onkeyup="if(event.key==='Enter')openGallery('reabvivendaunifamiliaralvorninha', this)">
+        <div class="proj-img">
+          <img width="1365" height="768" src="images/reabvivendaunifamiliaralvorninha_01.jpg" alt="Reabilitação de Vivenda Unifamiliar em Alvorninha" loading="lazy"
+               onerror="if(!this.parentNode)return;this.outerHTML='<div class=\'proj-ph\' data-ratio=\'wide\' style=\'aspect-ratio:16/9\'><div class=\'ph-lbl\'>Reabilitação de Vivenda Unifamiliar em Alvorninha · 2026</div></div>'">
+          <span class="proj-gallery-badge t">Ver Projecto</span>
+        </div>
+        <div class="proj-overlay"></div>
+        <div class="proj-info">
+          <p class="proj-cat t">Reabilitação · 2026</p>
+          <h3 class="proj-name">Reabilitação de Vivenda Unifamiliar em Alvorninha</h3>
+          <p class="proj-client">Reabilitação</p>
+        </div>
+      </div>
+
+      <!-- P44 · GALERIA (Restaurante Benfica do Ribatejo) -->
+      <div class="proj reveal proj-gallery" data-cat="com" data-ratio="wide" onclick="openGallery('restaurantebenficaribatejo', this)" role="button" tabindex="0" onkeyup="if(event.key==='Enter')openGallery('restaurantebenficaribatejo', this)">
+        <div class="proj-img">
+          <img width="1365" height="768" src="images/restaurantebenficaribatejo_01.jpg" alt="Restaurante Benfica do Ribatejo" loading="lazy"
+               onerror="if(!this.parentNode)return;this.outerHTML='<div class=\'proj-ph\' data-ratio=\'wide\' style=\'aspect-ratio:16/9\'><div class=\'ph-lbl\'>Restaurante Benfica do Ribatejo · 2019</div></div>'">
+          <span class="proj-gallery-badge t">Ver Projecto</span>
+        </div>
+        <div class="proj-overlay"></div>
+        <div class="proj-info">
+          <p class="proj-cat t">Restauração · 2019</p>
+          <h3 class="proj-name">Restaurante Benfica do Ribatejo</h3>
+          <p class="proj-client">Projecto Comercial</p>
+        </div>
+      </div>
     </div>
 
     <div class="port-cta reveal">
       <a href="#portfolio" class="btn btn-dark" id="portToggleBtn" onclick="togglePort(event)" role="button">
-        <span class="t" id="portLblMore">Ver todos os projectos →</span>
+        <span class="t" id="portLblMore">Ver portfólio completo →</span>
         <span class="t" id="portLblLess" style="display:none">Ver menos projectos ←</span>
       </a>
     </div>
@@ -1480,10 +1540,10 @@ footer{background:var(--c-black);padding:72px 0 36px}
       <div class="reveal">
         <p class="label t">Sobre Nós</p>
         <h2 class="h2" style="margin-bottom:20px">A Nossa <em>Proposta</em></h2>
-        <p class="about-lead t">Profissionais especializados e acreditados com competências reconhecidas nas áreas da engenharia, arquitectura e design.</p>
-        <p class="body t">A VISÃOVALE põe à sua disposição uma equipa com sólida reputação e experiência profissional adquirida ao longo de anos de trabalho no sector imobiliário.</p>
-        <p class="body t" style="margin-top:12px">Particularmente na área do projecto e construção, estamos aptos a oferecer ao mercado um verdadeiro serviço chave na mão, apoiando o cliente desde o momento da aquisição do activo, passando pelo licenciamento camarário, construção e colocação no mercado.</p>
-        <p class="body t" style="margin-top:12px">Garantimos cobertura em todo o Território Nacional, sem intermediários e com técnicos próprios.</p>
+        <p class="about-lead t">Acompanhamos projectos de habitação, reabilitação e espaços comerciais desde o estudo inicial até ao licenciamento e acompanhamento de obra.</p>
+        <p class="body t">A equipa da VISÃOVALE integra arquitectura, engenharia de especialidades e design de interiores num único processo, evitando a dispersão do projecto por várias entidades.</p>
+        <p class="body t" style="margin-top:12px">Oferecemos um serviço chave na mão: da análise de viabilidade e aquisição do terreno, ao projecto de licenciamento, à construção e à entrega da obra concluída.</p>
+        <p class="body t" style="margin-top:12px">Trabalhamos em todo o Território Nacional, com técnicos próprios e sem intermediários — um único interlocutor do primeiro esboço à chave na mão.</p>
         <a href="#contacto" class="about-cta t">Fale Connosco →</a>
       </div>
       <div class="about-imgs-side reveal-r">
@@ -2915,6 +2975,8 @@ const PROJECT_META = {
   vivendamoderna: {local:'', area:'', ano:'2026', tipo:'Construção nova', servicos:'Arquitectura', estado:'', media:'misto'},
   geminadasbanda: {local:'', area:'', ano:'2026', tipo:'Construção nova', servicos:'Arquitectura', estado:'', media:'misto'},
   edificioescritorios: {local:'', area:'', ano:'2026', tipo:'Escritórios', servicos:'Projecto Comercial · Arquitectura', estado:'', media:'obra'},
+  reabvivendaunifamiliaralvorninha: {local:'Alvorninha', area:'', ano:'2026', tipo:'Reabilitação', servicos:'Reabilitação', estado:'', media:'render'},
+  restaurantebenficaribatejo: {local:'Benfica do Ribatejo', area:'', ano:'2019', tipo:'Restauração', servicos:'Projecto Comercial', estado:'', media:'render'},
 };
 
 const PROJECT_GALLERIES = {
@@ -3133,6 +3195,21 @@ const PROJECT_GALLERIES = {
     {src:'images/edificioescritorios_01.jpg', caption:'Vista de esquina, conjunto de escritórios e armazém'},
     {src:'images/edificioescritorios_02.jpg', caption:'Alçado principal, entrada e revestimento em chapa nervurada'},
     {src:'images/edificioescritorios_03.jpg', caption:'Pátio interior, acesso aos escritórios e cais de carga'}
+  ],
+  reabvivendaunifamiliaralvorninha: [
+    {src:'images/reabvivendaunifamiliaralvorninha_01.jpg', caption:'Jardim e piscina, alçado tardoz ao entardecer'},
+    {src:'images/reabvivendaunifamiliaralvorninha_02.jpg', caption:'Vista geral a partir do acesso, portão e muro de vedação'},
+    {src:'images/reabvivendaunifamiliaralvorninha_03.jpg', caption:'Vista aérea, acesso, garagem e logradouro de entrada'},
+    {src:'images/reabvivendaunifamiliaralvorninha_04.jpg', caption:'Terraço e piscina, ambiente ao entardecer'},
+    {src:'images/reabvivendaunifamiliaralvorninha_05.jpg', caption:'Vista aérea, implantação do conjunto e envolvente rural'}
+  ],
+  restaurantebenficaribatejo: [
+    {src:'images/restaurantebenficaribatejo_01.jpg', caption:'Alçado principal, entrada e terraço coberto'},
+    {src:'images/restaurantebenficaribatejo_02.jpg', caption:'Vista aérea, estacionamento e acesso principal'},
+    {src:'images/restaurantebenficaribatejo_03.jpg', caption:'Vista aérea, alçado poente e enquadramento rural'},
+    {src:'images/restaurantebenficaribatejo_04.jpg', caption:'Vista aérea, entrada principal e esplanada exterior'},
+    {src:'images/restaurantebenficaribatejo_05.jpg', caption:'Sala de refeições, terraço coberto com vista sobre a vinha'},
+    {src:'images/restaurantebenficaribatejo_06.jpg', caption:'Sala principal, ambiente interior e zona de bar'}
   ],
 };
 
@@ -3377,7 +3454,7 @@ function showSvc(btn, id) {
 
 // ── PORTFOLIO FILTER ─────────────────────────────────────────
 // ── PORTFÓLIO: ordem aleatória + mostrar metade ──────────────
-const PORT_VISIBLE = 12;   // nº de projectos mostrados antes de "Ver todos"
+const PORT_VISIBLE = 8;    // nº de projectos mostrados antes de "Ver todos"
 let portCat = 'all';
 let portExpanded = false;
 
@@ -3445,6 +3522,15 @@ shufflePort();
 applyPort();
 enhanceCards();
 pintaCats();
+
+// Conta os projectos reais do portfólio para a secção de credibilidade —
+// nunca fica desactualizado nem preso a um número fixo (ou a "0").
+(function () {
+  const el = document.getElementById('statProjCount');
+  if (!el) return;
+  const n = document.querySelectorAll('#portGrid .proj').length;
+  el.textContent = n + '+';
+})();
 
 // Escreve "Tipo · Local" nos cartões, traduzindo só a parte traduzível.
 function pintaCats() {
