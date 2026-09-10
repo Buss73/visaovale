@@ -1419,13 +1419,17 @@ footer{background:var(--c-black);padding:72px 0 36px}
 .lightbox-top{flex-shrink:0;display:flex;justify-content:flex-end;padding:18px 26px}
 .lightbox-close{background:none;border:none;color:rgba(246,244,240,.6);font-size:1.7rem;line-height:1;cursor:pointer;font-weight:300;transition:color .2s}
 .lightbox-close:hover{color:var(--c-white)}
-.lightbox-stage{position:relative;flex:1;min-height:0;display:flex;align-items:center;justify-content:center;padding:0 84px;touch-action:pan-y}
+.lightbox-stage{position:relative;flex:1;min-height:0;display:flex;align-items:center;justify-content:center;padding:0 84px;touch-action:pan-y pinch-zoom}
 .lightbox-nav{position:absolute;top:50%;transform:translateY(-50%);background:none;border:none;color:rgba(246,244,240,.4);font-size:2.4rem;line-height:1;font-weight:200;cursor:pointer;padding:14px;transition:color .2s}
 .lightbox-nav:hover{color:var(--c-gold2)}
 .lightbox-nav.prev{left:4px}
 .lightbox-nav.next{right:4px}
-.lightbox-img-wrap{position:relative;max-width:100%;max-height:100%;display:flex}
-.lightbox-img-wrap img{max-height:64vh;max-width:100%;object-fit:contain;box-shadow:0 30px 70px rgba(0,0,0,.55)}
+.lightbox-img-wrap{position:relative;max-width:100%;max-height:100%;display:flex;overflow:hidden}
+.lightbox-img-wrap img{max-height:82vh;max-width:100%;object-fit:contain;box-shadow:0 30px 70px rgba(0,0,0,.55);cursor:zoom-in;transition:transform .3s ease}
+.lightbox-img-wrap.zoomed img{transform:scale(2.2);cursor:zoom-out}
+.lightbox:fullscreen{background:var(--c-black)}
+.lightbox:fullscreen .lightbox-img-wrap img{max-height:92vh}
+.lightbox:fullscreen .lightbox-info{padding:10px 26px 16px}
 .lightbox-tools{position:absolute;right:26px;bottom:22px;display:flex;gap:6px;z-index:3}
 .lightbox-tool{background:rgba(17,17,16,.6);border:1px solid rgba(246,244,240,.22);color:rgba(246,244,240,.85);width:36px;height:36px;display:flex;align-items:center;justify-content:center;cursor:pointer;transition:border-color .2s,color .2s,background .2s}
 .lightbox-tool:hover{border-color:var(--c-gold);color:var(--c-gold2);background:rgba(17,17,16,.85)}
@@ -1475,7 +1479,7 @@ footer{background:var(--c-black);padding:72px 0 36px}
   <div class="lightbox-stage">
     <button class="lightbox-nav prev" onclick="galleryStep(-1)" aria-label="Anterior">&#8249;</button>
     <div class="lightbox-img-wrap">
-      <img id="lightboxImg" src="" alt="" loading="lazy" decoding="async">
+      <img id="lightboxImg" src="" alt="" loading="lazy" decoding="async" onclick="imageClickZoom(event)">
     </div>
     <button class="lightbox-nav next" onclick="galleryStep(1)" aria-label="Seguinte">&#8250;</button>
   </div>
@@ -1485,6 +1489,9 @@ footer{background:var(--c-black);padding:72px 0 36px}
     </button>
     <button class="lightbox-tool" onclick="toggleFullscreen()" aria-label="Ecrã inteiro">
       <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M8 3H5a2 2 0 0 0-2 2v3"></path><path d="M16 3h3a2 2 0 0 1 2 2v3"></path><path d="M8 21H5a2 2 0 0 1-2-2v-3"></path><path d="M16 21h3a2 2 0 0 0 2-2v-3"></path></svg>
+    </button>
+    <button class="lightbox-tool" id="lightboxZoomBtn" onclick="toggleZoom()" aria-label="Ampliar imagem">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="11" cy="11" r="7"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line><line x1="11" y1="8" x2="11" y2="14"></line><line x1="8" y1="11" x2="14" y2="11"></line></svg>
     </button>
   </div>
   <div class="lightbox-grid" id="lightboxGrid"></div>
@@ -2517,9 +2524,13 @@ const TR = {
     'Aldeamento Turístico':'Tourist Village',
     'Grande Projecto Hoteleiro':'Major Hotel Project',
     'Reabilitação':'Reabilitação',
-    'Reabilitação':'3D Render · Refurbishment',
-    'Projecto Comercial':'Commercial Project · 3D Render',
-    'Arquitectura':'3D Render · Architecture',
+    'Reabilitação':'Rehabilitation',
+    'Projecto Comercial':'Commercial Project',
+    'Arquitectura':'Architecture',
+    'Planeamento Urbano':'Urban Planning',
+    'Decoração de Interiores':'Interior Decoration',
+    'Equipamento Desportivo · Arquitectura':'Sports Facility · Architecture',
+    'Projecto Comercial · Arquitectura':'Commercial Project · Architecture',
     'Projecto de construção de habitação unifamiliar e muro em Alcobertas, Rio Maior. Alçados e plantas de licenciamento elaborados pela equipa Visãovale.':'Single-family house and boundary wall construction in Alcobertas, Rio Maior. Elevations and planning drawings produced by the Visãovale team.',
     'Projecto de reabilitação e remodelação de moradia unifamiliar. Acompanhamento integral desde o projecto de arquitectura até à entrega da obra.':'Rehabilitation and renovation of a single-family home. Full oversight from architectural design to final handover.',
     'Habitação Colectiva':'Multi-Family Housing',
@@ -2557,6 +2568,33 @@ const TR = {
     'Foto Sobre Nós':'About Us Photo',
     'Foto Detalhe':'Detail Photo',
     '800×1000px':'800×1000px',
+    'Projectos no Portfólio':'Projects in Portfolio',
+    'Áreas de Especialização':'Areas of Specialisation',
+    'Disciplinas Integradas':'Integrated Disciplines',
+    'Intermediários':'Intermediaries',
+    'Ver portfólio completo →':'View full portfolio →',
+    'Acompanhamos projectos de habitação, reabilitação e espaços comerciais desde o estudo inicial até ao licenciamento e acompanhamento de obra.':'We manage housing, rehabilitation and commercial projects from the initial study through to permitting and site supervision.',
+    'A equipa da VISÃOVALE integra arquitectura, engenharia de especialidades e design de interiores num único processo, evitando a dispersão do projecto por várias entidades.':'The VISÃOVALE team brings architecture, specialist engineering and interior design together in a single process, so the project is never split across multiple parties.',
+    'Oferecemos um serviço chave na mão: da análise de viabilidade e aquisição do terreno, ao projecto de licenciamento, à construção e à entrega da obra concluída.':'We offer a genuine turnkey service: from feasibility analysis and land acquisition, through the permitting project, to construction and delivery of the completed work.',
+    'Trabalhamos em todo o Território Nacional, com técnicos próprios e sem intermediários — um único interlocutor do primeiro esboço à chave na mão.':'We work across all of Portugal, with our own in-house team and no intermediaries — a single point of contact from the first sketch to turnkey delivery.',
+    'Reabilitação · 2024':'Rehabilitation · 2024',
+    'Reabilitação · 2026':'Rehabilitation · 2026',
+    'Habitação · 2026':'Housing · 2026',
+    'Habitação Colectiva · 2025':'Multi-Family · 2025',
+    'Habitação Colectiva · 2026':'Multi-Family · 2026',
+    'Habitação Colectiva · 2027':'Multi-Family · 2027',
+    'Habitação Multifamiliar · São Martinho do Porto':'Multi-Family Housing · São Martinho do Porto',
+    'Escritórios · 2026':'Offices · 2026',
+    'Hotelaria · 2026':'Hospitality · 2026',
+    'Hotelaria e Turismo · 2021':'Hospitality & Tourism · 2021',
+    'Interiores · 2026':'Interiors · 2026',
+    'Restauração · 2019':'Restaurant · 2019',
+    'Urbanização, Comércio e Indústria · 2026':'Urban Planning, Commerce & Industry · 2026',
+    'Zona Desportiva · 2026':'Sports Facility · 2026',
+    'Restaurante Natura · 2017':'Restaurante Natura · 2017',
+    'Restaurante Natura':'Restaurante Natura',
+    'Hotel Natura · 2015':'Hotel Natura · 2015',
+    'Hotel Natura':'Hotel Natura',
   },
   fr: {
     'Desenvolvido por':'Développé par',
@@ -2857,9 +2895,13 @@ const TR = {
     'Aldeamento Turístico':'Village Touristique',
     'Grande Projecto Hoteleiro':'Grand Projet Hôtelier',
     'Reabilitação':'Reabilitação',
-    'Reabilitação':'Rendu 3D · Réhabilitation',
-    'Projecto Comercial':'Projet Commercial · Rendu 3D',
-    'Arquitectura':'Rendu 3D · Architecture',
+    'Reabilitação':'Réhabilitation',
+    'Projecto Comercial':'Projet Commercial',
+    'Arquitectura':'Architecture',
+    'Planeamento Urbano':'Planification Urbaine',
+    'Decoração de Interiores':'Décoration d\'Intérieur',
+    'Equipamento Desportivo · Arquitectura':'Équipement Sportif · Architecture',
+    'Projecto Comercial · Arquitectura':'Projet Commercial · Architecture',
     'Projecto de construção de habitação unifamiliar e muro em Alcobertas, Rio Maior. Alçados e plantas de licenciamento elaborados pela equipa Visãovale.':'Projet de construction d\'une maison individuelle et d\'un mur à Alcobertas, Rio Maior. Élévations et plans de permis réalisés par l\'équipe Visãovale.',
     'Projecto de reabilitação e remodelação de moradia unifamiliar. Acompanhamento integral desde o projecto de arquitectura até à entrega da obra.':'Projet de réhabilitation et rénovation d\'une maison individuelle. Suivi intégral depuis le projet d\'architecture jusqu\'à la livraison.',
     'Habitação Colectiva':'Logement Collectif',
@@ -2902,6 +2944,34 @@ const TR = {
     'Projectos &':'Projets &',
     'Moradias unifamiliares e edifícios colectivos com rigor técnico e sensibilidade estética.':'Maisons individuelles et immeubles collectifs avec rigueur technique et sensibilité esthétique.',
     'Projectos residenciais, comerciais e de reabilitação com acompanhamento integral, do estudo prévio à entrega da obra.':'Projets résidentiels, commerciaux et de réhabilitation avec suivi intégral, de l\'étude préliminaire à la livraison.',
+    'Projectos no Portfólio':'Projets au Portfolio',
+    'Áreas de Especialização':'Domaines de Spécialisation',
+    'Disciplinas Integradas':'Disciplines Intégrées',
+    'Intermediários':'Intermédiaires',
+    'Ver portfólio completo →':'Voir tout le portfolio →',
+    'Acompanhamos projectos de habitação, reabilitação e espaços comerciais desde o estudo inicial até ao licenciamento e acompanhamento de obra.':'Nous suivons des projets de logement, de réhabilitation et d\'espaces commerciaux depuis l\'étude initiale jusqu\'aux autorisations et au suivi de chantier.',
+    'A equipa da VISÃOVALE integra arquitectura, engenharia de especialidades e design de interiores num único processo, evitando a dispersão do projecto por várias entidades.':'L\'équipe VISÃOVALE réunit architecture, ingénierie de spécialités et design d\'intérieur dans un processus unique, évitant que le projet soit dispersé entre plusieurs intervenants.',
+    'Oferecemos um serviço chave na mão: da análise de viabilidade e aquisição do terreno, ao projecto de licenciamento, à construção e à entrega da obra concluída.':'Nous proposons un véritable service clé en main : de l\'étude de viabilité et de l\'acquisition du terrain, au projet d\'autorisation, jusqu\'à la construction et à la livraison de l\'ouvrage terminé.',
+    'Trabalhamos em todo o Território Nacional, com técnicos próprios e sem intermediários — um único interlocutor do primeiro esboço à chave na mão.':'Nous intervenons sur tout le territoire national, avec nos propres techniciens et sans intermédiaires — un interlocuteur unique, du premier croquis à la livraison clé en main.',
+    'Reabilitação · 2024':'Réhabilitation · 2024',
+    'Reabilitação · 2026':'Réhabilitation · 2026',
+    'Habitação · 2026':'Logement · 2026',
+    'Habitação Colectiva · 2025':'Collectif · 2025',
+    'Habitação Colectiva · 2026':'Collectif · 2026',
+    'Habitação Colectiva · 2027':'Collectif · 2027',
+    'Habitação Multifamiliar · São Martinho do Porto':'Logement Collectif · São Martinho do Porto',
+    'Escritórios · 2026':'Bureaux · 2026',
+    'Hotelaria · 2026':'Hôtellerie · 2026',
+    'Hotelaria e Turismo · 2021':'Hôtellerie et Tourisme · 2021',
+    'Interiores · 2026':'Intérieurs · 2026',
+    'Restauração · 2019':'Restaurant · 2019',
+    'Urbanização, Comércio e Indústria · 2026':'Urbanisme, Commerce et Industrie · 2026',
+    'Zona Desportiva · 2026':'Zone Sportive · 2026',
+    'Restaurante Natura · 2017':'Restaurante Natura · 2017',
+    'Restaurante Natura':'Restaurante Natura',
+    'Hotel Natura · 2015':'Hotel Natura · 2015',
+    'Hotel Natura':'Hotel Natura',
+    '800×1000px':'800×1000px',
   }
 };
 
@@ -3145,7 +3215,9 @@ const PROJECT_GALLERIES = {
   ],
   reabvivendaunifamiliar: [
     {src:'images/reabvivendaunifamiliar_01.jpg', caption:'Alçado principal, entrada coberta e garagem'},
-    {src:'images/reabvivendaunifamiliar_02.jpg', caption:'Vista de esquina, cobertura em telha e chaminés'}
+    {src:'images/reabvivendaunifamiliar_02.jpg', caption:'Vista de esquina, cobertura em telha e chaminés'},
+    {src:'images/reabvivendaunifamiliar_03.jpg', caption:'Alçado tardoz, volumes em tijolo e logradouro relvado'},
+    {src:'images/reabvivendaunifamiliar_04.jpg', caption:'Alçado principal, jardim envolvente e acesso pedonal'}
   ],
   bungalowsinteriores: [
     {src:'images/bungalowsinteriores_01.jpg', caption:'Sala comum, zona de refeições e kitchenette'},
@@ -3243,6 +3315,7 @@ function closeGallery() {
   lb.setAttribute('aria-hidden', 'true');
   document.body.style.overflow = '';
   currentGallery = null;
+  resetZoom();
   if (document.fullscreenElement) document.exitFullscreen();
 }
 
@@ -3250,6 +3323,7 @@ function galleryStep(dir) {
   if (!currentGallery) return;
   const imgs = PROJECT_GALLERIES[currentGallery];
   currentIndex = (currentIndex + dir + imgs.length) % imgs.length;
+  resetZoom();
   renderGalleryImage();
 }
 
@@ -3263,6 +3337,43 @@ function renderGalleryImage() {
   renderGalleryMeta();
 }
 
+// ── ZOOM ────────────────────────────────────────────────────
+// Clicar na imagem amplia centrado no ponto tocado; clicar de novo (ou o botão) repõe o tamanho normal.
+let isZoomed = false;
+let justSwiped = false;
+
+function imageClickZoom(e) {
+  if (justSwiped) return;
+  const img = document.getElementById('lightboxImg');
+  if (!isZoomed) {
+    const rect = img.getBoundingClientRect();
+    const originX = ((e.clientX - rect.left) / rect.width) * 100;
+    const originY = ((e.clientY - rect.top) / rect.height) * 100;
+    img.style.transformOrigin = originX + '% ' + originY + '%';
+  }
+  toggleZoom();
+}
+
+function toggleZoom() {
+  const wrap = document.querySelector('.lightbox-img-wrap');
+  const img = document.getElementById('lightboxImg');
+  isZoomed = !isZoomed;
+  wrap.classList.toggle('zoomed', isZoomed);
+  document.getElementById('lightboxZoomBtn').classList.toggle('on', isZoomed);
+  if (!isZoomed) img.style.transformOrigin = '';
+}
+
+function resetZoom() {
+  if (!isZoomed) return;
+  isZoomed = false;
+  const wrap = document.querySelector('.lightbox-img-wrap');
+  if (wrap) wrap.classList.remove('zoomed');
+  const img = document.getElementById('lightboxImg');
+  if (img) img.style.transformOrigin = '';
+  const btn = document.getElementById('lightboxZoomBtn');
+  if (btn) btn.classList.remove('on');
+}
+
 // Mostra a ficha do projecto na lightbox — só os campos preenchidos.
 function renderGalleryMeta() {
   const box = document.getElementById('lightboxMeta');
@@ -3270,12 +3381,21 @@ function renderGalleryMeta() {
   const m = PROJECT_META[currentGallery];
   if (!m) { box.innerHTML = ''; return; }
   const L = {
-    local:'Local', area:'Área', ano:'Ano',
-    tipo:'Intervenção', servicos:'Serviços', estado:'Estado'
+    local:{pt:'Local', en:'Location', fr:'Lieu'},
+    area:{pt:'Área', en:'Area', fr:'Surface'},
+    ano:{pt:'Ano', en:'Year', fr:'Année'},
+    tipo:{pt:'Intervenção', en:'Intervention', fr:'Intervention'},
+    servicos:{pt:'Serviços', en:'Services', fr:'Services'},
+    estado:{pt:'Estado', en:'Status', fr:'État'}
   };
+  const T = (typeof curLang !== 'undefined' && TR[curLang]) ? TR[curLang] : {};
   box.innerHTML = ['local','area','ano','tipo','servicos','estado']
     .filter(k => m[k])
-    .map(k => '<span>' + L[k] + ' <b>' + m[k] + (k === 'area' ? ' m²' : '') + '</b></span>')
+    .map(k => {
+      const label = L[k][curLang] || L[k].pt;
+      const val = (k === 'tipo' || k === 'servicos' || k === 'estado') ? (T[m[k]] || m[k]) : m[k];
+      return '<span>' + label + ' <b>' + val + (k === 'area' ? ' m²' : '') + '</b></span>';
+    })
     .join('');
 }
 
@@ -3295,7 +3415,13 @@ function enhanceCards() {
     }
     p.dataset.media = m.media || 'render';
     const cli = p.querySelector('.proj-client');
-    if (cli && m.servicos) cli.textContent = m.servicos;
+    if (cli && m.servicos) {
+      cli.textContent = m.servicos;
+      cli.classList.add('t');
+      cli.dataset.orig = m.servicos;
+      const tr = (TR[curLang] && TR[curLang][m.servicos]) || m.servicos;
+      cli.textContent = tr;
+    }
     if (m.area || (m.local && m.ano)) {
       let extra = p.querySelector('.proj-meta');
       if (!extra) {
@@ -3382,7 +3508,10 @@ document.getElementById('lightbox').addEventListener('click', (e) => {
     const touchEndY = e.changedTouches[0].screenY;
     const dx = touchEndX - touchStartX;
     const dy = touchEndY - touchStartY;
+    if (isZoomed) return; // não navega enquanto a imagem está ampliada
     if (Math.abs(dx) > SWIPE_THRESHOLD && Math.abs(dx) > Math.abs(dy)) {
+      justSwiped = true;
+      setTimeout(() => { justSwiped = false; }, 300);
       if (dx < 0) galleryStep(1);   // arrastar para a esquerda → foto seguinte
       else galleryStep(-1);         // arrastar para a direita → foto anterior
     }
