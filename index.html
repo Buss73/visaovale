@@ -1219,21 +1219,6 @@ footer{background:var(--c-black);padding:72px 0 36px}
         </div>
       </div>
 
-      <!-- P33 · GALERIA (Reabilitação de Vivenda Unifamiliar) -->
-      <div class="proj reveal proj-gallery" data-cat="reab" data-ratio="wide" onclick="openGallery('reabvivendaunifamiliar', this)" role="button" tabindex="0" onkeyup="if(event.key==='Enter')openGallery('reabvivendaunifamiliar', this)">
-        <div class="proj-img">
-          <img width="1365" height="768" src="images/reabvivendaunifamiliar_01.jpg" alt="Reabilitação de Vivenda Unifamiliar" loading="lazy"
-               onerror="if(!this.parentNode)return;this.outerHTML='<div class=\'proj-ph\' data-ratio=\'wide\' style=\'aspect-ratio:16/9\'><div class=\'ph-lbl\'>Reabilitação de Vivenda Unifamiliar · 2026</div></div>'">
-          <span class="proj-gallery-badge t">Ver Projecto</span>
-        </div>
-        <div class="proj-overlay"></div>
-        <div class="proj-info">
-          <p class="proj-cat t">Reabilitação · 2026</p>
-          <h3 class="proj-name">Reabilitação de Vivenda Unifamiliar</h3>
-          <p class="proj-client">Reabilitação</p>
-        </div>
-      </div>
-
       <!-- P34 · GALERIA (Bungalows · Decoração de Interiores) -->
       <div class="proj reveal proj-gallery" data-cat="int" data-ratio="wide" onclick="openGallery('bungalowsinteriores', this)" role="button" tabindex="0" onkeyup="if(event.key==='Enter')openGallery('bungalowsinteriores', this)">
         <div class="proj-img">
@@ -1396,6 +1381,21 @@ footer{background:var(--c-black);padding:72px 0 36px}
           <p class="proj-cat t">Restauração · 2019</p>
           <h3 class="proj-name">Restaurante Benfica do Ribatejo</h3>
           <p class="proj-client">Projecto Comercial</p>
+        </div>
+      </div>
+
+      <!-- P45 · GALERIA (Reabilitação de Vivenda Unifamiliar) -->
+      <div class="proj reveal proj-gallery" data-cat="reab" data-ratio="wide" onclick="openGallery('reabvivendaunifamiliar', this)" role="button" tabindex="0" onkeyup="if(event.key==='Enter')openGallery('reabvivendaunifamiliar', this)">
+        <div class="proj-img">
+          <img width="1365" height="768" src="images/reabvivendaunifamiliar_01.jpg" alt="Reabilitação de Vivenda Unifamiliar" loading="lazy"
+               onerror="if(!this.parentNode)return;this.outerHTML='<div class=\'proj-ph\' data-ratio=\'wide\' style=\'aspect-ratio:16/9\'><div class=\'ph-lbl\'>Reabilitação de Vivenda Unifamiliar · 2026</div></div>'">
+          <span class="proj-gallery-badge t">Ver Projecto</span>
+        </div>
+        <div class="proj-overlay"></div>
+        <div class="proj-info">
+          <p class="proj-cat t">Reabilitação · 2026</p>
+          <h3 class="proj-name">Reabilitação de Vivenda Unifamiliar</h3>
+          <p class="proj-client">Reabilitação</p>
         </div>
       </div>
     </div>
@@ -3044,7 +3044,6 @@ const PROJECT_META = {
   vivendaatouguia: {local:'Atouguia', area:'', ano:'2026', tipo:'Design de interiores', servicos:'Design de Interiores', estado:'', media:'obra'},
   vivendasgeminadas: {local:'', area:'', ano:'2026', tipo:'Construção nova', servicos:'Arquitectura', estado:'', media:'render'},
   blocoaptunifamiliares: {local:'', area:'', ano:'2026', tipo:'Construção nova', servicos:'Arquitectura', estado:'', media:'render'},
-  reabvivendaunifamiliar: {local:'', area:'', ano:'2026', tipo:'Reabilitação', servicos:'Reabilitação', estado:'', media:'render'},
   bungalowsinteriores: {local:'', area:'', ano:'2026', tipo:'Design de interiores', servicos:'Decoração de Interiores', estado:'', media:'obra'},
   vivendasserramar: {local:'', area:'', ano:'2026', tipo:'Construção nova', servicos:'Arquitectura', estado:'', media:'render'},
   vivendapedra: {local:'', area:'', ano:'2026', tipo:'Construção nova', servicos:'Arquitectura', estado:'', media:'render'},
@@ -3056,6 +3055,7 @@ const PROJECT_META = {
   edificioescritorios: {local:'', area:'', ano:'2026', tipo:'Escritórios', servicos:'Projecto Comercial · Arquitectura', estado:'', media:'obra'},
   reabvivendaunifamiliaralvorninha: {local:'Alvorninha', area:'', ano:'2026', tipo:'Reabilitação', servicos:'Reabilitação', estado:'', media:'render'},
   restaurantebenficaribatejo: {local:'Benfica do Ribatejo', area:'', ano:'2019', tipo:'Restauração', servicos:'Projecto Comercial', estado:'', media:'render'},
+  reabvivendaunifamiliar: {local:'', area:'', ano:'2026', tipo:'Reabilitação', servicos:'Reabilitação', estado:'', media:'render'},
 };
 
 const PROJECT_GALLERIES = {
@@ -3221,11 +3221,6 @@ const PROJECT_GALLERIES = {
     {src:'images/blocoaptunifamiliares_03.jpg', caption:'Alçado principal ao fim da tarde, enquadramento na envolvente'},
     {src:'images/blocoaptunifamiliares_04.jpg', caption:'Alçado lateral, acesso automóvel e garagens'}
   ],
-  reabvivendaunifamiliar: [
-    {src:'images/reabvivendaunifamiliar_01.jpg', caption:'Alçado principal, entrada coberta e garagem'},
-    {src:'images/reabvivendaunifamiliar_02.jpg', caption:'Vista de esquina, cobertura em telha e chaminés'},
-    {src:'images/reabvivendaunifamiliar_04.jpg', caption:'Alçado principal, jardim envolvente e acesso pedonal'}
-  ],
   bungalowsinteriores: [
     {src:'images/bungalowsinteriores_01.jpg', caption:'Sala comum, zona de refeições e kitchenette'},
     {src:'images/bungalowsinteriores_02.jpg', caption:'Quarto principal, parede de destaque e acesso ao exterior'}
@@ -3291,6 +3286,12 @@ const PROJECT_GALLERIES = {
     {src:'images/restaurantebenficaribatejo_04.jpg', caption:'Vista aérea, entrada principal e esplanada exterior'},
     {src:'images/restaurantebenficaribatejo_05.jpg', caption:'Sala de refeições, terraço coberto com vista sobre a vinha'},
     {src:'images/restaurantebenficaribatejo_06.jpg', caption:'Sala principal, ambiente interior e zona de bar'}
+  ],
+  reabvivendaunifamiliar: [
+    {src:'images/reabvivendaunifamiliar_01.jpg', caption:'Alçado principal, jardim e acesso automóvel'},
+    {src:'images/reabvivendaunifamiliar_02.jpg', caption:'Entrada coberta, alçado principal e logradouro'},
+    {src:'images/reabvivendaunifamiliar_03.jpg', caption:'Alçado principal, volume da garagem e logradouro'},
+    {src:'images/reabvivendaunifamiliar_04.jpg', caption:'Alçado tardoz, garagem e pátio de acesso'}
   ],
 };
 
